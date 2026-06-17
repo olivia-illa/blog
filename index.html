@@ -3,14 +3,44 @@ layout: default
 title: Home
 ---
 
+{% assign now_seconds = "now" | date: "%s" | plus: 0 %}
+{% assign day_seconds = 86400 %}
+{% assign hour_seconds = 3600 %}
+{% assign minute_seconds = 60 %}
+
 <div class="home-grid">
+<section>
+  <h2>Intro</h2>
+  <p>Welcome to my digital garden. This is a space where I collect internet clippings, share scattered thoughts, and document my journey. Stay tuned for more utter sense.</p>
+</section>
+
 <section>
   <h2>Internet Clippings</h2>
   <ul class="post-list">
     {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}
     {% for post in clippings %}
       <li class="post-item">
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-date">
+          {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
+          {% assign diff_seconds = now_seconds | minus: post_seconds %}
+          {% assign diff_days = diff_seconds | divided_by: day_seconds %}
+          
+          {% if diff_days == 0 %}
+            {% if diff_seconds < hour_seconds %}
+              {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+              {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+            {% else %}
+              {% assign hours = diff_seconds | divided_by: hour_seconds %}
+              {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+            {% endif %}
+          {% elsif diff_days == 1 %}
+            Yesterday
+          {% elsif diff_days < 7 %}
+            {{ diff_days }} days ago
+          {% else %}
+            {{ post.date | date: "%b %-d, %Y" }}
+          {% endif %}
+        </span>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </li>
     {% else %}
@@ -25,7 +55,27 @@ title: Home
     {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'scattered-thoughts'" %}
     {% for post in thoughts %}
       <li class="post-item">
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-date">
+          {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
+          {% assign diff_seconds = now_seconds | minus: post_seconds %}
+          {% assign diff_days = diff_seconds | divided_by: day_seconds %}
+          
+          {% if diff_days == 0 %}
+            {% if diff_seconds < hour_seconds %}
+              {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+              {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+            {% else %}
+              {% assign hours = diff_seconds | divided_by: hour_seconds %}
+              {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+            {% endif %}
+          {% elsif diff_days == 1 %}
+            Yesterday
+          {% elsif diff_days < 7 %}
+            {{ diff_days }} days ago
+          {% else %}
+            {{ post.date | date: "%b %-d, %Y" }}
+          {% endif %}
+        </span>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </li>
     {% else %}
@@ -40,7 +90,27 @@ title: Home
     {% for post in site.posts %}
       {% unless post.tags contains 'internet-clippings' or post.tags contains 'scattered-thoughts' %}
         <li class="post-item">
-          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <span class="post-date">
+            {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
+            {% assign diff_seconds = now_seconds | minus: post_seconds %}
+            {% assign diff_days = diff_seconds | divided_by: day_seconds %}
+            
+            {% if diff_days == 0 %}
+              {% if diff_seconds < hour_seconds %}
+                {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+                {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+              {% else %}
+                {% assign hours = diff_seconds | divided_by: hour_seconds %}
+                {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+              {% endif %}
+            {% elsif diff_days == 1 %}
+              Yesterday
+            {% elsif diff_days < 7 %}
+              {{ diff_days }} days ago
+            {% else %}
+              {{ post.date | date: "%b %-d, %Y" }}
+            {% endif %}
+          </span>
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </li>
       {% endunless %}
