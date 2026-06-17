@@ -31,7 +31,7 @@ You don't need to install Ruby or Jekyll on your machine. You can use Docker to 
     ```
 3.  Open your browser to [http://localhost:4000](http://localhost:4000).
 
-The script handles dependency installation and enables live reloading, so the site will automatically refresh when you save changes to your Markdown files or CSS.
+The script handles dependency installation and enables live reloading, so the site will automatically refresh when you save changes to your Markdown files or CSS. Do not run `bundle install` manually; `preview.sh` manages dependencies inside Docker.
 
 ## Adding New Content
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to Making Utter Sense"
-date: 2026-06-17 10:00:00 +0000
+date: 2026-06-17 18:00:00 +0800
 tags: [general]
 ---
 

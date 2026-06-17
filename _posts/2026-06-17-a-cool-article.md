@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A cool article I found"
-date: 2026-06-17 11:00:00 +0000
+date: 2026-06-17 19:00:00 +0800
 tags: [internet-clippings]
 ---
 

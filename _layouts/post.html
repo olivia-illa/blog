@@ -3,7 +3,21 @@ layout: default
 ---
 <article>
   <h1>{{ page.title }}</h1>
-  <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+  <p class="post-date">
+    <time id="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+      {{ page.date | date: "%B %d, %Y %l:%M %p" }}
+    </time>
+  </p>
+
+  {% if page.last_modified_at %}
+    <p class="post-updated">
+      <small>
+        Last edited <time class="post-updated-time" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+          {{ page.last_modified_at | date: "%B %d, %Y %l:%M %p" }}
+        </time>
+      </small>
+    </p>
+  {% endif %}
   
   {{ content }}
 
@@ -13,3 +27,28 @@ layout: default
     </div>
   {% endif %}
 </article>
+
+<script>
+  (function() {
+    var dateEls = document.querySelectorAll('#post-date, .post-updated-time');
+    if (!dateEls.length) return;
+
+    var formatter = new Intl.DateTimeFormat(navigator.language || 'en-US', {
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+      timeZoneName: 'short'
+    });
+
+    dateEls.forEach(function(timeEl) {
+      var iso = timeEl.getAttribute('datetime');
+      if (!iso) return;
+      var date = new Date(iso);
+      if (isNaN(date.getTime())) return;
+      timeEl.textContent = formatter.format(date);
+    });
+  })();
+</script>
