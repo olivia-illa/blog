@@ -41,8 +41,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--section-border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem; /* Tighter gap after nav */
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.6rem; /* Even tighter gap after nav */
 }
 
 nav > a:first-child {
@@ -100,9 +100,8 @@ a:hover {
   padding: 0;
 }
 
-.post-item {
-  margin-bottom: 1rem; /* Tighter spacing between items */
-  font-size: 0.85rem;
+.post-item:last-child {
+  margin-bottom: 0;
 }
 
 .post-date {
@@ -114,14 +113,15 @@ a:hover {
 }
 
 section {
-  margin-bottom: 2rem;
+  margin: 0 0 0.75rem;
 }
+
 
 /* Home Grid Layout */
 .home-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem; /* Tighter gap between columns */
+  gap: 1rem; /* Tighter gap between columns */
 }
 
 @media (min-width: 1000px) {
