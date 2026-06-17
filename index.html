@@ -5,6 +5,11 @@ title: Home
 
 <div class="home-grid">
 <section>
+  <h2>Intro</h2>
+  <p>Welcome to my digital garden. This is a space where I collect internet clippings, share scattered thoughts, and document my journey. Stay tuned for more utter sense.</p>
+</section>
+
+<section>
   <h2>Internet Clippings</h2>
   <ul class="post-list">
     {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}

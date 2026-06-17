@@ -1,30 +1,30 @@
 :root {
-  --bg-color: #ddeedd; /* Pastel green for light mode */
+  --bg-color: #ddeedd;
   --text-color: #111111;
   --link-color: #111111;
   --header-color: #111111;
   --footer-color: #111111;
-  --section-border: rgba(0, 0, 0, 0.1); /* Subtle dark border on green */
+  --section-border: rgba(0, 0, 0, 0.1);
   --font-mono: "VCTR Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #3b3a30; /* Deep olive for dark mode */
+    --bg-color: #3b3a30;
     --text-color: #eeeeee;
     --link-color: #eeeeee;
     --header-color: #eeeeee;
     --footer-color: #eeeeee;
-    --section-border: rgba(255, 255, 255, 0.1); /* Subtle light border on olive */
+    --section-border: rgba(255, 255, 255, 0.1);
   }
 }
 
 body {
   font-family: var(--font-mono);
-  line-height: 1.6;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  line-height: 1.5; /* Slightly tighter line height */
+  max-width: 98%; /* Use almost full width */
+  margin: 0; /* Left align everything */
+  padding: 0.5rem 1rem; /* Significantly reduced padding */
   background-color: var(--bg-color);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
@@ -32,7 +32,7 @@ body {
 }
 
 header, footer {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   font-family: var(--font-mono);
 }
 
@@ -41,13 +41,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--section-border);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem; /* Tighter gap after nav */
 }
 
 .nav-links a {
-  margin-left: 1.5rem;
-  font-size: 0.9rem;
+  margin-left: 1rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -62,18 +62,19 @@ h1, h2, h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin-top: 0; /* Remove top margin for tighter layout */
 }
 
 h1 {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   border-bottom: 1px solid var(--section-border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 a {
@@ -91,61 +92,67 @@ a:hover {
 }
 
 .post-item {
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 1rem; /* Tighter spacing between items */
+  font-size: 0.85rem;
 }
 
 .post-date {
   display: inline;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--footer-color);
   font-family: var(--font-mono);
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Home Grid Layout */
 .home-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem; /* Tighter gap between columns */
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .home-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     align-items: start;
   }
 }
 
+@media (min-width: 800px) and (max-width: 999px) {
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 footer {
-  text-align: center;
-  font-size: 0.8rem;
+  text-align: left; /* Left align footer too */
+  font-size: 0.75rem;
   color: var(--footer-color);
   border-top: 1px solid var(--section-border);
-  margin-top: 4rem;
-  padding-top: 2rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
 }
 
 /* Single Post Styles */
 article {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 1000px; /* Allow articles to be wider but still readable */
+  margin: 0; /* Left align articles */
 }
 
 article h1 {
   text-transform: none;
   letter-spacing: normal;
-  font-size: 2rem;
-  margin-top: 2rem;
+  font-size: 1.75rem;
+  margin-top: 1rem;
 }
 
 .post-tags {
-  margin-top: 3rem;
-  font-size: 0.8rem;
+  margin-top: 2rem;
+  font-size: 0.75rem;
   font-family: var(--font-mono);
   color: var(--footer-color);
 }
