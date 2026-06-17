@@ -2,7 +2,7 @@
 
 # Run Jekyll blog locally using Docker
 echo "Starting 'Making Utter Sense' local preview..."
-echo "Open http://localhost:4000 in your browser"
+echo "Open http://localhost:4000/blog in your browser"
 
 docker run --rm \
   -v "$(pwd):/srv/jekyll:Z" \
