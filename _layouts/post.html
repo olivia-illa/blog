@@ -8,7 +8,14 @@ layout: default
       {{ page.date | date: "%d %B %Y %H:%M" }}
     </time>
   </p>
+  {{ content }}
 
+  {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      Tags: {{ page.tags | join: ", " }}
+    </div>
+  {% endif %}
+  
   {% if page.last_modified_at %}
     <p class="post-updated">
       <small>
@@ -17,14 +24,6 @@ layout: default
         </time>
       </small>
     </p>
-  {% endif %}
-  
-  {{ content }}
-
-  {% if page.tags.size > 0 %}
-    <div class="post-tags">
-      Tags: {{ page.tags | join: ", " }}
-    </div>
   {% endif %}
 </article>
 
@@ -39,8 +38,7 @@ layout: default
       year: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
-      hour12: false,
-      timeZoneName: 'short'
+      hour12: false
     });
 
     dateEls.forEach(function(timeEl) {

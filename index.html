@@ -19,77 +19,8 @@ title: Home
   <ul class="post-list">
     {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}
     {% for post in clippings %}
-      <li class="post-item">
-        <span class="post-date">
-          {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
-          {% assign diff_seconds = now_seconds | minus: post_seconds %}
-          {% assign diff_days = diff_seconds | divided_by: day_seconds %}
-          
-          {% if diff_days == 0 %}
-            {% if diff_seconds < hour_seconds %}
-              {% assign minutes = diff_seconds | divided_by: minute_seconds %}
-              {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
-            {% else %}
-              {% assign hours = diff_seconds | divided_by: hour_seconds %}
-              {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
-            {% endif %}
-          {% elsif diff_days == 1 %}
-            Yesterday
-          {% elsif diff_days < 7 %}
-            {{ diff_days }} days ago
-          {% else %}
-            {{ post.date | date: "%b %-d, %Y" }}
-          {% endif %}
-        </span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
-    {% else %}
-      <p>No clippings yet.</p>
-    {% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h2>Scattered Thoughts</h2>
-  <ul class="post-list">
-    {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'scattered-thoughts'" %}
-    {% for post in thoughts %}
-      <li class="post-item">
-        <span class="post-date">
-          {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
-          {% assign diff_seconds = now_seconds | minus: post_seconds %}
-          {% assign diff_days = diff_seconds | divided_by: day_seconds %}
-          
-          {% if diff_days == 0 %}
-            {% if diff_seconds < hour_seconds %}
-              {% assign minutes = diff_seconds | divided_by: minute_seconds %}
-              {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
-            {% else %}
-              {% assign hours = diff_seconds | divided_by: hour_seconds %}
-              {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
-            {% endif %}
-          {% elsif diff_days == 1 %}
-            Yesterday
-          {% elsif diff_days < 7 %}
-            {{ diff_days }} days ago
-          {% else %}
-            {{ post.date | date: "%b %-d, %Y" }}
-          {% endif %}
-        </span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
-    {% else %}
-      <p>No thoughts yet.</p>
-    {% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h2>All Posts</h2>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      {% unless post.tags contains 'internet-clippings' or post.tags contains 'scattered-thoughts' %}
-        <li class="post-item">
+      <li class="post-item clipping-item">
+        <div class="clipping-meta">
           <span class="post-date">
             {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
             {% assign diff_seconds = now_seconds | minus: post_seconds %}
@@ -111,8 +42,69 @@ title: Home
               {{ post.date | date: "%b %-d, %Y" }}
             {% endif %}
           </span>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </div>
+        <div class="clipping-preview">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          </a>
+        </div>
+      </li>
+    {% else %}
+      <p>No clippings yet.</p>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="scattered-thoughts">
+  <h2>Scattered Thoughts</h2>
+  <ul class="post-list">
+    {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'scattered-thoughts'" %}
+    {% for post in thoughts %}
+      <li class="post-item">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% else %}
+      <p>No thoughts yet.</p>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="give-me-ten">
+  <h2>Give me 10.</h2>
+  <ul class="post-list">
+    {% assign give_me_count = 0 %}
+    {% for post in site.posts %}
+      {% unless post.tags contains 'internet-clippings' or post.tags contains 'scattered-thoughts' %}
+        {% assign give_me_count = give_me_count | plus: 1 %}
+        <li class="post-item give-me-10-item">
+          <span class="post-date">
+            {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
+            {% assign diff_seconds = now_seconds | minus: post_seconds %}
+            {% assign diff_days = diff_seconds | divided_by: day_seconds %}
+            
+            {% if diff_days == 0 %}
+              {% if diff_seconds < hour_seconds %}
+                {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+                {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+              {% else %}
+                {% assign hours = diff_seconds | divided_by: hour_seconds %}
+                {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+              {% endif %}
+            {% elsif diff_days == 1 %}
+              Yesterday
+            {% elsif diff_days < 7 %}
+              {{ diff_days }} days ago
+            {% else %}
+              {{ post.date | date: "%b %-d, %Y" }}
+            {% endif %}
+          </span>
+          <div class="give-me-10-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
         </li>
+        {% if give_me_count == 10 %}
+          {% break %}
+        {% endif %}
       {% endunless %}
     {% endfor %}
   </ul>

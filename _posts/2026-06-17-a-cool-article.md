@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "A cool article I found"
+title: "love island usa commentary"
 date: 2026-06-17 19:00:00 +0800
 tags: [internet-clippings]
 ---
 
-I found this really interesting article today about the future of the web. It made me think about how we consume information.
+My daily aftersun on YT: https://www.youtube.com/watch?v=SaSE9MEbd9U

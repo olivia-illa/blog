@@ -88,11 +88,12 @@ h2 {
 
 a {
   color: var(--link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
   opacity: 0.7;
+  text-decoration: underline;
 }
 
 .post-list {
@@ -116,18 +117,70 @@ section {
   margin: 0 0 0.75rem;
 }
 
+.scattered-thoughts .post-list {
+  padding-left: 0;
+}
+
+.scattered-thoughts .post-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0;
+  font-size: 0.82rem;
+}
+
+.scattered-thoughts .post-item::before {
+  content: "⇝";
+  display: inline-block;
+  margin-right: 0.35rem;
+  color: var(--link-color);
+}
+
+.scattered-thoughts .post-item a {
+  text-decoration: none;
+}
+
+.scattered-thoughts .post-item a:hover {
+  text-decoration: underline;
+}
+
+.clipping-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.clipping-meta {
+  margin-bottom: 0.35rem;
+}
+
+.clipping-preview a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.clipping-preview a:hover {
+  text-decoration: underline;
+}
 
 /* Home Grid Layout */
 .home-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem; /* Tighter gap between columns */
+  gap: 0.75rem;
+  position: relative;
+}
+
+.home-grid > section {
+  padding: 0.85rem;
 }
 
 @media (min-width: 1000px) {
   .home-grid {
-    grid-template-columns: repeat(4, 1fr);
-    align-items: start;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .home-grid > section:not(:first-child) {
+    border-left: 1px solid var(--section-border);
   }
 }
 
@@ -160,8 +213,9 @@ article h1 {
 }
 
 .post-tags {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.75rem;
   font-family: var(--font-mono);
   color: var(--footer-color);
+  display: inline-block;
 }
