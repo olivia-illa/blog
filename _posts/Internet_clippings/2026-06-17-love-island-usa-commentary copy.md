@@ -5,4 +5,4 @@ date: 2026-06-17 19:00:00 +0800
 tags: [internet-clippings]
 ---
 
-My daily [aftersun on YT](https://www.youtube.com/watch?v=SaSE9MEbd9U).
+Found a Love Island USA S8 [after show commentary](https://www.youtube.com/watch?v=SaSE9MEbd9U) worth my extra 10min and actually talks sassy and sarcastic.

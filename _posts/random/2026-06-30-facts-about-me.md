@@ -21,7 +21,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 7. I am a yes-woman to challenges, and have now earned bragging rights⁶ to three triathlons, two full marathons, and countless half marathons. 
 
-8. I am obsessed with all things chocolate, likely due to childhood disbelief in Roald Dahl tales and [Chocolatina](https://www.goodreads.com/en/book/show/1065563.Chocolatina). 
+8. I am obsessed with all things chocolate, likely due to childhood disbelief in Roald Dahl short stories and [Chocolatina](https://www.goodreads.com/en/book/show/1065563.Chocolatina). 
 
 9. [The book](https://www.theguardian.com/books/2017/feb/10/a-line-made-by-walking-review-sara-baume) that shaped my final year as an English major. #quartlifecrises
 
@@ -33,9 +33,9 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 13. I keep friends who remind me of a certain stage of life, and I intend to keep it that way.
 
-14. I once lived in a greenhouse converted from my bedroom to relieve my eyes from books and papers. At some point, there were close to 100 pots on shelves and tables that were not waterproof, and I would trip over potho vines every other week. I look forward to building one again once I move out of the current living situation.
+14. During Covid, I converted my bedroom into a greenhouse⁹ to relieve eye tension and restore the "Great Outdoors," while  studying for finals. I did also graduate right from that same room, which was rather sad.
 
-15. I fall asleep to noise and light like cooking ASMR, reality shows (currently binging Love Island USA), but not conspiracy talk shows or legal suits.
+15. I can fall asleep to noise and light, like [korean baking ASMR](https://www.youtube.com/watch?v=VGQFEiyMe-M), reality tv drama, but not conspiracy talk shows or lawsuits breakdowns.
 
 16. I make fresh pesto every week and add it to every dish like it's salt and pepper.
 
@@ -62,3 +62,5 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 ⁷ Seriously, I started compiling [trash journals](https://www.pinterest.com/search/pins/?q=Trash%20journal&rs=typed) before it became trendy.
 
 ⁸ My prized-find being the [Marc Jacobs 2002 runway](https://www.pinterest.com/pin/7599893117033732/) for $130
+
+⁹ At one point, there was close to 100 pots on shelves and tables that were not made waterproof, and I would trip over potho vines every other week.

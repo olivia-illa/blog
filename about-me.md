@@ -17,7 +17,7 @@ I log casual 1:1s, interview comments, weekly minutes, chats over sangria or cof
 
 For the sake of my poor memory and anxiety to keep track, I leave traces in text—a tangible memorabilia for life’s interactions. IRL I am a rambler, as shown in the string of commas I deploy.
 
-Neither a YouTuber¹, Instagrammer² nor LinkedIn-fluencer felt like the suitable role to platform my unsolicited advice, unremarkable experiences or annoying voice³ without feeling the pressure to conform to the rules set forth by successful attention-seekers. PLUS, I am doing this for myself! Hence by persuasion of my bf, now on refer to as “lower-case-D”, d⁴ for short, we renewed my domain, and became deities to this world. 
+Neither a YouTuber¹, Instagrammer² nor LinkedIn-fluencer felt suitable to platform my unsolicited advice, unremarkable experiences or annoying voice³ without feeling the pressure to conform to the rules set forth by successful attention-seekers. PLUS, I am doing this for myself! Hence by persuasion of my bf, now on refer to as “lower-case-D”, d⁴ for short, we renewed my domain, and became deities to this world. 
 
 TD;LR, a digital dump where I am compelled to be more intentional and well-organized with the [text](https://larvalsubjects.wordpress.com/2010/08/18/yall-have-made-me-paranoid-derrida-again/and) and [spaces](https://www.youtube.com/watch?v=oRva7UxGQDw) I publish.
 
