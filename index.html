@@ -54,7 +54,7 @@ title: Home
   <ul class="post-list" style="padding-left: 0;">
     {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}
     {% for post in clippings %}
-      <li class="post-item clipping-item" style="margin-bottom: 2rem; list-style: none;">
+      <li class="post-item clipping-item" style="list-style: none;">
         
         <!-- Posted Time -->
         <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">
