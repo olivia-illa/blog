@@ -1,0 +1,117 @@
+---
+layout: default
+---
+<style>
+  /* Underline all links inside the post content by default */
+  .post-body a {
+    text-decoration: underline;
+    text-underline-offset: 2px; /* Keeps it neat and readable */
+  }
+
+  /* Your existing hover code still works, but this ensures it stays styled correctly */
+  .post-body a:hover {
+    text-decoration: underline;
+  }
+
+  /* Remove underlines from footnote numbers inside paragraphs before hover */
+  .post-body sup a {
+    text-decoration: none;
+  }
+
+  /* Optional - adds the underline back only when someone hovers over the footnote number */
+  .post-body sup a:hover {
+    text-decoration: underline;
+  }
+
+  /* RESET & SETUP: Turn the list into a self-numbering machine */
+  .post-body ol.footnotes-list {
+    list-style: none;
+    counter-reset: footnote-counter; /* Creates a clean counter */
+    padding-left: 2em;               /* Global left boundary for the text column */
+    margin-top: 1.5em;
+  }
+
+  /* ALIGNMENT: Turn each list item into a true list behavior block */
+  .post-body ol.footnotes-list li {
+    counter-increment: footnote-counter;
+    position: relative;
+    margin-bottom: 0.8em;            /* Spacing between footnotes */
+    text-align: left;
+  }
+
+  /* THE MAGIC LAYER: This acts as a real list marker floating outside the text boundary */
+  .post-body ol.footnotes-list li::before {
+    content: attr(data-number);      /* Grabs your custom ¹, ², ¹⁰ symbols */
+    position: absolute;
+    right: 100%;                     /* Pushes the number completely out to the left */
+    padding-right: 0.5em;            /* Creates a crisp gap between number and text */
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* QUOTES STYLE: Thinner 2px accent bar with custom color #034f84 */
+  .post-body blockquote {
+    border-left: 2px solid #034f84;  
+    margin: 1.5em 0;
+    padding-left: 1rem;              /* Space between the bar and the text */
+    font-style: italic;
+    color: #555;
+  }
+  .post-body blockquote p {
+    margin: 0;                       /* Keeps spacing tight inside the quote box */
+  }
+</style>
+
+<article>
+  <!-- Title removed since clippings do not use titles -->
+  
+  <p class="post-date">
+    <time id="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+      {{ page.date | date: "%d %B %Y %H:%M" }}
+    </time>
+  </p>
+  
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      Tags: {{ page.tags | join: ", " }}
+    </div>
+  {% endif %}
+  
+  {% if page.last_modified_at %}
+    <p class="post-updated">
+      <small>
+        Last edited <time class="post-updated-time" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+          {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
+        </time>
+      </small>
+    </p>
+  {% endif %}
+</article>
+
+<script>
+  (function() {
+    var dateEls = document.querySelectorAll('#post-date, .post-updated-time');
+    if (!dateEls.length) return;
+
+    var formatter = new Intl.DateTimeFormat('en-GB', {
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+
+    dateEls.forEach(function(timeEl) {
+      var iso = timeEl.getAttribute('datetime');
+      if (!iso) return;
+      var date = new Date(iso);
+      if (isNaN(date.getTime())) return;
+      timeEl.textContent = formatter.format(date);
+    });
+  })();
+</script>
