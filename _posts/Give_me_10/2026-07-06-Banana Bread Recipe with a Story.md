@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Banana Bread Recipe with a Story"
+title: "Banana Bread Recipe (with a Story)"
 date: 2026-07-06 20:20:00 +0800
 tags: [baking]
 ---
