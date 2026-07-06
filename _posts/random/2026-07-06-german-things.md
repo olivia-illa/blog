@@ -13,7 +13,7 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 - Cold cuts, cheese, and a fresh loaf (untoasted) can be breakfast, lunch, and dinner
 - Sparkly water is for drinking, and lukewarm water is for washing hands
 - Bikes everywhere, and breaks for beer
-- Everything can be [repaired](https://frame.work/)<sup><a href="#fn1">¹</a></sup>
+- Everything-is-[repairable](https://frame.work/)<sup><a href="#fn1">¹</a></sup>-mentality
 - Goes for a quick walk, and ends up being an hour 
 - Embraces nudity (in the house)
 - Silence is the best background music
@@ -33,7 +33,7 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 
 <h3 id="credentials-section">Credentials by</h3>
 
-Family roadtrips:
+Family road-trips:
 - München for my first German sausage and beer at Hofbräuhaus
 - Frankfurt, the plane hub
 - Mainz, cuz Frankfurt was too boring for Dad
@@ -44,12 +44,12 @@ Family roadtrips:
 - Heidelberg to visit a college friend
 
 FlexBus (I swear never again):
-- Bohum, which I survived a week (no offense, it was the circumstances then)
+- Bochum, which I survived a week (no offense, it was the circumstances then)
 - Dresden to Prague
 - Berlin to transfer to Paris
 
 
-U/S Bahn to get away from Bohum:
+U/S Bahn to get away from Bochum:
 - Düsseldorf, where I flew in once
 - Essen for thrifting
 - Dortmund for shopping mittens
