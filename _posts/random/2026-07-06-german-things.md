@@ -5,21 +5,33 @@ date: 2026-07-06 23:30:00 +0800
 tags: [adulting]
 ---
 
-I can name a couple of German cities from travels, each for less than a day. So perhaps, I can also name a thing or two about alemanes.
+I can name a couple of <a href="#credentials-section">alemán cities</a> from travels, each for less than a day. So perhaps, I can also name a thing or two about alemanes.
 
-### Here are some (biased) observations:
+### Some (biased) observations (counting):
+
+- T-shirts inside out before laundry
+- Cold cuts, cheese, and a fresh loaf (untoasted) can be breakfast, lunch, and dinner
+- Sparkly water is for drinking, and lukewarm water is for washing hands
+- Bikes everywhere, and breaks for beer
+- Everything can be [repaired](https://frame.work/)<sup><a href="#fn1">¹</a></sup>
+- Goes for a quick walk, and ends up being an hour 
+- Embraces nudity (in the house)
+- Silence is the best background music
+- Es gibt kein schlechtes Wetter, nur schlechte Kleidung<sup><a href="#fn2">²</a></sup>
+
+<div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
 
-1. Reverse T-shirts inside out and placing the hanger from underneath without pulling the collar
-2. Meat cheese and fresh loaf (untoasted)
-3. Wear a button up despite rising temperatures and humidity
-4. Sparkly water is for drinking, and lukewarm water is for washing hands
-5. bike everywhere, and break for beer
-6. work work work
-7. honest
+### Footnotes
 
+<ol class="footnotes-list">
+  <li id="fn1" data-number="¹">If a pair of pants worn for 10 years now has a hole in the crotch, patch it up!</li>
+  <li id="fn2" data-number="²">The first iteration was, “you’re not made of sugar” and I was confused.</li>
+</ol>
 
-### My credentials by
+<div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
+
+<h3 id="credentials-section">Credentials by</h3>
 
 Family roadtrips:
 - München for my first German sausage and beer at Hofbräuhaus
@@ -31,7 +43,7 @@ Family roadtrips:
 - Nuremberg for the Dokumentationszentrum Reichsparteitagsgelände
 - Heidelberg to visit a college friend
 
-FlexBus (I swear never again)
+FlexBus (I swear never again):
 - Bohum, which I survived a week (no offense, it was the circumstances then)
 - Dresden to Prague
 - Berlin to transfer to Paris
@@ -42,3 +54,10 @@ U/S Bahn to get away from Bohum:
 - Essen for thrifting
 - Dortmund for shopping mittens
 
+<div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
+
+
+### Snacks I like
+- [Kids Em-eukal (cherry)](https://kinder.em-eukal.com/en/products/details/4/4009077073111/): herbal gummies; what a delight!
+- [leibniz knusper cornflakes](https://germandelistore.com/sweets/cookies-biscuits-wafers/2684/leibniz-crunchy-cornflakes-150g)
+- Erdnuss Flippies: similar to 乖乖 if it had peanut butter flavor
