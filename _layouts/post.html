@@ -48,12 +48,19 @@ layout: default
     text-align: right;
     white-space: nowrap;
   }
+
+  /* Creates a clean vertical gap between the tags line and the update line */
+  .post-updated {
+    margin-top: 0.4em; 
+    display: block;
+  }
 </style>
 
 <article>
   <h1>{{ page.title }}</h1>
+  
   <p class="post-date">
-    <time id="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+    <time class="js-format-date" datetime="{{ page.date | date_to_xmlschema }}">
       {{ page.date | date: "%d %B %Y %H:%M" }}
     </time>
   </p>
@@ -68,20 +75,21 @@ layout: default
     </div>
   {% endif %}
   
-  {% if page.last_modified_at %}
-    <p class="post-updated">
-      <small>
-        Last edited <time class="post-updated-time" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
-          {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
-        </time>
-      </small>
-    </p>
-  {% endif %}
+  <div class="post-tags post-updated">
+    Last Updated: 
+    {% if page.last_modified_at %}
+      <time class="js-format-date" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+        {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
+      </time>
+    {% else %}
+      <span>Never edited</span>
+    {% endif %}
+  </div>
 </article>
 
 <script>
   (function() {
-    var dateEls = document.querySelectorAll('#post-date, .post-updated-time');
+    var dateEls = document.querySelectorAll('.js-format-date');
     if (!dateEls.length) return;
 
     var formatter = new Intl.DateTimeFormat('en-GB', {
