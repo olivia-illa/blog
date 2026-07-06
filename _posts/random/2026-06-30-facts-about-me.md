@@ -58,7 +58,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 25. I had a 1GB monthly phone plan ($0.34) throughout college till 2025 that ended cuz the telecom got bought out. 
 
-26. I went to 3 elementary schools, had 5 different childhood homes, yet stayed in 1 company since intern.
+26. I went to 3 elementary schools, had 5 different childhood homes, and stayed (loyal) in 1 company since intern.
 
 27. I am most comfortable typing in English, conversing in Mandarin, and pondering in both—simultaneously.
 
