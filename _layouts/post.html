@@ -23,7 +23,28 @@ layout: default
     text-decoration: underline;
   }
 
-  /* RESET & SETUP: Turn the list into a self-numbering machine */
+  /* BULLET POINTS: Change default style to ⊹ and widen spacing */
+  .post-body ul {
+    list-style-type: "⊹ "; /* Sets the default marker and adds a tiny trailing space */
+    padding-left: 1.5em;   /* Ensures proper indentation for the custom character */
+  }
+
+  .post-body ul li {
+    margin-bottom: 0.6em;  /* Widens the spacing slightly between each item */
+    line-height: 1.6;      /* Ensures good readability for multi-line items */
+  }
+
+  /* Keep nested lists or numbered lists clean */
+  .post-body ol {
+    padding-left: 1.5em;
+  }
+  
+  .post-body ol li {
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+  }
+
+  /* RESET & SETUP: Turn the footnote list into a self-numbering machine */
   .post-body ol.footnotes-list {
     list-style: none;
     counter-reset: footnote-counter; /* Creates a clean counter */
@@ -31,7 +52,7 @@ layout: default
     margin-top: 1.5em;
   }
 
-  /* ALIGNMENT: Turn each list item into a true list behavior block */
+  /* ALIGNMENT: Turn each footnote item into a true list behavior block */
   .post-body ol.footnotes-list li {
     counter-increment: footnote-counter;
     position: relative;
