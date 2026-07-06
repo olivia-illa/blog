@@ -59,6 +59,7 @@ layout: default
 <article>
   <h1>{{ page.title }}</h1>
   
+  <!-- Original Post Date kept exactly as it was before -->
   <p class="post-date">
     <time class="js-format-date" datetime="{{ page.date | date_to_xmlschema }}">
       {{ page.date | date: "%d %B %Y %H:%M" }}
@@ -69,17 +70,19 @@ layout: default
     {{ content }}
   </div>
 
+  <!-- Tags Line -->
   {% if page.tags.size > 0 %}
     <div class="post-tags">
       Tags: {{ page.tags | join: ", " }}
     </div>
   {% endif %}
   
+  <!-- Last Updated Line (Fixed specifically to grab GitHub Pages repository updates) -->
   <div class="post-tags post-updated">
     Last Updated: 
-    {% if page.last_modified_at %}
-      <time class="js-format-date" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
-        {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
+    {% if site.github %}
+      <time class="js-format-date" datetime="{{ site.github.public_repositories[0].updated_at | date_to_xmlschema }}">
+        {{ site.github.public_repositories[0].updated_at | date: "%d %B %Y %H:%M" }}
       </time>
     {% else %}
       <span>Never edited</span>
