@@ -77,17 +77,15 @@ layout: default
     </div>
   {% endif %}
   
-  <!-- Last Updated Line (Fixed specifically to grab GitHub Pages repository updates) -->
-  <div class="post-tags post-updated">
-    Last Updated: 
-    {% if site.github %}
-      <time class="js-format-date" datetime="{{ site.github.public_repositories[0].updated_at | date_to_xmlschema }}">
-        {{ site.github.public_repositories[0].updated_at | date: "%d %B %Y %H:%M" }}
+  <!-- Last Updated Line: per-post git commit date via jekyll-last-modified-at -->
+  {% if page.last_modified_at %}
+    <div class="post-tags post-updated">
+      Last Updated:
+      <time class="js-format-date" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+        {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
       </time>
-    {% else %}
-      <span>Never edited</span>
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
 </article>
 
 <script>
