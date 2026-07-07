@@ -35,7 +35,12 @@ title: Home
         
         <div class="latest-preview">
           <a href="{{ post.url | relative_url }}">
-            {{ post.excerpt | strip_html | truncate: 120 }}
+            {% if post.layout == 'thoughts_style' %}
+              <!-- Dynamic title for micro-posts in the latest feed -->
+              <em>"{{ post.content | strip_html | truncatewords: 8 }}"</em>
+            {% else %}
+              {{ post.excerpt | strip_html | truncate: 120 }}
+            {% endif %}
           </a>
         </div>
       </li>
@@ -152,7 +157,14 @@ title: Home
             {% endif %}
           </span>
           <div class="Write anything">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a href="{{ post.url | relative_url }}">
+              {% if post.layout == 'thoughts_style' %}
+                <!-- Grabs the first complete sentence up to the period -->
+                {{ post.content | strip_html | split: '.' | first | append: '.' }}
+              {% else %}
+                {{ post.title }}
+              {% endif %}
+            </a>
           </div>
         </li>
         {% if give_me_count == 10 %}
