@@ -18,6 +18,7 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 - Embraces nudity (in the house)
 - Silence is the best background music
 - Es gibt kein schlechtes Wetter, nur schlechte Kleidung<sup><a href="#fn2">²</a></sup>
+- Expect an honest feedback or response<sup><a href="#fn2">³</a></sup>
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
@@ -27,6 +28,8 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">If a pair of pants worn for 10 years now has a hole in the crotch, patch it up!</li>
   <li id="fn2" data-number="²">The first iteration was, “you’re not made of sugar” and I was confused.</li>
+    <li id="fn2" data-number="³">Will spend 2 full min to fully ponder whether to pick up a flyer for free coupons, or reject there and then, so no one's deceived. "Hmm no thank you."</li>
+
 </ol>
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>

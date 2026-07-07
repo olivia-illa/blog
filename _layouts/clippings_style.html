@@ -81,15 +81,7 @@ layout: default
     </div>
   {% endif %}
   
-  {% if page.last_modified_at %}
-    <p class="post-updated">
-      <small>
-        Last edited <time class="post-updated-time" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
-          {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
-        </time>
-      </small>
-    </p>
-  {% endif %}
+
 </article>
 
 <script>
