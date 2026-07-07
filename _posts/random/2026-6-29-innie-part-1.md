@@ -12,7 +12,7 @@ This fact was not explicitly stated during the previous all-hands, except for an
 
 Ask anyone, I take (text) submissions seriously, but how would I know if the reviewer does...? 
 
-System status for approval: pending. 
+System status for approval: Pending 
 
 <div class="botanical-divider">・・・・・</div>
 
@@ -28,7 +28,7 @@ Naturally, a flood of questions hit me all at once:
 
 Spiraling, I decided to consult the person I presumed knew the rules best. I was wrong.
 
-"Gaslighting" was the closest in describing the responses I received:
+Gaslighting was the closest in describing the responses I received:
 1. “Did you not understand the purpose of Goal Setting?”
 2. “We don’t have the budget, but we do give out raises to those who are promoted or did good work.”
 3. “We do things differently now.”

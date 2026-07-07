@@ -2,6 +2,21 @@
 layout: default
 ---
 <style>
+  /* Import the clean monospaced fonts to keep your original aesthetic */
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fira+Code:wght@300;400;500;600&display=swap');
+
+  /* Apply the clean monospaced style across the article layout */
+  article {
+    font-family: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 400;
+  }
+
+  /* Headings maintain the same structural mono look */
+  article h1, article h2, article h3, article h4 {
+    font-family: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 600;
+  }
+
   /* Underline all links inside the post content by default */
   .post-body a {
     text-decoration: underline;
