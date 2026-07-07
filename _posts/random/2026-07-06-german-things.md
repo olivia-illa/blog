@@ -19,6 +19,8 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 - Silence is the best background music
 - Es gibt kein schlechtes Wetter, nur schlechte Kleidung<sup><a href="#fn2">²</a></sup>
 - Expect an honest feedback or response<sup><a href="#fn2">³</a></sup>
+- Splits everything but the bill
+- Prefers using fingers for dynamic control (of food)
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
