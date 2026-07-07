@@ -39,7 +39,7 @@ title: Home
               <!-- Dynamic title for micro-posts in the latest feed -->
               <em>"{{ post.content | strip_html | truncatewords: 8 }}"</em>
             {% else %}
-              {{ post.excerpt | strip_html | truncate: 120 }}
+              {{ post.excerpt | strip_html | truncate: 70 }}
             {% endif %}
           </a>
         </div>
