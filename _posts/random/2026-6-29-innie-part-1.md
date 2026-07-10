@@ -2,7 +2,7 @@
 layout: post
 title: "Innie Speaks (Part 1)"
 date: 2026-06-29 22:44:00 +0800
-tags: [work]
+tags: [unsevered]
 ---
 
 “You’d finally figured it out!” was the first text I received from e, who’d been actively preparing his break abroad. Turning over a new leaf, so to speak, with a newly branded IDGAF on his forehead, eager to chase his dreams at an age when others would normally settle down. I feel him, especially after being brushed off for questioning the game rules (or the house playbook). 
