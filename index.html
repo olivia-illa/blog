@@ -122,7 +122,8 @@ title: Home
   <!-- Scrollable container wrapper -->
   <div class="scrollable-col-content">
     <ul class="post-list" style="padding-left: 0;">
-      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}
+      <!-- Filter site.posts to include internet-clippings, quotes, books, or movies -->
+      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'books' or item.tags contains 'movies'" %}
       {% for post in clippings %}
         <li class="post-item clipping-item" style="list-style: none;">
           
@@ -200,7 +201,8 @@ title: Home
   <div class="scrollable-col-content">
     <ul class="post-list">
       {% for post in site.posts %}
-        {% unless post.tags contains 'internet-clippings' or post.tags contains 'weeknotes' %}
+        <!-- Exclude internet-clippings, weeknotes, quotes, books, and movies from this column -->
+        {% unless post.tags contains 'internet-clippings' or post.tags contains 'weeknotes' or post.tags contains 'quotes' or post.tags contains 'books' or post.tags contains 'movies' %}
           <li class="post-item give-me-10-item">
             <span class="post-date">
               {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
@@ -239,4 +241,5 @@ title: Home
     </ul>
   </div>
 </section>
+
 </div>

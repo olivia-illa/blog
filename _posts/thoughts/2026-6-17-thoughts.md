@@ -1,5 +1,6 @@
 ---
-layout: thoughts_style
+layout: post
+title: "takis or ulcer"
 date: 2026-06-17 19:26:00 +0800
 tags: [wordvomit]
 ---
