@@ -8,6 +8,36 @@ title: Home
 {% assign hour_seconds = 3600 %}
 {% assign minute_seconds = 60 %}
 
+<!-- CSS Fixes applied gracefully on top of your existing classes -->
+<style>
+  /* Freeze the viewport so only individual columns can overflow */
+  html, body {
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  /* Layout container height constraint */
+  .home-grid {
+    height: calc(100vh - 180px); /* Adjusts perfectly to keep layout within frame bounds */
+  }
+
+  /* Make the list containers scrollable without breaking headers or layout borders */
+  .scrollable-col-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 240px);
+    padding-right: 8px;
+  }
+
+  /* Hide scrollbars for a cleaner look while maintaining scroll functionality */
+  .scrollable-col-content::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollable-col-content::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+  }
+</style>
+
 <div class="home-grid">
 <section>
   <h2>Ni hao</h2>
@@ -54,126 +84,126 @@ title: Home
 </section>
 
 
-
 <section>
   <h2>Copy paste share</h2>
-  <ul class="post-list" style="padding-left: 0;">
-    {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}
-    {% for post in clippings %}
-      <li class="post-item clipping-item" style="list-style: none;">
-        
-        <!-- Posted Time -->
-        <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">
-          <span class="post-date">
-            {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
-            {% assign diff_seconds = now_seconds | minus: post_seconds %}
-            {% assign diff_days = diff_seconds | divided_by: day_seconds %}
-            
-            {% if diff_days == 0 %}
-              {% if diff_seconds < hour_seconds %}
-                {% assign minutes = diff_seconds | divided_by: minute_seconds %}
-                {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+  <!-- Scrollable container wrapper -->
+  <div class="scrollable-col-content">
+    <ul class="post-list" style="padding-left: 0;">
+      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings'" %}
+      {% for post in clippings %}
+        <li class="post-item clipping-item" style="list-style: none;">
+          
+          <!-- Posted Time -->
+          <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">
+            <span class="post-date">
+              {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
+              {% assign diff_seconds = now_seconds | minus: post_seconds %}
+              {% assign diff_days = diff_seconds | divided_by: day_seconds %}
+              
+              {% if diff_days == 0 %}
+                {% if diff_seconds < hour_seconds %}
+                  {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+                  {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+                {% else %}
+                  {% assign hours = diff_seconds | divided_by: hour_seconds %}
+                  {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+                {% endif %}
+              {% elsif diff_days == 1 %}
+                Yesterday
+              {% elsif diff_days < 7 %}
+                {{ diff_days }} days ago
               {% else %}
-                {% assign hours = diff_seconds | divided_by: hour_seconds %}
-                {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+                {{ post.date | date: "%b %-d, %Y" }}
               {% endif %}
-            {% elsif diff_days == 1 %}
-              Yesterday
-            {% elsif diff_days < 7 %}
-              {{ diff_days }} days ago
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-          </span>
-        </div>
-        
-        <!-- Preview Layout -->
-        <div class="clipping-preview post-body">
-          {% assign first_block_array = post.content | split: "</blockquote>" %}
-          {% assign pure_quote_text = first_block_array[0] | strip_html | strip_newlines %}
+            </span>
+          </div>
+          
+          <!-- Preview Layout -->
+          <div class="clipping-preview post-body">
+            {% assign first_block_array = post.content | split: "</blockquote>" %}
+            {% assign pure_quote_text = first_block_array[0] | strip_html | strip_newlines %}
 
-          <!-- Thinned out border-left to 1px -->
-          <blockquote style="border-left: 1px solid var(--text-color); margin: 0; padding-left: 1rem; font-style: italic; color: var(--text-color);">
-            <a href="{{ post.url | relative_url }}">
-              {{ pure_quote_text | truncate: 180 }}
-            </a>
-          </blockquote>
-        </div>
-        
-      </li>
-    {% else %}
-      <p>No clippings yet.</p>
-    {% endfor %}
-  </ul>
+            <!-- Thinned out border-left to 1px -->
+            <blockquote style="border-left: 1px solid var(--text-color); margin: 0; padding-left: 1rem; font-style: italic; color: var(--text-color);">
+              <a href="{{ post.url | relative_url }}">
+                {{ pure_quote_text | truncate: 180 }}
+              </a>
+            </blockquote>
+          </div>
+          
+        </li>
+      {% else %}
+        <p>No clippings yet.</p>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <section class="weeknotes">
   <h2>QUE PASA</h2>
-  <ul class="post-list" style="list-style: none; padding-left: 0;">
-    <!-- Filter site.posts to only show items where the tags array contains 'weeknotes' -->
-    {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'weeknotes'" %}
-    
-    {% for post in thoughts %}
-      <li class="post-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: baseline;">
-        <!-- Your custom symbol as the bullet point -->
-        <span class="custom-bullet" style="color: var(--text-color);">❇</span>
-        
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
-    {% else %}
-      <li>No thoughts yet.</li>
-    {% endfor %}
-  </ul>
+  <!-- Scrollable container wrapper -->
+  <div class="scrollable-col-content">
+    <ul class="post-list" style="list-style: none; padding-left: 0;">
+      <!-- Filter site.posts to only show items where the tags array contains 'weeknotes' -->
+      {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'weeknotes'" %}
+      
+      {% for post in thoughts %}
+        <li class="post-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: baseline;">
+          <!-- Your custom symbol as the bullet point -->
+          <span class="custom-bullet" style="color: var(--text-color);">❇</span>
+          
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% else %}
+        <li>No thoughts yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <section class="Write anything">
   <h2>Write anything</h2>
-  <ul class="post-list">
-    {% assign give_me_count = 0 %}
-    {% for post in site.posts %}
-      <!-- Changed condition to check for 'weeknotes' instead of 'scattered-thoughts' -->
-      {% unless post.tags contains 'internet-clippings' or post.tags contains 'weeknotes' %}
-        {% assign give_me_count = give_me_count | plus: 1 %}
-        <li class="post-item give-me-10-item">
-          <span class="post-date">
-            {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
-            {% assign diff_seconds = now_seconds | minus: post_seconds %}
-            {% assign diff_days = diff_seconds | divided_by: day_seconds %}
-            
-            {% if diff_days == 0 %}
-              {% if diff_seconds < hour_seconds %}
-                {% assign minutes = diff_seconds | divided_by: minute_seconds %}
-                {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+  <!-- Scrollable container wrapper with limit removed -->
+  <div class="scrollable-col-content">
+    <ul class="post-list">
+      {% for post in site.posts %}
+        {% unless post.tags contains 'internet-clippings' or post.tags contains 'weeknotes' %}
+          <li class="post-item give-me-10-item">
+            <span class="post-date">
+              {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
+              {% assign diff_seconds = now_seconds | minus: post_seconds %}
+              {% assign diff_days = diff_seconds | divided_by: day_seconds %}
+              
+              {% if diff_days == 0 %}
+                {% if diff_seconds < hour_seconds %}
+                  {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+                  {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+                {% else %}
+                  {% assign hours = diff_seconds | divided_by: hour_seconds %}
+                  {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+                {% endif %}
+              {% elsif diff_days == 1 %}
+                Yesterday
+              {% elsif diff_days < 7 %}
+                {{ diff_days }} days ago
               {% else %}
-                {% assign hours = diff_seconds | divided_by: hour_seconds %}
-                {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+                {{ post.date | date: "%b %-d, %Y" }}
               {% endif %}
-            {% elsif diff_days == 1 %}
-              Yesterday
-            {% elsif diff_days < 7 %}
-              {{ diff_days }} days ago
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-          </span>
-          <div class="Write anything">
-            <a href="{{ post.url | relative_url }}">
-              {% if post.layout == 'thoughts_style' %}
-                <!-- Grabs the first complete sentence up to the period -->
-                {{ post.content | strip_html | split: '.' | first | append: '.' }}
-              {% else %}
-                {{ post.title }}
-              {% endif %}
-            </a>
-          </div>
-        </li>
-        {% if give_me_count == 10 %}
-          {% break %}
-        {% endif %}
-      {% endunless %}
-    {% endfor %}
-  </ul>
+            </span>
+            <div class="Write anything">
+              <a href="{{ post.url | relative_url }}">
+                {% if post.layout == 'thoughts_style' %}
+                  <!-- Grabs the first complete sentence up to the period -->
+                  {{ post.content | strip_html | split: '.' | first | append: '.' }}
+                {% else %}
+                  {{ post.title }}
+                {% endif %}
+              </a>
+            </div>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 </div>
-
-

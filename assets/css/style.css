@@ -31,7 +31,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header, footer {
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  background-color: inherit;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+header {
   padding: 0.5rem 0;
   font-family: var(--font-mono);
 }
@@ -187,7 +199,7 @@ section {
 }
 
 .home-grid > section {
-  padding: 0.85rem;
+  padding: 0 0.85rem;
 }
 
 @media (min-width: 600px) {
@@ -248,3 +260,4 @@ hr {
   white-space: nowrap;        /* Keeps the symbols grouped on a single line */
   letter-spacing: 1px;        /* Optional: Gives the characters a tiny bit of breathing room */
 }
+
