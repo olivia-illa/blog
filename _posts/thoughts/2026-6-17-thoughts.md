@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-06-17 19:26:00 +0800
-tags: [adulting]
+tags: [wordvomit]
 ---
 
 Takis gave me a 1cm wide ulcer that took a full week to heal. Chewing become one sided as I tilted my head for liquids and solids to roll over, yet not too far back so I could still tear, crush and grind.
