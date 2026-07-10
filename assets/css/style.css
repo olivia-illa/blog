@@ -187,6 +187,12 @@ section {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* Separator lines between "Write anything" items, like the clippings column */
+.give-me-10-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--section-border);
+}
+
 .clipping-meta {
   margin-bottom: 0.35rem;
 }
