@@ -8,27 +8,48 @@ title: Home
 {% assign hour_seconds = 3600 %}
 {% assign minute_seconds = 60 %}
 
-<!-- CSS Fixes applied gracefully on top of your existing classes -->
+<!-- Home-only layout: lock to the viewport so the page never scrolls;
+     only the individual columns overflow internally. -->
 <style>
-  /* Freeze the viewport so only individual columns can overflow */
-  html, body {
-    overflow: hidden;
-    height: 100%;
-  }
-  
-  /* Layout container height constraint */
+  /* Freeze the home page to exactly one viewport tall. The flex layout in
+     style.css (main flex:1) fills the space between header and footer with
+     no gap, and overflow:hidden prevents a page-level scrollbar. */
+  html, body.home { height: 100%; overflow: hidden; }
+  /* Subtract the body's vertical padding (0.5rem top + 0.5rem bottom) so the
+     fixed height doesn't push the footer's bottom padding off-screen. */
+  body.home { height: calc(100vh - 1rem); }
+
+  /* The grid fills whatever height <main> is given by the flex layout. */
   .home-grid {
-    height: calc(100vh - 180px); /* Adjusts perfectly to keep layout within frame bounds */
+    height: 100%;
+    min-height: 0;
   }
 
-  /* Make the list containers scrollable without breaking headers or layout borders */
-  .scrollable-col-content {
+  /* Every column caps to the grid height and scrolls internally if its content
+     is taller (e.g. on a narrower screen), so nothing overlaps the footer. A
+     scrollbar only appears when a column actually overflows — at normal widths
+     "Ni hao" fits and stays a plain, unchanged block. */
+  .home-grid > section {
+    min-height: 0;
     overflow-y: auto;
-    max-height: calc(100vh - 240px);
+  }
+
+  /* Columns with a dedicated scroll region use flex so the <h2> stays put and
+     the scroll region fills the rest. "Ni hao" is left as a normal block. */
+  .home-grid > section:has(.scrollable-col-content) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Scroll region grows to fill the column and scrolls internally. */
+  .scrollable-col-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
     padding-right: 8px;
   }
 
-  /* Hide scrollbars for a cleaner look while maintaining scroll functionality */
+  /* Slim scrollbar for a cleaner look while keeping scroll functionality */
   .scrollable-col-content::-webkit-scrollbar {
     width: 4px;
   }
