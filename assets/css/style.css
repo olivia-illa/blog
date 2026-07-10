@@ -184,7 +184,7 @@ section {
 
 .clipping-item {
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--section-border);
 }
 
 /* Separator lines between "Write anything" items, like the clippings column */
