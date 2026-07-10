@@ -5,7 +5,7 @@ tags: [exchange]
 ---
 
 
-"My French sounding friend."
+*My French sounding friend.*
 
 Someone (clickety clack) presses send for new prompt.
 
