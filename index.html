@@ -49,6 +49,18 @@ title: Home
     padding-right: 8px;
   }
 
+  /* Drop the list's default top margin so the content sits closer to the
+     column heading (the <h2> already has its own bottom margin). */
+  .scrollable-col-content > .post-list {
+    margin-top: 0;
+  }
+
+  /* Remove the first item's top padding (clippings add 0.75rem) so every
+     column's content starts flush under its heading. */
+  .scrollable-col-content > .post-list > .post-item:first-child {
+    padding-top: 0;
+  }
+
   /* Slim scrollbar for a cleaner look while keeping scroll functionality */
   .scrollable-col-content::-webkit-scrollbar {
     width: 4px;
