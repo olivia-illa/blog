@@ -108,26 +108,28 @@ h2 {
 a {
   color: var(--link-color);
   text-decoration: none;
-  
-  /* 1. Setup the background gradient: half plum, half transparent */
-  background-image: linear-gradient(to right, #50394c 50%, transparent 50%);
-  
-  /* 2. Make the background twice as wide as the link and push it to the right (hidden) */
-  background-size: 200% 100%;
-  background-position: right bottom;
-  
-  /* 3. Smoothly animate the background position and the text color change */
-  transition: background-position 0.3s ease, color 0.3s ease;
+
+  /* Plum wipe on hover. The background is a solid plum block anchored at the
+     left edge whose width grows from 0 to 100% (left to right). Because
+     nothing is painted at rest (size 0), there is no stray 1px bar at the
+     link's left edge that the old two-tone-gradient trick left behind. */
+  background-image: linear-gradient(#50394c, #50394c);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 100%;
+
+  /* Smoothly animate the wipe and the text color change */
+  transition: background-size 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-  /* 4. Pull the plum background over to the left */
-  background-position: left bottom;
-  
-  /* 5. Change the text color to the background color */
+  /* Grow the plum background across the link (left to right) */
+  background-size: 100% 100%;
+
+  /* Change the text color to the background color */
   color: var(--bg-color);
-  
-  /* 6. Keep the underline */
+
+  /* Keep the underline */
   text-decoration: underline;
   text-underline-offset: 2px;
 }
