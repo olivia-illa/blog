@@ -1,6 +1,6 @@
 ---
 layout: thoughts_style
-date: 2026-07-10 13:04:00 +0800
+date: 2026-07-11 13:04:00 +0800
 tags: [thoughts]
 ---
 
