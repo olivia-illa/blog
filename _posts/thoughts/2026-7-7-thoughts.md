@@ -5,7 +5,7 @@ date: 2026-07-07 24:00:00 +0800
 tags: [work]
 ---
 
-When is rhetorical questions appropriate at work? To...
+When are rhetorical questions appropriate at work? To...
 
 
 (A) deal with trainees?
