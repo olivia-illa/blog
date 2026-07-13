@@ -20,7 +20,7 @@ The cost of committing to a whole was lower. 🍕 ⋆⭒˚.⋆
 
 Anyway, onto the focal point of this entry: half a decade later, this specific Saizeriya[²](#fn2) gave me a whole new perspective on the chain. This time, it felt less like a student cafeteria and more like a cruise buffet. Not because the food was all-you-can-eat (I wish!) or free for all, but because the seating area was spacious and brightly lit, complete with a drink bar to the side and people chatting face-to-face as if they were on vacation on a Monday evening.
 
-We ordered a small jug of *vino blanco* ($3), a ham and egg pizza ($5), a Caesar salad ($2.50), chicken doria ($4), and the escargots ($3). Everyone and I felt as though we were celebrating something on the horizon as we raised our plastic glasses and phones and cheered to *“better results.”*
+We ordered a small jug of *vino blanco* ($3), a ham and egg pizza ($5), a Caesar salad ($2.50), chicken doria ($4), and the escargots ($3). e and I felt as though we were celebrating something on the horizon as we raised our plastic glasses and phones and cheered to *“better results.”*
 
 How I wish I were taken off-grid right now, gazing out at those vibrant azure hues.
 
