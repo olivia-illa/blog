@@ -82,14 +82,12 @@ title: Home
  <!-- Custom text divider with top and bottom margin -->
   <div style="margin: 2rem 0; color: var(--text-color);">latest ✎﹏﹏﹏﹏</div>
 
-
 <ul class="post-list" style="list-style: none; padding-left: 0;">
   {% assign latest = site.posts %}
-  {% assign excluded_tags = "internet-clippings,scattered-thoughts,give-me-10" | split: "," %}
   {% assign counter = 0 %}
 
   {% for post in latest %}
-    {% unless excluded_tags contains post.tag %}
+    {% unless post.tags contains 'internet-clippings' or post.tags contains 'quotes' or post.tags contains 'articles' or post.tags contains 'books' or post.tags contains 'movies' %}
       {% if counter >= 5 %}{% break %}{% endif %}
       
       <li class="post-item latest-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px;">

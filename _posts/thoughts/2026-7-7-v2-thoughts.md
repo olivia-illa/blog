@@ -2,7 +2,7 @@
 layout: post
 title: "Press 0 for an Operator"
 date: 2026-07-07 14:20:00 +0800
-tags: [work]
+tags: [unsevered]
 ---
 
 
