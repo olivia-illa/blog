@@ -18,7 +18,10 @@ The cost of committing to a whole was much lower. 🍕 ⋆⭒˚.⋆
 <br>
 
 
-Anyway, onto the focal point of this entry: half a decade later, this specific Saizeriya[²](#fn2) gave me a whole new perspective on the chain. This time, it felt less like a student cafeteria and more like a cruise buffet. Not because the food was all-you-can-eat (I wish!) or free for all, but because the seating area was spacious and brightly lit, complete with a drink bar to the side and people chatting face-to-face as if they were on vacation on a Monday evening.
+Anyway, onto the focal point of this entry: half a decade later, this specific Saizeriya[²](#fn2) gave me a whole new perspective on the chain. This time around, the space transformed into a cruise buffet. Not because the food was all-you-can-eat (I wish!) or free for all, but because the seating area was spacious and brightly lit, complete with a drink bar to the side and people chatting face-to-face as if they were on vacation (literally, we were at the core district of tourism) on a Monday evening.
+
+Servers were hustling in and out with identical plastic plates, and guest piling in and out for refills. There was a strange theatrical formality in the air, with costumed waiters serving cartoonish food to casually dressed guests. Anyone who'd been on a cruise could attest to what I'm evoking. Perhaps, unconsciously I was longing for the past.
+
 
 We ordered a small jug of *vino blanco* ($3), a ham and egg pizza ($5), a Caesar salad ($2.50), chicken doria ($4), and the escargots ($3). e and I felt as though we were celebrating something on the horizon as we raised our plastic glasses and phones and cheered to *“better results.”* °🥂⋆.ೃ🍾࿔*:･
 
