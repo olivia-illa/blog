@@ -14,3 +14,7 @@ Girl living her wildest dreams.
 
 
 Ps. They used to give punny names for Movie Night...
+
+
+"Being chosen is [sometimes] not the prize." --Melanie reminds me of myself 2, 3 years ago. 
+
