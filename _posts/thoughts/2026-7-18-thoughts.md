@@ -18,7 +18,7 @@ Not Mom casually asking, "how's life?" in the passenger seat after briefing work
 
 "I'll be seeking elsewhere."
 
-Dad, "Good, you'd be perfect for gov. Or look into the chip factories out West. You know, better to do this fully invested." Aka, we support you.
+Dad, "Good, you'd be perfect for gov. Or look into the chip factories out West. You know, better to do this fully invested." Implied parent talk, "we support you."
 
 <br> 
 Well I preface neither of us will be depending on each other for national health insurance next year.
