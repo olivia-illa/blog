@@ -8,6 +8,12 @@ I'd be bawling out on Family Day.
 
 And I reiterate, we love a man who cries. Brinity, Brinity!
 
+<br>
+
+Bryce's gran outta nowhere squeals, "When are they going to send you guys to the hideaway?"
+
+"I'm glad they didn't do that!" yells Trinity's mom.
+
 
 
 <br>
