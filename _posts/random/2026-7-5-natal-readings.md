@@ -8,7 +8,7 @@ tags: [about-me]
 Got my readings done again, for I am losing the plot and needed her guidance.
 
 
-## Cosmic Mapping (as if I comprehend their gravity)
+## Cosmic Mapping 
 
 | **☀️ Sun**   | **Libra** ⚖️ | 💨 Air | 🌀 Cardinal | 
 | **🌙 Moon**   | **Capricorn** 🏛️ | 🌱 Earth | 🌀 Cardinal | 
@@ -18,4 +18,5 @@ Got my readings done again, for I am losing the plot and needed her guidance.
 | **♂️ Mars**   | **Leo** 🦁 | 🔥 Fire | ❄️ Fixed | 
 
 
+This will click for future self.
 
