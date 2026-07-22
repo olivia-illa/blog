@@ -28,6 +28,29 @@ layout: default
     text-decoration: underline;
   }
 
+  /* BULLET POINTS: Custom ⊹ marker with wide spacing for post content & thoughts */
+  .post-body ul,
+  .thoughts_style ul {
+    list-style-type: "⊹ "; /* Sets custom ⊹ marker with trailing space */
+    padding-left: 1.5em;   /* Gives enough indent room for the custom character */
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+  }
+
+  .post-body ul li,
+  .thoughts_style ul li {
+    margin-bottom: 0.6em;  /* Widened spacing between list items */
+    line-height: 1.6;
+  }
+
+  /* Nested list support */
+  .post-body ul ul,
+  .thoughts_style ul ul {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    list-style-type: "◦ "; /* Subtle marker variant for second-level bullets */
+  }
+
   /* RESET & SETUP: Turn the list into a self-numbering machine */
   .post-body ol.footnotes-list {
     list-style: none;

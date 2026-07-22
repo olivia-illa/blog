@@ -6,7 +6,7 @@ tags: [thoughts]
 
 Those who let themselves be stopped, stop.
 
-I've learned better to just barge into d's office building, despite dressed as a high schooler, aka lululemon tennis skirt +  *free* T from runs.
+I've learned better to just barge into d's office building, despite dressed as a high schooler--lululemon tennis skirt +  *free* running T.
 
 <br> 
 

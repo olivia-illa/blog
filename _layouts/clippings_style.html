@@ -49,16 +49,17 @@ layout: default
     white-space: nowrap;
   }
 
-  /* QUOTES STYLE: Thinner 2px accent bar with custom color #034f84 */
+  /* QUOTES STYLE: Thinner 1px accent bar */
   .post-body blockquote {
-    border-left: 2px solid #034f84;  
+    border-left: 1px solid #484f4f;  /* Reduced from 2px to 1px */
     margin: 1.5em 0;
     padding-left: 1rem;              /* Space between the bar and the text */
     font-style: italic;
-    color: #555;
+    color: #484f4f;
   }
   .post-body blockquote p {
     margin: 0;                       /* Keeps spacing tight inside the quote box */
+    color: inherit;                  /* Ensures inner paragraphs adopt #484f4f */
   }
 </style>
 
