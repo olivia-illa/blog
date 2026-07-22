@@ -5,10 +5,9 @@ layout: default
   /* Underline all links inside the post content by default */
   .post-body a {
     text-decoration: underline;
-    text-underline-offset: 2px; /* Keeps it neat and readable */
+    text-underline-offset: 2px;
   }
 
-  /* Your existing hover code still works, but this ensures it stays styled correctly */
   .post-body a:hover {
     text-decoration: underline;
   }
@@ -18,71 +17,104 @@ layout: default
     text-decoration: none;
   }
 
-  /* Optional - adds the underline back only when someone hovers over the footnote number */
   .post-body sup a:hover {
     text-decoration: underline;
   }
 
-  /* RESET & SETUP: Turn the list into a self-numbering machine */
+  /* RESET & SETUP: Footnote list styling */
   .post-body ol.footnotes-list {
     list-style: none;
-    counter-reset: footnote-counter; /* Creates a clean counter */
-    padding-left: 2em;               /* Global left boundary for the text column */
+    counter-reset: footnote-counter;
+    padding-left: 2em;
     margin-top: 1.5em;
   }
 
-  /* ALIGNMENT: Turn each list item into a true list behavior block */
   .post-body ol.footnotes-list li {
     counter-increment: footnote-counter;
     position: relative;
-    margin-bottom: 0.8em;            /* Spacing between footnotes */
+    margin-bottom: 0.8em;
     text-align: left;
   }
 
-  /* THE MAGIC LAYER: This acts as a real list marker floating outside the text boundary */
   .post-body ol.footnotes-list li::before {
-    content: attr(data-number);      /* Grabs your custom ¹, ², ¹⁰ symbols */
+    content: attr(data-number);
     position: absolute;
-    right: 100%;                     /* Pushes the number completely out to the left */
-    padding-right: 0.5em;            /* Creates a crisp gap between number and text */
+    right: 100%;
+    padding-right: 0.5em;
     text-align: right;
     white-space: nowrap;
   }
 
   /* QUOTES STYLE: Thinner 1px accent bar */
   .post-body blockquote {
-    border-left: 1px solid #484f4f;  /* Reduced from 2px to 1px */
+    border-left: 1px solid var(--text-color, #484f4f);
     margin: 1.5em 0;
-    padding-left: 1rem;              /* Space between the bar and the text */
+    padding-left: 1rem;
     font-style: italic;
-    color: #484f4f;
+    color: var(--text-color, #484f4f);
   }
   .post-body blockquote p {
-    margin: 0;                       /* Keeps spacing tight inside the quote box */
-    color: inherit;                  /* Ensures inner paragraphs adopt #484f4f */
+    margin: 0 0 0.5em 0;
+    color: inherit;
+  }
+  .post-body blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* SOURCE SECTION STYLE */
+  .clipping-source {
+    margin-top: 1.5em;
+    font-size: 0.95rem;
+    color: var(--text-color, #484f4f);
+  }
+
+  .clipping-source a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 </style>
 
-<article>
-  <!-- Title removed since clippings do not use titles -->
-  
-  <p class="post-date">
+<article class="clipping-post">
+  <!-- Posted Date -->
+  <p class="post-date" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
     <time id="post-date" datetime="{{ page.date | date_to_xmlschema }}">
       {{ page.date | date: "%d %B %Y %H:%M" }}
     </time>
   </p>
   
+  <!-- Quote Content + Personal Remarks -->
   <div class="post-body">
     {{ content }}
   </div>
 
+  <!-- Mandatory Source Section -->
+  {% if page.source_title or page.source_url or page.source_publisher %}
+    <div class="clipping-source">
+      Source: 
+      {% if page.source_title %}
+        {% if page.source_url %}
+          <a href="{{ page.source_url }}" target="_blank" rel="noopener">{{ page.source_title }}</a>
+        {% else %}
+          <span>{{ page.source_title }}</span>
+        {% endif %}
+      {% endif %}
+
+      {% if page.source_publisher %}
+        via 
+        {% if page.source_publisher_url %}
+          <a href="{{ page.source_publisher_url }}" target="_blank" rel="noopener">{{ page.source_publisher }}</a>
+        {% else %}
+          <span>{{ page.source_publisher }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
+
   {% if page.tags.size > 0 %}
-    <div class="post-tags">
+    <div class="post-tags" style="margin-top: 1.5rem; font-size: 0.85rem; color: #888;">
       Tags: {{ page.tags | join: ", " }}
     </div>
   {% endif %}
-  
-
 </article>
 
 <script>

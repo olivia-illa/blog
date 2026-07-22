@@ -69,6 +69,17 @@ title: Home
     background: rgba(0,0,0,0.1);
     border-radius: 4px;
   }
+
+  /* Quote left vertical bar styling */
+  .clipping-preview blockquote {
+    border-left: 1.5px solid currentColor !important;
+    padding-left: 0.75rem !important;
+    margin: 0.25rem 0 !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    font-style: italic;
+  }
 </style>
 
 <div class="home-grid">
@@ -84,29 +95,22 @@ title: Home
 
 <ul class="post-list" style="list-style: none; padding-left: 0;">
   {% assign latest = site.posts %}
-  {% assign counter = 0 %}
 
   {% for post in latest %}
-    {% unless post.tags contains 'internet-clippings' or post.tags contains 'quotes' or post.tags contains 'articles' or post.tags contains 'books' or post.tags contains 'movies' %}
-      {% if counter >= 5 %}{% break %}{% endif %}
+    {% assign post_title_lower = post.title | downcase %}
+    {% unless post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' or post.tags contains 'weeknotes' or post.tags contains 'internet-clippings' or post.tags contains 'quotes' or post.tags contains 'articles' or post.tags contains 'books' or post.tags contains 'movies' %}
       
-      <li class="post-item latest-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px;">
+      <li class="post-item latest-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: baseline;">
         <!-- Your custom symbol as the bullet point -->
         <span class="custom-bullet" style="color: var(--text-color);">✵</span>
         
         <div class="latest-preview">
           <a href="{{ post.url | relative_url }}">
-            {% if post.layout == 'thoughts_style' %}
-              <!-- Dynamic title for micro-posts in the latest feed -->
-              <em>"{{ post.content | strip_html | truncatewords: 8 }}"</em>
-            {% else %}
-              {{ post.excerpt | strip_html | truncate: 70 }}
-            {% endif %}
+            {{ post.title }}
           </a>
         </div>
       </li>
       
-      {% assign counter = counter | plus: 1 %}
     {% endunless %}
   {% else %}
     <p>No latest posts yet.</p>
@@ -121,12 +125,12 @@ title: Home
   <div class="scrollable-col-content">
     <ul class="post-list" style="padding-left: 0;">
       <!-- Filter site.posts to include internet-clippings, quotes, books, or movies -->
-      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles'or item.tags contains 'books' or item.tags contains 'movies'" %}
+      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies'" %}
       {% for post in clippings %}
-        <li class="post-item clipping-item" style="list-style: none;">
+        <li class="post-item clipping-item" style="list-style: none; margin-bottom: 1rem;">
           
           <!-- Posted Time -->
-          <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">
+          <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.25rem;">
             <span class="post-date">
               {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
               {% assign diff_seconds = now_seconds | minus: post_seconds %}
@@ -152,15 +156,27 @@ title: Home
           
           <!-- Preview Layout -->
           <div class="clipping-preview post-body">
-            {% assign first_block_array = post.content | split: "</blockquote>" %}
-            {% assign pure_quote_text = first_block_array[0] | strip_html | strip_newlines %}
+            {% comment %} Grab only the first quote paragraph {% endcomment %}
+            {% assign blocks = post.content | split: "</p>" %}
+            {% assign first_quote_block = blocks[0] | strip_html | strip %}
 
-            <!-- Thinned out border-left to 1px -->
-            <blockquote style="border-left: 1px solid var(--text-color); margin: 0; padding-left: 1rem; font-style: italic; color: var(--text-color);">
+            <blockquote>
               <a href="{{ post.url | relative_url }}">
-                {{ pure_quote_text | truncate: 180 }}
+                “{{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}”
               </a>
             </blockquote>
+
+            <!-- Source title & URL with explicit underline -->
+            {% if post.source_title %}
+              <div class="clipping-source-preview" style="font-size: 0.9rem; margin-top: 0.25rem;">
+                Source: 
+                {% if post.source_url %}
+                  <a href="{{ post.source_url }}" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</a>
+                {% else %}
+                  <span style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
           </div>
           
         </li>
@@ -199,8 +215,9 @@ title: Home
   <div class="scrollable-col-content">
     <ul class="post-list">
       {% for post in site.posts %}
-        <!-- Exclude internet-clippings, weeknotes, quotes, articles, books, and movies from this column -->
-        {% unless post.tags contains 'internet-clippings' or post.tags contains 'weeknotes' or post.tags contains 'quotes' or post.tags contains 'articles' or post.tags contains 'books' or post.tags contains 'movies' %}
+        {% assign post_title_lower = post.title | downcase %}
+        <!-- Only include thoughts / micro-posts -->
+        {% if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' %}
           <li class="post-item give-me-10-item">
             <span class="post-date">
               {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
@@ -225,16 +242,12 @@ title: Home
             </span>
             <div class="Write anything">
               <a href="{{ post.url | relative_url }}">
-                {% if post.layout == 'thoughts_style' %}
-                  <!-- Grabs the first complete sentence up to the period -->
-                  {{ post.content | strip_html | split: '.' | first | append: '.' }}
-                {% else %}
-                  {{ post.title }}
-                {% endif %}
+                <!-- Grabs the first complete sentence up to the period -->
+                {{ post.content | strip_html | split: '.' | first | append: '.' }}
               </a>
             </div>
           </li>
-        {% endunless %}
+        {% endif %}
       {% endfor %}
     </ul>
   </div>
