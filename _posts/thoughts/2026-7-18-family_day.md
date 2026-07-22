@@ -1,7 +1,8 @@
 ---
-layout: thoughts_style
+layout: post
 date: 2026-07-18 19:45:00 +0800
-tags: [thoughts]
+title: "Family Day"
+tags: [adulting]
 ---
 
 I'd be bawling out on Family Day. 

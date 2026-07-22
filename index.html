@@ -108,6 +108,9 @@ title: Home
           <a href="{{ post.url | relative_url }}">
             {{ post.title }}
           </a>
+          {% if post.tags.size > 0 %}
+            <span style="font-size: 0.8rem; color: #666; margin-left: 0.5rem;">#{{ post.tags | join: " #" }}</span>
+          {% endif %}
         </div>
       </li>
       
@@ -127,7 +130,7 @@ title: Home
       <!-- Filter site.posts to include internet-clippings, quotes, books, or movies -->
       {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies'" %}
       {% for post in clippings %}
-        <li class="post-item clipping-item" style="list-style: none; margin-bottom: 1rem;">
+        <li class="post-item clipping-item" style="list-style: none">
           
           <!-- Posted Time -->
           <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.25rem;">
@@ -162,7 +165,7 @@ title: Home
 
             <blockquote>
               <a href="{{ post.url | relative_url }}">
-                “{{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}”
+                {{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}
               </a>
             </blockquote>
 
