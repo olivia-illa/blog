@@ -21,6 +21,7 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 - Expect an honest feedback or response<sup><a href="#fn2">³</a></sup>
 - Splits everything but the bill
 - Prefers using fingers for dynamic control (of food)
+- Aligns 4 corners of the bedsheet to the corners of the mattress like a giant spider
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
