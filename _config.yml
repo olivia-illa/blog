@@ -7,6 +7,7 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://olivia-illa.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
+timezone: Asia/Singapore # UTC+8, matches the +0800 dates in posts so URLs use the intended day
 theme: null # We are building a custom theme
 plugins:
   - jekyll-feed
