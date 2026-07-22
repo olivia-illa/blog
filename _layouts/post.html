@@ -5,16 +5,26 @@ layout: default
   /* Import the clean monospaced fonts to keep your original aesthetic */
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fira+Code:wght@300;400;500;600&display=swap');
 
-  /* Apply the clean monospaced style across the article layout */
+  /* Apply the clean monospaced style across the article layout with airier line height */
   article {
     font-family: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-weight: 400;
+    line-height: 1.75; /* Opens up overall text density */
   }
 
-  /* Headings maintain the same structural mono look */
-  article h1, article h2, article h3, article h4 {
+  /* Headings maintain the same structural mono look and have all underlines/borders removed */
+  article h1, article h2, article h3, article h4,
+  .post-body h1, .post-body h2, .post-body h3, .post-body h4 {
     font-family: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-weight: 600;
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+
+  /* Paragraph spacing to eliminate the clustered look */
+  .post-body p {
+    margin-bottom: 1.35rem; /* Generous vertical gap between paragraphs */
+    line-height: 1.75;
   }
 
   /* Underline all links inside the post content by default */
@@ -42,21 +52,25 @@ layout: default
   .post-body ul {
     list-style-type: "⊹ "; /* Sets the default marker and adds a tiny trailing space */
     padding-left: 1.5em;   /* Ensures proper indentation for the custom character */
+    margin-top: 1em;
+    margin-bottom: 1.35rem;
   }
 
   .post-body ul li {
-    margin-bottom: 0.6em;  /* Widens the spacing slightly between each item */
-    line-height: 1.6;      /* Ensures good readability for multi-line items */
+    margin-bottom: 0.8em;  /* Widened spacing between each item */
+    line-height: 1.7;      
   }
 
-  /* Keep nested lists or numbered lists clean */
+  /* Keep nested lists or numbered lists clean with wider breathing room */
   .post-body ol {
     padding-left: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1.35rem;
   }
   
   .post-body ol li {
-    margin-bottom: 0.6em;
-    line-height: 1.6;
+    margin-bottom: 0.8em;
+    line-height: 1.7;
   }
 
   /* RESET & SETUP: Turn the footnote list into a self-numbering machine */
@@ -71,8 +85,9 @@ layout: default
   .post-body ol.footnotes-list li {
     counter-increment: footnote-counter;
     position: relative;
-    margin-bottom: 0.8em;            /* Spacing between footnotes */
+    margin-bottom: 0.9em;            /* Spacing between footnotes */
     text-align: left;
+    line-height: 1.7;
   }
 
   /* THE MAGIC LAYER: This acts as a real list marker floating outside the text boundary */
@@ -86,8 +101,12 @@ layout: default
   }
 
   /* Creates a clean vertical gap between the tags line and the update line */
+  .post-tags {
+    margin-top: 1.5em;
+  }
+
   .post-updated {
-    margin-top: 0.4em; 
+    margin-top: 0.5em; 
     display: block;
   }
 </style>

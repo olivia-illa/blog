@@ -2,18 +2,59 @@
 layout: default
 ---
 <style>
-  /* Remove the underline/border from markdown ## headers */
-  .post-body h2 {
-    border-bottom: none !important;
+  /* --- TYPOGRAPHY & FONT PROPORTIONS --- */
+  .post-body {
+    font-size: 1.05rem;     /* Slightly elevated base size for readability */
+    line-height: 1.75;      /* Comfortable line height */
   }
 
+  .post-body p {
+    margin-bottom: 1.25rem; /* Proportional spacing between paragraphs */
+  }
+
+  /* Harmonious heading proportions */
+  .post-body h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-body h2 {
+    font-size: 1.65rem;     /* Proportional subheader size */
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    border-bottom: none !important; /* Remove the underline/border from markdown ## headers */
+  }
+
+  .post-body h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Meta & Date proportions */
+  .post-date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-tags {
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    opacity: 0.85;
+  }
+
+  /* --- LINKS & FOOTNOTES --- */
   /* Underline all links inside the post content by default */
   .post-body a {
     text-decoration: underline;
     text-underline-offset: 2px; /* Keeps it neat and readable */
   }
 
-  /* Your existing hover code still works, but this ensures it stays styled correctly */
   .post-body a:hover {
     text-decoration: underline;
   }
@@ -23,76 +64,71 @@ layout: default
     text-decoration: none;
   }
 
-  /* Optional - adds the underline back only when someone hovers over the footnote number */
   .post-body sup a:hover {
     text-decoration: underline;
   }
 
-  /* BULLET POINTS: Custom ⊹ marker with wide spacing for post content & thoughts */
+  /* --- BULLET POINTS: Custom ⊹ marker with wide spacing --- */
   .post-body ul,
   .thoughts_style ul {
-    list-style-type: "⊹ "; /* Sets custom ⊹ marker with trailing space */
-    padding-left: 1.5em;   /* Gives enough indent room for the custom character */
+    list-style-type: "⊹ "; 
+    padding-left: 1.5em;   
     margin-top: 1em;
     margin-bottom: 1.5em;
   }
 
   .post-body ul li,
   .thoughts_style ul li {
-    margin-bottom: 0.6em;  /* Widened spacing between list items */
+    margin-bottom: 0.6em;  
     line-height: 1.6;
   }
 
-  /* Nested list support */
   .post-body ul ul,
   .thoughts_style ul ul {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
-    list-style-type: "◦ "; /* Subtle marker variant for second-level bullets */
+    list-style-type: "◦ "; 
   }
 
-  /* RESET & SETUP: Turn the list into a self-numbering machine */
+  /* --- FOOTNOTES LIST STYLING --- */
   .post-body ol.footnotes-list {
     list-style: none;
-    counter-reset: footnote-counter; /* Creates a clean counter */
-    padding-left: 2em;               /* Global left boundary for the text column */
+    counter-reset: footnote-counter; 
+    padding-left: 2em;               
     margin-top: 1.5em;
+    font-size: 0.9rem;              /* Proportionally smaller for footnotes */
   }
 
-  /* ALIGNMENT: Turn each list item into a true list behavior block */
   .post-body ol.footnotes-list li {
     counter-increment: footnote-counter;
     position: relative;
-    margin-bottom: 0.8em;            /* Spacing between footnotes */
+    margin-bottom: 0.8em;            
     text-align: left;
   }
 
-  /* THE MAGIC LAYER: This acts as a real list marker floating outside the text boundary */
   .post-body ol.footnotes-list li::before {
-    content: attr(data-number);      /* Grabs your custom ¹, ², ¹⁰ symbols */
+    content: attr(data-number);      
     position: absolute;
-    right: 100%;                     /* Pushes the number completely out to the left */
-    padding-right: 0.5em;            /* Creates a crisp gap between number and text */
+    right: 100%;                     
+    padding-right: 0.5em;            
     text-align: right;
     white-space: nowrap;
   }
 
-  /* QUOTES STYLE: Thinner 2px accent bar with custom color #034f84 */
+  /* --- QUOTES STYLE --- */
   .post-body blockquote {
     border-left: 2px solid #034f84;  
     margin: 1.5em 0;
-    padding-left: 1rem;              /* Space between the bar and the text */
+    padding-left: 1rem;              
     font-style: italic;
     color: #555;
   }
   .post-body blockquote p {
-    margin: 0;                       /* Keeps spacing tight inside the quote box */
+    margin: 0;                       
   }
 </style>
 
 <article>
-  <!-- Title removed since clippings do not use titles -->
-  
   <p class="post-date">
     <time id="post-date" datetime="{{ page.date | date_to_xmlschema }}">
       {{ page.date | date: "%d %B %Y %H:%M" }}
