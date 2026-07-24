@@ -2,6 +2,13 @@
 layout: default
 ---
 <style>
+  /* Remove any borders or underlines from headers */
+  .clipping-post h1, .clipping-post h2, .clipping-post h3, .clipping-post h4,
+  .post-body h1, .post-body h2, .post-body h3, .post-body h4 {
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+
   /* Underline all links inside the post content by default */
   .post-body a {
     text-decoration: underline;
