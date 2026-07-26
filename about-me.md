@@ -17,7 +17,7 @@ I log casual 1:1s, interview comments, weekly minutes, chats over sangria or cof
 
 For the sake of my poor memory and anxiety to keep track, I leave traces in text—a tangible memorabilia for life’s interactions. IRL I am a rambler, as shown in the string of commas I deploy.
 
-Neither being a YouTuber<sup><a href="#fn1">¹</a></sup>, Instagrammer<sup><a href="#fn2">²</a></sup> nor LinkedIn-fluencer felt like the right way to broadcast my unsolicited advice, unremarkable experiences or annoying voice<sup><a href="#fn3">³</a></sup>. PLUS, I had zero desire to conform to the rules set by successful attention-seekers and I am doing this for myself! 
+Neither being a YouTuber<sup><a href="#fn1">¹</a></sup>, Instagrammer<sup><a href="#fn2">²</a></sup> nor LinkedIn-fluencer felt like the right way to broadcast my unsolicited advice, unremarkable experiences or annoying voice<sup><a href="#fn3">³</a></sup>. PLUS, I have zero desire to conform to the rules set by successful attention-seekers and I am doing this for myself! 
 
 Thus by persuasion of my bf, now on refer to as “lower-case-D”, d<sup><a href="#fn4">⁴</a></sup> for short, we renewed my domain, and became deities to this world. 
 
