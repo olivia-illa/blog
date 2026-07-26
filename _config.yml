@@ -3,8 +3,8 @@ author: Olivia Illa
 email: your-email@example.com
 description: >-
   A simple static blog for writing down thoughts.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://olivia-illa.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://oliviailla.blog" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 timezone: Asia/Singapore # UTC+8, matches the +0800 dates in posts so URLs use the intended day
