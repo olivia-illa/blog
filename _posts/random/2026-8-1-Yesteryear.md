@@ -7,7 +7,10 @@ tags: [review]
 
 **Spoilers ahead, read at your discretion.** 
 
+
 The book and this review aren't that deep. I don't think it spoils the experience.
+
+★★★☆☆
 
 
 With all the winding twists and turns in the final chapters, especially once Clementine, her eldest, showed up, I immediately sensed the ending was going to be a slap in the face, a quick "that's that." At one point, I assume most readers clung to *The Truman Show* theory, that Doug, her father in-law, orchestrated the whole thing using his wealth and control to set civilization back a century or two, purely to crush his family’s progressive and skewed ideas. Yet, a random mic cover was the faintest connection we got, leaving us with nothing beyond *wild chicken breasts and dirt-covered apples* (they grow on trees!) to support the theory.
@@ -16,9 +19,12 @@ I wasn’t reading sci-fi, so three-quarters of the way through, I knew the endi
 
 That said, I’ve accepted that the real entertainment was riding along through Natalie's five stages of grief (except she lacked emotions when her kids got taken away, as if she knew she was unfit...?) and internal conflicts. I laughed at so many of her mental back-and-forths, swearing, self deprecation because I catch myself doing the exact same thing EVERY SINGLE F DAY.
 
+<br>
 
 ## Reviews threads I submerge into:
-- [Yesteryear - says more about the writer than the subject.](https://www.reddit.com/r/books/comments/1tp1466/yesteryear_says_more_about_the_writer_than_the/)
+- [says more about the writer than the subject](https://www.reddit.com/r/books/comments/1tp1466/yesteryear_says_more_about_the_writer_than_the/) yes yes and yes about Caleb.
+- [Lauren-May 7, 2026](https://www.goodreads.com/review/show/8521710640) upvoted.
+- [Minne-May 10, 2026](https://www.goodreads.com/review/show/8395503392) fair points 👏
 
 
 <br>
