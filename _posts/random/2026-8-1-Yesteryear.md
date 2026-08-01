@@ -16,6 +16,11 @@ I wasn’t reading sci-fi, so three-quarters of the way through, I knew the endi
 
 That said, I’ve accepted that the real entertainment was riding along through Natalie's five stages of grief (except she lacked emotions when her kids got taken away, as if she knew she was unfit...?) and internal conflicts. I laughed at so many of her mental back-and-forths, swearing, self deprecation because I catch myself doing the exact same thing EVERY SINGLE F DAY.
 
+
+## Reviews threads I submerge into:
+- [Yesteryear - says more about the writer than the subject.](https://www.reddit.com/r/books/comments/1tp1466/yesteryear_says_more_about_the_writer_than_the/)
+
+
 <br>
 
 ### The End (a gentle reminder to myself)
