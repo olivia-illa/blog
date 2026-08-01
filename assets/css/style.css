@@ -5,7 +5,7 @@
   --header-color: #111111;
   --footer-color: #111111;
   --section-border: rgba(0, 0, 0, 0.1);
-  --font-mono: "VCTR Mono", monospace;
+  --font-mono: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
