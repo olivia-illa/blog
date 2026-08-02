@@ -1,0 +1,24 @@
+
+---
+layout: clippings_style
+date: 2026-07-31 20:10:00 +0800
+tags: [internet-clippings]
+source_title: "Token Costs Have Execs Rethinking AI Rollouts"
+source_url: "https://www.wsj.com/podcasts/whats-news/token-costs-have-execs-rethinking-ai-rollouts/1b74c5bd-0aae-4402-b849-786d1ee18246"
+source_publisher: "WSJ Pod"
+source_publisher_url: 
+---
+
+
+
+>There's really three components to that total cost. One is the amount of tokens you're consuming with a specific activity. So the higher computationally intensive areas like building out software or maybe doing a detailed study require more tokens. 
+>
+>There's also the cost of the model that you're producing. Some of the latest and greatest frontier capabilities that are pushed out by the frontier AI firms, those latest and greatest models might be five times more expensive than some of the less capable models that are in their portfolio. So the model that you pick actually has a pretty big outcome on cost. 
+>
+>And then the third bit is it does come down to the lack of predictability. For many times, a specific task might take, let's say 20,000 tokens, but because of some configurations on data, it might get stuck and retry again and again, and that could start to really increase the meter to several hundred thousand tokens to be able to perform that task.
+
+
+## Costs to AI tokens:
+1. The intensity of the prompted activity.
+2. The model used.
+3. Predictability of the tokens used.
