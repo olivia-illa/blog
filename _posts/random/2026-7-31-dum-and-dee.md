@@ -27,7 +27,7 @@ I picked a white jersey with mesh sleeve caps that claimed extra breathability a
 
 **Tanned staff:** "What kind of riding do you do? I can help pick the fit."  
 
-**Me:** "Uh, you know...triathlons." *Mumbled and with awkward hand gestures* "For fun, of course. I’ve been fine in Lululemons and oversized gear, but I figured I'd level up this year. These feel pretty tight, though… Is that normal?"
+**Me:** "Uh, you know...triathlons." *Mumbled and with awkward hand gestures* "For fun, of course. I’ve been fine in Lululemons and oversized gear, but I figured I'd level up this year. These feel pretty tight, though…"
 
 It turned out I could actually go a size smaller. The fabric on the waist was bunching up, causing the back pockets to sag. But I'd knew the smaller size would squeeze my chest so tightly that zipping it to my neck would feel suffocating. Still, I tried on the recommended size; this time with elastic bands cinching all four limbs.
 
@@ -35,7 +35,7 @@ It turned out I could actually go a size smaller. The fabric on the waist was bu
 
 **Tanned staff:** "That’s completely normal. You can fold up the jersey hem so the proportions look cleaner. Notice the lettering on the back? It pops against the darker tone. A lot of clients specifically look for that detail."
 
-Little did he know, I preferred a lighter color to stay low-key and avoid absorbing unnecessary heat (from cycling snobs). He handed me a mossy green and white striped top paired with a grassy green bib. They’re a looser cut, but equally snug.
+Little did he know, I preferred a lighter color to stay low-key and avoid absorbing unnecessary heat *(from cycling snobs)*. He handed me a mossy green and white striped top paired with a grassy green bib. They’re a looser cut, but equally snug.
 
 **Me:** "This looks like my regular clothes" *Do I look like a real cyclist?*  
 
