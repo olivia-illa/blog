@@ -21,15 +21,15 @@ Inside, the contrasting black arched window frames set off the off-white walls, 
 
 **Tanned staff:** "It's 23% off basics, or 30% if you buy two items. In the back, we have clearance items up to 50% off. Are you familiar with our collections?"
 
-I gently felt the fabrics, pretending to compare the earthy tones while trying not to look suspicious. Staff outnumbered customers, so I was terrified that any sharp movement would trigger unsolicited advice as I hunted for price tags. Flipping each one over, I soon realized my action was in vain, as everything was absurdly expensive for synthetic fabric. I either had to commit or go home to keep riding in oversized hand-me-downs and running tees.
+I gently felt the fabrics, pretending to compare the earthy tones while trying not to look suspicious. Staff outnumbered customers, so I was terrified that any sharp movement would trigger unsolicited advice as I hunted for price tags. Flipping each one over, I soon realized my mission was in vain, as everything was absurdly expensive for synthetic fabric. I either had to commit or go home to keep riding in oversized hand-me-downs and running tees.
 
-I picked a white jersey with mesh sleeve caps that claimed extra breathability and also conveniently a tad cheaper *(less material, perhaps?)*. I paired it with a bib in matte midnight, unsure of my proper size. Looking in the mirror, I felt like a boxer wearing built-in adult diapers. At least my thighs looked toned.
+I picked a white jersey with mesh sleeve caps that claimed extra breathability and also conveniently, being a tad cheaper *(less material, perhaps?)*. I paired it with a bib in matte midnight, unsure of my proper size. Looking in the mirror, I felt like a boxer wearing built-in adult diapers. *At least my thighs looked toned.*
 
-**Tanned staff:** "What kind of riding do you do? I can help pick the fit."  
+**Tanned staff:** "What kind of riding do you do? I can help pick out the right fit."  
 
-**Me:** "Uh, you know...triathlons." *Mumbled and with awkward hand gestures* "For fun, of course. I’ve been fine in Lululemons and oversized gear, but I figured I'd level up this year. These feel pretty tight, though…"
+**Me:** "Uh, you know... triathlons." *Mumbled with awkward hand gestures* "For fun, of course! I’ve been fine in Lululemons and oversized gear, but I figured I'd level up this year. These feel pretty tight though… "
 
-It turned out I could actually go a size smaller. The fabric on the waist was bunching up, causing the back pockets to sag. But I'd knew the smaller size would squeeze my chest so tightly that zipping it to my neck would feel suffocating. Still, I tried on the recommended size; this time with elastic bands cinching all four limbs.
+It turned out I could go a size smaller. The fabric on the waist was bunching up, causing the back pockets to sag. But I'd knew the smaller size would squeeze my chest so tightly that zipping it to my neck would feel suffocating. Still, I tried on the recommended size; this time with elastic bands cinching all four limbs.
 
 **Me:** "I feel totally sucked in. Protected in the *(point coochie)* area."  
 
@@ -41,11 +41,11 @@ Little did he know, I preferred a lighter color to stay low-key and avoid absorb
 
 **Tanned staff:** "The top is 50% off and the bottoms are 60%."
 
-Hearing that, I immediately coerced d into picking out an outfit. Looking equally lost, he was handed a darker variant of the striped jersey and a gray bib. d has a narrow waist and heavy thighs, so predictably, the initial fit was awkward. His top also bagged out just like the white one I tried. Neither of us was accustomed to clothes that fit like second skin. *d's swim trunks barely hold onto his hips!*
+Hearing that, I immediately coerced d into picking out an outfit. Looking completely lost, he was handed a darker variant of the striped jersey and a gray bib. d has a narrow waist and heavy thighs, so predictably, the initial fit was awkward. His top also bagged out just like the white one I tried. Neither of us was accustomed to clothes that fit like second skin. *d's swim trunks barely hold onto his hips!*
 
 **Tanned staff:** "This is the last size in the dark stripe. But we have a size down in white."
 
-Just like that, Tweedledum and Tweedledee were born. Matching couple outfits are adorable when they complement each other, but quickly cross into cringe territory when being identical. We aren't twins, and we don't bike, talk, or even look remotely alike! Yet, the *girl* math was undeniable. Two discounted sets cost barely more than a single full-priced outfit!
+Just like that, Tweedledum and Tweedledee were born. Matching couple outfits are adorable when they complement each other, but quickly cross into cringe territory when being identical. We aren't twins, and we don't bike, talk, or even look remotely alike! Yet, the *girl math* was undeniable: two discounted sets cost barely more than a single full-priced outfit, comm'on!
 
 **Me:** "Are we actually doing this?"  
 
