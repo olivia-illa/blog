@@ -13,7 +13,7 @@ I jot most things down, if not every dialogue and passing thought.
 I log casual 1:1s, interview comments, weekly minutes, chats over sangria or coffee (depending on the time of the day), calls with long-distance friends, one-minute dentist appointments, etc. You get the point.
 
 
-✎﹏﹏﹏﹏
+<br>
 
 For the sake of my poor memory and anxiety to keep track, I leave traces in text—a tangible memorabilia for life’s interactions. IRL I am a rambler, as shown in the string of commas I deploy.
 
@@ -21,6 +21,7 @@ Neither being a YouTuber<sup><a href="#fn1">¹</a></sup>, Instagrammer<sup><a hr
 
 Thus by persuasion of my bf, now on refer to as “lower-case-D”, d<sup><a href="#fn4">⁴</a></sup> for short, we renewed my domain, and became deities to this world. 
 
+<br>
 
 ✎﹏﹏﹏﹏
 

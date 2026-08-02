@@ -22,6 +22,7 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 - Splits everything but the bill
 - Prefers using fingers for dynamic control (of food)
 - Aligns 4 corners of the bedsheet to the corners of the mattress like a giant spider
+- Makes a mad mayo potato salad with a crunch (soybean sprouts)
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
@@ -65,5 +66,6 @@ U/S Bahn to get away from Bochum:
 
 ### Snacks I like
 - [Kids Em-eukal (cherry)](https://kinder.em-eukal.com/en/products/details/4/4009077073111/): herbal gummies; what a delight!
-- [leibniz knusper cornflakes](https://germandelistore.com/sweets/cookies-biscuits-wafers/2684/leibniz-crunchy-cornflakes-150g)
+- [leibniz Knusper (cornflakes)](https://germandelistore.com/sweets/cookies-biscuits-wafers/2684/leibniz-crunchy-cornflakes-150g): I demand they revive this product asap!
 - Erdnuss Flippies: similar to 乖乖 if it had peanut butter flavor
+- [Fuchs Organic Spelt Pops with Honey](https://whynotorganic.com.my/fuchs-cereals/#spelt-pops): the equivalent of 爆米香 imo
