@@ -15,3 +15,6 @@ Should I feel fortunate?
 Holy smokes MSFT jumped. Byeee~ Gracefully hopping off the train before it crashes.
 
 But fingers crossed I catch it at below...$350?!
+
+
+Edits 2026/8/8: I am the biggest idiot, MSFT at nearly $500 (⁠╥⁠﹏⁠╥⁠)
