@@ -56,10 +56,14 @@ Bake for 35min at 170'C in bath water
 - 110g mascarpone
 - 10g white sugar
 
+Allow the cake set for at least 5hrs in the fridge. I made this 2 days ahead.
+
 <br>
 
 
-A traditional double fromage is smeared down with whipped cream and coated in blitzed sponge cake crumbs. In my version, I shaved chocolate over the top to hide the cracks after an aggressive unmolding process [²](#fn2).
+A traditional double fromage is frosted with whipped cream and coated in blitzed sponge cake crumbs. In my version, I shaved chocolate over the top to hide the cracks after an aggressive unmolding process [²](#fn2).
+
+Happy Birthday, d ˗ˏˋ 🍰 ˎˊ˗
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
@@ -67,5 +71,5 @@ A traditional double fromage is smeared down with whipped cream and coated in bl
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">It came out fine and firm.</li>
-  <li id="fn2" data-number="²">d attempted to cover it with his finger prints all over.</li>
+  <li id="fn2" data-number="²">d attempted to cover it but left finger prints all over.</li>
 </ol>
