@@ -4,15 +4,41 @@ title: Write anything
 permalink: /write-anything/
 ---
 
-<ul class="post-list">
+<!-- Header spacing, header size, and layout adjustments -->
+<style>
+  main, article, .post-list {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  header, nav {
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+
+  main h1, article h1, h1 {
+    font-size: 1.5rem !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0.4rem !important;
+  }
+</style>
+
+<ul class="post-list" style="list-style: none; padding-left: 0; margin-top: 0;">
   {% for post in site.posts %}
     {% assign post_title_lower = post.title | downcase %}
     {% if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' %}
-      <li class="post-item give-me-10-item">
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.content | strip_html | split: '.' | first | append: '.' }}
-        </a>
+      <li class="post-item give-me-10-item" style="padding: 0.25rem 0; margin-bottom: 0; border-bottom: 1px solid #e5e5e5;">
+        <div style="display: flex; align-items: center; white-space: nowrap; overflow: hidden;">
+          
+          <!-- Date -->
+          <span class="post-date" style="flex-shrink: 0; width: 100px; display: inline-block; color: #888; font-size: 0.9rem;">{{ post.date | date: "%b %-d, %Y" }}</span>
+          
+          <!-- Content preview truncated with ... -->
+          <a href="{{ post.url | relative_url }}" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; flex-grow: 1;">
+            {{ post.content | strip_html | split: '.' | first | append: '.' }}
+          </a>
+        </div>
       </li>
     {% endif %}
   {% endfor %}
