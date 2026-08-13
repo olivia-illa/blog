@@ -134,6 +134,18 @@ a:hover {
   text-underline-offset: 2px;
 }
 
+/* Links that take their resting color from surrounding text (column headings,
+   tag lists) instead of --link-color. This must be a class rather than an
+   inline `color: inherit`, or the inherited color would also win on :hover and
+   the text would stay dark against the plum wipe. */
+.inherit-link {
+  color: inherit;
+}
+
+.inherit-link:hover {
+  color: var(--bg-color);
+}
+
 .post-list {
   list-style: none;
   padding: 0;
