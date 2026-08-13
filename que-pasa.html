@@ -1,0 +1,20 @@
+---
+layout: page
+title: Que pasa
+permalink: /que-pasa/
+---
+
+<ul class="post-list" style="list-style: none; padding-left: 0;">
+  {% assign weeknotes = site.posts | where_exp: "item", "item.tags contains 'weeknotes'" %}
+  {% for post in weeknotes %}
+    <li class="post-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: baseline;">
+      <span class="custom-bullet" style="color: var(--text-color);">❇</span>
+      <div>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </div>
+    </li>
+  {% else %}
+    <li>No thoughts yet.</li>
+  {% endfor %}
+</ul>

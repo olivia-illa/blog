@@ -1,0 +1,19 @@
+---
+layout: page
+title: Write anything
+permalink: /write-anything/
+---
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    {% assign post_title_lower = post.title | downcase %}
+    {% if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' %}
+      <li class="post-item give-me-10-item">
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.content | strip_html | split: '.' | first | append: '.' }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

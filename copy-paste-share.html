@@ -1,0 +1,48 @@
+---
+layout: page
+title: Copy paste share
+permalink: /copy-paste-share/
+---
+
+<style>
+  .clipping-preview blockquote {
+    border-left: 1.5px solid currentColor !important;
+    padding-left: 0.75rem !important;
+    margin: 0.25rem 0 !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+  }
+</style>
+
+<ul class="post-list" style="padding-left: 0;">
+  {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies' or item.tags contains 'music'" %}
+  {% for post in clippings %}
+    <li class="post-item clipping-item" style="list-style: none">
+      <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.25rem;">
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </div>
+      <div class="clipping-preview post-body">
+        {% assign blocks = post.content | split: "</p>" %}
+        {% assign first_quote_block = blocks[0] | strip_html | strip %}
+        <blockquote>
+          <a href="{{ post.url | relative_url }}">
+            {{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}
+          </a>
+        </blockquote>
+        {% if post.source_title %}
+          <div class="clipping-source-preview" style="font-size: 0.9rem; margin-top: 0.25rem;">
+            Source:
+            {% if post.source_url %}
+              <a href="{{ post.source_url }}" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</a>
+            {% else %}
+              <span style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </li>
+  {% else %}
+    <p>No clippings yet.</p>
+  {% endfor %}
+</ul>
