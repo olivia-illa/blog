@@ -1,10 +1,28 @@
 ---
 layout: page
-title: Copy paste share
+title: and your thoughts?
 permalink: /copy-paste-share/
 ---
 
 <style>
+  /* Collapse top container margins and set title styling */
+  main, article, .post-list {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  header, nav {
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+
+  main h1, article h1, h1 {
+    font-size: 1.5rem !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0.4rem !important;
+  }
+
   .clipping-preview blockquote {
     border-left: 1.5px solid currentColor !important;
     padding-left: 0.75rem !important;
@@ -15,7 +33,7 @@ permalink: /copy-paste-share/
   }
 </style>
 
-<ul class="post-list" style="padding-left: 0;">
+<ul class="post-list" style="padding-left: 0; margin-top: 0;">
   {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies' or item.tags contains 'music'" %}
   {% for post in clippings %}
     <li class="post-item clipping-item" style="list-style: none">
