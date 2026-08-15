@@ -2,42 +2,14 @@
 layout: page
 title: and your thoughts?
 permalink: /copy-paste-share/
+body_class: page-compact page-clippings
 ---
 
-<style>
-  /* Collapse top container margins and set title styling */
-  main, article, .post-list {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  header, nav {
-    margin-bottom: 0.2rem !important;
-    padding-bottom: 0.2rem !important;
-  }
-
-  main h1, article h1, h1 {
-    font-size: 1rem !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    margin-bottom: 0.4rem !important;
-  }
-
-  .clipping-preview blockquote {
-    border-left: 1.5px solid currentColor !important;
-    padding-left: 0.75rem !important;
-    margin: 0.25rem 0 !important;
-    border-top: none !important;
-    border-right: none !important;
-    border-bottom: none !important;
-  }
-</style>
-
-<ul class="post-list" style="padding-left: 0; margin-top: 0;">
+<ul class="post-list">
   {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies' or item.tags contains 'music'" %}
   {% for post in clippings %}
-    <li class="post-item clipping-item" style="list-style: none">
-      <div class="clipping-meta" style="font-size: 0.85rem; color: #666; margin-bottom: 0.25rem;">
+    <li class="post-item clipping-item">
+      <div class="clipping-meta">
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
       </div>
       <div class="clipping-preview post-body">
@@ -49,12 +21,12 @@ permalink: /copy-paste-share/
           </a>
         </blockquote>
         {% if post.source_title %}
-          <div class="clipping-source-preview" style="font-size: 0.9rem; margin-top: 0.25rem;">
+          <div class="clipping-source-preview">
             Source:
             {% if post.source_url %}
-              <a href="{{ post.source_url }}" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</a>
+              <a href="{{ post.source_url }}" target="_blank" rel="noopener">{{ post.source_title }}</a>
             {% else %}
-              <span style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</span>
+              <span>{{ post.source_title }}</span>
             {% endif %}
           </div>
         {% endif %}

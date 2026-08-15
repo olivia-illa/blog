@@ -1,47 +1,28 @@
 ---
 layout: page
-title: r u hungry for blah 
+title: r u hungry for blah
 permalink: /latest/
+body_class: page-compact page-latest
 ---
 
-<!-- Spacing adjustments -->
-<style>
-  main, article, .post-list {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  header, nav {
-    margin-bottom: 0.2rem !important;
-    padding-bottom: 0.2rem !important;
-  }
-
-  main h1, article h1, h1 {
-    font-size: 1rem !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    margin-bottom: 0.4rem !important;
-  }
-</style>
-
-<ul class="post-list" style="list-style: none; padding-left: 0; margin-top: 0;">
+<ul class="post-list">
   {% for post in site.posts %}
     {% assign post_title_lower = post.title | downcase %}
     {% unless post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' or post.tags contains 'weeknotes' or post.tags contains 'internet-clippings' or post.tags contains 'quotes' or post.tags contains 'articles' or post.tags contains 'books' or post.tags contains 'movies' or post.tags contains 'music' %}
-      <li class="post-item latest-item" style="padding: 0.25rem 0; margin-bottom: 0; border-bottom: 1px solid #e5e5e5;">
-        <div class="latest-preview" style="display: flex; align-items: center; white-space: nowrap;">
-          
+      <li class="post-item latest-item list-row">
+        <div class="latest-preview list-row-inner">
+
           <!-- Date -->
-          <span class="post-date" style="flex-shrink: 0; width: 100px; display: inline-block; color: #888; font-size: 0.9rem;">{{ post.date | date: "%b %-d, %Y" }}</span>
-          
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+
           <!-- Title -->
-          <a href="{{ post.url | relative_url }}" style="white-space: nowrap; margin-right: 0.5rem;">{{ post.title }}</a>
-          
-          <!-- Tags (now sits right after the title with a small gap) -->
+          <a class="list-row-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+
+          <!-- Tags (sit right after the title with a small gap) -->
           {% if post.tags.size > 0 %}
-            <span style="font-size: 0.8rem; color: #666; flex-shrink: 0;">
+            <span class="list-row-tags">
               {% for tag in post.tags %}
-                <a href="{{ '/tag/' | relative_url }}?t={{ tag | uri_escape }}" style="color: inherit;">#{{ tag }}</a>
+                <a href="{{ '/tag/' | relative_url }}?t={{ tag | uri_escape }}">#{{ tag }}</a>
                 {% unless forloop.last %} {% endunless %}
               {% endfor %}
             </span>

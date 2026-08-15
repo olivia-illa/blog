@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+body_class: home
 ---
 
 {% assign now_seconds = "now" | date: "%s" | plus: 0 %}
@@ -8,117 +9,9 @@ title: Home
 {% assign hour_seconds = 3600 %}
 {% assign minute_seconds = 60 %}
 
-<!-- Home-only layout: lock to the viewport so the page never scrolls;
-     only the individual columns overflow internally. -->
-<style>
-  /* Freeze the home page to exactly one viewport tall. */
-  html, body.home { height: 100%; overflow: hidden; }
-  body.home { height: calc(100vh - 1rem); }
-
-  /* Collapse site header spacing on home page */
-  header, .site-header, nav {
-    margin-bottom: 0.2rem !important;
-    padding-bottom: 0.2rem !important;
-  }
-
-  /* Pull main containers flush under the top header border */
-  main, article, .home-grid {
-    padding-top: 0 !important;
-    margin-top: 0.2rem !important;
-  }
-
-  /* Typography & vertical rhythm normalization */
-  h1, h2, h3 {
-    letter-spacing: 0.05em;
-    line-height: 1.2 !important;
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.5rem !important;
-    padding-top: 0 !important;
-  }
-
-  /* Force top headers flush */
-  h1:first-child, h2:first-child, .home-grid section:first-child h2 {
-    margin-top: 0 !important;
-  }
-
-  /* Body text & list line-height normalization */
-  p, ul, ol {
-    line-height: 1.5 !important;
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-
-  /* Grid layout */
-  .home-grid {
-    height: 100%;
-    min-height: 0;
-  }
-
-  .home-grid > section {
-    min-height: 0;
-    overflow-y: auto;
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  .home-grid > section:has(.scrollable-col-content) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Column headings sizing & tight spacing */
-  .home-grid h2, 
-  .home-grid h2 a {
-    font-size: 0.95rem !important;
-    font-weight: bold;
-    margin-top: 0.2rem !important;
-    padding-top: 0 !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Standardize preview post link font sizes */
-  .home-grid .post-list,
-  .home-grid .post-list a,
-  .home-grid p {
-    font-size: 0.95rem !important;
-  }
-
-  .scrollable-col-content {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow-y: auto;
-    padding-right: 8px;
-  }
-
-  .scrollable-col-content > .post-list {
-    margin-top: 0;
-  }
-
-  .scrollable-col-content > .post-list > .post-item:first-child {
-    padding-top: 0;
-  }
-
-  /* Slim scrollbar */
-  .scrollable-col-content::-webkit-scrollbar {
-    width: 4px;
-  }
-  .scrollable-col-content::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.1);
-    border-radius: 4px;
-  }
-
-  /* Quote styling */
-  .clipping-preview blockquote {
-    border-left: 1.5px solid currentColor !important;
-    padding-left: 0.75rem !important;
-    margin: 0.25rem 0 !important;
-    border-top: none !important;
-    border-right: none !important;
-    border-bottom: none !important;
-  }
-</style>
-
+<!-- Home-only layout: locked to the viewport so the page never scrolls; only
+     the individual columns overflow internally. Styles: "Page: home" in
+     assets/css/style.css. -->
 <div class="home-grid">
 <section class="scrollable-col-content">
   <h2><a href="{{ '/latest/' | relative_url }}" class="inherit-link">Ni hao</a></h2>
@@ -127,9 +20,9 @@ title: Home
   <p>For ✅ I am human.</p>
   <p>Click around for <a href="https://oliviailla.blog/2026/06/30/facts-about-me.html">bits and bobs</a> <a href="https://oliviailla.blog/about-me/">about me</a>.</p>
 
-  <div style="margin: 2rem 0; color: var(--text-color);">latest ✎﹏﹏﹏﹏</div>
+  <div class="section-label">latest ✎﹏﹏﹏﹏</div>
 
-<ul class="post-list" style="list-style: none; padding-left: 0;">
+<ul class="post-list">
   {% assign latest = site.posts %}
   {% assign shown = 0 %}
 
@@ -139,9 +32,9 @@ title: Home
       {% if shown >= 10 %}{% break %}{% endif %}
       {% assign shown = shown | plus: 1 %}
 
-      <li class="post-item latest-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: baseline;">
-        <span class="custom-bullet" style="color: var(--text-color);">⚘</span>
-        
+      <li class="post-item latest-item bullet-item">
+        <span class="custom-bullet">⚘</span>
+
         <div class="latest-preview">
           <a href="{{ post.url | relative_url }}">
             {{ post.title }}
@@ -154,8 +47,8 @@ title: Home
     <p>No latest posts yet.</p>
   {% endfor %}
 </ul>
-<div style="margin-top: 0.75rem;">
-  <a href="{{ '/latest/' | relative_url }}" style="font-size: 0.75rem;">see more →</a>
+<div class="see-more">
+  <a href="{{ '/latest/' | relative_url }}">see more →</a>
 </div>
 </section>
 
@@ -163,12 +56,11 @@ title: Home
 <section>
   <h2><a href="{{ '/copy-paste-share/' | relative_url }}" class="inherit-link">Copy paste share</a></h2>
   <div class="scrollable-col-content">
-    <ul class="post-list" style="padding-left: 0;">
+    <ul class="post-list">
       {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies' or item.tags contains 'music'" %}
       {% for post in clippings limit: 10 %}
-        <li class="post-item clipping-item" style="list-style: none">
-          
-          <div class="clipping-meta" style="font-size: 0.75rem; color: #666; margin-bottom: 0.25rem;">
+        <li class="post-item clipping-item">
+          <div class="clipping-meta">
             <span class="post-date">
               {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
               {% assign diff_seconds = now_seconds | minus: post_seconds %}
@@ -203,12 +95,12 @@ title: Home
             </blockquote>
 
             {% if post.source_title %}
-              <div class="clipping-source-preview" style="font-size: 0.8rem; margin-top: 0.25rem;">
+              <div class="clipping-source-preview">
                 Source: 
                 {% if post.source_url %}
-                  <a href="{{ post.source_url }}" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</a>
+                  <a href="{{ post.source_url }}" target="_blank" rel="noopener">{{ post.source_title }}</a>
                 {% else %}
-                  <span style="text-decoration: underline; text-underline-offset: 2px;">{{ post.source_title }}</span>
+                  <span>{{ post.source_title }}</span>
                 {% endif %}
               </div>
             {% endif %}
@@ -219,8 +111,8 @@ title: Home
         <p>No clippings yet.</p>
       {% endfor %}
     </ul>
-    <div style="margin-top: 0.75rem;">
-      <a href="{{ '/copy-paste-share/' | relative_url }}" style="font-size: 0.75rem;">see more →</a>
+    <div class="see-more">
+      <a href="{{ '/copy-paste-share/' | relative_url }}">see more →</a>
     </div>
   </div>
 </section>
@@ -228,12 +120,12 @@ title: Home
 <section class="weeknotes">
   <h2>QUE PASA</h2>
   <div class="scrollable-col-content">
-    <ul class="post-list" style="list-style: none; padding-left: 0;">
+    <ul class="post-list">
       {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'weeknotes'" %}
       
       {% for post in thoughts %}
-        <li class="post-item" style="margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: baseline;">
-          <span class="custom-bullet" style="color: var(--text-color);">❇</span>
+        <li class="post-item bullet-item">
+          <span class="custom-bullet">❇</span>
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </li>
       {% else %}
@@ -254,7 +146,7 @@ title: Home
           {% if thoughts_shown >= 10 %}{% break %}{% endif %}
           {% assign thoughts_shown = thoughts_shown | plus: 1 %}
           <li class="post-item give-me-10-item">
-            <span class="post-date" style="font-size: 0.75rem;">
+            <span class="post-date">
               {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
               {% assign diff_seconds = now_seconds | minus: post_seconds %}
               {% assign diff_days = diff_seconds | divided_by: day_seconds %}
@@ -284,8 +176,8 @@ title: Home
         {% endif %}
       {% endfor %}
     </ul>
-    <div style="margin-top: 0.75rem;">
-      <a href="{{ '/write-anything/' | relative_url }}" style="font-size: 0.75rem;">see more →</a>
+    <div class="see-more">
+      <a href="{{ '/write-anything/' | relative_url }}">see more →</a>
     </div>
   </div>
 </section>

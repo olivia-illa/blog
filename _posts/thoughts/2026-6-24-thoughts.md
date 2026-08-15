@@ -7,7 +7,7 @@ tags: [exchange]
 On asking unromantic questions.
 
 
-<div style="text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 50vh;">
+<div class="centered-scene">
 
 
 <p>INT. Hanging medals, national parks prints, and a brewing pod machine. Two low wingback chairs and glasses.-DAY</p>

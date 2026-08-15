@@ -1,3 +1,43 @@
+/* ==========================================================================
+   Making Utter Sense — site stylesheet
+
+   Everything lives here. Pages and layouts should not carry <style> blocks or
+   inline style="" attributes; add a class and a rule in the matching section
+   below instead.
+
+   Page-level rules are keyed off a class that `_layouts/default.html` puts on
+   both <html> and <body>, taken from the page's `body_class` front matter:
+
+     home            index.html
+     page-compact    shared by the four dense list pages
+     page-latest     latest.html
+     page-write      write-anything.html
+     page-clippings  copy-paste-share.html
+     page-tags       tag.html
+
+   Post layouts are keyed off classes on <article>:
+
+     post-article    all three post layouts (shared post-body rules)
+     post-long       _layouts/post.html
+     post-thoughts   _layouts/thoughts_style.html
+     clipping-post   _layouts/clippings_style.html
+
+   Sections:
+     1. Design tokens
+     2. Base layout
+     3. Typography
+     4. Links
+     5. Components
+     6. Page: home
+     7. Pages: dense list pages
+     8. Post layouts
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. Design tokens
+   ========================================================================== */
+
 :root {
   --bg-color: #ddeedd;
   --text-color: #111111;
@@ -5,6 +45,17 @@
   --header-color: #111111;
   --footer-color: #111111;
   --section-border: rgba(0, 0, 0, 0.1);
+
+  /* Plum block that wipes across a link on hover */
+  --link-hover-bg: #50394c;
+
+  /* Fixed greys. These deliberately do NOT flip in dark mode — that matches
+     the hard-coded #666/#888/#e5e5e5 values this file replaced. Giving them
+     dark-mode values is now a one-line change in the block below. */
+  --meta-color: #666666;        /* secondary meta text (clipping dates, tag lists) */
+  --date-muted-color: #888888;  /* date column on the dense list pages */
+  --row-border-color: #e5e5e5;  /* separator between dense list rows */
+
   --font-mono: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -18,6 +69,11 @@
     --section-border: rgba(255, 255, 255, 0.1);
   }
 }
+
+
+/* ==========================================================================
+   2. Base layout
+   ========================================================================== */
 
 body {
   font-family: var(--font-mono);
@@ -41,18 +97,11 @@ body {
 main {
   flex: 1 1 auto;
   min-height: 0;
-}
-
-footer {
-  padding: 1rem 2rem;
-  margin: 0;
-  background-color: inherit;
-  box-sizing: border-box;
+  padding: 0;
 }
 
 header {
   padding: 0.5rem 0;
-  font-family: var(--font-mono);
 }
 
 nav {
@@ -80,13 +129,28 @@ nav > a:first-child {
   font-style: normal; /* Keep nav links normal */
 }
 
-main {
-  padding: 0;
+footer {
+  margin: 0;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  background-color: inherit;
+  text-align: left; /* Left align footer too */
+  font-size: 0.75rem;
+  color: var(--footer-color);
+  border-top: 1px solid var(--section-border);
 }
+
+footer p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
 
 h1, h2, h3 {
   color: var(--header-color);
-  font-family: var(--font-mono);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -105,6 +169,32 @@ h2 {
   margin-bottom: 1rem;
 }
 
+hr {
+  margin: 2rem 0;
+}
+
+section {
+  margin: 0 0 0.75rem;
+}
+
+/* Standalone article pages (posts, and the page.html wrapper) */
+article {
+  max-width: 600px; /* Allow articles to be wider but still readable */
+  margin: 0; /* Left align articles */
+}
+
+article h1 {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+}
+
+
+/* ==========================================================================
+   4. Links
+   ========================================================================== */
+
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -113,7 +203,7 @@ a {
      left edge whose width grows from 0 to 100% (left to right). Because
      nothing is painted at rest (size 0), there is no stray 1px bar at the
      link's left edge that the old two-tone-gradient trick left behind. */
-  background-image: linear-gradient(#50394c, #50394c);
+  background-image: linear-gradient(var(--link-hover-bg), var(--link-hover-bg));
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 0% 100%;
@@ -146,6 +236,13 @@ a:hover {
   color: var(--bg-color);
 }
 
+
+/* ==========================================================================
+   5. Components
+   ========================================================================== */
+
+/* --- Post lists ---------------------------------------------------------- */
+
 .post-list {
   list-style: none;
   padding: 0;
@@ -155,46 +252,53 @@ a:hover {
   margin-bottom: 0;
 }
 
+/* Rows introduced by a decorative glyph (home "latest" and "que pasa" lists).
+   Written as .post-item.bullet-item so the bottom margin still applies to the
+   last row, which .post-item:last-child above would otherwise zero out. */
+.post-item.bullet-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.custom-bullet {
+  color: var(--text-color);
+}
+
 .post-date {
   display: inline;
   font-size: 0.75rem;
   color: var(--footer-color);
-  font-family: var(--font-mono);
   margin-right: 0.5rem;
 }
 
-section {
-  margin: 0 0 0.75rem;
-}
-
-.scattered-thoughts .post-list {
-  padding-left: 0;
-}
-
-.scattered-thoughts .post-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.15rem 0;
-  font-size: 0.82rem;
-}
-
-.scattered-thoughts .post-item::before {
-  content: "⇝";
+.post-tags {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--footer-color);
   display: inline-block;
-  margin-right: 0.35rem;
-  color: var(--link-color);
 }
 
-.scattered-thoughts .post-item a {
-  text-decoration: none;
+/* "see more →" affordance at the foot of a home column */
+.see-more {
+  margin-top: 0.75rem;
 }
 
-.scattered-thoughts .post-item a:hover {
-  text-decoration: underline;
+.see-more a {
+  font-size: 0.75rem;
 }
+
+/* Small decorative label between blocks inside a column */
+.section-label {
+  margin: 2rem 0;
+  color: var(--text-color);
+}
+
+/* --- Clippings ----------------------------------------------------------- */
 
 .clipping-item {
+  list-style: none;
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--section-border);
 }
@@ -206,7 +310,9 @@ section {
 }
 
 .clipping-meta {
-  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--meta-color);
+  margin-bottom: 0.25rem;
 }
 
 .clipping-preview a {
@@ -217,16 +323,129 @@ section {
   text-decoration: underline;
 }
 
-/* Home Grid Layout */
+/* The pulled quote in a clipping preview: a single left accent rule, no box */
+.clipping-preview blockquote {
+  border-left: 1.5px solid currentColor !important;
+  padding-left: 0.75rem !important;
+  margin: 0.25rem 0 !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.clipping-source-preview {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.clipping-source-preview a,
+.clipping-source-preview span {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* --- Misc ---------------------------------------------------------------- */
+
+.botanical-divider {
+  text-align: center;         /* Centers the symbols on the page */
+  margin: 3rem 0;             /* Adds spacious margin before and after the divider */
+  font-size: 1.1rem;          /* Optional: Adjusts the size of the symbols */
+  color: var(--text-color);   /* Keeps the color matching your text */
+  white-space: nowrap;        /* Keeps the symbols grouped on a single line */
+  letter-spacing: 1px;        /* Optional: Gives the characters a tiny bit of breathing room */
+}
+
+/* Screenplay-style passages inside a post: centred and vertically padded out */
+.centered-scene {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+
+/* ==========================================================================
+   6. Page: home
+
+   The home page is locked to exactly one viewport tall; only the individual
+   grid columns scroll, internally.
+   ========================================================================== */
+
+html.home,
+body.home {
+  height: 100%;
+  overflow: hidden;
+}
+
+body.home {
+  height: calc(100vh - 1rem);
+}
+
+/* Collapse site header spacing */
+.home header,
+.home nav {
+  margin-bottom: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
+/* Pull main containers flush under the top header border */
+.home main,
+.home article {
+  padding-top: 0 !important;
+  margin-top: 0.2rem !important;
+}
+
+/* Typography & vertical rhythm normalization */
+.home h1,
+.home h2,
+.home h3 {
+  letter-spacing: 0.05em;
+  line-height: 1.2 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-top: 0 !important;
+}
+
+/* Force top headers flush */
+.home h1:first-child,
+.home h2:first-child {
+  margin-top: 0 !important;
+}
+
+/* Body text & list line-height normalization */
+.home p,
+.home ul,
+.home ol {
+  line-height: 1.5 !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* --- The column grid ----------------------------------------------------- */
+
 .home-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
   position: relative;
+  height: 100%;
+  min-height: 0;
+  padding-top: 0 !important;
+  margin-top: 0.2rem !important;
 }
 
 .home-grid > section {
   padding: 0 0.85rem;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.home-grid > section:has(.scrollable-col-content) {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 600px) {
@@ -245,45 +464,434 @@ section {
   }
 }
 
-footer {
-  text-align: left; /* Left align footer too */
-  font-size: 0.75rem;
-  color: var(--footer-color);
-  border-top: 1px solid var(--section-border);
-  padding-top: 1rem;
+/* Column headings sizing & tight spacing. The `.home ` prefix is load-bearing:
+   it keeps these ahead of the `.home h2:first-child` rule above, so only the
+   first column's heading sits flush at margin-top 0. */
+.home .home-grid h2,
+.home .home-grid h2 a {
+  font-size: 0.95rem !important;
+  font-weight: bold;
+  margin-top: 0.2rem !important;
+  padding-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
 }
 
-/* Single Post Styles */
-article {
-  max-width: 600px; /* Allow articles to be wider but still readable */
-  margin: 0; /* Left align articles */
+.home .home-grid section:first-child h2 {
+  margin-top: 0 !important;
 }
 
-article h1 {
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 1.75rem;
-  margin-top: 1rem;
+/* Standardize preview post link font sizes */
+.home-grid .post-list,
+.home-grid .post-list a,
+.home-grid p {
+  font-size: 0.95rem !important;
 }
 
-.post-tags {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  color: var(--footer-color);
+/* --- Internally scrolling column body ------------------------------------ */
+
+.scrollable-col-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.scrollable-col-content > .post-list {
+  margin-top: 0;
+}
+
+.scrollable-col-content > .post-list > .post-item:first-child {
+  padding-top: 0;
+}
+
+/* Slim scrollbar */
+.scrollable-col-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollable-col-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+
+/* ==========================================================================
+   7. Pages: dense list pages
+
+   latest.html, write-anything.html, copy-paste-share.html and tag.html all
+   share the same compact header treatment and (except for the clippings page)
+   the same one-line row.
+   ========================================================================== */
+
+.page-compact main,
+.page-compact article,
+.page-compact .post-list,
+.page-compact .tag-group {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.page-compact header,
+.page-compact nav {
+  margin-bottom: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
+.page-compact h1,
+.page-compact main h1,
+.page-compact article h1 {
+  font-size: 1rem !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* --- One-line rows (latest, write-anything, tags) ------------------------- */
+
+.list-row {
+  padding: 0.25rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--row-border-color);
+}
+
+.list-row-inner {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Fixed-width date gutter so the titles line up down the page */
+.list-row .post-date {
+  flex-shrink: 0;
+  width: 100px;
   display: inline-block;
+  color: var(--date-muted-color);
+  font-size: 0.9rem;
 }
 
-hr {
-  margin: 2rem 0;
+.list-row-title {
+  white-space: nowrap;
 }
 
-.botanical-divider {
-  text-align: center;         /* Centers the symbols on the page */
-  margin: 3rem 0;           /* Adds spacious margin before and after the divider */
-  font-size: 1.1rem;          /* Optional: Adjusts the size of the symbols */
-  color: var(--text-color);   /* Keeps the color matching your text */
-  white-space: nowrap;        /* Keeps the symbols grouped on a single line */
-  letter-spacing: 1px;        /* Optional: Gives the characters a tiny bit of breathing room */
+.list-row-tags {
+  font-size: 0.8rem;
+  color: var(--meta-color);
+  flex-shrink: 0;
 }
 
+/* Deliberately not .inherit-link: these keep the muted parent color on hover
+   too, which is how they were written inline. */
+.list-row-tags a,
+.tag-group-title a {
+  color: inherit;
+}
+
+/* --- Page: latest -------------------------------------------------------- */
+
+.page-latest .list-row-title {
+  margin-right: 0.5rem;
+}
+
+/* --- Pages: write-anything and tags (titles truncate) --------------------- */
+
+.page-write .list-row-inner,
+.page-tags .list-row-inner {
+  overflow: hidden;
+}
+
+.page-write .list-row-title,
+.page-tags .list-row-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-write .list-row-title {
+  flex-grow: 1;
+}
+
+/* --- Page: tags ---------------------------------------------------------- */
+
+/* Override the narrow reading measure so the tag index uses the full width */
+.page-tags main,
+.page-tags article,
+.page-tags .post-list,
+.page-tags .tag-group {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.page-tags .list-row-inner {
+  width: 100%;
+}
+
+.page-tags .list-row-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.tag-group-title {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Page: copy-paste-share ---------------------------------------------- */
+
+.page-clippings .clipping-meta {
+  font-size: 0.85rem;
+}
+
+.page-clippings .clipping-source-preview {
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   8. Post layouts
+   ========================================================================== */
+
+/* --- Shared by post.html, thoughts_style.html, clippings_style.html ------- */
+
+/* Headings never carry the border/underline the base h2 rule adds */
+.post-article h1,
+.post-article h2,
+.post-article h3,
+.post-article h4 {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* Underline all links inside the post content by default */
+.post-article .post-body a {
+  text-decoration: underline;
+  text-underline-offset: 2px; /* Keeps it neat and readable */
+}
+
+.post-article .post-body a:hover {
+  text-decoration: underline;
+}
+
+/* Footnote markers stay clean until hovered */
+.post-article .post-body sup a {
+  text-decoration: none;
+}
+
+.post-article .post-body sup a:hover {
+  text-decoration: underline;
+}
+
+/* Footnote list: self-numbering from each item's data-number attribute, with
+   the marker hung outside the text column. */
+.post-article .post-body ol.footnotes-list {
+  list-style: none;
+  counter-reset: footnote-counter;
+  padding-left: 2em;    /* Global left boundary for the text column */
+  margin-top: 1.5em;
+}
+
+.post-article .post-body ol.footnotes-list li {
+  counter-increment: footnote-counter;
+  position: relative;
+  margin-bottom: 0.8em;
+  text-align: left;
+}
+
+.post-article .post-body ol.footnotes-list li::before {
+  content: attr(data-number);   /* Grabs the custom ¹, ², ¹⁰ symbols */
+  position: absolute;
+  right: 100%;                  /* Pushes the number completely out to the left */
+  padding-right: 0.5em;         /* Creates a crisp gap between number and text */
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Custom ⊹ bullets with wide spacing. Not applied to clippings, whose lists
+   keep the browser default. */
+.post-long .post-body ul,
+.post-thoughts .post-body ul {
+  list-style-type: "⊹ ";  /* Sets the default marker and adds a tiny trailing space */
+  padding-left: 1.5em;    /* Ensures proper indentation for the custom character */
+  margin-top: 1em;
+}
+
+/* --- Layout: post.html (long form) --------------------------------------- */
+
+.post-long {
+  font-weight: 400;
+  line-height: 1.75; /* Opens up overall text density */
+}
+
+.post-long h1,
+.post-long h2,
+.post-long h3,
+.post-long h4 {
+  font-weight: 600;
+}
+
+/* Paragraph spacing to eliminate the clustered look */
+.post-long .post-body p {
+  margin-bottom: 1.35rem; /* Generous vertical gap between paragraphs */
+  line-height: 1.75;
+}
+
+.post-long .post-body ul {
+  margin-bottom: 1.35rem;
+}
+
+.post-long .post-body ul li {
+  margin-bottom: 0.8em;   /* Widened spacing between each item */
+  line-height: 1.7;
+}
+
+/* Keep nested lists or numbered lists clean with wider breathing room */
+.post-long .post-body ol {
+  padding-left: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1.35rem;
+}
+
+.post-long .post-body ol li {
+  margin-bottom: 0.8em;
+  line-height: 1.7;
+}
+
+.post-long .post-body ol.footnotes-list li {
+  margin-bottom: 0.9em;   /* Spacing between footnotes */
+  line-height: 1.7;
+}
+
+/* Creates a clean vertical gap between the tags line and the update line */
+.post-long .post-tags {
+  margin-top: 1.5em;
+}
+
+.post-long .post-updated {
+  margin-top: 0.5em;
+  display: block;
+}
+
+/* --- Layout: thoughts_style.html ----------------------------------------- */
+
+.post-thoughts .post-body {
+  font-size: 1rem;    /* Slightly elevated base size for readability */
+  line-height: 1.75;  /* Comfortable line height */
+}
+
+.post-thoughts .post-body p {
+  margin-bottom: 1.25rem; /* Proportional spacing between paragraphs */
+}
+
+/* Harmonious heading proportions - adjusted for visual weight */
+.post-thoughts .post-body h1 {
+  font-size: 2.35rem;     /* Scaled up to keep clear hierarchy over h2 */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-thoughts .post-body h2 {
+  font-size: 2rem;        /* Stands out over body text */
+  font-weight: 700;       /* Ensures strong stroke weight */
+  letter-spacing: 0.03em; /* Slightly tighter for cleaner all-caps look */
+  line-height: 1.25;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.post-thoughts .post-body h3 {
+  font-size: 1.8rem;      /* Subheaders beat fraction/bullet heights */
+  font-weight: 700;       /* Keeps uppercase subheaders visually heavy */
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.post-thoughts .post-date {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.post-thoughts .post-tags {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  opacity: 0.85;
+}
+
+.post-thoughts .post-body ul {
+  margin-bottom: 1.5em;
+}
+
+.post-thoughts .post-body ul li {
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+}
+
+.post-thoughts .post-body ul ul {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  list-style-type: "◦ ";
+}
+
+.post-thoughts .post-body ol.footnotes-list {
+  font-size: 0.9rem; /* Proportionally smaller for footnotes */
+}
+
+.post-thoughts .post-body blockquote {
+  border-left: 2px solid #034f84;
+  margin: 1.5em 0;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #555555;
+}
+
+.post-thoughts .post-body blockquote p {
+  margin: 0;
+}
+
+/* --- Layout: clippings_style.html ---------------------------------------- */
+
+.clipping-post .post-date {
+  font-size: 0.85rem;
+  color: var(--meta-color);
+  margin-bottom: 1rem;
+}
+
+.clipping-post .post-tags {
+  font-size: 0.85rem;
+  color: var(--date-muted-color);
+  margin-top: 1.5rem;
+}
+
+/* Thinner 1px accent bar than the thoughts layout uses */
+.clipping-post .post-body blockquote {
+  border-left: 1px solid var(--text-color, #484f4f);
+  margin: 1.5em 0;
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--text-color, #484f4f);
+}
+
+.clipping-post .post-body blockquote p {
+  margin: 0 0 0.5em 0;
+  color: inherit;
+}
+
+.clipping-post .post-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* The mandatory attribution line at the foot of a clipping */
+.clipping-source {
+  margin-top: 1.5em;
+  font-size: 0.95rem;
+  color: var(--text-color, #484f4f);
+}
+
+.clipping-source a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

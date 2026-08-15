@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{%- comment -%}
+  `body_class` in a page's front matter selects that page's block in
+  assets/css/style.css. It goes on <html> as well as <body> so the home page
+  can size the root element.
+{%- endcomment -%}
+{%- assign page_class = page.body_class | default: "" -%}
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="{{ page_class }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +17,7 @@
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   {% feed_meta %}
 </head>
-<body class="{% if page.url == '/' %}home{% endif %}">
+<body class="{{ page_class }}">
   <header>
     <nav>
       <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
@@ -26,9 +32,8 @@
     {{ content }}
   </main>
 
-  <!-- Footer with background coloring preserved and minimized height/padding matching image_0b9e69.png -->
   <footer>
-    <p style="margin: 0;">&copy; {{ "now" | date: "%Y" }} {{ site.author }}</p>
+    <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }}</p>
   </footer>
 
 </body>

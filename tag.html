@@ -2,46 +2,23 @@
 layout: page
 title: tags
 permalink: /tag/
+body_class: page-compact page-tags
 ---
-
-<!-- Header size, header margin, and container layout fixes -->
-<style>
-  /* Allow main page containers to fill the available screen width */
-  main, article, .post-list, .tag-group {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-    max-width: 100% !important; /* Overrides default theme narrow width */
-    width: 100% !important;
-  }
-
-  header, nav {
-    margin-bottom: 0.2rem !important;
-    padding-bottom: 0.2rem !important;
-  }
-
-  main h1, article h1, h1 {
-    font-size: 1rem !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    margin-bottom: 0.4rem !important;
-  }
-</style>
 
 {% for tag in site.tags %}
 <div class="tag-group" data-tag="{{ tag[0] }}">
-  <h2 class="tag-group-title" style="font-size: 1.2rem; margin-top: 1rem; margin-bottom: 0.5rem;"><a href="{{ '/tag/' | relative_url }}?t={{ tag[0] | uri_escape }}" style="color: inherit;">#{{ tag[0] }}</a></h2>
-  <ul class="post-list" style="list-style: none; padding-left: 0; margin-top: 0; width: 100%;">
+  <h2 class="tag-group-title"><a href="{{ '/tag/' | relative_url }}?t={{ tag[0] | uri_escape }}">#{{ tag[0] }}</a></h2>
+  <ul class="post-list">
     {% for post in tag[1] %}
       {% assign post_title_lower = post.title | downcase %}
-      <!-- Tight grid line formatting matching Ni hao page -->
-      <li class="post-item" style="padding: 0.25rem 0; margin-bottom: 0; border-bottom: 1px solid #e5e5e5;">
-        <div style="display: flex; align-items: center; white-space: nowrap; overflow: hidden; width: 100%;">
-          
-          <!-- Date (Fixed width so titles align vertically) -->
-          <span class="post-date" style="flex-shrink: 0; width: 100px; display: inline-block; color: #888; font-size: 0.9rem;">{{ post.date | date: "%b %-d, %Y" }}</span>
-          
-          <!-- Title (Fills remaining space completely, truncates cleanly before scrolling) -->
-          <a href="{{ post.url | relative_url }}" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; flex: 1; min-width: 0;">
+      <li class="post-item list-row">
+        <div class="list-row-inner">
+
+          <!-- Date (fixed width so titles align vertically) -->
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <!-- Title (fills remaining space, truncates cleanly before scrolling) -->
+          <a class="list-row-title" href="{{ post.url | relative_url }}">
             {%- if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' -%}
               {{ post.content | strip_html | split: '.' | first | append: '.' }}
             {%- else -%}
