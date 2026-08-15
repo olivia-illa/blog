@@ -7,11 +7,11 @@ tags: [unsevered]
 
 No one does it like him. I applaud his bravery and the rest of 𝓜𝓸𝓸✩‧₊˚🐄 who save me a first row seat.
 
-We were gathered for an exclusive all-hands meeting, the first one since last year, when everything spiraled downhill despite desperate efforts to contain it. In self-deprecating terms, I was the cockroach left surviving. 
+We were gathered for an exclusive all-hands meeting, the first one since last year, when everything spiraled downhill despite desperate efforts to contain it. In self-deprecating terms, I was the cockroach left surviving.
 
 While HR was right that I needed to talk to my boss about whether I deserved a raise, she was dead wrong in assuming that rankings, promotions, and ~~secret~~ assessments had ever been delivered transparently with accessible documentation. In fact, tx jokingly admitted this was likely the first time anyone actually knew what their official titles were, let alone the vague corresponding responsibilities.
 
-“Well, it's not *that* important anyway. We are very flatly structured.” 
+“Well, it's not *that* important anyway. We are very flatly structured.”
 
 <div class="botanical-divider">・・・・・</div>
 
@@ -25,16 +25,16 @@ Annual performance reviews happen at the EOY, where the direct manager evaluates
 
 <div class="botanical-divider">・・・・・</div>
 
-tx explained the company only began mid-year adjustments the year before, and it wasn’t meant to be public info. Apparently, treating July's payday like a *blind box* is completely normal procedure ~~since they aren't exactly going to demote your pay~~. 
+tx explained the company only began mid-year adjustments the year before, and it wasn’t meant to be public info. Apparently, treating July's payday like a *blind box* is completely normal procedure ~~since they aren't exactly going to demote your pay~~.
 
-“In fact a few of you got *pleasant* surprises last year,” tx noted, looking around the room. 
+“In fact a few of you got *pleasant* surprises last year,” tx noted, looking around the room.
 
 Someone raised her hand, “What if I don’t want surprises? I’d rather know exactly how I performed, so I have metrics to improve on.” Girl, exactly.
 
 <div class="botanical-divider">・・・・・</div>
 
-I then shot my hand up to ask about X planning and what happens when the cycle ends. 
+I then shot my hand up to ask about X planning and what happens when the cycle ends.
 
-“It will likely be phased out completely—ensuring newbies aren’t missing out on tax benefits for too long—but it’s being taken care of for those who already have it.” 
+“It will likely be phased out completely—ensuring newbies aren’t missing out on tax benefits for too long—but it’s being taken care of for those who already have it.”
 
 This begged the question: Do I even get a chance to negotiate ~~fight for it~~ now that the terms have shifted to *one cycle per year*? It was literally part of my initial hiring package, and right now, it feels a lot like a disguised salary reduction if I keep quiet.

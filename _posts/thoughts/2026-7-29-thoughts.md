@@ -14,7 +14,7 @@ How about measuring how well one can manage being productive at work while maint
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
-### Footnotes
+## Footnotes
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">I mean actually prompting, calculating, emailing, not live status, the heck how companies monitor employees these days</li>

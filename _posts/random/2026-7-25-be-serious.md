@@ -22,12 +22,12 @@ Identified pattern:
 
 Two weeks ago, we sat at the edge of the dock with the sunset minutes away from the horizon, my teary eyes burning straight into your precarious soul. You knew I was sick of the deflection whenever I probed the bigger questions, yet you stonewalled me again. “This is not the time, please. I want to leave.” You wanted out—not just in the moment, but in the conditional future.
 
-Shouldn’t this be easier if we both want the same things? I was confused but more upset by his reaction. 
+Shouldn’t this be easier if we both want the same things? I was confused but more upset by his reaction.
 
 Wanting the same things doesn’t guarantee achieving them. It just meant sharing a dream and hoping that, by some miracle, we’d get what we wished for. Refusing to let the same script unfold, I pushed through with blurry vision, aware that audiences in pairs were surrounding us to watch the tangerine skies. “Let’s start with definitions…” We shared the same vision, but clearly carried it in different weight.
 
 
-As it turned out, you required a gradual approach to big topics, and setting provisional deadlines felt arbitrary and overwhelming. Neither of us likes being commanded or monitored. And yet, I constantly think of our future in quiet moments; what about you? Things don’t just fall into place and good outcomes require planning. “What if we set up weekly catch-ups to talk about it? Both the big picture and the day-to-day?” 
+As it turned out, you required a gradual approach to big topics, and setting provisional deadlines felt arbitrary and overwhelming. Neither of us likes being commanded or monitored. And yet, I constantly think of our future in quiet moments; what about you? Things don’t just fall into place and good outcomes require planning. “What if we set up weekly catch-ups to talk about it? Both the big picture and the day-to-day?”
 
 We did eventually ended the talk similar to the therapist's suggestion, otherwise I'd be telling a very different story.
 

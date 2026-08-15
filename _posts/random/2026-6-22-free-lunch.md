@@ -6,11 +6,11 @@ tags: [work]
 ---
 
 
-I’ll never turn down a free lunch whether or not I deserve it. 
+I’ll never turn down a free lunch whether or not I deserve it.
 
 The day before, our manager treated us to Taiwanese cuisine, KUAICHAO, a place known to put a fancy twist on the classic. On the set menu, there were crab tofu, boneless cold chicken, smoked cod, garlic sauce squash, BBQ pork ribs, and more. If I could speak for our five-person team, comprising the youngest among the company, a sit-down round table would always be appreciated, especially for being a switch from the parallel and intense work we do.
 
-We were celebrating the team’s quick solution to an urgent risk assessment the final hours of the week. They handled the hedging strategies and margin loans to brace for if the currency’s value dropped steeper. Meanwhile, I came back fully rested, and stepped in to clean up P&L reports, yet got called in for some [whipping, again](http://0.0.0.0:4000/blog/2026/07/07/thoughts.html). 
+We were celebrating the team’s quick solution to an urgent risk assessment the final hours of the week. They handled the hedging strategies and margin loans to brace for if the currency’s value dropped steeper. Meanwhile, I came back fully rested, and stepped in to clean up P&L reports, yet got called in for some [whipping, again](http://0.0.0.0:4000/blog/2026/07/07/thoughts.html).
 
 
 <br>
@@ -23,7 +23,7 @@ It reminded me of when I first watched *Marriage Story* (2019). It left me sobbi
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
 
-### Footnotes
+## Footnotes
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">Neither parent wanted to see each other on their son’s wedding day, so the protagonist had to hold two separate ones to accommodate.</li>

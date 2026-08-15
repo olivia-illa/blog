@@ -11,7 +11,7 @@ Dining there also completely changed my perspective on pizza. Before then, I onl
 
 It was at Saizeriya that I discovered how Europeans enjoy pizza (technically, the restaurant serves *Itameshi*[¹](#fn1)), which is by not sharing at all! A win-win for all parties. Everyone gets their own diner-plate round with thinner crust, topped with more cheese and meat. You can choose to grease it up with olive oil, slice it into squares, wedges, and domes, or do nothing at all.
 
-Suddenly, pizza was no longer strictly associated with birthday parties or Christmas celebrations. It could be enjoyed on a solo date night or with a friend who wanted risotto while you insisted on hot honey on a cheese pizza. 
+Suddenly, pizza was no longer strictly associated with birthday parties or Christmas celebrations. It could be enjoyed on a solo date night or with a friend who wanted risotto while you insisted on hot honey on a cheese pizza.
 
 The cost of committing to a whole was much lower. 🍕 ⋆⭒˚.⋆
 
@@ -27,13 +27,13 @@ We ordered a small jug of *vino blanco* ($3), a ham and egg pizza ($5), a Caesar
 
 <br>
 
-How I wish I were taken off-grid right now, gazing out at those vibrant azure hues. 
+How I wish I were taken off-grid right now, gazing out at those vibrant azure hues.
 
 
 
 <div class="botanical-divider">⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖</div>
 
-### Footnotes
+## Footnotes
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">Japanese-Italian fusion</li>

@@ -20,16 +20,16 @@ In search of accessible third spaces that meet the criteria:
 
 🌟 Approved locations with ratings 🌟
 
-### Esoothman
+## Esoothman
 * **Rating:** 9.1 / 10
 * **Price:** Less than $10 for 3 hours per person
 * **Hours:** Open 24/7
 * **Drinks:** Unlimited drinks, fountains for coffee, tea, and soft drinks
 * **Seating:** Dining chairs available only in open *soft-spoken* areas. Booths feature deep couches, not ideal for good posture, but has large windows overlooking the main street. Private rooms have desktop setups with half and full enclosures; good alternative for a night cap.
 * **Atmosphere:** Extremely silent with barely-there soft piano
- 
 
-### Louisa Coffee (Banqiao)
+
+## Louisa Coffee (Banqiao)
 * **Rating:** 7.5 / 10
 * **Price:** No minimum spend
 * **Hours:** Open till 9:00 PM (2F open till 8:00 PM)
@@ -39,7 +39,7 @@ In search of accessible third spaces that meet the criteria:
 
 
 
-### McDonald's (Guting)
+## McDonald's (Guting)
 * **Rating:** 5.5 / 10
 * **Price:** No minimum spend
 * **Hours:** Open till 3:00 AM

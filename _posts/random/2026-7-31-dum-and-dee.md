@@ -17,7 +17,7 @@ The atmosphere was welcoming and intimidating all at once.
 
 Inside, the contrasting black arched window frames set off the off-white walls, allowing the warm tangerine light of dusk to flood in. Racks of jerseys and bibs were organized by color and fit, each hanger precisely 5 centimeters apart. I took in the entire collection in one glance without fumbling through racks and drawing attention to myself.
 
-**Me:** "I saw online there's a promo."  
+**Me:** "I saw online there's a promo."
 
 **Tanned staff:** "It's 23% off basics, or 30% if you buy two items. In the back, we have clearance items up to 50% off. Are you familiar with our collections?"
 
@@ -25,19 +25,19 @@ I gently felt the fabrics, pretending to compare the earthy tones while trying n
 
 I picked a white jersey with mesh sleeve caps that claimed extra breathability and also conveniently, being a tad cheaper *(less material, perhaps?)*. I paired it with a bib in matte midnight, unsure of my proper size. Looking in the mirror, I felt like a boxer wearing built-in adult diapers. *At least my thighs looked toned.*
 
-**Tanned staff:** "What kind of riding do you do? I can help pick out the right fit."  
+**Tanned staff:** "What kind of riding do you do? I can help pick out the right fit."
 
 **Me:** "Uh, you know... triathlons." *Mumbled with awkward hand gestures* "For fun, of course! I’ve been fine in Lululemons and oversized gear, but I figured I'd level up this year. These feel pretty tight though… "
 
 It turned out I could go a size smaller. The fabric on the waist was bunching up, causing the back pockets to sag. But I'd knew the smaller size would squeeze my chest so tightly that zipping it to my neck would feel suffocating. Still, I tried on the recommended size; this time with elastic bands cinching all four limbs.
 
-**Me:** "I feel totally sucked in. Protected in the *(point coochie)* area."  
+**Me:** "I feel totally sucked in. Protected in the *(point coochie)* area."
 
 **Tanned staff:** "That’s completely normal. You can fold up the jersey hem so the proportions look cleaner. Notice the lettering on the back? It pops against the darker tone. A lot of clients specifically look for that detail."
 
 Little did he know, I preferred a lighter color to stay low-key and avoid absorbing unnecessary heat *(from cycling snobs)*. He handed me a mossy green and white striped top paired with a grassy green bib. They’re a looser cut, but equally snug.
 
-**Me:** "This looks like my regular clothes" *Do I look like a real cyclist?*  
+**Me:** "This looks like my regular clothes" *Do I look like a real cyclist?*
 
 **Tanned staff:** "The top is 50% off and the bottoms are 60%."
 
@@ -47,7 +47,7 @@ Hearing that, I immediately coerced d into picking out an outfit. Looking comple
 
 Just like that, Tweedledum and Tweedledee were born. Matching couple outfits are adorable when they complement each other, but quickly cross into cringe territory when being identical. We aren't twins, and we don't bike, talk, or even look remotely alike! Yet, the *girl math* was undeniable: two discounted sets cost barely more than a single full-priced outfit, comm'on!
 
-**Me:** "Are we actually doing this?"  
+**Me:** "Are we actually doing this?"
 
 **Bleached-blond staff:** "He looks way better in the white stripes."
 

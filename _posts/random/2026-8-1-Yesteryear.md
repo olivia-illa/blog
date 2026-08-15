@@ -5,7 +5,7 @@ title: "Immediate afterthoughts: Yesteryear (2026)"
 tags: [review]
 ---
 
-**Spoilers ahead, read at your discretion.** 
+**Spoilers ahead, read at your discretion.**
 
 
 The book and this review aren't that deep. I don't think it spoils the experience.
@@ -29,7 +29,7 @@ That said, I’ve accepted that the real entertainment was riding along through 
 
 <br>
 
-### The End (a gentle reminder to myself)
+## The End (a gentle reminder to myself)
 
 > A moment later, I opened my eyes. We were flying, hurtling into the future, toward a world I couldn't yet begin to imagine.
 

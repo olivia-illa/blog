@@ -12,9 +12,9 @@ I suggest baking the following measurement in a slightly smaller spring form the
 
 <br>
 
-### Classic Crust Layer
+## Classic Crust Layer
 
-## 🧀 Pack down the wet sand
+### 🧀 Pack down the wet sand
 
 - ⅓ pack of wholewheat Leibniz (pantry biscuits)
 - a corner of butter + drizzles of olive oil
@@ -24,13 +24,13 @@ Bake for 15min at 170'C
 
 <br>
 
-### Baked Cheesecake Layer
+## Baked Cheesecake Layer
 
-## 🧀 Melt white chocolate
+### 🧀 Melt white chocolate
 - 80g heated heavy cream
 - 60g chopped white chocolate
 
-## 🧀 Cream Together in Room Temp with the Above
+### 🧀 Cream Together in Room Temp with the Above
 - 100g cream cheese
 - 90g mascarpone
 - 20g white sugar
@@ -42,17 +42,17 @@ Bake for 35min at 170'C in bath water
 
 <br>
 
-### Chilled Mascarpone Layer
+## Chilled Mascarpone Layer
 
-## 🧀 Melt Dark Chocolate
+### 🧀 Melt Dark Chocolate
 - 100g heated heavy cream
 - 50g chopped dark chocolate
 
-## 🧀 Soak gelatin sheet in cold water
+### 🧀 Soak gelatin sheet in cold water
 - 2.5g gelatin sheet, wrung out
 - 15g hot water
 
-## 🧀Cream Together in Room Temp with the Above
+### 🧀Cream Together in Room Temp with the Above
 - 110g mascarpone
 - 10g white sugar
 
@@ -67,7 +67,7 @@ Happy Birthday, d ˗ˏˋ 🍰 ˎˊ˗
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
-### Footnotes
+## Footnotes
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">It came out fine and firm.</li>

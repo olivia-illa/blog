@@ -5,24 +5,24 @@ date: 2026-06-30 22:44:00 +0800
 tags: [about-me]
 ---
 
-d says my sentences don’t flow, so a list makes more sense until I can piece together more coherent paragraphs. 
+d says my sentences don’t flow, so a list makes more sense until I can piece together more coherent paragraphs.
 
 
 1. My baking journey<sup><a href="#fn1">¹</a></sup> started when I made my first cookie following [Momofuku’s Compost Cookie (2012) tutorial](https://www.youtube.com/watch?v=RwvOvC1Swos) that demonstrated anything could be mixed into a batter and taste good. Since then, I’ve been bribing my way through life for friendships, birthday wishes, Christmas greetings and peacekeeping<sup><a href="#fn2">²</a></sup>.
 
 2. I thought having seven piercings fooled others into assuming I had taste in music<sup><a href="#fn3">³</a></sup>. Now, I see them as [metal embellishments](https://www.monicavinader.com/hk/deia-huggie-earrings/gold-vermeil-deia-huggie-earrings) that make elders go ooh and ahhh, in a not-so-positive way.
 
-3. I am proud that 90% of my current wardrobe is thrifted<sup><a href="#fn4">⁴</a></sup> thanks to early influences by [Clothencounters](https://www.youtube.com/watch?v=-MgDyzsW8jw).  
+3. I am proud that 90% of my current wardrobe is thrifted<sup><a href="#fn4">⁴</a></sup> thanks to early influences by [Clothencounters](https://www.youtube.com/watch?v=-MgDyzsW8jw).
 
 4. I have a good read on people’s intentions, but also, I was scammed twice on the streets of Paris for engaging in the most human way possible, like anyone would in the city of Love.
 
 5. I still get called a middle schooler at the farmers market<sup><a href="#fn5">⁵</a></sup>.
 
-6. My go-to McD order will always be French fries with Oreo McFlurry. 
+6. My go-to McD order will always be French fries with Oreo McFlurry.
 
-7. I am a yes-woman to challenges, and have now earned bragging rights<sup><a href="#fn6">⁶</a></sup> to three triathlons, two full marathons, and countless half marathons. 
+7. I am a yes-woman to challenges, and have now earned bragging rights<sup><a href="#fn6">⁶</a></sup> to three triathlons, two full marathons, and countless half marathons.
 
-8. I am obsessed with all things chocolate, likely due to a childhood disbelief in Roald Dahl stories and [Chocolatina](https://www.goodreads.com/en/book/show/1065563.Chocolatina). 
+8. I am obsessed with all things chocolate, likely due to a childhood disbelief in Roald Dahl stories and [Chocolatina](https://www.goodreads.com/en/book/show/1065563.Chocolatina).
 
 9. [The book](https://www.theguardian.com/books/2017/feb/10/a-line-made-by-walking-review-sara-baume) that shaped my final year as an English major. #quarterlifecrises
 
@@ -40,7 +40,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 16. I make fresh pesto every week and add it to every dish like it's salt and pepper.
 
-17. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone<sup><a href="#fn10">¹⁰</a></sup>. 
+17. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone<sup><a href="#fn10">¹⁰</a></sup>.
 
 18. I keep eye contact when talking, but would break it once I sense bs.
 
@@ -54,9 +54,9 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 23. I had my first kiss stolen by a golden retriever in 5th grade and it had reincarnated as d 12 years later to shepard me.
 
-24. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar chords with my voice<sup><a href="#fn11">¹¹</a></sup>. 
+24. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar chords with my voice<sup><a href="#fn11">¹¹</a></sup>.
 
-25. I had a 1GB monthly phone plan ($0.34) throughout college till 2025 that ended cuz the telecom got bought out. 
+25. I had a 1GB monthly phone plan ($0.34) throughout college till 2025 that ended cuz the telecom got bought out.
 
 26. I went to 3 elementary schools, had 5 different childhood homes, and stayed (loyal) in 1 company since intern.
 
@@ -66,7 +66,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
 
-### Footnotes
+## Footnotes
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">Fact 0 is that everything begins and ends with TS. Throw back to <a href="https://www.tumblr.com/msjessjohnston/99427326950/taylorswift-imnotsomefloozy-taylorswift-we">Chai Sugar Cookies</a> for the 1989 (2014) secret sessions.</li>

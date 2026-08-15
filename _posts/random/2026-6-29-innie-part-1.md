@@ -5,14 +5,14 @@ date: 2026-06-29 22:44:00 +0800
 tags: [unsevered]
 ---
 
-“You’d finally figured it out!” was the first text I received from e, who’d been actively preparing his break abroad. Turning over a new leaf, so to speak, with a newly branded IDGAF on his forehead, eager to chase his dreams at an age when others would normally settle down. I feel him, especially after being brushed off for questioning the game rules (or the house playbook). 
+“You’d finally figured it out!” was the first text I received from e, who’d been actively preparing his break abroad. Turning over a new leaf, so to speak, with a newly branded IDGAF on his forehead, eager to chase his dreams at an age when others would normally settle down. I feel him, especially after being brushed off for questioning the game rules (or the house playbook).
 
-Earlier this Monday, I approached HR after inadvertently finding out that salary adjustments would take place around July. 
-This fact was not explicitly stated during the previous all-hands, except for an odd emphasis on, “please treat our Goal Setting seriously and log it into the system after 1-on-1s,” as if we’d have Gemini generate it. 
+Earlier this Monday, I approached HR after inadvertently finding out that salary adjustments would take place around July.
+This fact was not explicitly stated during the previous all-hands, except for an odd emphasis on, “please treat our Goal Setting seriously and log it into the system after 1-on-1s,” as if we’d have Gemini generate it.
 
-Ask anyone, I take (text) submissions seriously, but how would I know if the reviewer does...? 
+Ask anyone, I take (text) submissions seriously, but how would I know if the reviewer does...?
 
-System status for approval: Pending 
+System status for approval: Pending
 
 <div class="botanical-divider">・・・・・</div>
 
@@ -46,4 +46,4 @@ To which I countered:
 Furious that I hadn't advocated for myself enough, instead waited for judgment day each year while others demanded more. Frustrated, because the window closes in less than a month and I was handed an answer meant to fool a fresh grad. Unsatisfied, because my compensation has already taken a hit from down market rates and a rigged program. Roiled, because I was denied a fair shot at being evaluated on my actual work.
 
 
-Edit: d says Innies don't ask for compensation, only [waffles](https://www.reddit.com/r/SeveranceAppleTVPlus/comments/ue3aap/if_your_innie_attends_a_waffle_party/). 
+Edit: d says Innies don't ask for compensation, only [waffles](https://www.reddit.com/r/SeveranceAppleTVPlus/comments/ue3aap/if_your_innie_attends_a_waffle_party/).

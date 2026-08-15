@@ -662,6 +662,23 @@ body.home {
   text-decoration: none !important;
 }
 
+/* Size headings inside a post body. The base `h2 { font-size: 0.8rem }` is
+   sized for the small uppercase column labels on the home page — left alone it
+   renders a post's section headings smaller than the body text around them.
+   The thoughts layout sets its own scale further down and is not touched here.
+
+   1.17rem is the browser's default h3 size, which is what these headings were
+   rendered at back when posts wrote their top-level sections as `###`. */
+.post-long .post-body h2,
+.clipping-post .post-body h2 {
+  font-size: 1.17rem;
+}
+
+.post-long .post-body h3,
+.clipping-post .post-body h3 {
+  font-size: 1rem;
+}
+
 /* Underline all links inside the post content by default */
 .post-article .post-body a {
   text-decoration: underline;

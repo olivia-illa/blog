@@ -31,7 +31,7 @@ TD;LR, a digital dump where I am compelled to be more intentional and well-organ
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
 
-### Footnotes
+## Footnotes
 
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">I made a few unlisted videos with T back in uni. Footages of one staring awkwardly, the other blankly into the camera, and QAs that no one asked for.</li>
