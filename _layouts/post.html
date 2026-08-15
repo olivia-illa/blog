@@ -9,18 +9,13 @@ layout: default
       {{ page.date | date: "%d %B %Y %H:%M" }}
     </time>
   </p>
-  
+
   <div class="post-body">
     {{ content }}
   </div>
 
-  <!-- Tags Line -->
-  {% if page.tags.size > 0 %}
-    <div class="post-tags">
-      Tags: {% for tag in page.tags %}<a href="{{ '/tag/' | relative_url }}?t={{ tag | uri_escape }}" class="inherit-link">#{{ tag }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}
-    </div>
-  {% endif %}
-  
+  {% include post-tags.html tags=page.tags %}
+
   <!-- Last Updated Line: per-post git commit date via jekyll-last-modified-at -->
   {% if page.last_modified_at %}
     <div class="post-tags post-updated">
@@ -31,27 +26,3 @@ layout: default
     </div>
   {% endif %}
 </article>
-
-<script>
-  (function() {
-    var dateEls = document.querySelectorAll('.js-format-date');
-    if (!dateEls.length) return;
-
-    var formatter = new Intl.DateTimeFormat('en-GB', {
-      month: 'long',
-      day: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
-    });
-
-    dateEls.forEach(function(timeEl) {
-      var iso = timeEl.getAttribute('datetime');
-      if (!iso) return;
-      var date = new Date(iso);
-      if (isNaN(date.getTime())) return;
-      timeEl.textContent = formatter.format(date);
-    });
-  })();
-</script>

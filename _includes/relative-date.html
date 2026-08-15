@@ -1,0 +1,36 @@
+{%- comment -%}
+  Human-friendly age of a post, for listing pages:
+
+    just now / N mins ago / N hours ago / Yesterday / N days ago
+
+  falling back to an absolute "%b %-d, %Y" date once the post is a week old.
+
+  Usage:  {% include relative-date.html date=post.date %}
+
+  "now" is Jekyll's *build* time, so these stay accurate only as long as the
+  site is rebuilt regularly — which the deploy does on every push.
+{%- endcomment -%}
+{% assign now_seconds = "now" | date: "%s" | plus: 0 %}
+{% assign day_seconds = 86400 %}
+{% assign hour_seconds = 3600 %}
+{% assign minute_seconds = 60 %}
+
+{% assign post_seconds = include.date | date: "%s" | plus: 0 %}
+{% assign diff_seconds = now_seconds | minus: post_seconds %}
+{% assign diff_days = diff_seconds | divided_by: day_seconds %}
+
+{% if diff_days == 0 %}
+  {% if diff_seconds < hour_seconds %}
+    {% assign minutes = diff_seconds | divided_by: minute_seconds %}
+    {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
+  {% else %}
+    {% assign hours = diff_seconds | divided_by: hour_seconds %}
+    {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
+  {% endif %}
+{% elsif diff_days == 1 %}
+  Yesterday
+{% elsif diff_days < 7 %}
+  {{ diff_days }} days ago
+{% else %}
+  {{ include.date | date: "%b %-d, %Y" }}
+{% endif %}

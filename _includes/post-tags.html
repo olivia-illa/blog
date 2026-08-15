@@ -1,0 +1,12 @@
+{%- comment -%}
+  Tag line at the foot of a post, each tag linking into the tag index.
+
+  Usage:  {% include post-tags.html tags=page.tags %}
+
+  Renders nothing when the post has no tags, so callers don't need to guard.
+{%- endcomment -%}
+{% if include.tags.size > 0 %}
+  <div class="post-tags">
+    Tags: {% for tag in include.tags %}<a href="{{ '/tag/' | relative_url }}?t={{ tag | uri_escape }}" class="inherit-link">#{{ tag }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}
+  </div>
+{% endif %}

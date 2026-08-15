@@ -4,11 +4,6 @@ title: Home
 body_class: home
 ---
 
-{% assign now_seconds = "now" | date: "%s" | plus: 0 %}
-{% assign day_seconds = 86400 %}
-{% assign hour_seconds = 3600 %}
-{% assign minute_seconds = 60 %}
-
 <!-- Home-only layout: locked to the viewport so the page never scrolls; only
      the individual columns overflow internally. Styles: "Page: home" in
      assets/css/style.css. -->
@@ -62,25 +57,7 @@ body_class: home
         <li class="post-item clipping-item">
           <div class="clipping-meta">
             <span class="post-date">
-              {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
-              {% assign diff_seconds = now_seconds | minus: post_seconds %}
-              {% assign diff_days = diff_seconds | divided_by: day_seconds %}
-              
-              {% if diff_days == 0 %}
-                {% if diff_seconds < hour_seconds %}
-                  {% assign minutes = diff_seconds | divided_by: minute_seconds %}
-                  {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
-                {% else %}
-                  {% assign hours = diff_seconds | divided_by: hour_seconds %}
-                  {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
-                {% endif %}
-              {% elsif diff_days == 1 %}
-                Yesterday
-              {% elsif diff_days < 7 %}
-                {{ diff_days }} days ago
-              {% else %}
-                {{ post.date | date: "%b %-d, %Y" }}
-              {% endif %}
+              {% include relative-date.html date=post.date %}
             </span>
           </div>
           
@@ -147,25 +124,7 @@ body_class: home
           {% assign thoughts_shown = thoughts_shown | plus: 1 %}
           <li class="post-item give-me-10-item">
             <span class="post-date">
-              {% assign post_seconds = post.date | date: "%s" | plus: 0 %}
-              {% assign diff_seconds = now_seconds | minus: post_seconds %}
-              {% assign diff_days = diff_seconds | divided_by: day_seconds %}
-              
-              {% if diff_days == 0 %}
-                {% if diff_seconds < hour_seconds %}
-                  {% assign minutes = diff_seconds | divided_by: minute_seconds %}
-                  {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}
-                {% else %}
-                  {% assign hours = diff_seconds | divided_by: hour_seconds %}
-                  {{ hours }} {% if hours == 1 %}hour{% else %}hours{% endif %} ago
-                {% endif %}
-              {% elsif diff_days == 1 %}
-                Yesterday
-              {% elsif diff_days < 7 %}
-                {{ diff_days }} days ago
-              {% else %}
-                {{ post.date | date: "%b %-d, %Y" }}
-              {% endif %}
+              {% include relative-date.html date=post.date %}
             </span>
             <div class="Write anything">
               <a href="{{ post.url | relative_url }}">
