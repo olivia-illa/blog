@@ -52,6 +52,10 @@
   /* Fixed greys. These deliberately do NOT flip in dark mode — that matches
      the hard-coded #666/#888/#e5e5e5 values this file replaced. Giving them
      dark-mode values is now a one-line change in the block below. */
+  /* Running text size, shared by the home columns and post bodies so the two
+     stay in step. Headings and meta text are sized independently. */
+  --reading-size: 0.95rem;
+
   --meta-color: #666666;        /* secondary meta text (clipping dates, tag lists) */
   --date-muted-color: #888888;  /* date column on the dense list pages */
   --row-border-color: #e5e5e5;  /* separator between dense list rows */
@@ -186,7 +190,7 @@ article {
 article h1 {
   text-transform: none;
   letter-spacing: normal;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -485,7 +489,7 @@ body.home {
 .home-grid .post-list,
 .home-grid .post-list a,
 .home-grid p {
-  font-size: 0.95rem !important;
+  font-size: var(--reading-size) !important;
 }
 
 /* --- Internally scrolling column body ------------------------------------ */
@@ -662,6 +666,11 @@ body.home {
   text-decoration: none !important;
 }
 
+/* Running text in a post matches the home page columns. */
+.post-article .post-body {
+  font-size: var(--reading-size);
+}
+
 /* Size headings inside a post body. The base `h2 { font-size: 0.8rem }` is
    sized for the small uppercase column labels on the home page — left alone it
    renders a post's section headings smaller than the body text around them.
@@ -791,7 +800,6 @@ body.home {
 /* --- Layout: thoughts_style.html ----------------------------------------- */
 
 .post-thoughts .post-body {
-  font-size: 1rem;    /* Slightly elevated base size for readability */
   line-height: 1.75;  /* Comfortable line height */
 }
 
