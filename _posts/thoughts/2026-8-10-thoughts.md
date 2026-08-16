@@ -4,7 +4,7 @@ date: 2026-08-10 20::36 +0800
 tags: [exchange]
 ---
 
-t and d share a few key traits: 
+t and d share a few key traits:
 
 (a) solving complex puzzles, 
 
