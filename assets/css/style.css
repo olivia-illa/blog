@@ -183,7 +183,7 @@ section {
 
 /* Standalone article pages (posts, and the page.html wrapper) */
 article {
-  max-width: 600px; /* Allow articles to be wider but still readable */
+  max-width: 700px; /* Allow articles to be wider but still readable */
   margin: 0; /* Left align articles */
 }
 
