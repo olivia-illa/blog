@@ -4,8 +4,13 @@ date: 2026-08-10 20::36 +0800
 tags: [exchange]
 ---
 
+t and d share a few key traits: 
 
-t and d share a few key traits: a) solving complex puzzles, b) being on the spectrum, and c) eating with their fingers even when utensils are provided.
+(a) solving complex puzzles, 
+
+(b) being on the spectrum,
+
+(c) eating with their fingers even when utensils are provided.
 
 d and I were two-thirds finished with our individual hot pots. I still had beef slices, a piece of sweet potato,  pumpkin, and a milky pot filled with mushy cabbage left. 
 
