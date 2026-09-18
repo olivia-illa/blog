@@ -10,7 +10,7 @@ Halfway through our second round, I decided to share my recent project.
 
 **me:** Sorry? 
 
-**m:** You know you love me. XOXO, Gossip Girl
+**m:** You know you love me. XOXO, Gossip Girl.
 
 We burst out laughing in unison, chanting the opening scene and gossiping our favourite characters.
 
