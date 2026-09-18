@@ -15,6 +15,6 @@ All packaged in lightheartedness (?!) Likewise, I backtrack the dates to keep ev
 
 I’ll also be commenting my relationship with AI, cause I’m noticing a heavy reliance not only at work but during vacation too...
 
-**Prompt:** I've been to the zoo. Where else can I visit under 4hrs, preferably after 1pm, besides the beach (too windy), park (too much UV), and thrift shops (lack physical strength), while having a burn, snot-dripping and managing a headache? List 3 options, be concise, with transportation method, and bookstores/restaurant/cafe recommendations. (Now off you go)
+**Prompt:** I've been to the zoo. Where else can I visit under 4hrs, preferably after 1pm, besides the beach (too windy), park (too much UV), and thrift shops (lack physical strength), while having a burn, snot-dripping and managing a headache? List 3 options, be concise, with transportation method, and bookstore/restaurant/cafe recommendations. (Now off you go)
 
 Also thanks to G, I figured out how to boot up the blog's staging environment, by sending screenshots of terminal responses, and apps employed. Yeah yeah, its rudimentary, but hey I'm a liberal arts major in finance/ operations. D is the IT manager for the website and turned out G's an amazing acting substitute (for most things).

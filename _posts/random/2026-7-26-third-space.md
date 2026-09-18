@@ -47,3 +47,13 @@ In search of accessible third spaces that meet the criteria:
 * **Seating:** 4-seaters along the walls with either dining chairs or curved benches with backs. Some tables can be separated into 2-seaters, and hungry diners will be eyeing them
 * **Atmosphere:** Mostly tutors, college students, and parents with little kids
 
+
+
+## Eslite Cafe (Songyan)
+* **Rating:** 7 / 10
+* **Wifi:** none
+* **Price:** $7 minimum, or $1 if you have a [Premium Card](https://meet.eslite.com/hk/tc/catering/202309180003) bestie
+* **Hours:** Weekdays (for discount), till 10:30pm
+* **Food:** Ordered a hot honey oat latte
+* **Seating:** 3-seaters facing the floor length windows and 4-seaters with back support chairs. Some couch seatings too in the back, I believe.
+* **Atmosphere:** Lots of chatters during dinner hours. Calms down after 8pm. Unfortunately, we did encounter a talkative, guessing econ and liberal art professors, elderly couple to our right and an annoyed young couple (or were they mother and son?!!) to our left. Otherwise, most patrons stay long hours for the same reason--$1 drinks and blocked time on a Tuesday evening.
