@@ -6,9 +6,9 @@ tags: [sydney’26]
 ---
 
 
-Call us spontaneous (or deliberately underprepared), lucky (-bastards, or just accidental), and experienced (or laid-back). We escaped the grim fate twice before reaching our final destination. Looking back on this day, ominous signs were warning us everywhere. Yet, we insisted to challenge our luck, until *I had to suffer the consequences of my ill choices*.
+Call us spontaneous (or deliberately underprepared), lucky (-bastards, or just accidental), and experienced (or laid-back) travelers. We escaped the grim fate twice before reaching our final destination. Looking back on this day, ominous signs were warning us everywhere. Yet, we insisted to challenge our luck, until *I had to suffer the consequences of my ill choices*.
 
-I woke up this morning as usual, enjoying a final piece of double chocolate cake with a thick layer of almond butter while mentally making a packing checklist for tomorrow’s 4pm flight. I was certain I’d finish packing tonight, do the laundry, and vacuum tomorrow morning before saying goodbye to the apartment for two weeks.
+I woke up this morning as usual, enjoying the final piece of double chocolate cake with a thick layer of almond butter while mentally making a packing checklist for tomorrow’s 4pm flight. I was certain I’d finish packing tonight, do the laundry, and vacuum tomorrow morning before saying goodbye to the apartment for two weeks.
 
 “There is plenty of time,” I smiled to myself.
 
