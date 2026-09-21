@@ -17,7 +17,7 @@ body_class: page-compact page-write
 
           <!-- Content preview truncated with ... -->
           <a class="list-row-title" href="{{ post.url | relative_url }}">
-            {{ post.content | strip_html | split: '.' | first | append: '.' }}
+            {{ post.content | split: '</p>' | first | strip_html | strip }}
           </a>
         </div>
       </li>
