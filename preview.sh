@@ -16,9 +16,8 @@ fi
 
 echo "Starting 'Making Utter Sense' local preview..."
 echo "------------------------------------------------"
-echo "URL: http://localhost:4000/blog/"
+echo "URL: http://localhost:4000/"
 echo "------------------------------------------------"
-echo "(Note: You MUST include /blog/ at the end of the URL)"
 
 # Ensure required directories exist for Docker mounting
 mkdir -p .jekyll-cache _site
