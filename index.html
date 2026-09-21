@@ -128,7 +128,7 @@ body_class: home
             </span>
             <div class="Write anything">
               <a href="{{ post.url | relative_url }}">
-                {{ post.content | strip_html | split: '.' | first | append: '.' }}
+                {{ post.content | split: '</p>' | first | strip_html | strip | truncate: 140 }}
               </a>
             </div>
           </li>
