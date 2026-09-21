@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "There were signs: DRIVE ON LEFT (Part 1)"
-date: 2026-08-21 00:40:00 +0800
+date: 2026-08-20 17:30:00 +0800
 tags: [sydney’26]
 ---
-
 
 Call us spontaneous (or deliberately underprepared), lucky (-bastards, or just accidental), and experienced (or laid-back) travelers. We escaped the grim fate twice before reaching our final destination. Looking back on this day, ominous signs were warning us everywhere. Yet, we insisted to challenge our luck, until *I had to suffer the consequences of my ill choices*.
 
