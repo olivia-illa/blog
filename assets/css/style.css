@@ -372,18 +372,28 @@ a:hover {
 /* ==========================================================================
    6. Page: home
 
-   The home page is locked to exactly one viewport tall; only the individual
-   grid columns scroll, internally.
+   On a viewport with room for it, the page is locked to exactly one viewport
+   tall and only the individual grid columns scroll, internally. Anything
+   smaller — a phone upright, a phone on its side — would turn that into a
+   stack of quarter-height nested scrollboxes, which is miserable to read and
+   miserable to swipe (and 100vh is a lie there anyway, with the browser chrome
+   sliding in and out). So below the threshold the lock is lifted and the whole
+   page scrolls as one ordinary document.
+
+   The lock therefore keys off width AND height; the column count below keys
+   off width alone, so a short, wide viewport still gets its columns.
    ========================================================================== */
 
-html.home,
-body.home {
-  height: 100%;
-  overflow: hidden;
-}
+@media (min-width: 600px) and (min-height: 500px) {
+  html.home,
+  body.home {
+    height: 100%;
+    overflow: hidden;
+  }
 
-body.home {
-  height: calc(100vh - 1rem);
+  body.home {
+    height: calc(100vh - 1rem);
+  }
 }
 
 /* Collapse site header spacing */
@@ -433,7 +443,6 @@ body.home {
   grid-template-columns: 1fr;
   gap: 0.75rem;
   position: relative;
-  height: 100%;
   min-height: 0;
   padding-top: 0 !important;
   margin-top: 0.2rem !important;
@@ -444,7 +453,6 @@ body.home {
   padding-top: 0 !important;
   margin-top: 0 !important;
   min-height: 0;
-  overflow-y: auto;
 }
 
 .home-grid > section:has(.scrollable-col-content) {
@@ -459,6 +467,26 @@ body.home {
 
   .home-grid > section:not(:first-child) {
     border-left: 1px solid var(--section-border);
+  }
+}
+
+/* Only while the page itself is locked does the grid fill the viewport and
+   hand its overflow to the individual columns. */
+@media (min-width: 600px) and (min-height: 500px) {
+  .home-grid {
+    height: 100%;
+  }
+
+  .home-grid > section {
+    overflow-y: auto;
+  }
+}
+
+/* Stacked columns: the vertical rule between them becomes a horizontal one. */
+@media (max-width: 599px) {
+  .home-grid > section:not(:first-child) {
+    border-top: 1px solid var(--section-border);
+    padding-top: 1rem !important;
   }
 }
 
@@ -492,13 +520,18 @@ body.home {
   font-size: var(--reading-size) !important;
 }
 
-/* --- Internally scrolling column body ------------------------------------ */
+/* --- Column body: scrolls internally only while the page is locked -------- */
 
 .scrollable-col-content {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow-y: auto;
   padding-right: 8px;
+}
+
+@media (min-width: 600px) and (min-height: 500px) {
+  .scrollable-col-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
 }
 
 .scrollable-col-content > .post-list {
@@ -509,16 +542,16 @@ body.home {
   padding-top: 0;
 }
 
-/* --- The "latest" column: never scrolls ----------------------------------- */
+/* --- The "latest" column -------------------------------------------------- */
 
-/* Unlike the other columns, this one is not allowed to scroll: the intro and
-   the "see more" link are always visible, and assets/js/fit-latest.js hides
-   whichever trailing posts do not fit. overflow:hidden is the safety net for
-   readers without JS — it clips rather than scrolls. */
+/* While the page is locked, this column is the one that is not allowed to
+   scroll: the intro and the "see more" link stay visible and
+   assets/js/fit-latest.js hides whichever trailing posts do not fit. Unlocked,
+   there is no fixed height to fit into, so the rules below stay out of the way
+   and every row shows. */
 .home-grid > section.latest-col {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding-bottom: 0.5rem;
 }
 
@@ -526,14 +559,29 @@ body.home {
   flex: 0 0 auto;
 }
 
-/* Hugs its rows so "see more" follows the last one; fit-latest.js grows it to
-   the column's full height while measuring. Without JS the shrink factor plus
-   overflow:hidden clips the overflowing rows instead of scrolling them. */
 .latest-col > .latest-list {
-  flex: 0 1 auto;
-  min-height: 0;
   margin-top: 0;
-  overflow: hidden;
+}
+
+@media (min-width: 600px) and (min-height: 500px) {
+  /* overflow:hidden is the safety net for readers without JS — it clips the
+     overflowing rows rather than scrolling them. */
+  .home-grid > section.latest-col {
+    overflow: hidden;
+  }
+
+  /* Hugs its rows so "see more" follows the last one; fit-latest.js grows it
+     to the column's full height while measuring. */
+  .latest-col > .latest-list {
+    flex: 0 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .latest-col > .see-more {
+    flex: 0 0 auto;
+    margin-bottom: auto;
+  }
 }
 
 .latest-col > .latest-list > .post-item:first-child {
@@ -544,11 +592,6 @@ body.home {
    stylesheet's [hidden] rule and leave trimmed rows visible. */
 .latest-col > .latest-list > [hidden] {
   display: none !important;
-}
-
-.latest-col > .see-more {
-  flex: 0 0 auto;
-  margin-bottom: auto;
 }
 
 /* Slim scrollbar */

@@ -4,11 +4,13 @@ title: Home
 body_class: home
 ---
 
-<!-- Home-only layout: locked to the viewport so the page never scrolls; only
-     the individual columns overflow internally. The first column is the
-     exception: it never scrolls, and assets/js/fit-latest.js drops the posts
-     that do not fit so "see more" stays visible. Styles: "Page: home" in
-     assets/css/style.css. -->
+<!-- Home-only layout: on a viewport with room for it the page is locked to
+     one screen and never scrolls; only the individual columns overflow
+     internally. The first column is the exception: it never scrolls, and
+     assets/js/fit-latest.js drops the posts that do not fit so "see more"
+     stays visible. On small or short viewports (phones either way up) the
+     columns stack and the page scrolls normally instead. Styles: "Page: home"
+     in assets/css/style.css. -->
 <div class="home-grid">
 <section class="latest-col">
   <div class="latest-intro">

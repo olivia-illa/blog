@@ -1,9 +1,10 @@
 // Trims the home page's "latest" list to whole rows that fit on screen.
 //
-// That column is not allowed to scroll: its intro and its "see more →" link
-// stay put, so anything Jekyll rendered past the bottom of the column would be
-// clipped mid-row. This hides trailing <li>s until the list fits its box, and
-// re-measures whenever the column changes size (resize, zoom, late webfont).
+// While the home page is locked to one screen, that column is not allowed to
+// scroll: its intro and its "see more →" link stay put, so anything Jekyll
+// rendered past the bottom of the column would be clipped mid-row. This hides
+// trailing <li>s until the list fits its box, and re-measures whenever the
+// column changes size (resize, zoom, late webfont).
 (function () {
   var list = document.querySelector('.js-fit-list');
   if (!list) return;
@@ -20,6 +21,15 @@
     items.forEach(function (item) {
       item.hidden = false;
     });
+
+    // Small or short viewports let the page scroll normally, so there is no
+    // fixed height to fit into and every row should show. The stylesheet owns
+    // that threshold — it only clips this column while the page is locked —
+    // so ask the column rather than restate the media query here.
+    if (getComputedStyle(column).overflowY !== 'hidden') {
+      measuring = false;
+      return;
+    }
 
     // Measure against the whole column: the list normally hugs its rows, so
     // stretch it over the free space first to learn how much room there is.
