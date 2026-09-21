@@ -5,19 +5,23 @@ body_class: home
 ---
 
 <!-- Home-only layout: locked to the viewport so the page never scrolls; only
-     the individual columns overflow internally. Styles: "Page: home" in
+     the individual columns overflow internally. The first column is the
+     exception: it never scrolls, and assets/js/fit-latest.js drops the posts
+     that do not fit so "see more" stays visible. Styles: "Page: home" in
      assets/css/style.css. -->
 <div class="home-grid">
-<section class="scrollable-col-content">
-  <h2><a href="{{ '/latest/' | relative_url }}" class="inherit-link">Ni hao</a></h2>
-  <p>Oh hey, you’re in my space!</p>
-  <p>But stay for the feisty narrations, sloppy justifications and aimless fixations.</p>
-  <p>For ✅ I am human.</p>
-  <p>Click around for <a href="https://oliviailla.blog/2026/06/30/facts-about-me.html">bits and bobs</a> <a href="https://oliviailla.blog/about-me/">about me</a>.</p>
+<section class="latest-col">
+  <div class="latest-intro">
+    <h2><a href="{{ '/latest/' | relative_url }}" class="inherit-link">Ni hao</a></h2>
+    <p>Oh hey, you’re in my space!</p>
+    <p>But stay for the feisty narrations, sloppy justifications and aimless fixations.</p>
+    <p>For ✅ I am human.</p>
+    <p>Click around for <a href="https://oliviailla.blog/2026/06/30/facts-about-me.html">bits and bobs</a> <a href="https://oliviailla.blog/about-me/">about me</a>.</p>
 
-  <div class="section-label">latest ✎﹏﹏﹏﹏</div>
+    <div class="section-label">latest ✎﹏﹏﹏﹏</div>
+  </div>
 
-<ul class="post-list">
+<ul class="post-list latest-list js-fit-list">
   {% assign latest = site.posts %}
   {% assign shown = 0 %}
 

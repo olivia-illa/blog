@@ -509,6 +509,48 @@ body.home {
   padding-top: 0;
 }
 
+/* --- The "latest" column: never scrolls ----------------------------------- */
+
+/* Unlike the other columns, this one is not allowed to scroll: the intro and
+   the "see more" link are always visible, and assets/js/fit-latest.js hides
+   whichever trailing posts do not fit. overflow:hidden is the safety net for
+   readers without JS — it clips rather than scrolls. */
+.home-grid > section.latest-col {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 0.5rem;
+}
+
+.latest-col > .latest-intro {
+  flex: 0 0 auto;
+}
+
+/* Hugs its rows so "see more" follows the last one; fit-latest.js grows it to
+   the column's full height while measuring. Without JS the shrink factor plus
+   overflow:hidden clips the overflowing rows instead of scrolling them. */
+.latest-col > .latest-list {
+  flex: 0 1 auto;
+  min-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.latest-col > .latest-list > .post-item:first-child {
+  padding-top: 0;
+}
+
+/* .post-item.bullet-item sets display:flex, which would otherwise beat the UA
+   stylesheet's [hidden] rule and leave trimmed rows visible. */
+.latest-col > .latest-list > [hidden] {
+  display: none !important;
+}
+
+.latest-col > .see-more {
+  flex: 0 0 auto;
+  margin-bottom: auto;
+}
+
 /* Slim scrollbar */
 .scrollable-col-content::-webkit-scrollbar {
   width: 4px;
