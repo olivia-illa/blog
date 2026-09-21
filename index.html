@@ -106,7 +106,7 @@ body_class: home
     <ul class="post-list">
       {% assign thoughts = site.posts | where_exp: "item", "item.tags contains 'weeknotes'" %}
       
-      {% for post in thoughts %}
+      {% for post in thoughts limit: 10 %}
         <li class="post-item bullet-item">
           <span class="custom-bullet">❇</span>
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
