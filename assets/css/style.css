@@ -9,8 +9,9 @@
    both <html> and <body>, taken from the page's `body_class` front matter:
 
      home            index.html
-     page-compact    shared by the four dense list pages
+     page-compact    shared by the five dense list pages
      page-latest     latest.html
+     page-all        all.html
      page-write      write-anything.html
      page-clippings  copy-paste-share.html
      page-tags       tag.html
@@ -608,9 +609,9 @@ a:hover {
 /* ==========================================================================
    7. Pages: dense list pages
 
-   latest.html, write-anything.html, copy-paste-share.html and tag.html all
-   share the same compact header treatment and (except for the clippings page)
-   the same one-line row.
+   latest.html, all.html, write-anything.html, copy-paste-share.html and
+   tag.html all share the same compact header treatment and (except for the
+   clippings page) the same one-line row.
    ========================================================================== */
 
 .page-compact main,
@@ -636,7 +637,7 @@ a:hover {
   margin-bottom: 0.4rem !important;
 }
 
-/* --- One-line rows (latest, write-anything, tags) ------------------------- */
+/* --- One-line rows (latest, all, write-anything, tags) ------------------ */
 
 .list-row {
   padding: 0.25rem 0;
@@ -676,10 +677,21 @@ a:hover {
   color: inherit;
 }
 
-/* --- Page: latest -------------------------------------------------------- */
+/* --- Pages: latest and all ----------------------------------------------- */
 
-.page-latest .list-row-title {
+.page-latest .list-row-title,
+.page-all .list-row-title {
   margin-right: 0.5rem;
+}
+
+/* Thoughts rows fall back to their opening line, which can run long. */
+.page-all .list-row-inner {
+  overflow: hidden;
+}
+
+.page-all .list-row-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* --- Pages: write-anything and tags (titles truncate) --------------------- */
