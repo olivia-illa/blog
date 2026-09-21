@@ -59,7 +59,7 @@ body_class: home
   <div class="scrollable-col-content">
     <ul class="post-list">
       {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.tags contains 'quotes' or item.tags contains 'articles' or item.tags contains 'books' or item.tags contains 'movies' or item.tags contains 'music'" %}
-      {% for post in clippings limit: 10 %}
+      {% for post in clippings limit: 2 %}
         <li class="post-item clipping-item">
           <div class="clipping-meta">
             <span class="post-date">
