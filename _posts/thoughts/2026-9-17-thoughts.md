@@ -4,7 +4,7 @@ date: 2026-09-17 19:50:00 +0800
 tags: [exchange]
 ---
 
-*You’re telling me we scored the same for Speaking right after I spent a whole month in Zushi[¹](#fn1), mingling with locals at the co-working space?*
+"You’re telling me we scored the same for Speaking right after you spent a whole month in Zushi[¹](#fn1), mingling with locals at the co-working space?"
 
 Why does that feel like a double jab?
 
