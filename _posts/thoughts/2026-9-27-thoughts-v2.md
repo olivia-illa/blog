@@ -4,9 +4,9 @@ date: 2026-09-26 13:40:00 +0800
 tags: [random]
 ---
 
+Strange. I thought I had a sticker of an mad rabbit flipping the table with a lightening strike behind. 
 
-
-Strange. I thought I had a sticker of an mad rabbit flipping the table with a lightening strike behind. Turns out I don't. Disappointing. 
+Turns out I don't. Disappointing. 
 
 
 **continues to sticker bomb**
