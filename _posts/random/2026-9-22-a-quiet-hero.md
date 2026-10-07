@@ -2,7 +2,7 @@
 layout: post
 title: "The Quiet Hero"
 date: 2026-09-22 23:55:00 +0800
-tags: [random]
+tags: [f-around]
 ---
 
 Everyone has experienced that sudden stomach drop—that hollow feeling inside, whether from a physical plunge on a roller coaster or a sudden spike of anxiety. For me, it’s a simmering, sickening sensation that can be summed up in four words: *I fucked up big time.*
