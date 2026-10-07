@@ -38,6 +38,13 @@ Mostly because I wonder if I've ever accidentally projected that same tone-deafn
 
 * "There is no beauty in this city or pretty boys." — To that, I'd have to agree, only partially.
 
+* "The simplest happiness comes from getting blueberries from the farmers market and eating them on the bench." - We get them in bulk from Costco, does that count?
+
+* "The weather's wet outside, but I am dry inside." - Hard to tell if it was in a literal sense or lack of love life in this humidity. I followed up with a joke, but realized it was
+
+
+
+
 All jokes aside, I do sympathize with these comments—the performative effort to wear a specific identity like a wolf skin, or to cling to a place merely visited or briefly lived in. I certainly have done the same, intentionally or not.
 
 But having lived in one city for the majority of my life, somewhere some say a complete opposite of my persona, language, and cultural interests, strangers sometimes still question whether I am an alien. I always answer no, and they know it’s true based on how much I appreciate my surroundings, the way I live and interact.
