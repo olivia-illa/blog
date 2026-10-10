@@ -48,4 +48,4 @@ Jokes aside, I do sympathize with these comments—the performative effort to we
 
 But having lived in one city for the majority of my life, somewhere some say a complete opposite of my persona, language, and cultural interests, strangers sometimes still question whether I am an alien. I always answer no, and they know it’s true based on how much I appreciate my surroundings, the way I live and interact.
 
-You can’t escape the roots that shaped you, so why not embrace them in a way you naturally would, even if things have  changed on the surface.
+We can’t escape the roots that shaped us, so why not embrace them in a way we naturally would, even if things have  changed on the surface.
