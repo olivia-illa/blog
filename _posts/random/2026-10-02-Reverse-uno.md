@@ -42,6 +42,7 @@ Mostly because I wonder if I've ever accidentally projected that same tone-deafn
 
 * "The weather's wet outside, but I am dry inside." - Hard to tell if it was in a literal sense or lack of love life in this humidity. I made a funny remark, but wasn't well received.
 
+- “Climbing the career ladder was something conditioned back at home; here, I began to ask myself why work harder when the salary's decent and I'm happy (with the job) overall.” — Concluded after expressing discontent over feeling excluded by locals due to inherent social differences, and simply not buying a drink. I guess happiness is also contextual.
 
 
 Jokes aside, I do sympathize with these comments—the performative effort to wear a specific identity like a wolf skin, or to cling to a place merely visited or briefly lived in. I certainly have done the same, intentionally or not.
@@ -49,3 +50,4 @@ Jokes aside, I do sympathize with these comments—the performative effort to we
 But having lived in one city for the majority of my life, somewhere some say a complete opposite of my persona, language, and cultural interests, strangers sometimes still question whether I am an alien. I always answer no, and they know it’s true based on how much I appreciate my surroundings, the way I live and interact.
 
 We can’t escape the roots that shaped us, so why not embrace them in a way we naturally would, even if things have  changed on the surface.
+
