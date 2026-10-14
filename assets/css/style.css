@@ -48,6 +48,7 @@
 
   /* Plum block that wipes across a link on hover */
   --link-hover-bg: #50394c;
+  --link-hover-color: var(--bg-color); /* text on the plum wipe */
 
   /* Fixed greys. These deliberately do NOT flip in dark mode — that matches
      the hard-coded #666/#888/#e5e5e5 values this file replaced. Giving them
@@ -71,6 +72,7 @@
     --header-color: #eeeeee;
     --footer-color: #eeeeee;
     --section-border: rgba(255, 255, 255, 0.1);
+    --link-hover-color: #eeeeee; /* the dark bg is unreadable on plum */
   }
 }
 
@@ -220,8 +222,8 @@ a:hover {
   /* Grow the plum background across the link (left to right) */
   background-size: 100% 100%;
 
-  /* Change the text color to the background color */
-  color: var(--bg-color);
+  /* Light text on the plum wipe */
+  color: var(--link-hover-color);
 
   /* Keep the underline */
   text-decoration: underline;
@@ -237,7 +239,7 @@ a:hover {
 }
 
 .inherit-link:hover {
-  color: var(--bg-color);
+  color: var(--link-hover-color);
 }
 
 
