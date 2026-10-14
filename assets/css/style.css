@@ -544,6 +544,17 @@ a:hover {
   padding-top: 0;
 }
 
+/* --- The "copy paste share" column ---------------------------------------- */
+
+/* index.html renders 10 clippings for the locked desktop layout, where the
+   column scrolls. Unlocked (the exact complement of the lock query), the page
+   scrolls as one document, so keep it to the first 2. */
+@media (max-width: 599px), (max-height: 499px) {
+  .clippings-col .clipping-item:nth-child(n+3) {
+    display: none;
+  }
+}
+
 /* --- The "latest" column -------------------------------------------------- */
 
 /* While the page is locked, this column is the one that is not allowed to
