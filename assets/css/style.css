@@ -951,7 +951,7 @@ a:hover {
 }
 
 .post-thoughts .post-body blockquote {
-  border-left: 2px solid #034f84;
+  border-left: 2px solid var(--text-color);
   margin: 1.5em 0;
   padding-left: 1rem;
   font-style: italic;
@@ -960,6 +960,13 @@ a:hover {
 
 .post-thoughts .post-body blockquote p {
   margin: 0;
+}
+
+/* Grey text is unreadable on the dark background */
+@media (prefers-color-scheme: dark) {
+  .post-thoughts .post-body blockquote {
+    color: var(--text-color);
+  }
 }
 
 /* --- Layout: clippings_style.html ---------------------------------------- */
