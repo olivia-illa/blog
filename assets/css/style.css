@@ -38,7 +38,16 @@
    1. Design tokens
    ========================================================================== */
 
+/* Colour schemes. The light one lives on :root itself; the dark ones override
+   its colour tokens. A reader's pick is stored by assets/js/theme-picker.js
+   and set as data-theme on <html> (before first paint, by the inline script
+   in _layouts/default.html). With no pick, the system preference decides:
+   light, or "red" in dark mode — so "red" is written out twice below, once
+   for each route in. Keep the two copies in step, and keep the scheme list in
+   theme-picker.js and the picker in default.html in step with these blocks. */
+
 :root {
+  color-scheme: light;
   --bg-color: #ddeedd;
   --text-color: #111111;
   --link-color: #111111;
@@ -49,6 +58,7 @@
   /* Plum block that wipes across a link on hover */
   --link-hover-bg: #50394c;
   --link-hover-color: var(--bg-color); /* text on the plum wipe */
+  --quote-color: #555555;              /* thoughts-post blockquote text */
 
   /* Fixed greys. These deliberately do NOT flip in dark mode — that matches
      the hard-coded #666/#888/#e5e5e5 values this file replaced. Giving them
@@ -64,16 +74,47 @@
   --font-mono: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Dark text is unreadable on the plum hover wipe and grey quote text is too
+   dim, so the dark schemes point both at their text colour. */
+
+/* "red": the dark-mode default */
+:root[data-theme="red"] {
+  color-scheme: dark;
+  --bg-color: #2c1b17;
+  --text-color: #f7cac9;
+  --link-color: #f7cac9;
+  --header-color: #f7cac9;
+  --footer-color: #f7cac9;
+  --section-border: rgba(255, 255, 255, 0.1);
+  --link-hover-color: #f7cac9;
+  --quote-color: #f7cac9;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #3b3a30;
-    --text-color: #eeeeee;
-    --link-color: #eeeeee;
-    --header-color: #eeeeee;
-    --footer-color: #eeeeee;
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg-color: #2c1b17;
+    --text-color: #f7cac9;
+    --link-color: #f7cac9;
+    --header-color: #f7cac9;
+    --footer-color: #f7cac9;
     --section-border: rgba(255, 255, 255, 0.1);
-    --link-hover-color: #eeeeee; /* the dark bg is unreadable on plum */
+    --link-hover-color: #f7cac9;
+    --quote-color: #f7cac9;
   }
+}
+
+/* "olive": the original dark scheme */
+:root[data-theme="olive"] {
+  color-scheme: dark;
+  --bg-color: #3b3a30;
+  --text-color: #eeeeee;
+  --link-color: #eeeeee;
+  --header-color: #eeeeee;
+  --footer-color: #eeeeee;
+  --section-border: rgba(255, 255, 255, 0.1);
+  --link-hover-color: #eeeeee;
+  --quote-color: #eeeeee;
 }
 
 
@@ -144,11 +185,50 @@ footer {
   font-size: 0.75rem;
   color: var(--footer-color);
   border-top: 1px solid var(--section-border);
+
+  /* Copyright on the left, colour-scheme picker on the right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 footer p {
   margin: 0;
 }
+
+/* Colour-scheme picker: one small circle per scheme, filled with that
+   scheme's background. The fills are hard-coded copies of each scheme's
+   --bg-color (the tokens only hold the active scheme's values). */
+.theme-picker {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.theme-picker[hidden] {
+  display: none;
+}
+
+.theme-swatch {
+  width: 0.9rem;
+  height: 0.9rem;
+  padding: 0;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* The active scheme gets a ring set off from the circle */
+.theme-swatch[aria-pressed="true"] {
+  outline: 1px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+.theme-swatch[data-scheme=""]      { background: linear-gradient(90deg, #000000 50%, #ffffff 50%); }
+.theme-swatch[data-scheme="light"] { background: #ddeedd; }
+.theme-swatch[data-scheme="red"]   { background: #2c1b17; }
+.theme-swatch[data-scheme="olive"] { background: #3b3a30; }
 
 
 /* ==========================================================================
@@ -968,18 +1048,11 @@ a:hover {
   margin: 1.5em 0;
   padding-left: 1rem;
   font-style: italic;
-  color: #555555;
+  color: var(--quote-color);
 }
 
 .post-thoughts .post-body blockquote p {
   margin: 0;
-}
-
-/* Grey text is unreadable on the dark background */
-@media (prefers-color-scheme: dark) {
-  .post-thoughts .post-body blockquote {
-    color: var(--text-color);
-  }
 }
 
 /* --- Layout: clippings_style.html ---------------------------------------- */

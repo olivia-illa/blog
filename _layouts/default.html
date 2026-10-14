@@ -9,6 +9,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- comment -%}
+    Applies the reader's saved colour scheme before first paint, so a picked
+    scheme never flashes the default one. Must stay inline and above the
+    stylesheet; assets/js/theme-picker.js owns the picker and the list of
+    valid schemes.
+  {%- endcomment %}
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='olive'||t==='red')document.documentElement.dataset.theme=t}catch(e){}</script>
   {% seo %}
   <link rel="icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +24,7 @@
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <script src="{{ "/assets/js/format-dates.js" | relative_url }}" defer></script>
   <script src="{{ "/assets/js/fit-latest.js" | relative_url }}" defer></script>
+  <script src="{{ "/assets/js/theme-picker.js" | relative_url }}" defer></script>
   {% feed_meta %}
 </head>
 <body class="{{ page_class }}">
@@ -36,6 +44,12 @@
 
   <footer>
 	  <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }} &bull; write to me at <a href="mailto://blahblah@oliviailla.blog">blahblah@oliviailla.blog</a></p>
+	  <div class="theme-picker" role="group" aria-label="Colour scheme" hidden>
+	    <button type="button" class="theme-swatch" data-scheme="" aria-label="Auto" title="Auto"></button>
+	    <button type="button" class="theme-swatch" data-scheme="light" aria-label="Light" title="Light"></button>
+	    <button type="button" class="theme-swatch" data-scheme="red" aria-label="Red" title="Red"></button>
+	    <button type="button" class="theme-swatch" data-scheme="olive" aria-label="Olive" title="Olive"></button>
+	  </div>
   </footer>
 
 </body>
