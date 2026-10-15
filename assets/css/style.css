@@ -81,13 +81,13 @@
 :root[data-theme="red"] {
   color-scheme: dark;
   --bg-color: #2c1b17;
-  --text-color: #f7cac9;
-  --link-color: #f7cac9;
-  --header-color: #f7cac9;
-  --footer-color: #f7cac9;
-  --section-border: rgba(255, 255, 255, 0.1);
-  --link-hover-color: #f7cac9;
-  --quote-color: #f7cac9;
+  --text-color: #A3CCDA;
+  --link-color: #A3CCDA;
+  --header-color: #A3CCDA;
+  --footer-color: #A3CCDA;
+  --section-border: #FAFDD6;
+  --link-hover-color: #A3CCDA;
+  --quote-color: #A3CCDA;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -107,14 +107,14 @@
 /* "olive": the original dark scheme */
 :root[data-theme="olive"] {
   color-scheme: dark;
-  --bg-color: #3b3a30;
-  --text-color: #eeeeee;
-  --link-color: #eeeeee;
-  --header-color: #eeeeee;
-  --footer-color: #eeeeee;
-  --section-border: rgba(255, 255, 255, 0.1);
-  --link-hover-color: #eeeeee;
-  --quote-color: #eeeeee;
+    --bg-color: #18184f;
+    --text-color: #D6C1E2;
+    --link-color: #D6C1E2;
+    --header-color: #D6C1E2;
+    --footer-color: #D6C1E2;
+    --section-border: #E76A9B;
+    --link-hover-color: #f7cac9;
+    --quote-color: #f7cac9;
 }
 
 :root[data-theme="sakura"] {
