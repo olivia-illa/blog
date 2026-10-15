@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fira+Code:wght@300;400;500;600&display=swap">
+  {%- comment -%} Only the 𐫱 glyph of the Auto theme swatch; few systems ship a Manichaean font. {%- endcomment %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Manichaean&text=%F0%90%AB%B1&display=swap">
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <script src="{{ "/assets/js/format-dates.js" | relative_url }}" defer></script>
   <script src="{{ "/assets/js/fit-latest.js" | relative_url }}" defer></script>
@@ -45,10 +47,10 @@
   <footer>
 	  <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }} &bull; write to me at <a href="mailto://blahblah@oliviailla.blog">blahblah@oliviailla.blog</a></p>
 	  <div class="theme-picker" role="group" aria-label="Colour scheme" hidden>
-	    <button type="button" class="theme-swatch" data-scheme="" aria-label="Auto" title="Auto"></button>
-	    <button type="button" class="theme-swatch" data-scheme="red" aria-label="Red" title="Red"></button>
-	    <button type="button" class="theme-swatch" data-scheme="olive" aria-label="Olive" title="Olive"></button>
-	    <button type="button" class="theme-swatch" data-scheme="sakura" aria-label="Sakura" title="Sakura"></button>
+	    <button type="button" class="theme-swatch" data-scheme="" aria-label="Auto" title="Auto">𐫱</button>
+	    <button type="button" class="theme-swatch" data-scheme="red" aria-label="Red" title="Red">✿</button>
+	    <button type="button" class="theme-swatch" data-scheme="olive" aria-label="Olive" title="Olive">❀</button>
+	    <button type="button" class="theme-swatch" data-scheme="sakura" aria-label="Sakura" title="Sakura">❁</button>
 	  </div>
   </footer>
 

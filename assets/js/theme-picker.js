@@ -1,4 +1,4 @@
-// Lets the reader pick a colour scheme from the circles in the footer.
+// Lets the reader pick a colour scheme from the flowers in the footer.
 //
 // The pick is stored in localStorage and set as data-theme on <html>; the
 // schemes themselves are the :root[data-theme] blocks at the top of

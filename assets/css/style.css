@@ -209,11 +209,13 @@ footer p {
   margin: 0;
 }
 
-/* Colour-scheme picker: one small circle per scheme, filled with that
-   scheme's background. The fills are hard-coded copies of each scheme's
-   --bg-color (the tokens only hold the active scheme's values). */
+/* Colour-scheme picker: one flower glyph per scheme. The active one is shown
+   at full strength and a size up; the rest are dimmed. Hovering one spins
+   it. Scale and rotation use the separate `scale` and `rotate` properties so
+   the spin doesn't cancel the active scheme's enlargement. */
 .theme-picker {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
 }
@@ -223,24 +225,40 @@ footer p {
 }
 
 .theme-swatch {
-  width: 0.9rem;
-  height: 0.9rem;
   padding: 0;
-  border: 1px solid var(--text-color);
-  border-radius: 50%;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-family: var(--font-mono), "Noto Sans Manichaean", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.4;
   cursor: pointer;
+  transition: opacity 0.15s, scale 0.15s;
 }
 
-/* The active scheme gets a ring set off from the circle */
+.theme-swatch:hover,
 .theme-swatch[aria-pressed="true"] {
-  outline: 1px solid var(--text-color);
-  outline-offset: 2px;
+  opacity: 1;
 }
 
-.theme-swatch[data-scheme=""]      { background: linear-gradient(90deg, #000000 50%, #ffffff 50%); }
-.theme-swatch[data-scheme="red"]   { background: #2c1b17; }
-.theme-swatch[data-scheme="olive"] { background: #3b3a30; }
-.theme-swatch[data-scheme="sakura"] { background: #FCEDED; }
+.theme-swatch[aria-pressed="true"] {
+  scale: 1.4;
+}
+
+.theme-swatch:hover {
+  animation: theme-swatch-spin 2s linear infinite;
+}
+
+@keyframes theme-swatch-spin {
+  to { rotate: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-swatch:hover {
+    animation: none;
+  }
+}
 
 
 /* ==========================================================================
