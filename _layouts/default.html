@@ -15,7 +15,7 @@
     stylesheet; assets/js/theme-picker.js owns the picker and the list of
     valid schemes.
   {%- endcomment %}
-  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='olive'||t==='red')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='olive'||t==='red'||t==='sakura')document.documentElement.dataset.theme=t}catch(e){}</script>
   {% seo %}
   <link rel="icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +49,7 @@
 	    <button type="button" class="theme-swatch" data-scheme="light" aria-label="Light" title="Light"></button>
 	    <button type="button" class="theme-swatch" data-scheme="red" aria-label="Red" title="Red"></button>
 	    <button type="button" class="theme-swatch" data-scheme="olive" aria-label="Olive" title="Olive"></button>
+	    <button type="button" class="theme-swatch" data-scheme="sakura" aria-label="Sakura" title="Sakura"></button>
 	  </div>
   </footer>
 

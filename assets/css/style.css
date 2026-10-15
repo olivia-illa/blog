@@ -117,6 +117,18 @@
   --quote-color: #eeeeee;
 }
 
+:root[data-theme="sakura"] {
+  color-scheme: dark;
+  --bg-color: #FCEDED;
+  --text-color: #3C9267;
+  --link-color: #3C9267;
+  --header-color: #3C9267;
+  --footer-color: #3C9267;
+  --section-border: #8CA9FF;
+  --link-hover-color: #3C9267;
+  --quote-color: #3C9267;
+}
+
 
 /* ==========================================================================
    2. Base layout
@@ -229,6 +241,7 @@ footer p {
 .theme-swatch[data-scheme="light"] { background: #ddeedd; }
 .theme-swatch[data-scheme="red"]   { background: #2c1b17; }
 .theme-swatch[data-scheme="olive"] { background: #3b3a30; }
+.theme-swatch[data-scheme="sakura"] { background: #FCEDED; }
 
 
 /* ==========================================================================
