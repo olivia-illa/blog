@@ -238,7 +238,6 @@ footer p {
 }
 
 .theme-swatch[data-scheme=""]      { background: linear-gradient(90deg, #000000 50%, #ffffff 50%); }
-.theme-swatch[data-scheme="light"] { background: #ddeedd; }
 .theme-swatch[data-scheme="red"]   { background: #2c1b17; }
 .theme-swatch[data-scheme="olive"] { background: #3b3a30; }
 .theme-swatch[data-scheme="sakura"] { background: #FCEDED; }

@@ -7,7 +7,7 @@
 // inline script in _layouts/default.html re-applies a stored pick before first
 // paint on every page; keep its list of schemes in step with SCHEMES here.
 (function () {
-  var SCHEMES = ['light', 'red', 'olive', 'sakura'];
+  var SCHEMES = ['red', 'olive', 'sakura'];
   var picker = document.querySelector('.theme-picker');
   if (!picker) return;
 
