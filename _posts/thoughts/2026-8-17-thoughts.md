@@ -26,7 +26,7 @@ I catch sight the crust and parchment paper on l's desk. I pause for a second, t
 
 **Diane Nguyen:** don't like sweets
 
-**Kuai Kuai:** nah too stressed, only chewing gum
+**Kuai Kuai:** nah too stressed, only chewing gum helps
 
 
 🚬🍰
