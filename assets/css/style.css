@@ -882,16 +882,17 @@ a:hover {
 /* Size headings inside a post body. The base `h2 { font-size: 0.8rem }` is
    sized for the small uppercase column labels on the home page — left alone it
    renders a post's section headings smaller than the body text around them.
-   The thoughts layout sets its own scale further down and is not touched here.
 
    1.17rem is the browser's default h3 size, which is what these headings were
    rendered at back when posts wrote their top-level sections as `###`. */
 .post-long .post-body h2,
+.post-thoughts .post-body h2,
 .clipping-post .post-body h2 {
   font-size: 1.17rem;
 }
 
 .post-long .post-body h3,
+.post-thoughts .post-body h3,
 .clipping-post .post-body h3 {
   font-size: 1rem;
 }
@@ -959,7 +960,9 @@ a:hover {
 .post-long h1,
 .post-long h2,
 .post-long h3,
-.post-long h4 {
+.post-long h4,
+.post-thoughts .post-body h2,
+.post-thoughts .post-body h3 {
   font-weight: 600;
 }
 
@@ -1022,24 +1025,6 @@ a:hover {
   line-height: 1.2;
   margin-top: 2rem;
   margin-bottom: 1rem;
-}
-
-.post-thoughts .post-body h2 {
-  font-size: 2rem;        /* Stands out over body text */
-  font-weight: 700;       /* Ensures strong stroke weight */
-  letter-spacing: 0.03em; /* Slightly tighter for cleaner all-caps look */
-  line-height: 1.25;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-}
-
-.post-thoughts .post-body h3 {
-  font-size: 1.8rem;      /* Subheaders beat fraction/bullet heights */
-  font-weight: 700;       /* Keeps uppercase subheaders visually heavy */
-  letter-spacing: 0.02em;
-  line-height: 1.3;
-  margin-top: 1.5rem;
-  margin-bottom: 0.6rem;
 }
 
 .post-thoughts .post-date {
