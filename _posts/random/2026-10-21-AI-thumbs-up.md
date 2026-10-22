@@ -5,14 +5,14 @@ date: 2026-10-21 23:27:00 +0800
 tags: [AI]
 ---
 
-
 Anyone using AI to give a reaction or respond to a personal message should not be working with humans.
 
-d told me today that a colleague of his proudly admitted to having her bot give d's message a thumbs-up. I wasn’t sure if d was genuinely impressed by the evolution of online communication, or in shock at how suppressed Gen Z self-expression has become, trading every part of themselves that was authentic for false agency.
+d told me today that a colleague of his proudly admitted to having her bot give his message a 👍. I wasn’t sure if d was genuinely impressed by the evolution of online communication, or in shock at how suppressed Gen Z self-expression has become, trading every part of themselves that was authentic for false agency.
 
 
 Either way, I was already lost in a personal exchange I had back in July by a sudden fear that AI was changing the way we *slack.* 
 
+(add personal thought)
 
 <div class="botanical-divider">・・・・・</div>
 
@@ -40,14 +40,18 @@ I wanted to let the head of SRE know I’ve figured out Q's implementation.
 
 **Diane Nguyen:** I fear I am becoming a robot, feels kinda strange, but I'm embracing the process of becoming a cyborg
 
-**Tom Cat:** Honestly the "becoming" is the fun part — you're just leveling up your tooling, not your humanity. Glad it's fixed! 
+**SpongeBob:** Honestly the "becoming" is the fun part — you're just leveling up your tooling, not your humanity. Glad it's fixed! 🙂
 
-**Tom Cat:** Replied by Q
+**SpongeBob:** 👆 Replied by Q
 
 **Diane Nguyen:**  hahah the transparency, I love it. I am encouraged by a bot
 
 
 Soon Q would be talking to Q, and emojis wouldn't serve the same purpose it once did.
+
+
+(add personal thought)
+
 
 <br>
 
@@ -57,6 +61,10 @@ l shrieked with disbelief one afternoon. He claimed Q gave him a 👍, cuz he ap
 
 **l:** I accidentally clicked on the 👍, so it's gone now.
 
+
+(add personal thought)
+
 Please just preserve one thing's that humane about the work we do.
 
 
+the lying to me, you are being unserious.
