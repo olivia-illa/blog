@@ -5,7 +5,7 @@ date: 2026-10-21 23:27:00 +0800
 tags: [about-me]
 ---
 
-Right about the time I became full-time, was when I first read this strip(1). There was one square that struck a particular chord in me. Teary-eyed, I saw my childhood illustrated exactly as it did. There were good parts like the  friends I still keep in touch or reconnect after a decade who accepted me for who I am. But there were also many nightmare, when I'd dream of escaping the place I , knowing kids in class only befriended me because of the difference. My nightmares were alw
+Right about the time I became full-time, was when I first read this strip(1). There was one square that struck a  chord. Teary-eyed, I saw my childhood illustrated exactly as it did. There were good parts like the lifelong friends I'd be keeping who accepted me for who I am and all the numbers 1s that blostered my ego. But there were also many nightmare, when I'd dream of escaping the place I , knowing kids in class only befriended me because of the difference. My nightmares were alw
 
 
 Sometimes that difference became a reason to bully and ostrich. At my first school, I was encouraged to show off my personality, my interests, my advantages, but I soon learnt that only brought unwanted attention in an environment that focused entirely on academia competition. Still I insisted I was going to be different. And indeed I became.
