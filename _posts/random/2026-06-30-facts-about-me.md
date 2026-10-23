@@ -7,7 +7,6 @@ tags: [about-me]
 
 d says my sentences don’t flow, so a list makes more sense until I can piece together more coherent paragraphs.
 
-
 1. My baking journey<sup><a href="#fn1">¹</a></sup> started when I made my first cookie following [Momofuku’s Compost Cookie (2012) tutorial](https://www.youtube.com/watch?v=RwvOvC1Swos) that demonstrated anything could be mixed into a batter and tasted good. Since then, I’ve been bribing my way through life for friendships, birthday wishes, Christmas greetings and peacekeeping<sup><a href="#fn2">²</a></sup>.
 
 2. I thought having seven piercings fooled others into assuming I had taste in music<sup><a href="#fn3">³</a></sup>. Now, I see them as [metal embellishments](https://www.monicavinader.com/hk/deia-huggie-earrings/gold-vermeil-deia-huggie-earrings) that make elders go ooh and ahhh, in a not-so-positive way.
@@ -24,37 +23,37 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 8. I am obsessed with all things chocolate, likely due to a childhood disbelief in Roald Dahl stories and [Chocolatina](https://www.goodreads.com/en/book/show/1065563.Chocolatina).
 
-9. [The book](https://www.theguardian.com/books/2017/feb/10/a-line-made-by-walking-review-sara-baume) that shaped my final year as an English major. #quarterlifecrises
+9. [I hate Mondays](https://garfield.fandom.com/wiki/Monday/Gallery?file=1980-08-25.gif), period.
 
-10. [I hate Mondays](https://garfield.fandom.com/wiki/Monday/Gallery?file=1980-08-25.gif), period.
+10. The older I get, the more easily I cry over the little things.
 
-11. The older I get, the more easily I cry over the little things.
+11. I get into phases of collecting things. At 10, it was candy and cookie wrappers<sup><a href="#fn7">⁷</a></sup> that Dad would bring home from his travels; at 13, it was frozen butterfly and beetle specimens; at 16, it was masking tapes and patterned paper for handmade (stitched at times!) cards. Now I have a curated collection of 2000s vintage dresses <sup><a href="#fn8">⁸</a></sup> and tea from travels.
 
-12. I get into phases of collecting things. At 10, it was candy and cookie wrappers<sup><a href="#fn7">⁷</a></sup> that Dad would bring home from his travels; at 13, it was frozen butterfly and beetle specimens; at 16, it was masking tape and patterned paper for handmade (stitched at times!) cards. Now I have a curated collection of 2000s vintage dresses <sup><a href="#fn8">⁸</a></sup> and tea from travels.
+12. I keep friends who remind me of a certain stage of life, and I intend to keep it that way.
 
-13. I keep friends who remind me of a certain stage of life, and I intend to keep it that way.
+13. I can fall asleep to noise and light, like [korean baking ASMR](https://www.youtube.com/watch?v=VGQFEiyMe-M), reality tv drama, but not conspiracy talk shows or lawsuit breakdowns.
 
-14. I converted my bedroom into a greenhouse<sup><a href="#fn9">⁹</a></sup> during Covid to relieve eye tension and restore the *Great Outdoors*. I also graduated from that room, which was rather sad.
+14. I make fresh pesto every week and add it to every dish like it's salt and pepper.
 
-15. I can fall asleep to noise and light, like [korean baking ASMR](https://www.youtube.com/watch?v=VGQFEiyMe-M), reality tv drama, but not conspiracy talk shows or lawsuit breakdowns.
+15. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone<sup><a href="#fn10">¹⁰</a></sup>.
 
-16. I make fresh pesto every week and add it to every dish like it's salt and pepper.
+16. I keep eye contact when talking, but break it once I sense bs.
 
-17. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone<sup><a href="#fn10">¹⁰</a></sup>.
+17. I like (or am) an organized mess.
 
-18. I keep eye contact when talking, but break it once I sense bs.
+18. My favorite foods are tempura, pork blood cake, watermelon and mango.
 
-19. My colleagues call me a fair person, even more so after knowing my star sign.
+19. I find cooking a creative expression and baking, a chemistry experiment I refuse to give up on.
 
-20. I like (or am) an organized mess.
+20. I had my first kiss stolen by a golden retriever in 5th grade and it had reincarnated as d 12 years later to shepard me.
 
-21. My favorite foods are tempura, pork blood cake, watermelon and mango.
+21. [The book](https://www.theguardian.com/books/2017/feb/10/a-line-made-by-walking-review-sara-baume) that shaped my final year as an English major. #quarterlifecrises
 
-22. I find cooking a creative expression and baking, a chemistry experiment I refuse to give up on.
+22. I converted my bedroom into a greenhouse<sup><a href="#fn9">⁹</a></sup> during Covid to relieve eye tension and restore the *Great Outdoors*. I also graduated from that room, which was rather sad.
 
-23. I had my first kiss stolen by a golden retriever in 5th grade and it had reincarnated as d 12 years later to shepard me.
+23. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar sounds every time<sup><a href="#fn11">¹¹</a></sup>.
 
-24. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar sounds every time<sup><a href="#fn11">¹¹</a></sup>.
+24. My colleagues call me a fair person, even more so after knowing my star sign.
 
 25. I had a 1GB monthly phone plan ($0.34) throughout college till 2025 cuz the telecom I had got bought out.
 
@@ -62,7 +61,8 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 27. I am most comfortable typing in English, conversing in Mandarin, and pondering in both simultaneously.
 
-28. My google searches are predominately: [insert word] synonym. ##precision
+28. My google searches are predominately: [insert word] synonym <sup><a href="#fn12">¹²</a></sup>.
+
 
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
@@ -82,4 +82,6 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
   <li id="fn9" data-number="⁹">At one point, there was close to 100 pots on shelves and tables that were not made waterproof, and I would trip over potho vines every other week.</li>
   <li id="fn10" data-number="¹⁰">I once burst out laughing (in tears!) in front of an interviewee, who was probably traumatized afterwards, mid presentation. I had to dismissed myself from the rest of the program that day.</li>
   <li id="fn11" data-number="¹¹">I can't sing.</li>
-</ol>
+  <li id="fn12" data-number="¹²">It's very important to find the closest word that translates my thinkings.
+</li></ol>
+
