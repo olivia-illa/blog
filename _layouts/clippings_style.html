@@ -36,10 +36,6 @@ layout: default
     </div>
   {% endif %}
 
-  {% if page.tags.size > 0 %}
-    <div class="post-tags">
-      Tags: {{ page.tags | join: ", " }}
-    </div>
-  {% endif %}
+  {% include post-tags.html tags=page.tags %}
 </article>
 
