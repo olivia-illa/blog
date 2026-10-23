@@ -799,11 +799,16 @@ a:hover {
   flex-shrink: 0;
 }
 
-/* Deliberately not .inherit-link: these keep the muted parent color on hover
-   too, which is how they were written inline. */
+/* Rest in the muted parent color, but take the scheme's hover text color on
+   hover like every other link; the muted grey is unreadable on the wipe. */
 .list-row-tags a,
 .tag-group-title a {
   color: inherit;
+}
+
+.list-row-tags a:hover,
+.tag-group-title a:hover {
+  color: var(--link-hover-color);
 }
 
 /* --- Page: latest -------------------------------------------------------- */
