@@ -58,7 +58,7 @@ body_class: home
   <h2><a href="{{ '/copy-paste-share/' | relative_url }}" class="inherit-link">Copy paste share</a></h2>
   <div class="scrollable-col-content">
     <ul class="post-list">
-      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or post.layout == 'clippings_style' %}
+      {% assign clippings = site.posts | where_exp: "item", "item.tags contains 'internet-clippings' or item.layout == 'clippings_style'" %}
       {% comment %} 10 for the scrolling desktop column; CSS trims to 2 when the page is unlocked (phones) {% endcomment %}
       {% for post in clippings limit: 10 %}
         <li class="post-item clipping-item">
