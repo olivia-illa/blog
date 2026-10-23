@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-08-18 20:32:00 +0800
-tags: [exchange]
+tags: [exchanges]
 ---
 
 Halfway through our second round, I decided to share my recent project.

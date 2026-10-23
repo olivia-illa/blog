@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-06-24 12:36:00 +0800
-tags: [exchange]
+tags: [exchanges]
 ---
 
 On asking unromantic questions.

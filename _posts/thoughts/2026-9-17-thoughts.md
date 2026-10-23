@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-17 19:50:00 +0800
-tags: [exchange]
+tags: [exchanges]
 ---
 
 "You’re telling me we scored the same for Speaking right after you spent a whole month in Zushi[¹](#fn1), mingling with locals at the co-working space?"

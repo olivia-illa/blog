@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-08-13 21:33:00 +0800
-tags: [exchange]
+tags: [exchanges]
 ---
 
 I have my earbuds in, nearly in a flow state. 

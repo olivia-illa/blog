@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-08-10 20::36 +0800
-tags: [exchange]
+tags: [exchanges]
 ---
 
 t and d share a few key traits:

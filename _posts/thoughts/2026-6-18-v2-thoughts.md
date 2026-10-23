@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-06-18 22:26:00 +0800
-tags: [exchange]
+tags: [exchanges]
 ---
 
 
