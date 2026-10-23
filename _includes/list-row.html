@@ -24,7 +24,7 @@
       {%- endif -%}
     </a>
 
-    <!-- Tags (sit right after the title with a small gap) -->
+    <!-- Tags (aligned to the right edge of the row) -->
     {% if row.tags.size > 0 %}
       <span class="list-row-tags">
         {% for tag in row.tags %}<a href="{{ '/tag/' | relative_url }}?t={{ tag | uri_escape }}">#{{ tag }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}

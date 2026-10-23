@@ -886,8 +886,8 @@ a:hover {
   font-size: 0.9rem;
 }
 
-/* Sized to its text, so the tags sit right after it; shrinks and truncates
-   with an ellipsis once the row is full, so the tags are never pushed off. */
+/* Sized to its text; shrinks and truncates with an ellipsis once the row is
+   full, so the tags are never pushed off. */
 .list-row-title {
   white-space: nowrap;
   min-width: 0;
@@ -896,10 +896,12 @@ a:hover {
   margin-right: 0.5rem;
 }
 
+/* Pushed to the right edge of the row */
 .list-row-tags {
   font-size: 0.8rem;
   color: var(--meta-color);
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* Rest in the muted parent color, but take the scheme's hover text color on
@@ -912,19 +914,6 @@ a:hover {
 .list-row-tags a:hover,
 .tag-group-title a:hover {
   color: var(--link-hover-color);
-}
-
-/* --- Page: latest -------------------------------------------------------- */
-
-/* Post titles are short, so let the odd long one run past the measure rather
-   than truncate; the dense pages below keep the ellipsis. */
-.page-latest .list-row-inner {
-  overflow: visible;
-}
-
-.page-latest .list-row-title {
-  min-width: auto;
-  overflow: visible;
 }
 
 /* --- Page: tags ---------------------------------------------------------- */
