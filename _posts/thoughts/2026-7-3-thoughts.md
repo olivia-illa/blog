@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-03 22:14:00 +0800
-tags: [thoughts]
+tags: [shows]
 ---
 
 Watched Love Island S8E19, Temperature Rising Challenge. and was convinced the producers explicitly encouraged the orgy scenes. Seriously, what did I just watch?
