@@ -44,7 +44,10 @@
    in _layouts/default.html). With no pick, the system preference decides:
    light, or "red" in dark mode — so "red" is written out twice below, once
    for each route in. Keep the two copies in step, and keep the scheme list in
-   theme-picker.js and the picker in default.html in step with these blocks. */
+   theme-picker.js and the picker in default.html in step with these blocks.
+   The "custom" scheme has no block here: its values are inline custom
+   properties set by the tuner in theme-picker.js, which lists every token
+   below — add new colour tokens to its TOKENS list too. */
 
 :root {
   color-scheme: light;
@@ -205,8 +208,10 @@ footer {
   color: var(--footer-color);
   border-top: 1px solid var(--section-border);
 
-  /* Copyright on the left, colour-scheme picker on the right */
+  /* Copyright on the left, colour-scheme picker on the right; the tuner
+     panel, when open, wraps onto its own full-width row below */
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -264,6 +269,97 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   .theme-swatch:hover {
     animation: none;
+  }
+}
+
+/* Colour tuner, opened by the "custom" swatch. One native colour input per
+   token in style.css; theme-picker.js applies each change live as an inline
+   custom property on <html> and prints the matching :root[data-theme] block
+   so a finished scheme can be pasted into section 1 above. */
+.theme-tuner {
+  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.75rem 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--section-border);
+}
+
+.theme-tuner[hidden] {
+  display: none;
+}
+
+.theme-tuner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.4rem 1rem;
+  grid-column: 1;
+}
+
+.theme-tuner-grid label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.theme-tuner-grid input[type="color"] {
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 1px solid var(--section-border);
+  border-radius: 0.2rem;
+  background: none;
+  cursor: pointer;
+}
+
+.theme-tuner-actions {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-tuner-actions select,
+.theme-tuner-actions button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 1px solid var(--section-border);
+  border-radius: 0.2rem;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+}
+
+.theme-tuner-actions button:hover {
+  background: var(--link-hover-bg);
+  color: var(--link-hover-color);
+}
+
+.theme-tuner-css {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font: inherit;
+  font-size: 0.7rem;
+  color: inherit;
+  background: none;
+  border: 1px solid var(--section-border);
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  resize: vertical;
+  white-space: pre;
+  overflow: auto;
+}
+
+@media (max-width: 40rem) {
+  .theme-tuner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theme-tuner-css {
+    grid-column: 1;
+    grid-row: auto;
   }
 }
 

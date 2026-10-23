@@ -13,9 +13,10 @@
     Applies the reader's saved colour scheme before first paint, so a picked
     scheme never flashes the default one. Must stay inline and above the
     stylesheet; assets/js/theme-picker.js owns the picker and the list of
-    valid schemes.
+    valid schemes. A "custom" pick also re-applies the tuned colours stored
+    as JSON under 'theme-custom'.
   {%- endcomment %}
-  <script>try{var t=localStorage.getItem('theme');if(t==='olive'||t==='red'||t==='sakura')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script>try{var t=localStorage.getItem('theme'),d=document.documentElement;if(t==='olive'||t==='red'||t==='sakura'||t==='custom'){d.dataset.theme=t;if(t==='custom'){var c=JSON.parse(localStorage.getItem('theme-custom')||'{}'),k;for(k in c)if(/^(--[a-z-]+|color-scheme)$/.test(k)&&/^(#[0-9a-f]{6}|light|dark)$/i.test(c[k]))d.style.setProperty(k,c[k])}}}catch(e){}</script>
   {% seo %}
   <link rel="icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +52,7 @@
 	    <button type="button" class="theme-swatch" data-scheme="red" aria-label="Red" title="Red">✿</button>
 	    <button type="button" class="theme-swatch" data-scheme="olive" aria-label="Olive" title="Olive">❀</button>
 	    <button type="button" class="theme-swatch" data-scheme="sakura" aria-label="Sakura" title="Sakura">❁</button>
+	    <button type="button" class="theme-swatch" data-scheme="custom" aria-label="Custom" title="Custom: pick your own colours">✎</button>
 	  </div>
   </footer>
 
