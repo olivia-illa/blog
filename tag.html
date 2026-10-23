@@ -29,8 +29,16 @@ body_class: page-compact page-tags
         group.remove();
       }
     });
+    // Heading becomes the tag name, linking back to the unfiltered index
     var h1 = document.querySelector('article h1');
-    if (h1) h1.textContent = '#' + tag;
+    if (h1) {
+      var link = document.createElement('a');
+      link.href = {{ '/tag/' | relative_url | jsonify }};
+      link.className = 'inherit-link';
+      link.textContent = '#' + tag;
+      h1.textContent = '';
+      h1.appendChild(link);
+    }
     var rest = document.title.split(' | ').slice(1).join(' | ');
     document.title = '#' + tag + (rest ? ' | ' + rest : '');
   })();
