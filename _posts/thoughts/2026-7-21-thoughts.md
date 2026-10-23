@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-21 18:01:00 +0800
-tags: [thoughts]
+tags: [exchanges]
 ---
 
 Those who let themselves be stopped, stop.

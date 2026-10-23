@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-21 00:15:00 +0800
-tags: [reaction]
+tags: [fangirl]
 ---
 
 Holddddddd my horses, what is Joe Alwyn signaling with Truman's [¹](#fn1) final scene??

@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-11 13:04:00 +0800
-tags: [thoughts]
+tags: [random]
 ---
 
 *Look, the rain is coming down sideways now.*

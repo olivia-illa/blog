@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-24 22:21:00 +0800
-tags: [reaction]
+tags: [fangirl]
 ---
 
 

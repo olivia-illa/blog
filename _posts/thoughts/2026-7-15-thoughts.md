@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-15 21:15:00 +0800
-tags: [thoughts]
+tags: [unsevered]
 ---
 
 Threads already knows how I feel about today's unsevered talk. 

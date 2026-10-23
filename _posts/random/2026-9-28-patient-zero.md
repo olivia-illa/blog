@@ -2,7 +2,7 @@
 layout: post
 title: "Immediate afterthoughts: Patient Zero"
 date: 2026-09-28 11:05:00 +0800
-tags: [fangirl]
+tags: [review]
 ---
 
 

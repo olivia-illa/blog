@@ -2,7 +2,7 @@
 layout: post
 date: 2026-07-25 21:45:00 +0800
 title: "Be Serious"
-tags: [adulting]
+tags: [brezel-knot]
 ---
 
 I came across this [Dear Therapist](https://www.theatlantic.com/family/archive/2019/08/my-boyfriend-doesnt-want-talk-about-serious-things/595762/) submission. And it made me realize I should've documented these moments of frustration too.

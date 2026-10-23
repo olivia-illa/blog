@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-22 12:40:00 +0800
-tags: [thoughts]
+tags: [severed]
 ---
 
 "I am a lapdog" she said after finishing off the onigiri. 

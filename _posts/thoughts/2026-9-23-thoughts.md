@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-23 07:02:00 +0800
-tags: [reaction]
+tags: [fangirl]
 ---
 
 I downloaded Instagram again just to see what was up with PATIENT ZER()!
