@@ -16,22 +16,25 @@ A minimal, typography-focused static blog for Olivia Illa. Built with Jekyll and
 
 ## Local Development
 
-You don't need to install Ruby or Jekyll on your machine. You can use Docker to preview the site locally.
-
-### Prerequisites
-
-- [Docker](https://docs.docker.com/get-docker/) installed and running.
+You don't need to install Ruby or Jekyll on your machine. With [Nix](https://nixos.org/download/) installed, the flake in this repository builds the exact gems from `Gemfile.lock`; without Nix, `preview.sh` falls back to Docker.
 
 ### Running the Preview
 
 1.  Clone the repository.
-2.  Run the preview script:
+2.  Run the preview script (it uses Nix when available, otherwise Docker):
     ```bash
     ./preview.sh
     ```
+    With Nix you can equally run `nix run` from the repository root.
 3.  Open your browser to [http://localhost:4000](http://localhost:4000).
 
-The script handles dependency installation and enables live reloading, so the site will automatically refresh when you save changes to your Markdown files or CSS. Do not run `bundle install` manually; `preview.sh` manages dependencies inside Docker.
+The preview watches for changes and live-reloads the page, so the site refreshes when you save changes to your Markdown files or CSS. Do not run `bundle install` manually; the flake (or Docker) manages dependencies.
+
+Other flake commands:
+
+- `nix run .#build` builds the site into `_site/` the same way CI does.
+- `nix develop` opens a shell with `jekyll`, `bundle` and `bundix` on the PATH.
+- After changing the `Gemfile`, run `bundle lock` followed by `nix run .#bundix` to refresh `Gemfile.lock` and `gemset.nix`.
 
 ## Adding New Content
 

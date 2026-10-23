@@ -24,4 +24,8 @@ exclude:
   - vendor/ruby/
   - .jekyll-cache
   - .jekyll-metadata
+  - flake.nix
+  - flake.lock
+  - gemset.nix
+  - result
 

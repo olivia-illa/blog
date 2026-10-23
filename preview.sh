@@ -1,4 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Local preview at http://localhost:4000/
+#
+# With Nix installed this runs Jekyll straight from the flake (no Docker,
+# no Ruby setup; `nix run` on its own does the same thing). Without Nix it
+# falls back to the Docker image.
+
+cd "$(dirname "$0")"
+
+if command -v nix >/dev/null 2>&1; then
+    exec nix run . -- "$@"
+fi
 
 # Detect OS and Architecture
 OS="$(uname)"
