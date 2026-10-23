@@ -2,7 +2,7 @@
 layout: post
 title: "a break"
 date: 2026-07-10 8:00:00 +0800
-tags: [unsevered]
+tags: [random]
 ---
 
 Sunlight washed through our translucent curtains, a quiet contrast to the rattling rain and wind that were supposed to hit these massive windows.
