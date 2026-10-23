@@ -27,4 +27,4 @@ docker run --rm $PLATFORM_FLAG \
   -v "$(pwd):/srv/jekyll$VOLUME_FLAGS" \
   -p 4000:4000 \
   -it docker.io/jekyll/jekyll:4.2.2 \
-  jekyll serve --watch --force_polling
+  jekyll serve --watch --force_polling --drafts
