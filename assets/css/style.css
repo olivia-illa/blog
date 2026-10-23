@@ -953,6 +953,15 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* "Tags:" line directly under the source line, styled to match it rather
+   than like the tag footer on a post page */
+.page-clippings .clipping-preview .post-tags {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: inherit;
+}
+
 
 /* ==========================================================================
    8. Post layouts

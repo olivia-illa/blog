@@ -30,6 +30,7 @@ body_class: page-compact page-clippings
             {% endif %}
           </div>
         {% endif %}
+        {% include post-tags.html tags=post.tags %}
       </div>
     </li>
   {% else %}
