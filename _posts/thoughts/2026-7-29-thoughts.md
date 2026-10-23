@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-29 12:55:00 +0800
-tags: [thoughts]
+tags: [severed]
 ---
 
 Someone should invent an app that shuts down work laptops for 15min after an hour of continuous output[¹](#fn1), and turns them off completely after 6hrs of total daily use[²](#fn2). 

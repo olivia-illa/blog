@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-22 18:38:00 +0800
-tags: [thoughts]
+tags: [about-me]
 ---
 
 I like to reimagine live interactions in 4 panel comic strips.

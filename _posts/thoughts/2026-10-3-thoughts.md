@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-10-03 01:13:00 +0800
-tags: [random]
+tags: [friendships]
 ---
 
 Who knew a 🎂 would reignite a friendship lost for nearly half a decade.

@@ -2,7 +2,7 @@
 layout: post
 title: "Dinner at Saizeriya"
 date: 2026-07-13 23:55:00 +0800
-tags: [random]
+tags: [friendships]
 ---
 
 To me, Saizeriya was the equivalent of a college cafeteria—a place where students could pay a modest amount to enjoy affordable, abundant Italian food, ranging from *Margherita* rounds and creamy pesto pasta to garlic escargots with warm pita. In fact, I had my very first taste of that French delicacy during my sophomore year, paying less than $3 for a plate of six.

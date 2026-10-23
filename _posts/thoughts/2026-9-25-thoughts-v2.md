@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-25 06:46:00 +0800
-tags: [random]
+tags: [about-me]
 ---
 
 If you ask me why I don’t have Instagram on my phone, or the YouTube app, and insist on accessing them from the browser [¹](#fn1), here’s why:

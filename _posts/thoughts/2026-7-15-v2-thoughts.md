@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-15 22:15:00 +0800
-tags: [thoughts]
+tags: [shows]
 ---
 
 I like a man who cries. 

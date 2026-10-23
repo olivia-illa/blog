@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-30 23:45:00 +0800
-tags: [thoughts]
+tags: [money]
 ---
 
 My glasses slipped off my nose into the toilet before I had the chance to flush. 

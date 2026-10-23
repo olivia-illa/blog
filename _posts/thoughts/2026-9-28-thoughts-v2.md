@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-28 09:31:00 +0800
-tags: [random]
+tags: [fangirl]
 ---
 
 She is stunning, statuesque, a goddess. 

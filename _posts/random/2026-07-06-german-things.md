@@ -2,7 +2,7 @@
 layout: post
 title: "cosas de alemán"
 date: 2026-07-06 23:30:00 +0800
-tags: [adulting]
+tags: [brezel-knot]
 ---
 
 I can name a couple of <a href="#credentials-section">alemán cities</a> from travels, each for less than a day. So perhaps, I can also name a thing or two about alemanes.

@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-07-26 23:22:00 +0800
-tags: [thoughts]
+tags: [AI-slop]
 ---
 
 d's knelling on the LIDKULLEN, bouncing slightly while prompting three agents at once. Reviewing and permitting each action. 

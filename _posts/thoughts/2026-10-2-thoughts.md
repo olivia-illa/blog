@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-10-02 20:20:00 +0800
-tags: [random]
+tags: [exchanges]
 ---
 
 "When I first came back, they all noted, 'You're like o, living a bizarrely parallel lifestyle despite the *barred*  environment.'"

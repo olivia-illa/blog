@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-30 19:29:00 +0800
-tags: [random]
+tags: [friendships]
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: "rhetorical questions"
 date: 2026-07-07 24:00:00 +0800
-tags: [work]
+tags: [unsevered]
 ---
 
 When are rhetorical questions appropriate at work? To...
