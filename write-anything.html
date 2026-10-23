@@ -9,18 +9,7 @@ body_class: page-compact page-write
   {% for post in site.posts %}
     {% assign post_title_lower = post.title | downcase %}
     {% if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' %}
-      <li class="post-item give-me-10-item list-row">
-        <div class="list-row-inner">
-
-          <!-- Date -->
-          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-          <!-- Content preview truncated with ... -->
-          <a class="list-row-title" href="{{ post.url | relative_url }}">
-            {{ post.content | split: '</p>' | first | strip_html | strip }}
-          </a>
-        </div>
-      </li>
+      {% include list-row.html post=post %}
     {% endif %}
   {% endfor %}
 </ul>

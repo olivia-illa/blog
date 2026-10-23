@@ -836,7 +836,7 @@ a:hover {
 
    latest.html, write-anything.html, copy-paste-share.html and tag.html all
    share the same compact header treatment and (except for the clippings page)
-   the same one-line row.
+   the same one-line row, rendered by _includes/list-row.html.
    ========================================================================== */
 
 .page-compact main,
@@ -874,6 +874,7 @@ a:hover {
   display: flex;
   align-items: center;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Fixed-width date gutter so the titles line up down the page */
@@ -885,8 +886,14 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* Sized to its text, so the tags sit right after it; shrinks and truncates
+   with an ellipsis once the row is full, so the tags are never pushed off. */
 .list-row-title {
   white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 0.5rem;
 }
 
 .list-row-tags {
@@ -909,46 +916,18 @@ a:hover {
 
 /* --- Page: latest -------------------------------------------------------- */
 
+/* Post titles are short, so let the odd long one run past the measure rather
+   than truncate; the dense pages below keep the ellipsis. */
+.page-latest .list-row-inner {
+  overflow: visible;
+}
+
 .page-latest .list-row-title {
-  margin-right: 0.5rem;
-}
-
-/* --- Pages: write-anything and tags (titles truncate) --------------------- */
-
-.page-write .list-row-inner,
-.page-tags .list-row-inner {
-  overflow: hidden;
-}
-
-.page-write .list-row-title,
-.page-tags .list-row-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.page-write .list-row-title {
-  flex-grow: 1;
+  min-width: auto;
+  overflow: visible;
 }
 
 /* --- Page: tags ---------------------------------------------------------- */
-
-/* Override the narrow reading measure so the tag index uses the full width */
-.page-tags main,
-.page-tags article,
-.page-tags .post-list,
-.page-tags .tag-group {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-.page-tags .list-row-inner {
-  width: 100%;
-}
-
-.page-tags .list-row-title {
-  flex: 1;
-  min-width: 0;
-}
 
 .tag-group-title {
   font-size: 1.2rem;
