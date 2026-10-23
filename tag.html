@@ -34,10 +34,16 @@ body_class: page-compact page-tags
     if (h1) {
       var link = document.createElement('a');
       link.href = {{ '/tag/' | relative_url | jsonify }};
-      link.className = 'inherit-link';
+      link.className = 'inherit-link tag-index-link';
       link.textContent = '#' + tag;
+      // Hint shown on hover; a sibling rather than part of the link so it
+      // stays clear of the link's hover wipe and underline
+      var hint = document.createElement('span');
+      hint.className = 'tag-index-hint';
+      hint.textContent = ' (\u2190 explore)';
       h1.textContent = '';
       h1.appendChild(link);
+      h1.appendChild(hint);
     }
     var rest = document.title.split(' | ').slice(1).join(' | ');
     document.title = '#' + tag + (rest ? ' | ' + rest : '');

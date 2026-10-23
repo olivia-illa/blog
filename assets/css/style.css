@@ -918,6 +918,19 @@ a:hover {
 
 /* --- Page: tags ---------------------------------------------------------- */
 
+/* The filtered page's heading links back to the full index; hint at that on
+   hover with a small suffix after the tag name. The hint sits outside the
+   link so it gets neither the hover wipe nor the underline. */
+.tag-index-hint {
+  display: none;
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+.tag-index-link:hover + .tag-index-hint {
+  display: inline;
+}
+
 /* Styled like the compact page <h1> so the tag name looks the same on the
    full index and on a filtered /tag/?t= page. */
 .tag-group-title {
