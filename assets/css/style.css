@@ -74,8 +74,11 @@
   --font-mono: "IBM Plex Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* Dark text is unreadable on the plum hover wipe and grey quote text is too
-   dim, so the dark schemes point both at their text colour. */
+/* The plum hover wipe only works under the light scheme's pale text. Every
+   other scheme inverts itself on hover instead: the wipe is the scheme's text
+   colour and the text on it is the scheme's background colour, so the pair
+   has exactly the contrast the resting page has. Grey quote text is too dim
+   on dark backgrounds, so those schemes point it at their text colour. */
 
 /* "red": the dark-mode default */
 :root[data-theme="red"] {
@@ -86,7 +89,8 @@
   --header-color: #A3CCDA;
   --footer-color: #A3CCDA;
   --section-border: #FAFDD6;
-  --link-hover-color: #A3CCDA;
+  --link-hover-bg: #A3CCDA;
+  --link-hover-color: #2c1b17;
   --quote-color: #A3CCDA;
 }
 
@@ -99,7 +103,8 @@
     --header-color: #f7cac9;
     --footer-color: #f7cac9;
     --section-border: rgba(255, 255, 255, 0.1);
-    --link-hover-color: #f7cac9;
+    --link-hover-bg: #f7cac9;
+    --link-hover-color: #2c1b17;
     --quote-color: #f7cac9;
   }
 }
@@ -113,19 +118,21 @@
     --header-color: #D6C1E2;
     --footer-color: #D6C1E2;
     --section-border: #E76A9B;
-    --link-hover-color: #f7cac9;
+    --link-hover-bg: #D6C1E2;
+    --link-hover-color: #18184f;
     --quote-color: #f7cac9;
 }
 
 :root[data-theme="sakura"] {
-  color-scheme: dark;
+  color-scheme: light;
   --bg-color: #FCEDED;
   --text-color: #3C9267;
   --link-color: #3C9267;
   --header-color: #3C9267;
   --footer-color: #3C9267;
   --section-border: #8CA9FF;
-  --link-hover-color: #3C9267;
+  --link-hover-bg: #3C9267;
+  --link-hover-color: #FCEDED;
   --quote-color: #3C9267;
 }
 
