@@ -2,7 +2,7 @@
 layout: post
 date: 2026-07-31 18:30
 title: "Tweedledum and Tweedledee"
-tags: [random]
+tags: [brezel-knot]
 ---
 
 Walking up the street, I felt jittery and queasy, imagining the staff trying to figure out what *type* I was based on the opaqueness of my lines. *I am a total fraud!*
