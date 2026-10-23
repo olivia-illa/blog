@@ -8,7 +8,7 @@ tags: [about-me]
 d says my sentences don’t flow, so a list makes more sense until I can piece together more coherent paragraphs.
 
 
-1. My baking journey<sup><a href="#fn1">¹</a></sup> started when I made my first cookie following [Momofuku’s Compost Cookie (2012) tutorial](https://www.youtube.com/watch?v=RwvOvC1Swos) that demonstrated anything could be mixed into a batter and taste good. Since then, I’ve been bribing my way through life for friendships, birthday wishes, Christmas greetings and peacekeeping<sup><a href="#fn2">²</a></sup>.
+1. My baking journey<sup><a href="#fn1">¹</a></sup> started when I made my first cookie following [Momofuku’s Compost Cookie (2012) tutorial](https://www.youtube.com/watch?v=RwvOvC1Swos) that demonstrated anything could be mixed into a batter and tasted good. Since then, I’ve been bribing my way through life for friendships, birthday wishes, Christmas greetings and peacekeeping<sup><a href="#fn2">²</a></sup>.
 
 2. I thought having seven piercings fooled others into assuming I had taste in music<sup><a href="#fn3">³</a></sup>. Now, I see them as [metal embellishments](https://www.monicavinader.com/hk/deia-huggie-earrings/gold-vermeil-deia-huggie-earrings) that make elders go ooh and ahhh, in a not-so-positive way.
 
@@ -28,13 +28,13 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 10. [I hate Mondays](https://garfield.fandom.com/wiki/Monday/Gallery?file=1980-08-25.gif), period.
 
-11. The older I get, the easier I cry over the little things.
+11. The older I get, the more easily I cry over the little things.
 
-12. I get into phases of collecting things. At 10, it was candy and cookie wrappers<sup><a href="#fn7">⁷</a></sup> that Dad would bring home from his travels; then it was masking tape and patterned paper when I was into handmade (stitched at times!) cards. Now I collect vintage dresses from the 2000s<sup><a href="#fn8">⁸</a></sup> and tea from my travels.
+12. I get into phases of collecting things. At 10, it was candy and cookie wrappers<sup><a href="#fn7">⁷</a></sup> that Dad would bring home from his travels; at 13, it was frozen butterfly and beetle specimens; at 16, it was masking tape and patterned paper for handmade (stitched at times!) cards. Now I have a curated collection of 2000s vintage dresses <sup><a href="#fn8">⁸</a></sup> and tea from travels.
 
 13. I keep friends who remind me of a certain stage of life, and I intend to keep it that way.
 
-14. I converted my bedroom into a greenhouse<sup><a href="#fn9">⁹</a></sup> during Covid to relieve eye tension and restore the "Great Outdoors," while  studying for finals. I also graduated from that room, which was rather sad.
+14. I converted my bedroom into a greenhouse<sup><a href="#fn9">⁹</a></sup> during Covid to relieve eye tension and restore the *Great Outdoors*. I also graduated from that room, which was rather sad.
 
 15. I can fall asleep to noise and light, like [korean baking ASMR](https://www.youtube.com/watch?v=VGQFEiyMe-M), reality tv drama, but not conspiracy talk shows or lawsuit breakdowns.
 
@@ -42,7 +42,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 17. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone<sup><a href="#fn10">¹⁰</a></sup>.
 
-18. I keep eye contact when talking, but would break it once I sense bs.
+18. I keep eye contact when talking, but break it once I sense bs.
 
 19. My colleagues call me a fair person, even more so after knowing my star sign.
 
@@ -54,13 +54,15 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 23. I had my first kiss stolen by a golden retriever in 5th grade and it had reincarnated as d 12 years later to shepard me.
 
-24. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar chords with my voice<sup><a href="#fn11">¹¹</a></sup>.
+24. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar sounds every time<sup><a href="#fn11">¹¹</a></sup>.
 
-25. I had a 1GB monthly phone plan ($0.34) throughout college till 2025 that ended cuz the telecom got bought out.
+25. I had a 1GB monthly phone plan ($0.34) throughout college till 2025 cuz the telecom I had got bought out.
 
-26. I went to 3 elementary schools, had 5 different childhood homes, and stayed (loyal) in 1 company since intern.
+26. I went to 3 elementary schools, had 5 different childhood homes, and stayed ~~loyal~~ in 1 company since intern.
 
-27. I am most comfortable typing in English, conversing in Mandarin, and pondering in both—simultaneously.
+27. I am most comfortable typing in English, conversing in Mandarin, and pondering in both simultaneously.
+
+28. My google searches are predominately: [insert word] synonym. ##precision
 
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Good, you know me; if not, Hiya
+title: Good, you know me; if not, Hiya~
 date: 2026-06-17 18:00:00 +0800
 tags: [about-me]
 permalink: /about-me/
