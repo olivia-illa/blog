@@ -11,8 +11,10 @@
 // live as inline custom properties on <html> and stored as JSON under
 // 'theme-custom'. The panel also prints the equivalent :root[data-theme]
 // block, so a scheme tuned here can be pasted into style.css as a fixed one.
+// It is an authoring tool: default.html only renders its swatch in drafts
+// mode, and without the swatch a stored "custom" pick falls back to Auto.
 (function () {
-  var SCHEMES = ['red', 'olive', 'sakura', 'custom'];
+  var SCHEMES = ['red', 'olive', 'sakura'];
   var CUSTOM_KEY = 'theme-custom';
 
   // Every colour token in style.css, in the order the panel shows them.
@@ -36,6 +38,7 @@
 
   var root = document.documentElement;
   var swatches = Array.prototype.slice.call(picker.querySelectorAll('.theme-swatch'));
+  if (picker.querySelector('.theme-swatch[data-scheme="custom"]')) SCHEMES.push('custom');
   var tuner = null;   // built lazily, the first time "custom" is picked
   var inputs = {};
   var cssOut = null;
@@ -256,7 +259,11 @@
   /* ---- wiring --------------------------------------------------------- */
 
   var current = root.dataset.theme;
-  current = SCHEMES.indexOf(current) === -1 ? '' : current;
+  if (SCHEMES.indexOf(current) === -1) {
+    // Unknown or, on the published site, "custom": show as Auto.
+    delete root.dataset.theme;
+    current = '';
+  }
   mark(current);
   if (current === 'custom') openTuner('');
 
