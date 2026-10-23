@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-08-17 11:13:00 +0800
-tags: [severance]
+tags: [severed]
 ---
 
 

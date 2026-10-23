@@ -2,7 +2,7 @@
 layout: post
 title: "free lunch"
 date: 2026-06-22 21:00:00 +0800
-tags: [work]
+tags: [severed]
 ---
 
 

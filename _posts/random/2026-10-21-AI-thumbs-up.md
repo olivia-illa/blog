@@ -2,7 +2,7 @@
 layout: post
 title: "Q gave you a 👍"
 date: 2026-10-21 23:27:00 +0800
-tags: [AI]
+tags: [AI-slop]
 ---
 
 Anyone using AI to give a reaction or respond to a personal message should not be working with humans.
