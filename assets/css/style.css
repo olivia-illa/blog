@@ -115,14 +115,14 @@
 /* "olive": the original dark scheme */
 :root[data-theme="olive"] {
   color-scheme: dark;
-    --bg-color: #18184f;
+    --bg-color: #17184b;
     --text-color: #D6C1E2;
     --link-color: #D6C1E2;
     --header-color: #D6C1E2;
     --footer-color: #D6C1E2;
-    --section-border: #E76A9B;
+    --section-border: #D3381C;
     --link-hover-bg: #D6C1E2;
-    --link-hover-color: #18184f;
+    --link-hover-color: #17184b;
     --quote-color: #f7cac9;
 }
 
@@ -951,15 +951,6 @@ a:hover {
 
 .page-clippings .clipping-source-preview {
   font-size: 0.9rem;
-}
-
-/* "Tags:" line directly under the source line, styled to match it rather
-   than like the tag footer on a post page */
-.page-clippings .clipping-preview .post-tags {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.9rem;
-  color: inherit;
 }
 
 
