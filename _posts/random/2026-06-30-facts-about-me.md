@@ -82,6 +82,6 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
   <li id="fn9" data-number="⁹">At one point, there was close to 100 pots on shelves and tables that were not made waterproof, and I would trip over potho vines every other week.</li>
   <li id="fn10" data-number="¹⁰">I once burst out laughing (in tears!) in front of an interviewee, who was probably traumatized afterwards, mid presentation. I had to dismissed myself from the rest of the program that day.</li>
   <li id="fn11" data-number="¹¹">I can't sing.</li>
-  <li id="fn12" data-number="¹²">It's very important to find the closest word that translates my thinkings.
+  <li id="fn12" data-number="¹²">It's very important I find the closest word that translates my mind; oftentimes I'm describing a specific situation or attempting an idea.
 </li></ol>
 
