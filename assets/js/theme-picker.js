@@ -14,7 +14,7 @@
 // It is an authoring tool: default.html only renders its swatch in drafts
 // mode, and without the swatch a stored "custom" pick falls back to Auto.
 (function () {
-  var SCHEMES = ['red', 'olive', 'sakura'];
+  var SCHEMES = ['lombard', 'birthday', 'sakura'];
   var CUSTOM_KEY = 'theme-custom';
 
   // Every colour token in style.css, in the order the panel shows them.
@@ -194,7 +194,7 @@
     var from = document.createElement('label');
     from.appendChild(document.createTextNode('Start from '));
     var select = document.createElement('select');
-    [['', 'Auto'], ['red', 'Red'], ['olive', 'Olive'], ['sakura', 'Sakura']].forEach(function (s) {
+    [['', 'Auto'], ['lombard', 'Lombard'], ['birthday', 'Birthday'], ['sakura', 'Sakura']].forEach(function (s) {
       var opt = document.createElement('option');
       opt.value = s[0];
       opt.textContent = s[1];

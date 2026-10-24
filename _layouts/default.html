@@ -19,9 +19,9 @@
     'theme-custom'; the published site treats a stored "custom" as Auto.
   {%- endcomment %}
   {%- if site.show_drafts %}
-  <script>try{var t=localStorage.getItem('theme'),d=document.documentElement;if(t==='olive'||t==='red'||t==='sakura'||t==='custom'){d.dataset.theme=t;if(t==='custom'){var c=JSON.parse(localStorage.getItem('theme-custom')||'{}'),k;for(k in c)if(/^(--[a-z-]+|color-scheme)$/.test(k)&&/^(#[0-9a-f]{6}|light|dark)$/i.test(c[k]))d.style.setProperty(k,c[k])}}}catch(e){}</script>
+  <script>try{var t=localStorage.getItem('theme'),d=document.documentElement;if(t==='birthday'||t==='lombard'||t==='sakura'||t==='custom'){d.dataset.theme=t;if(t==='custom'){var c=JSON.parse(localStorage.getItem('theme-custom')||'{}'),k;for(k in c)if(/^(--[a-z-]+|color-scheme)$/.test(k)&&/^(#[0-9a-f]{6}|light|dark)$/i.test(c[k]))d.style.setProperty(k,c[k])}}}catch(e){}</script>
   {%- else %}
-  <script>try{var t=localStorage.getItem('theme');if(t==='olive'||t==='red'||t==='sakura')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script>try{var t=localStorage.getItem('theme');if(t==='birthday'||t==='lombard'||t==='sakura')document.documentElement.dataset.theme=t}catch(e){}</script>
   {%- endif %}
   {% seo %}
   <link rel="icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}">
@@ -55,8 +55,8 @@
 	  <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }} &bull; write to me at <a href="mailto://blahblah@oliviailla.blog">blahblah@oliviailla.blog</a></p>
 	  <div class="theme-picker" role="group" aria-label="Colour scheme" hidden>
 	    <button type="button" class="theme-swatch" data-scheme="" aria-label="Auto" title="Auto">𐫱</button>
-	    <button type="button" class="theme-swatch" data-scheme="red" aria-label="Red" title="Red">✿</button>
-	    <button type="button" class="theme-swatch" data-scheme="olive" aria-label="Olive" title="Olive">❀</button>
+	    <button type="button" class="theme-swatch" data-scheme="lombard" aria-label="Lombard" title="Lombard">✿</button>
+	    <button type="button" class="theme-swatch" data-scheme="birthday" aria-label="birthday" title="birthday">❀</button>
 	    <button type="button" class="theme-swatch" data-scheme="sakura" aria-label="Sakura" title="Sakura">❁</button>
 	    {%- if site.show_drafts %}
 	    <button type="button" class="theme-swatch" data-scheme="custom" aria-label="Custom" title="Custom: pick your own colours">✎</button>

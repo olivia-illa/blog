@@ -84,17 +84,17 @@
    on dark backgrounds, so those schemes point it at their text colour. */
 
 /* "red": the dark-mode default */
-:root[data-theme="red"] {
+:root[data-theme="lombard"] {
   color-scheme: dark;
-  --bg-color: #2c1b17;
-  --text-color: #A3CCDA;
-  --link-color: #A3CCDA;
-  --header-color: #A3CCDA;
-  --footer-color: #A3CCDA;
-  --section-border: #FAFDD6;
-  --link-hover-bg: #A3CCDA;
-  --link-hover-color: #2c1b17;
-  --quote-color: #A3CCDA;
+  --bg-color: #55161c;
+  --text-color: #88d3ec;
+  --link-color: #88d3ec;
+  --header-color: #88d3ec;
+  --footer-color: #88d3ec;
+  --section-border: #848a28;
+  --link-hover-bg: #88d3ec;
+  --link-hover-color: #55161c;
+  --quote-color: #88d3ec;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -112,18 +112,18 @@
   }
 }
 
-/* "olive": the original dark scheme */
-:root[data-theme="olive"] {
+
+:root[data-theme="birthday"] {
   color-scheme: dark;
     --bg-color: #17184b;
-    --text-color: #D6C1E2;
-    --link-color: #D6C1E2;
-    --header-color: #D6C1E2;
-    --footer-color: #D6C1E2;
+    --text-color: #f9f2c8;
+    --link-color: #f9f2c8;
+    --header-color: #f9f2c8;
+    --footer-color: #f9f2c8;
     --section-border: #D3381C;
-    --link-hover-bg: #D6C1E2;
+    --link-hover-bg: #f9f2c8;
     --link-hover-color: #17184b;
-    --quote-color: #f7cac9;
+    --quote-color: #f9f2c8;
 }
 
 :root[data-theme="sakura"] {
