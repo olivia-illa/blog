@@ -100,7 +100,7 @@ Sub-5 is *more than possible, it is probable.*
 
 1. Drink lots of water to get the bowels moving early 💩
 2. Eat breakfast + a banana.
-3. Do makeup: brows + highligher, no mascara.
+3. Do makeup: brows + highlighter, no mascara.
 4. Slather sunscreen over neck, arms, and legs[³](#fn3).
 5. Put on *the* outfit.
 6. Double-knot shoelaces.
@@ -139,8 +139,8 @@ Sub-5 is *more than possible, it is probable.*
       <li>Tear the paper from the middle of the first grid as if its a BandAid to avoid touching the adhesive.</li>
       <li>To adhere, stretch the tape, then release the tension slightly as it adheres to the skin.</li>
       <li>Run hands over the tape for the heat to transfer to the glue</li>
-      <li><em>For one knee:</em> Exact placement is personal, but I run two strips from right below the kneecap (with the knee bent at 90') extending up the thighs.</li>
-      <li><em>For one calve:</em> Run two strips starting from the sole of the foot, up against the Achilles, and onto the side calf muscle while lying down in a relaxed position.</li>
+      <li><em>For per knee:</em> Exact placement is personal, but I run two strips from right below the kneecap (with the knee bent at 90') extending up the thighs.</li>
+      <li><em>For per calve:</em> Run two strips starting from the sole of the foot, up against the Achilles, and onto the side calf muscle while lying down in a relaxed position.</li>
       <li>Watch a tutorial, if the description above made no sense.</li>
     </ul>
   </li>
