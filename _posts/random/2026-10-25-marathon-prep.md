@@ -14,13 +14,15 @@ But if I’m the one who redirected you here...*[puts on] [the voice](https://yo
 
 ### Well hello there,
 
-You've come to the right person for advice! Assuming like me, you've only taken this marathon seriously since two months ago, barely run 20k a week with 6'10" being the fastest pace, and somehow expected to hit sub-5. Allow me to snap you awake. Be realistic about your goals and your body. 
+You've come to the right person for advice! Assuming like me, you've only taken this marathon seriously since two months ago, barely run 20k a week with 6'10" being the fastest pace, and somehow expected to hit sub-5. Allow me to snap you awake: be realistic about your goals and your body. 
 
 Listen closely to your body rather than the numbers. This stays true the day before, the night of, and all through race day. Take this from someone who had an Apple watch, switched to Garmin for battery longevity, and still has trouble navigating which app the data's being ~~exploited~~ imported to. All I care is the watch's counting, something.
 
 The tips below are for last-minute racers, like you and I, aiming to complete a marathon without suffering a sudden heart failure or rolled ankle. It's bare minimum effort to achieving runner status. 
 
-Sub-5 is *more than possible, it is probable.* ~~Break a leg!~~ **Good luck!**
+Sub-5 is *more than possible, it is probable.* 
+
+~~Break a leg!~~ **Good luck!**
 
 <br>
 
@@ -73,7 +75,7 @@ Sub-5 is *more than possible, it is probable.* ~~Break a leg!~~ **Good luck!**
 - High-sodium chips
 - Greasy soups (ramen)
 
-### 30 Minutes Before Starting:
+### 30min Before Racing:
 - BCAA pills
 - 1 energy gel
 - Electrolyte water
@@ -98,7 +100,7 @@ Sub-5 is *more than possible, it is probable.* ~~Break a leg!~~ **Good luck!**
 
 1. Drink lots of water to get the bowels moving early 💩
 2. Eat breakfast + a banana.
-3. Do makeup: brows + highligher, no mascara
+3. Do makeup: brows + highligher, no mascara.
 4. Slather sunscreen over neck, arms, and legs[³](#fn3).
 5. Put on *the* outfit.
 6. Double-knot shoelaces.
@@ -118,9 +120,9 @@ Sub-5 is *more than possible, it is probable.* ~~Break a leg!~~ **Good luck!**
 - **15k:** Depending on the temperature, cool down with drinking water by pouring it over the head and arms. Good time to naturally pick up speed.
 - **21k:** **Halfway there!** Alternate between listening to music and taking in the atmosphere. Laugh at the comical signs, do the high-fives and power-up taps.
 - **25k:** Ignore the regretful thoughts. You'll bound to sign up for the next one.
-- **30k:** *This* is when the marathon begins! When tired, intervals of 30sec walks and runs. Count the seconds, or only walk when there's shade, and run when underneath the sun directly.
+- **30k:** *This* is when the marathon begins! When tired, try intervals of 30sec walks and runs. Count each seconds.  Or walk when there's shade, and run when underneath the sunshine.
 - **35k:** Happy thoughts only. Drink lots.
-- **41k:** Time to pick up speed! Keep an eye out for loved ones[⁴](#fn4). I tend to well up at this point.
+- **41k:** Time to pick up speed and smile! Keep an eye out for loved ones[⁴](#fn4). I tend to well up at this point.
 - **42k: 👏🏼 YOU ARE A FINISHER 👏🏼**
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
