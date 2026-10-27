@@ -30,6 +30,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fira+Code:wght@300;400;500;600&display=swap">
   {%- comment -%} Only the 𐫱 glyph of the Auto theme swatch; few systems ship a Manichaean font. {%- endcomment %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Manichaean&text=%F0%90%AB%B1&display=swap">
+  {%- comment -%}
+    Only the ᯓ🏃🏻‍♀️‍➡️ glyphs of .botanical-divider: few systems ship a Batak font,
+    and older emoji fonts (e.g. Firefox's bundled Twemoji) draw the right-facing
+    runner as a left-facing one plus ➡️. Add any new divider glyphs to `text`.
+  {%- endcomment %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Batak&family=Noto+Color+Emoji&text=%E1%AF%93%F0%9F%8F%83%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F&display=swap">
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <script src="{{ "/assets/js/format-dates.js" | relative_url }}" defer></script>
   <script src="{{ "/assets/js/fit-latest.js" | relative_url }}" defer></script>
