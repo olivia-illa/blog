@@ -33,9 +33,9 @@ echo "------------------------------------------------"
 
 # Ensure required directories exist for Docker mounting
 mkdir -p .jekyll-cache _site
-chmod 777 .jekyll-cache _site
 
 docker run --rm $PLATFORM_FLAG \
+  -e JEKYLL_ROOTLESS=1 \
   -v "$(pwd):/srv/jekyll$VOLUME_FLAGS" \
   -p 4000:4000 \
   -it docker.io/jekyll/jekyll:4.2.2 \
