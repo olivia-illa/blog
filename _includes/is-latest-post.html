@@ -1,0 +1,23 @@
+{%- comment -%}
+  Decides whether a post belongs in "latest" (the home page column and
+  latest.html), so both lists share one rule. Thoughts, clippings, weeknotes
+  and the review-style tags each have their own sections and are left out.
+
+  Clippings are matched by layout, not just the internet-clippings tag: most
+  are tagged by topic (politics, shows, ...) instead.
+
+  Usage:  {% include is-latest-post.html post=post %}
+          {% if is_latest_post %} ... {% endif %}
+
+  Sets is_latest_post in the caller's scope, since Jekyll includes share it.
+{%- endcomment -%}
+{%- assign latest_candidate = include.post -%}
+{%- assign latest_candidate_title_lower = latest_candidate.title | downcase -%}
+{%- assign is_latest_post = true -%}
+{%- if latest_candidate.layout == 'thoughts_style' or latest_candidate.layout == 'clippings_style' or latest_candidate_title_lower == 'thoughts' -%}
+  {%- assign is_latest_post = false -%}
+{%- elsif latest_candidate.tags contains 'thoughts' or latest_candidate.tags contains 'weeknotes' or latest_candidate.tags contains 'internet-clippings' or latest_candidate.tags contains 'quotes' -%}
+  {%- assign is_latest_post = false -%}
+{%- elsif latest_candidate.tags contains 'articles' or latest_candidate.tags contains 'books' or latest_candidate.tags contains 'movies' or latest_candidate.tags contains 'music' -%}
+  {%- assign is_latest_post = false -%}
+{%- endif -%}

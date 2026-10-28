@@ -28,8 +28,8 @@ body_class: home
   {% assign shown = 0 %}
 
   {% for post in latest %}
-    {% assign post_title_lower = post.title | downcase %}
-    {% unless post.layout == 'thoughts_style' or post.layout == 'clippings_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' or post.tags contains 'weeknotes' or post.tags contains 'internet-clippings' or post.tags contains 'quotes' or post.tags contains 'articles' or post.tags contains 'books' or post.tags contains 'movies' or post.tags contains 'music' %}
+    {% include is-latest-post.html post=post %}
+    {% if is_latest_post %}
       {% if shown >= 10 %}{% break %}{% endif %}
       {% assign shown = shown | plus: 1 %}
 
@@ -42,8 +42,8 @@ body_class: home
           </a>
         </div>
       </li>
-      
-    {% endunless %}
+
+    {% endif %}
   {% else %}
     <p>No latest posts yet.</p>
   {% endfor %}
