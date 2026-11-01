@@ -821,16 +821,10 @@ a:hover {
   display: none !important;
 }
 
-/* Slim scrollbar */
-.scrollable-col-content::-webkit-scrollbar {
-  width: 4px;
+.scrollable-col-content {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--link-color) 35%, transparent) transparent;
 }
-
-.scrollable-col-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-
 
 /* ==========================================================================
    7. Pages: dense list pages
