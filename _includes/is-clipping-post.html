@@ -1,0 +1,18 @@
+{%- comment -%}
+  Decides whether a post is a clipping (the home page "Copy paste share"
+  column and copy-paste-share.html), so both lists share one rule.
+
+  Clippings are matched by layout, not just the internet-clippings tag: most
+  are tagged by topic (politics, books, movies, ...) instead. Matching on those
+  topic tags would wrongly pull in other posts that share them, e.g. thoughts.
+
+  Usage:  {% include is-clipping-post.html post=post %}
+          {% if is_clipping_post %} ... {% endif %}
+
+  Sets is_clipping_post in the caller's scope, since Jekyll includes share it.
+{%- endcomment -%}
+{%- assign clipping_candidate = include.post -%}
+{%- assign is_clipping_post = false -%}
+{%- if clipping_candidate.layout == 'clippings_style' or clipping_candidate.tags contains 'internet-clippings' -%}
+  {%- assign is_clipping_post = true -%}
+{%- endif -%}
