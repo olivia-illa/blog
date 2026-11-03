@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Kitsune Udon Comparison"
+title: "Kitsune Udon A/B Testing"
 date: 2026-10-28 19:46:00 +0800
 tags: [random]
 ---
 
 
-I wanted to know whether the Japanese had truly perfected the craft of instant noodles. For two meals straight, I conducted a taste test. I had Marugame’s Bean Curd Udon for dinner, then followed it up for lunch with a bowl of Kitsune Udon scavenged from the office cabinets.
+I wanted to know whether the Japanese had truly perfected the craft of instant noodles. So for two meals straight, I conducted a taste test. I had Marugame’s Bean Curd Udon for dinner, then followed it up for lunch with a bowl of Kitsune Udon scavenged from the office cabinets.
 
 The verdict? **Hai!**
 
@@ -29,8 +29,7 @@ The verdict? **Hai!**
 
 **Broth:** Light, clean umami dashi.
 
-**Inari age:** Thick tender and juicy. Perhaps a touch too sweet, but I see it as the dish’s signature note. A perfectly balanced sweet-and-savory bowl with added meat hehe. 
-
+**Inari age:** Thick tender and juicy. Perhaps a touch too sweet, but I see it as the dish’s signature note. A perfectly balanced sweet and savory bowl when the meant is added 〜⁠(⁠꒪⁠꒳⁠꒪⁠)⁠〜
 
 <br>
 
@@ -47,7 +46,7 @@ The verdict? **Hai!**
 
 **Broth:** Added half a packet of seasoning, which was plenty for my LocknLock container. Clear dashi base with zero biting saltiness you get from instant noodle seasonings.
 
-**The sponge[³](#fn3):** Expands into an 8×6 square under, very absorbent. A more subtle twinge of sweetness with a texture almost indistinguishable from fresh stuff.
+**The sponge[³](#fn3):** Expands into an 8*6 square under, very absorbent. A more subtle twinge of sweetness with a texture almost indistinguishable from fresh stuff ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
