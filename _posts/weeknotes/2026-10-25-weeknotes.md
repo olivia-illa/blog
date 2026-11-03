@@ -39,7 +39,7 @@ tags: [weeknotes]
 - Web browser skill/desktop browser is Q with eyes and hands.
 
 ## CONSUMING
-- *The Chair Company* Ep. 1: [Died laughing](https://oliviailla.blog/2026/10/25/clips.html).
+- *The Chair Company* S1E1 (rewatch): [Died laughing](https://oliviailla.blog/2026/10/25/clips.html).
 - [Why are protests in France so frequent and violent?](https://www.reddit.com/r/NoStupidQuestions/comments/1x8kfng/why_are_protests_in_france_so_often_and_also_turn/): *"There's a political or even ideological interest for some countries, notably the anglo-saxon ones which are chronically scared of anything resembling 'the left', to depict negatively the French system at every opportunity they get."*
 - [The Israel Situation is Insane](https://www.youtube.com/watch?v=_ptPuYVfNUM&t=2106s)
 - [Nathan Fielder and Lance Oppenheim on You Can See Everything](https://www.youtube.com/watch?v=6gn0QeqYMr4): Nat really respects allowing audience a first-hands experience.
