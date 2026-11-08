@@ -1,6 +1,7 @@
 ---
-layout: thoughts_style
-date: 2026-11-08 10:24:00 +0800
+layout: post
+title: "Sore Ankle Mystery"
+date: 2026-11-08 10:23:00 +0800
 tags: [wordvomit]
 ---
 
@@ -11,6 +12,13 @@ It dawned on me why my right ankle has felt sore lately, as if recovering from a
 Now, picture my writing desk being that *zataku*. To sit comfortably with back support, I lean flat against the 30 degree angle of the window frame, with the desk slanted parallel to the frame, my right leg bent under the table, and the other hanging straight, off the edge of the elevated panel. Even with a cushion underneath, my right ankle is tucked into a cross-legged position--the yoga pose where I'm flexing my flexible hips.
 
 The forced position on a hard, flat surface is what's causing the soreness! Especially when I stand up afterward from a near-squatting position and leading with the right foot with my weight onto that cramped ankle.
+
+
+<div class="botanical-divider">・・・・・</div>
+
+Back to writing my normal program, munching on the bagel bites d garnished with sardine and cheddar slices alongside a cup hot coffee.
+
+
 
 <div class="botanical-divider">𖡼.𖤣𖥧𖡼.𖤣𖥧</div>
 
