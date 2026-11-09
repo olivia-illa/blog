@@ -2,7 +2,7 @@
 layout: post
 date: 2026-07-26 16:45:00 +0800
 title: "List of Third Spaces"
-tags: [random]
+tags: [lists]
 ---
 
 In search of accessible third spaces that meet the criteria:

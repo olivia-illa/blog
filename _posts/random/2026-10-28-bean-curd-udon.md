@@ -2,7 +2,7 @@
 layout: post
 title: "Kitsune Udon A/B Testing"
 date: 2026-10-28 19:46:00 +0800
-tags: [random]
+tags: [f-around]
 ---
 
 
