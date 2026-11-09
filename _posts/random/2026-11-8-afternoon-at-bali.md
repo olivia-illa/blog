@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Afternoon at Bali?"
-date: 2026-11-08 10:23:00 +0800
+date: 2026-11-08 16:13:00 +0800
 tags: [wordvomit]
 ---
 
