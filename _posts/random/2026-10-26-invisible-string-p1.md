@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Invisible (Red) String"
-date: 2026-10-26 16:16:00 +0800
+title: "Invisible Red String (Part 1)"
+date: 2026-10-26 21:16:00 +0800
 tags: [brezel-knot]
 ---
 
@@ -11,7 +11,7 @@ I like to joke about finding a lost golden puppy seeking love at just the right 
 
 For those who know (you know), d’s and my introduction was very much an intentional setup, complete with matching preferences listed. We’d both only had brief encounters in the past, and had yet to learn how to cherish a person in their entirety. Neither of us expected the fruition of a years-long relationship built on unconditional love and evolving understanding after that first meeting.
 
-The truth is, there weren’t any red strings binding us to one another at first. Only the courage and curiosity to see things through after first sight. 
+The truth is, there weren’t any red strings binding us to one another. Only the courage and curiosity to see things through. 
 
 We spent the initial months in forced social distancing, suppressing the urge to pounce, feeding off limerence through texts and pictures. We played Romeo and Juliet by defying my parents’ wishes, biking/skating across the city whenever either of us needed a breath of fresh air. We’d stroll through parks and along riverbanks for hours, talking endlessly about our post-quarantine plans, his work, and my final semester. 
 
@@ -28,53 +28,14 @@ It makes me wonder if an invisible string has been holding us together this enti
 
 ## Show A Sign, please
 
-Today’s post is about my bestie, who went to ask the universe, *月老 (The Old Man Under the Moon)*, for a sign regarding a specific man in her life. As a kid, I always drawn my future home in complex mole burrows, where my besties occupied spaces with their significant others and family, directly connected to mine. As an adult, that childhood dream translated into double dates or even double weddings (*Bride Wars*, anyone?). However, I never really considered *how* my friends would meet their soulmates. Of course they would eventually, but men don't just appear out of thin air like they do in my ideal world.
+Today’s post was actually suppose to be about my bestie, who went to ask the universe, *月老 (The Old Man Under the Moon)*, for a sign regarding a specific man in her life. 
 
-While t and I are opposites by definition, our preferences for men aren’t too far apart. I thought, why not pluck out the traits I observe in mine, along with the qualities I used to take for granted:
-
-
-
-### Foundations
-
-* Not married, nor has children
-* Pleasant smile with healthy skin
-* Good personal hygiene
-* Non-smoker, non-heavy drinker *Beer doesn't count.*
-* Exercises regularly
-* Well-dressed *Shirts count? The bar is low for engineers.*
-
-### Character
-
-* Disciplined, honest, ~~punctual~~, responsible
-* Committed to personal growth *Undefeated by AI? Not yet.*
-* Critical thinker, an expert in his field
-* Avoids excessive profanity *It’s rare when d speaks up.*
-* Socially aware *Autistic relieves d of this right?*
-* Politically moderate *Some things are probably off-limits.*
-
-### Interpersonal
-
-* Expresses affection and enjoys physical touch
-* Listens and is non-judgmental *d tries not to laugh all the time.*
-* Respects my independence
-* Not envious of my success and supportive in tough times ⭐️⭐️⭐️⭐️⭐️
-* Welcoming to my family and friends
-* Curious and engaged in partner's life
-
-### Finances
-
-* Has work-life balance *What if work = passion = money?*
-* Has a stable income
-* ~~Proactive~~ in legal investments
-* Affords overseas trips twice a year
-
-### Family
-
-* Healthy family boundaries
-* Not a mama's boy
-* No unresolved family baggage, or heavy financial burdens
-* Open to having children
-* Willing to share domestic and parenting duties equally
+Whenever I was told to draw my future home as a kid, it'd always been a complex mole burrow, where my bestie would occupy spaces with their significant other and family, directly connected to mine. As an adult, that dream translated into imaginations of double dates or heck, double weddings (*Bride Wars*, anyone?). However, I never really considered *how* my friends would meet their soulmates. Of course they would eventually, but men don't just appear out of thin air like they do in my made up world.
 
 
-Credits to t for the creating this precise Genie list. I pray your man to show up soon.
+<br>
+
+*Read the about our day here.*
+
+
+
