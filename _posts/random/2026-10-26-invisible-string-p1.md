@@ -35,7 +35,7 @@ Whenever I was told to draw my future home as a kid, it'd always been a complex 
 
 <br>
 
-*Read the about our day here.*
+*Read the about our day [here](https://oliviailla.blog/2026/10/27/invisible-string-p2.html).*
 
 
 
