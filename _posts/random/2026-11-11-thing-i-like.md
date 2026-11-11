@@ -20,8 +20,6 @@ Keeping a list of things I like and ~~dislike~~ hate, inspired by [Sylvia’s](h
 * Bright lights in the room
 * Hour-long YT videos that talk throughout
 * Grapefruit scents
-- A good contrasting color
-- Taking makeup off
 
 <br>
 
@@ -44,13 +42,15 @@ Keeping a list of things I like and ~~dislike~~ hate, inspired by [Sylvia’s](h
 * Mango smoothies (instant brain freeze cuz I get too excited)
 * Mala hot pot (destroys my butt)
 * Antique furniture (that Art Deco Airbnb in Sydney)
-- Nasi lemak, Indian curry, and ramen (the grease in these foods go undetected when I'm chowing down)
-* Lobster (it cost me a literal foot)
+- Nasi lemak, Indian curry, and ramen (the diminishing returns are real)
+* Shellfish (cost me a literal foot)
 * Large friend gatherings
 * Wind blowing directly on my neck and head
 - Sunbathing on the beach
 - Dragging files into digital folders
 - Wasabi flavored snacks
+- High-waisted pants (the proportions don't look good on me)
+- Wearing a belt
 
 
 <br>
@@ -58,12 +58,12 @@ Keeping a list of things I like and ~~dislike~~ hate, inspired by [Sylvia’s](h
 ### Things I think I hate, but actually like
 
 * Full marathons and 70.3s
-* Beer over wine during long chats
-* Sardines for breakfast
+* Beer over long chats
 * Big family gatherings
 * Dubbed shows
-* Hot buttered corn
+* Buttered corn
 * Unsalted pecans or peanuts
 - Carrying a drinking bottle
-- Painting my nails
 - Butter on toast (has to be a delicate spread)
+- Having supper past 8pm
+- Midi dresses/skirts
