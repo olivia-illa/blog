@@ -22,7 +22,7 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 * Had the texture of an underbaked loaf skin.
 - Thank god, I had the foresight to put off the cream another day when I started.
 
-### Trashed: After 2 weeks in the freezer
+### Trashed after 2 weeks in the freezer
 
 <br>
 
@@ -38,7 +38,7 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 * A truly underbaked brownie.
 - Should've just gone gluten-free if I'd knew it wouldn't rise.
 
-### Finished: In 5 minutes
+### Finished in 5 minutes
 
 <br>
 
@@ -46,17 +46,17 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 
 * Didn't cream the cheese and sugar together first.
 * Didn't bring the cream and eggs to room temperature.
-* Whisked all the wet ingredients together as if creating a single-bowl recipe.
-* Strained the final batter thinking coarsely ground sesame would pass through, ending up separating the entire mixture instead.
-* Didn't just use plain sesame paste.
+* Whisked all the wet ingredients together at once as if creating a single-bowl recipe.
+* Strained the batter thinking coarsely ground sesame would pass through, which ended up separating the mixture instead.
+* Didn't just use sesame paste.
 
 ### Result: Blotchy Sesame Cheesecake
 
-* Sand-like cream cheese curds throughout the cake.
-* The top didn't burn enough.
-- Thankfully, I only had enough cream cheese to make 1/3 the portion.
+* Sand-like cream cheese curds.
+* The top didn't burn.
+- Luckily, I only had enough cream cheese to make 1/3 the portion.
 
-### Finished: In 1.5 weeks
+### Finished in 1.5 weeks
 
 <br>
 
@@ -71,13 +71,13 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 * Crunched like WASA crackers.
 * The olives all popped off the top.
 
-### Finished: In under a week
+### Finished in under a week
 
 <br>
 
 ## Chocolate Banana Bread
 
-* Replaced mascarpone with yogurt of an entirely incorrect consistency.
+* Replaced mascarpone with yogurt of incorrect consistency.
 * Added a few too many grams of banana.
 * Used too little baking powder, or maybe it was expired, not sure which.
 
@@ -86,4 +86,4 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 * A cheese-like density you get when slicing into a Kirkland block.
 * Full of mini ~~cheese~~ holes.
 
-### Trashed: The final slice
+### Trashed the final slice
