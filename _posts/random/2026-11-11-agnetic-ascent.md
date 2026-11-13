@@ -8,16 +8,15 @@ tags: [AI-slop]
 
 Do you still write more than [20% of the code](https://x.com/mitsuhiko/status/2114318715705548812) by hand?
 
-I cannot speak for d (though he did spot the post on Mastodon), but I’ve made a few observations on the subway when he'd pull out his laptop (these days just his phone) or after dinner, all I'd hear is the CLICKTY-CLACK of endlessly typing into the night, wondering if its two lovers writing up walls of text to until one of us realizes the other side is a chatbot... 
+I cannot speak for d (though he did spot the post on Mastodon), but I’ve made a few observations, whether it was on the subway when he'd pull out his laptop (these days it's just his phone) or after dinner, when all I’d hear is the *CLICKETY-CLACK* of endless typing and squealing late into the night.
 
-Some of the observation have been modified for comedic effects, but I've kept it as close as possible to my hearings. 
+Some of these observations have been modified for comedic effect, though I've kept them as close as possible to what I actually overheard:
 
-* Convert the agent’s responses into the format of a math explanation video
-* Run agents on his phone while keeping his laptop on "never go to sleep" mode
-* Have a colleague act as his meat proxy at the office to replug the wires connecting his machines
-* Ask one agent whether another agent’s feedback makes sense, then test them against each other
-* Fight ~~the boss’~~ slop with more, faster slop
-* Have 48 bots working simultaneously until they all crash, then start over again
-* Use the laptop's front camera to give the agent eyes so it can identify what the flashing error on a keyboard means and how to resolve it
-* Check the agent’s thought process on his phone and course-correct
-
+- Converts the agent’s responses into the format of a math explanation video
+- Runs agents on his phone while keeping his laptop on *never go to sleep* mode
+- Has a colleague act as his *meat proxy* at the office to replug the wires connecting his machines
+- Asks one agent whether another agent’s feedback makes sense, then pits them against each other
+- Fights ~~the boss’~~ slop with more, faster slop
+- Runs 48 bots simultaneously until they all crash, then starts over from scratch
+- Uses the laptop's front camera to give the agent eyes so it can identify what a flashing error on a keyboard means and how to resolve it
+- Checks the agent’s thought process on his phone and course-corrects in real time
