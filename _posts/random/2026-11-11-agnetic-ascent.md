@@ -20,3 +20,4 @@ Some of these observations have been modified for comedic effect, though I've ke
 - Runs 48 bots simultaneously until they all crash, then starts over from scratch
 - Uses the laptop's front camera to give the agent eyes so it can identify what a flashing error on a keyboard means and how to resolve it
 - Checks the agent’s thought process on his phone and course-corrects in real time
+- "May I pull the latest remote changes and rebase your local commits, automatically preserving your uncommitted edits?" Yes, don't ask me again.

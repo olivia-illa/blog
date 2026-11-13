@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Trading Aloud (In the Mind of an Amateur Trader)"
+title: "In the Mind of an Amateur Trader"
 date: 2026-11-12 22:42:00 +0800
 tags: [money]
 ---
@@ -24,5 +24,5 @@ WHATTTT, **BREAKING NEWS: Jensen Huang, Nvidia's CEO, resigned.** After two extr
 
 *Shakes d awake.*
 
-Let's see what Reddit makes of this. MMM... a ploy, YES. Some powerful people want him down. Yes. A fishy timing. Yes. Since when did a man's sexual proclivities bring him real consequences? Yes, people on Reddit get it. They'll figure out what’s up while I'm asleep. Places two at market price, TEHEHEHE.
+Let's see what Reddit makes of this. MMM... a ploy, YES. Powerful people want him down. YES. A fishy timing. YES. China's involved. Yes, I mean I thought that's established. Since when did a man's sexual proclivities bring him real consequences?? People on Reddit just gets it. They'll figure out what’s up while I'm asleep. Places two at market price, TEHEHEHE.
 
