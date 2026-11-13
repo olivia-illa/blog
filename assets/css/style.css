@@ -528,6 +528,12 @@ a:hover {
   border-bottom: 1px solid var(--section-border);
 }
 
+/* The surrounding grid already closes each column. Keep item separators
+   between entries, without adding another rule after the final entry. */
+.home-grid .post-item:last-child {
+  border-bottom: none;
+}
+
 .clipping-meta {
   font-size: 0.75rem;
   color: var(--meta-color);
@@ -767,6 +773,10 @@ a:hover {
   .clippings-col .clipping-item:nth-child(n+3) {
     display: none;
   }
+
+  .home-grid .clippings-col .clipping-item:nth-child(2) {
+    border-bottom: none;
+  }
 }
 
 /* --- The "latest" column -------------------------------------------------- */
@@ -909,6 +919,11 @@ a:hover {
 .list-row-tags a:hover,
 .tag-group-title a:hover {
   color: var(--link-hover-color);
+}
+
+.page-tags .list-row:last-child,
+.page-write .list-row:last-child {
+  border-bottom: none;
 }
 
 /* --- Page: tags ---------------------------------------------------------- */
