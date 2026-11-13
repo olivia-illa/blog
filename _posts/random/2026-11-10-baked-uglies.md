@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Baked-Uglies"
-date: 2026-11-11 15:47:00 +0800
+date: 2026-11-9 15:47:00 +0800
 tags: [lists]
 ---
 
