@@ -7,9 +7,10 @@
 
   Usage:  {% include relative-date.html date=post.date %}
 
-  "now" is Jekyll's *build* time, so these stay accurate only as long as the
-  site is rebuilt regularly — which the deploy does on every push.
+  Build-time text is a fallback; relative-dates.js updates it in the reader's
+  browser using the timezone-aware datetime and their current clock.
 {%- endcomment -%}
+<time class="js-relative-date" datetime="{{ include.date | date_to_xmlschema }}">
 {% assign now_seconds = "now" | date: "%s" | plus: 0 %}
 {% assign day_seconds = 86400 %}
 {% assign hour_seconds = 3600 %}
@@ -34,3 +35,4 @@
 {% else %}
   {{ include.date | date: "%b %-d, %Y" }}
 {% endif %}
+</time>
