@@ -1,0 +1,2 @@
+- If you're making layout/design changes for me, please ask me to confirm them. If I tell you it's okay, please commit them. Offer to push
+- Before making changes run `git pull --autostash --rebase`. If conflicts, please resolve them automatically
