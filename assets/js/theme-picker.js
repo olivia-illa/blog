@@ -3,7 +3,7 @@
 // The pick is stored in localStorage and set as data-theme on <html>; the
 // schemes themselves are the :root[data-theme] blocks at the top of
 // assets/css/style.css. "Auto" (data-scheme="") removes both, handing the
-// choice back to the system preference (light, or "red" in dark mode). The
+// choice back to the default Lumon palette. The
 // inline script in _layouts/default.html re-applies a stored pick before first
 // paint on every page; keep its list of schemes in step with SCHEMES here.
 //

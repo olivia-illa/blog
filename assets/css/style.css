@@ -38,16 +38,9 @@
    1. Design tokens
    ========================================================================== */
 
-/* Colour schemes. The light one lives on :root itself; the dark ones override
-   its colour tokens. A reader's pick is stored by assets/js/theme-picker.js
-   and set as data-theme on <html> (before first paint, by the inline script
-   in _layouts/default.html). With no pick, the system preference decides:
-   light, or "red" in dark mode — so "red" is written out twice below, once
-   for each route in. Keep the two copies in step, and keep the scheme list in
-   theme-picker.js and the picker in default.html in step with these blocks.
-   The "custom" scheme has no block here: its values are inline custom
-   properties set by the tuner in theme-picker.js, which lists every token
-   below — add new colour tokens to its TOKENS list too. */
+/* Auto uses Lumon in both light and dark system settings. Explicit themes
+   override its tokens. Keep the picker and pre-paint script in default.html
+   in step with theme-picker.js. Custom colours are draft-only. */
 
 :root {
   color-scheme: light;
@@ -83,7 +76,7 @@
    has exactly the contrast the resting page has. Grey quote text is too dim
    on dark backgrounds, so those schemes point it at their text colour. */
 
-/* "red": the dark-mode default */
+/* Lombard */
 :root[data-theme="lombard"] {
   color-scheme: dark;
   --bg-color: #55161c;
@@ -96,22 +89,6 @@
   --link-hover-color: #55161c;
   --quote-color: #88d3ec;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    color-scheme: dark;
-    --bg-color: #2c1b17;
-    --text-color: #f7cac9;
-    --link-color: #f7cac9;
-    --header-color: #f7cac9;
-    --footer-color: #f7cac9;
-    --section-border: rgba(255, 255, 255, 0.1);
-    --link-hover-bg: #f7cac9;
-    --link-hover-color: #2c1b17;
-    --quote-color: #f7cac9;
-  }
-}
-
 
 :root[data-theme="birthday"] {
   color-scheme: dark;
@@ -140,7 +117,8 @@
 }
 
 
-/* Lumon reference palette; the picker exposes this preset only in drafts. */
+/* Lumon is also the default Auto palette. */
+:root:not([data-theme]),
 :root[data-theme="lumon"] {
   color-scheme: light;
   --bg-color: #d8e0e0;
@@ -158,9 +136,16 @@
 }
 
 
+:root:not([data-theme]),
+:root:not([data-theme]) *,
 :root[data-theme="lumon"],
 :root[data-theme="lumon"] * {
-  scrollbar-color: var(--section-border) var(--bg-color);
+  scrollbar-color: #ffed9e var(--bg-color);
+}
+
+:root[data-theme="sakura"],
+:root[data-theme="sakura"] * {
+  scrollbar-color: #426bc2 var(--bg-color);
 }
 
 
