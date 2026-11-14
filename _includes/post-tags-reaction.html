@@ -1,0 +1,9 @@
+{% assign reaction_title = page.title | downcase %}
+{% if page.layout == 'thoughts_style' or reaction_title == 'thoughts' or page.tags contains 'thoughts' %}
+  {% include post-tags.html tags=page.tags %}
+{% else %}
+  <div class="post-tags-reaction">
+    {% include post-tags.html tags=page.tags %}
+    {% include apple-reaction.html %}
+  </div>
+{% endif %}

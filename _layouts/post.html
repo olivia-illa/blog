@@ -14,12 +14,12 @@ layout: default
     {{ content }}
   </div>
 
-  {% include post-tags.html tags=page.tags %}
+  {% include post-tags-reaction.html %}
 
   <!-- Last Updated Line: per-post git commit date via jekyll-last-modified-at -->
   {% if page.last_modified_at %}
     <div class="post-tags post-updated">
-      Last Updated:
+      Last updated:
       <time class="js-format-date" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
         {{ page.last_modified_at | date: "%d %B %Y %H:%M" }}
       </time>

@@ -510,6 +510,48 @@ a:hover {
   display: inline-block;
 }
 
+.post-tags-reaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.post-article .post-tags-reaction .post-tags {
+  margin-top: 0;
+}
+
+.post-tags-reaction .post-reaction {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.pie-caption {
+  font-size: 0.75rem;
+}
+
+.apple-reaction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.apple-reaction:focus-visible {
+  outline: 1px solid var(--text-color);
+  outline-offset: 2px;
+}
+
 /* "see more →" affordance at the foot of a home column */
 .see-more {
   margin-top: 0.75rem;
