@@ -3,4 +3,5 @@
 The site is built by `bundle exec jekyll build` in `.github/workflows/jekyll-gh-pages.yml`, not by GitHub Pages' own builder, so custom plugins in this directory run in production as well as in `preview.sh`.
 
 - `clippings_title.rb`: titles `clippings_style` posts after their `source_title` unless they set `title:`.
+- `thoughts_title.rb`: gives untitled `thoughts_style` posts an opening-paragraph title (up to 100 characters) for feeds and metadata. Explicit titles and post URLs are preserved.
 - `recently_edited.rb`: sorts posts by the full last-modified timestamp for the recently edited page.
