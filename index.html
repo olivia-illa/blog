@@ -14,13 +14,13 @@ body_class: home
 <div class="home-grid">
 <section class="latest-col">
   <div class="latest-intro">
-    <h2><a href="{{ '/latest/' | relative_url }}" class="inherit-link">Ni hao</a></h2>
+    <h2>Ni hao</h2>
     <p>Oh hey, you’re in my space!</p>
     <p>But stay for the feisty narrations, sloppy justifications and aimless fixations.</p>
     <p>For ✅ I am human.</p>
     <p>Click around for <a href="{{ '/2026/06/30/facts-about-me.html' | relative_url }}">bits and bobs</a> <a href="{{ '/about-me/' | relative_url }}">about me</a>.</p>
 
-    <div class="section-label">latest ✎﹏﹏﹏﹏</div>
+    <div class="section-label"><a href="{{ '/recently-edited/' | relative_url }}" class="inherit-link">latest</a> ✎﹏﹏﹏﹏</div>
   </div>
 
 <ul class="post-list latest-list js-fit-list">
@@ -55,7 +55,7 @@ body_class: home
 
 
 <section class="clippings-col">
-  <h2><a href="{{ '/copy-paste-share/' | relative_url }}" class="inherit-link">Copy paste share</a></h2>
+  <h2>Copy paste share</h2>
   <div class="scrollable-col-content">
     <ul class="post-list">
       {% comment %} 10 for the scrolling desktop column; CSS trims to 2 when the page is unlocked (phones) {% endcomment %}
@@ -128,7 +128,7 @@ body_class: home
 </section>
 
 <section class="Write anything">
-  <h2><a href="{{ '/write-anything/' | relative_url }}" class="inherit-link">Write anything</a></h2>
+  <h2>Write anything</h2>
   <div class="scrollable-col-content">
     <ul class="post-list">
       {% assign thoughts_shown = 0 %}

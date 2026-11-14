@@ -1,0 +1,16 @@
+---
+layout: page
+title: shhh I made edits
+permalink: /recently-edited/
+body_class: page-compact page-edited
+---
+
+<ul class="post-list">
+  {% assign edited_posts = site.posts | recently_edited %}
+  {% for post in edited_posts %}
+    {% include is-latest-post.html post=post %}
+    {% if is_latest_post %}
+      {% include list-row.html post=post updated=true %}
+    {% endif %}
+  {% endfor %}
+</ul>

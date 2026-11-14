@@ -182,12 +182,23 @@ nav {
   margin-bottom: 0.6rem; /* Even tighter gap after nav */
 }
 
-nav > a:first-child {
+nav > a:first-child,
+.site-title {
   font-size: 1.4rem;
   font-style: italic;
   font-weight: normal;
   text-transform: lowercase;
   text-decoration: none;
+}
+
+.site-title-hint {
+  display: none;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.site-title:hover + .site-title-hint {
+  display: inline;
 }
 
 .nav-links a {
@@ -508,6 +519,11 @@ a:hover {
   font-size: 0.75rem;
 }
 
+.home-grid .see-more {
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
 /* Small decorative label between blocks inside a column */
 .section-label {
   margin: 2rem 0;
@@ -621,15 +637,15 @@ a:hover {
 /* Collapse site header spacing */
 .home header,
 .home nav {
-  margin-bottom: 0.2rem !important;
-  padding-bottom: 0.2rem !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* Pull main containers flush under the top header border */
 .home main,
 .home article {
   padding-top: 0 !important;
-  margin-top: 0.2rem !important;
+  margin-top: 0 !important;
 }
 
 /* Typography & vertical rhythm normalization */
@@ -663,11 +679,11 @@ a:hover {
 .home-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.75rem;
+  gap: 0.75rem 0;
   position: relative;
   min-height: 0;
   padding-top: 0 !important;
-  margin-top: 0.2rem !important;
+  margin-top: 0 !important;
 }
 
 .home-grid > section {
@@ -701,6 +717,7 @@ a:hover {
 
   .home-grid > section {
     overflow-y: auto;
+    margin-bottom: 0;
   }
 }
 
@@ -708,7 +725,7 @@ a:hover {
 @media (max-width: 599px) {
   .home-grid > section:not(:first-child) {
     border-top: 1px solid var(--section-border);
-    padding-top: 1rem !important;
+    padding-top: 0.5rem !important;
   }
 }
 
@@ -718,9 +735,7 @@ a:hover {
   }
 }
 
-/* Column headings sizing & tight spacing. The `.home ` prefix is load-bearing:
-   it keeps these ahead of the `.home h2:first-child` rule above, so only the
-   first column's heading sits flush at margin-top 0. */
+/* Align column headings and extend their rules through the column padding. */
 .home .home-grid h2,
 .home .home-grid h2 a {
   font-size: 0.95rem !important;
@@ -731,8 +746,14 @@ a:hover {
   line-height: 1.2 !important;
 }
 
-.home .home-grid section:first-child h2 {
+.home .home-grid h2 {
   margin-top: 0 !important;
+  margin-left: -0.85rem;
+  margin-right: -0.85rem;
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem;
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
 }
 
 /* Standardize preview post link font sizes */
@@ -891,6 +912,12 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* Numeric update timestamps have a consistent length; keep titles close. */
+.page-edited .list-row .post-date {
+  width: auto;
+  margin-right: 0.75rem;
+}
+
 /* Sized to its text; shrinks and truncates with an ellipsis once the row is
    full, so the tags are never pushed off. */
 .list-row-title {
@@ -921,8 +948,7 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-.page-tags .list-row:last-child,
-.page-write .list-row:last-child {
+.page-compact .post-list > .post-item:last-child {
   border-bottom: none;
 }
 

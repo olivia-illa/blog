@@ -13,7 +13,14 @@
   <div class="list-row-inner">
 
     <!-- Date (fixed width so titles align vertically) -->
-    <span class="post-date">{{ row.date | date: "%b %-d, %Y" }}</span>
+    {% if include.updated %}
+      {% assign updated_at = row.last_modified_at | default: row.date %}
+      <time class="post-date js-format-date" data-date-format="numeric" datetime="{{ updated_at | date_to_xmlschema }}">{{ updated_at | date: "%Y-%m-%d %H:%M" }}</time>
+    {% elsif include.numeric_date %}
+      <time class="post-date" datetime="{{ row.date | date_to_xmlschema }}">{{ row.date | date: "%Y-%m-%d" }}</time>
+    {% else %}
+      <span class="post-date">{{ row.date | date: "%b %-d, %Y" }}</span>
+    {% endif %}
 
     <!-- Title, or the first paragraph for untitled thoughts -->
     <a class="list-row-title" href="{{ row.url | relative_url }}">

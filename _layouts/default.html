@@ -46,7 +46,13 @@
 <body class="{{ page_class }}">
   <header>
     <nav>
-      <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
+      {% if page.url != '/' %}
+      <div class="site-brand">
+        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a><span class="site-title-hint"> (← try again)</span>
+      </div>
+      {% else %}
+      <span class="site-title">{{ site.title }}</span>
+      {% endif %}
       <div class="nav-links">
         <a href="{{ "/about-me/" | relative_url }}">About</a>
         <a href="{{ "/feed.xml" | relative_url }}">RSS</a>

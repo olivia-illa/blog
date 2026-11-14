@@ -30,6 +30,7 @@ Keeping a list of things I like and ~~dislike~~ hate, inspired by [Sylvia’s](h
 * Recipes not measured in grams
 - Deleting duplicates
 * Backless chairs
+- *Drag xxx to Applications* (stupid design)
 
 <br>
 
