@@ -7,7 +7,14 @@
       humanButton.classList.add('is-poofing');
       var status = document.querySelector('.human-status');
       var human = status.textContent !== 'I am only human';
-      status.textContent = human ? 'I am only human' : 'I am not a robot';
+      status.replaceChildren();
+      if (human) {
+        var emphasis = document.createElement('em');
+        emphasis.textContent = 'only';
+        status.append('I am ', emphasis, ' human');
+      } else {
+        status.textContent = 'I am not a robot';
+      }
       humanButton.setAttribute('aria-pressed', String(human));
     });
     humanButton.addEventListener('animationend', function () {
