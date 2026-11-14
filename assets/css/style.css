@@ -683,6 +683,40 @@ a:hover {
   padding-bottom: 0 !important;
 }
 
+.home header {
+  padding-top: 0;
+}
+
+.home nav {
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem !important;
+  position: relative;
+  border-bottom: none;
+}
+
+.home nav::after {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  bottom: 0;
+  width: 100vw;
+  border-bottom: 1px solid var(--section-border);
+}
+
+.home footer {
+  position: relative;
+  border-top: none;
+}
+
+.home footer::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  width: 100vw;
+  border-top: 1px solid var(--section-border);
+}
+
 /* Pull main containers flush under the top header border */
 .home main,
 .home article {
@@ -798,11 +832,37 @@ a:hover {
   padding-right: 0.85rem;
 }
 
+/* Continue the first row's heading rule beyond the outer column gutters. */
+.home-grid::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: calc(0.95rem * 1.2 + 0.7rem);
+  width: 100vw;
+  border-top: 1px solid var(--section-border);
+  pointer-events: none;
+}
+
 /* Standardize preview post link font sizes */
 .home-grid .post-list,
 .home-grid .post-list a,
 .home-grid p {
   font-size: var(--reading-size) !important;
+}
+
+.home-grid .post-date {
+  display: block;
+  font-size: 0.7rem;
+  padding-bottom: 0.4rem;
+}
+
+.home-grid .clipping-meta {
+  margin-bottom: 0;
+}
+
+.home-grid .clipping-source-preview,
+.home-grid .clipping-source-preview a {
+  font-size: 0.7rem !important;
 }
 
 /* --- Column body: scrolls internally only while the page is locked -------- */
@@ -853,10 +913,52 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding-bottom: 0.5rem;
+  --latest-gap: 0.75rem;
 }
 
 .latest-col > .latest-intro {
   flex: 0 0 auto;
+}
+
+.home .latest-intro p {
+  margin-top: 0 !important;
+  margin-bottom: var(--latest-gap) !important;
+}
+
+.latest-intro .section-label {
+  margin: 0;
+  padding-top: var(--latest-gap);
+}
+
+.latest-intro .section-label a {
+  font-weight: bold;
+}
+
+.home .latest-col > .latest-list {
+  margin-top: var(--latest-gap) !important;
+  margin-bottom: 0 !important;
+}
+
+.latest-col .post-item.bullet-item {
+  margin-bottom: var(--latest-gap);
+}
+
+.latest-col .post-item.bullet-item:last-child,
+.latest-col .post-item.bullet-item:has(+ [hidden]) {
+  margin-bottom: 0;
+}
+
+.latest-col > .see-more {
+  margin-top: var(--latest-gap);
+  padding-bottom: 0;
+}
+
+.latest-summary {
+  flex: 0 0 auto;
+  margin-top: var(--latest-gap);
+  font-size: var(--reading-size);
+  line-height: 1.5;
+  color: var(--footer-color);
 }
 
 .latest-col > .latest-list {

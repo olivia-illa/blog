@@ -7,7 +7,7 @@ body_class: home
 <!-- Home-only layout: on a viewport with room for it the page is locked to
      one screen and never scrolls; only the individual columns overflow
      internally. The first column is the exception: it never scrolls, and
-     assets/js/fit-latest.js drops the posts that do not fit so "see more"
+     assets/js/fit-latest.js drops the posts that do not fit so "read more"
      stays visible. On small or short viewports (phones either way up) the
      columns stack and the page scrolls normally instead. Styles: "Page: home"
      in assets/css/style.css. -->
@@ -20,7 +20,7 @@ body_class: home
     <p>For ✅ I am human.</p>
     <p>Click around for <a href="{{ '/2026/06/30/facts-about-me.html' | relative_url }}">bits and bobs</a> <a href="{{ '/about-me/' | relative_url }}">about me</a>.</p>
 
-    <div class="section-label"><a href="{{ '/recently-edited/' | relative_url }}" class="inherit-link">latest</a> ✎﹏﹏﹏﹏</div>
+    <div class="section-label"><a href="{{ '/recently-edited/' | relative_url }}" class="inherit-link">LATEST</a> ✎﹏﹏﹏﹏</div>
   </div>
 
 <ul class="post-list latest-list js-fit-list">
@@ -49,7 +49,13 @@ body_class: home
   {% endfor %}
 </ul>
 <div class="see-more">
-  <a href="{{ '/latest/' | relative_url }}">see more →</a>
+  <a href="{{ '/latest/' | relative_url }}">read more →</a>
+</div>
+{% assign updated_posts = site.posts | recently_edited %}
+{% assign newest_update = updated_posts | first %}
+{% assign newest_update_date = newest_update.last_modified_at | default: newest_update.date %}
+<div class="latest-summary">
+  I was here on <time datetime="{{ newest_update_date | date_to_xmlschema }}">{{ newest_update_date | date: "%Y-%m-%d" }}</time> and have made {{ site.posts.size }} scribbles.
 </div>
 </section>
 
@@ -101,7 +107,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/copy-paste-share/' | relative_url }}">see more →</a>
+      <a href="{{ '/copy-paste-share/' | relative_url }}">read more →</a>
     </div>
   </div>
 </section>
@@ -122,7 +128,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/tag/' | relative_url }}?t=weeknotes">see more →</a>
+      <a href="{{ '/tag/' | relative_url }}?t=weeknotes">read more →</a>
     </div>
   </div>
 </section>
@@ -151,7 +157,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/write-anything/' | relative_url }}">see more →</a>
+      <a href="{{ '/write-anything/' | relative_url }}">read more →</a>
     </div>
   </div>
 </section>
