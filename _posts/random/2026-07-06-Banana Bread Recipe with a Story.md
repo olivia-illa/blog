@@ -7,13 +7,13 @@ tags: [baking]
 
 My experience baking 🍞🐒🍌 <a href="#recipe-section">Banana Bread</a>:
 
-I’ve made banana bread countless times with a success rate somewhere in the 15- 20% range, depending on the definition of success--for me, it is the rise. Back in high school, I fell hard for the “Free the Ingredients” movement, completely convinced that certain foods were inherently toxic to the human body, and aspired to become the next rising vegan, GSA-free<sup><a href="#fn1">¹</a></sup> baker on the internet.
+I’ve made banana bread countless times with a success rate somewhere in the 15- 20% range, depending on the definition of success--for me, it is the rise. Back in high school, I fell hard for the “Free the Ingredients” movement, completely convinced that certain foods were inherently toxic to the human body, and aspired to become the next rising vegan, GSA-free[¹](#fn1) baker on the internet.
 
 I replaced AP flour with oats by pulsing them until the blender heated up with smoke, soaked chia seeds to the consistency of goopy frog eggs, and replaced sugar and butter with half a jar of honey and almond butter. I once had the bright idea of adding shredded zucchini for extra fiber, skipping the crucial step of wringing it out because I was too lazy to wash a cheesecloth. Oblivious to the foreseeable consequences of an overly wet batter, I strayed away from pound cake and bread recipes until I regained the courage to toy with the ingredient list again.
 
 To some, I was an ambitious and overly confident baker. I would eyeball measurements, place full trust in US customary cups, and fluidly interchange between sour cream, cream cheese, heavy cream, and Greek yogurt depending on what was available. I also never bothered to differentiate between baking soda and baking powder. I would toss in a teaspoon and move on to the next step, entirely unaware of the difference between a chemical requiring an acid catalyst and a self-contained leavener.
 
-My banana bread usually turned out like an awkward cross between 蘿蔔糕 and 發糕<sup><a href="#fn2">²</a></sup>. “At worst, it’d be like fudgy, chocolate-oozing brownies, right?” Nooo, the loaves were gummy and pocketed with tiny, trapped air bubbles. It looked like cheese, just without any of the savoriness.
+My banana bread usually turned out like an awkward cross between 蘿蔔糕 and 發糕[²](#fn2). “At worst, it’d be like fudgy, chocolate-oozing brownies, right?” Nooo, the loaves were gummy and pocketed with tiny, trapped air bubbles. It looked like cheese, just without any of the savoriness.
 
 For obvious reasons, I am posting my ultimate chocolate banana bread recipe, so I don’t have to scrape the web trying to find a new one to experiment with.
 

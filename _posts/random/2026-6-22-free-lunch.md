@@ -15,7 +15,7 @@ We were celebrating the team’s quick solution to an urgent risk assessment the
 
 <br>
 
-Anyway, the big topic at lunch was the rom-com *Double Happiness* (2025). It brought both l and his gf to tears, though she wept out of sympathy ("awww 😅"). The protagonist's dilemma<sup><a href="#fn1">¹</a></sup> was eerily similar to what he’d expect to face in the (near) future. I’d always suspected he was a mama’s boy; not just cuz of 孝順, but out of genuine empathy for whatever his mother faced as a single mom. He even rewatched it with her, and later pressured his dad to do so too, despite the pretend reluctance in his tone. Asian men will ignore their emotions till the end of the day.
+Anyway, the big topic at lunch was the rom-com *Double Happiness* (2025). It brought both l and his gf to tears, though she wept out of sympathy ("awww 😅"). The protagonist's dilemma[¹](#fn1) was eerily similar to what he’d expect to face in the (near) future. I’d always suspected he was a mama’s boy; not just cuz of 孝順, but out of genuine empathy for whatever his mother faced as a single mom. He even rewatched it with her, and later pressured his dad to do so too, despite the pretend reluctance in his tone. Asian men will ignore their emotions till the end of the day.
 
 It reminded me of when I first watched *Marriage Story* (2019). It left me sobbing uncontrollably; the fight scenes brought back vivid memories of how my parents treated each other when I was still in elementary school. Back then, I’d also told Ma to check out the film, though I never asked how she felt about it. Thankfully, after all these years, my parents were able to *cope with* their differences and shed some ego.
 

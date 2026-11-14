@@ -9,7 +9,7 @@ We’re leaving in a week and still have a lot of dairy left from the double fro
 
 At 11:10 PM on a Monday (midnight bakes! my fav timing to have an inspiration), I decided to finally try out Red Currant Bakery’s indulgent [chocolatey cake](https://redcurrantbakery.com/chocolate-cake-with-chocolate-mascarpone-whipped-cream/). At first glance, I knew it was what I’d want for my birthday: triple-layered in cream, mixed with cherries, covered in chocolate shavings, and topped with blueberries. It's the perfect base for a *Schwarzwälder Kirschtorte* (Black Forest Cake/Gâteau) similar to the ones I had as a child, but with a twist—espresso!
 
-The batter filled up a small loaf pan + 4 cupcakes<sup><a href="#fn1" id="ref1">¹</a></sup>.
+The batter filled up a small loaf pan + 4 cupcakes[¹](#fn1).
 
 ## Cream the following in a bowl:
   * 100g granulated sugar
@@ -38,4 +38,6 @@ Bake at 170 °C, then reduce to 150 °C halfway through. I baked them for roughl
 
 ## Footnotes
 
-¹ <a id="fn1"></a><a href="#ref1">Or a 16cm round tin for higher lift.</a>
+<ol class="footnotes-list">
+  <li id="fn1" data-number="¹">Or a 16cm round tin for higher lift.</li>
+</ol>

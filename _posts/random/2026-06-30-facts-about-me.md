@@ -7,19 +7,19 @@ tags: [about-me]
 
 d says my sentences don’t flow, so a list makes more sense until I can piece together more coherent paragraphs.
 
-1. My baking journey<sup><a href="#fn1">¹</a></sup> started when I made my first cookie following [Momofuku’s Compost Cookie (2012) tutorial](https://www.youtube.com/watch?v=RwvOvC1Swos) that demonstrated anything could be mixed into a batter and tasted good. Since then, I’ve been bribing my way through life for friendships, birthday wishes, Christmas greetings and peacekeeping<sup><a href="#fn2">²</a></sup>.
+1. My baking journey[¹](#fn1) started when I made my first cookie following [Momofuku’s Compost Cookie (2012) tutorial](https://www.youtube.com/watch?v=RwvOvC1Swos) that demonstrated anything could be mixed into a batter and tasted good. Since then, I’ve been bribing my way through life for friendships, birthday wishes, Christmas greetings and peacekeeping[²](#fn2).
 
-2. I thought having seven piercings fooled others into assuming I had taste in music<sup><a href="#fn3">³</a></sup>. Now, I see them as [metal embellishments](https://www.monicavinader.com/hk/deia-huggie-earrings/gold-vermeil-deia-huggie-earrings) that make elders go ooh and ahhh, in a not-so-positive way.
+2. I thought having seven piercings fooled others into assuming I had taste in music[³](#fn3). Now, I see them as [metal embellishments](https://www.monicavinader.com/hk/deia-huggie-earrings/gold-vermeil-deia-huggie-earrings) that make elders go ooh and ahhh, in a not-so-positive way.
 
-3. I am proud that 90% of my current wardrobe is thrifted<sup><a href="#fn4">⁴</a></sup> thanks to early influences by [Clothencounters](https://www.youtube.com/watch?v=-MgDyzsW8jw).
+3. I am proud that 90% of my current wardrobe is thrifted[⁴](#fn4) thanks to early influences by [Clothencounters](https://www.youtube.com/watch?v=-MgDyzsW8jw).
 
 4. I have a good read on people’s intentions, but also, I was scammed twice on the streets of Paris for engaging in the most human way possible, like anyone would in the city of Love.
 
-5. I still get called a middle schooler at the farmers market<sup><a href="#fn5">⁵</a></sup>.
+5. I still get called a middle schooler at the farmers market[⁵](#fn5).
 
 6. My go-to McD order will always be French fries with Oreo McFlurry.
 
-7. I am a yes-woman to challenges, and have now earned bragging rights<sup><a href="#fn6">⁶</a></sup> to three triathlons, two full marathons, and countless half marathons.
+7. I am a yes-woman to challenges, and have now earned bragging rights[⁶](#fn6) to three triathlons, two full marathons, and countless half marathons.
 
 8. I am obsessed with all things chocolate, likely due to a childhood disbelief in Roald Dahl stories and [Chocolatina](https://www.goodreads.com/en/book/show/1065563.Chocolatina).
 
@@ -27,7 +27,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 10. The older I get, the more easily I cry over the little things.
 
-11. I get into phases of collecting things. At 10, it was candy and cookie wrappers<sup><a href="#fn7">⁷</a></sup> that Dad would bring home from his travels; at 13, it was frozen butterfly and beetle specimens; at 16, it was masking tapes and patterned paper for handmade (stitched at times!) cards. Now I have a curated collection of 2000s vintage dresses <sup><a href="#fn8">⁸</a></sup> and tea from travels.
+11. I get into phases of collecting things. At 10, it was candy and cookie wrappers[⁷](#fn7) that Dad would bring home from his travels; at 13, it was frozen butterfly and beetle specimens; at 16, it was masking tapes and patterned paper for handmade (stitched at times!) cards. Now I have a curated collection of 2000s vintage dresses [⁸](#fn8) and tea from travels.
 
 12. I keep friends who remind me of a certain stage of life, and I intend to keep it that way.
 
@@ -35,7 +35,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 14. I make fresh pesto every week and add it to every dish like it's salt and pepper.
 
-15. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone<sup><a href="#fn10">¹⁰</a></sup>.
+15. The monologist in me tries to find a comedic timing in every interaction and dialogue, especially when the actual script takes on stressful or awkward tone[¹⁰](#fn10).
 
 16. I keep eye contact when talking, but break it once I sense bs.
 
@@ -49,9 +49,9 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 21. [The book](https://www.theguardian.com/books/2017/feb/10/a-line-made-by-walking-review-sara-baume) that shaped my final year as an English major. #quarterlifecrises
 
-22. I converted my bedroom into a greenhouse<sup><a href="#fn9">⁹</a></sup> during Covid to relieve eye tension and restore the *Great Outdoors*. I also graduated from that room, which was rather sad.
+22. I converted my bedroom into a greenhouse[⁹](#fn9) during Covid to relieve eye tension and restore the *Great Outdoors*. I also graduated from that room, which was rather sad.
 
-23. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar sounds every time<sup><a href="#fn11">¹¹</a></sup>.
+23. I associate [Hotel California](https://www.youtube.com/watch?v=BciS5krYL80) with road trips and get the irresistible urge to make inaudible guitar sounds every time[¹¹](#fn11).
 
 24. My colleagues call me a fair person, even more so after knowing my star sign.
 
@@ -61,7 +61,7 @@ d says my sentences don’t flow, so a list makes more sense until I can piece t
 
 27. I am most comfortable typing in English, conversing in Mandarin, and pondering in both simultaneously.
 
-28. My google searches are predominately: [insert word] synonym <sup><a href="#fn12">¹²</a></sup>.
+28. My google searches are predominately: [insert word] synonym [¹²](#fn12).
 
 
 

@@ -13,12 +13,12 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 - Cold cuts, cheese, and a fresh loaf (untoasted) can be breakfast, lunch, and dinner
 - Sparkly water is for drinking, and lukewarm water is for washing hands
 - Bikes everywhere, and breaks for beer
-- Everything-is-[repairable](https://frame.work/)<sup><a href="#fn1">¹</a></sup>-mentality
+- Everything-is-[repairable](https://frame.work/)[¹](#fn1)-mentality
 - Goes for a quick walk, and ends up being an hour
 - Embraces nudity (in the house)
 - Silence is the best background music
-- Es gibt kein schlechtes Wetter, nur schlechte Kleidung<sup><a href="#fn2">²</a></sup>
-- Expect an honest feedback or response<sup><a href="#fn2">³</a></sup>
+- Es gibt kein schlechtes Wetter, nur schlechte Kleidung[²](#fn2)
+- Expect an honest feedback or response[³](#fn3)
 - Splits everything but the bill
 - Prefers using fingers for dynamic control (of food)
 - Aligns 4 corners of the bedsheet to the corners of the mattress like a giant spider
@@ -32,7 +32,7 @@ I can name a couple of <a href="#credentials-section">alemán cities</a> from tr
 <ol class="footnotes-list">
   <li id="fn1" data-number="¹">If a pair of pants worn for 10 years now has a hole in the crotch, patch it up!</li>
   <li id="fn2" data-number="²">The first iteration was, “you’re not made of sugar” and I was confused.</li>
-    <li id="fn2" data-number="³">Will spend 2 full min to fully ponder whether to pick up a flyer for free coupons, or reject there and then, so no one's deceived. "Hmm no thank you."</li>
+    <li id="fn3" data-number="³">Will spend 2 full min to fully ponder whether to pick up a flyer for free coupons, or reject there and then, so no one's deceived. "Hmm no thank you."</li>
 
 </ol>
 
