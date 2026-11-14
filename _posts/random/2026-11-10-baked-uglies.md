@@ -9,14 +9,14 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 
 <br>
 
-## Matcha Choux au Craquelin with Matcha Cream
+## 🥣 Matcha Choux au Craquelin with Matcha Cream
 
 * Added one egg too many to the choux batter.
 * Undermixed the batter before giving the flour enough time to fully soak up the egg mixture.
 * Craquelin cracked easily, likely due to rushed kneading.
 - Overtoasted the almond flour.
 
-### Result: Matcha Choux Cookies
+### Result: Matcha *Choux*-gar Cookies
 
 * Resembled Christmas sugar cookies without the snap.
 * Had the texture of an underbaked loaf skin.
@@ -26,7 +26,7 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 
 <br>
 
-## Chocolate Lava Cake
+## 🥣 Chocolate Lava Cake
 
 * Chose an eggless recipe—the first big mistake.
 * The flour to butter ratio was completely off.
@@ -42,7 +42,7 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 
 <br>
 
-## Sesame Basque Cheesecake
+## 🥣 Sesame Basque Cheesecake
 
 * Didn't cream the cheese and sugar together first.
 * Didn't bring the cream and eggs to room temperature.
@@ -50,7 +50,7 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 * Strained the batter thinking coarsely ground sesame would pass through, which ended up separating the mixture instead.
 * Didn't just use sesame paste.
 
-### Result: Blotchy Sesame Cheesecake
+### Result: Blotchy Cheesecake
 
 * Sand-like cream cheese curds.
 * The top didn't burn.
@@ -60,13 +60,13 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 
 <br>
 
-## Focaccia with Olives
+## 🥣 Focaccia with Olives
 
 * Overproofed the dough.
 * Soaked in too much olive oil.
 * Half of the bread stuck to the metal tray where the olive oil pooled away.
 
-### Result: Flat ~~Bread~~ Focaccia
+### Result: Fried Naan
 
 * Crunched like WASA crackers.
 * The olives all popped off the top.
@@ -75,7 +75,7 @@ Baked goods I fumbled so hard they ended up resembling wet cow dung, unsettled c
 
 <br>
 
-## Chocolate Banana Bread
+## 🥣 Chocolate Banana Bread
 
 * Replaced mascarpone with yogurt of incorrect consistency.
 * Added a few too many grams of banana.
