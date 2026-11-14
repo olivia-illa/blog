@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Invisible Red String (Part 2)"
-date: 2026-10-27 01:23:00 +0800
+date: 2026-11-09 01:23:00 +0800
 tags: [brezel-knot]
 ---
 
@@ -11,17 +11,17 @@ With two white chocolate Bueno bars and a bag of Werther's salted caramels, t an
 
 One or two were dressed for the occasion in faded baby pinks and florals, while the majority blended into a sea of beige and grey sweater jackets, indifferent of gender. The women seemed slightly older, and with the same weary expressions concealed behind minimal makeup. *They’re too pretty to be single.* The men, compared to their counterparts, were lanky and lost, sporting identical hairstyles that didn't suit their head shapes.
 
-*I hope 月老 isn't picking one of this bunch.*
+> *I hope 月老 isn't picking one of this bunch.*
 
 t wore a chocolate-brown gingham shirt with scrunched details in the front, paired with high-waisted French jeans. A classic t look, discreet. I, on the other hand, showed up looking like a grunge *Hello Kitty*, wearing a crimson red cardigan over a heavy cotton dress in faded oxford-blue tie-dye. 
 
-*Why not pray for a future for us too?*
+> *Why not pray for a future for us too?*
 
 <div class="botanical-divider">𓂃˖˳·˖ ִֶָ ⋆♡⋆ ִֶָ˖·˳˖𓂃 ִֶָ</div>
 
 Following the line of girls, t purchased a bundle of joss money and some incense from the auntie behind the counter. The auntie shoved a handful of cheap candy after she paid $15 for the service. 
 
-*“Remember to have these afterwards.”*
+> *“Remember to have these afterwards.”*
 
 I watched as t placed her offerings on a red plastic plate next to a box of dried fruits, chocolate bars, and Oreos. She began praying, moving from the stove outside to the main prayer table inside. There, she read her wishlist in silence, staring solemnly at her phone screen like everyone else in the room. Following closely behind her as I filmed, I soon found myself trapped amidst the wishful prayers. 
 
