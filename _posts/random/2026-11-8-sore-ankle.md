@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sore Ankle Mystery"
+title: "Sore Ankle Mystery (Part 1)"
 date: 2026-11-08 10:23:00 +0800
 tags: [wordvomit]
 ---
