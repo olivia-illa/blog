@@ -25,11 +25,11 @@ Never have I felt this fragile, like I'd walked straight onto broken glass. The 
 
 Like supporting a toddler's neck, d had to gently cradle my ankle with one hand and the sole of my foot with the other, propping it against the neck of the reading lamp while my Achilles heel rested on the arm of the couch. I needed to stop the fluid from rushing to the inflammation. d then brought me a *Waschhandschuh* stuffed with ice pouches to relieve the pain. For a few minutes, I lay there stiff, reverse-planking.
 
-> *Oh no, I have arthritis. This must be it.*
+> *I have arthritis. This is it for me.*
 
 How did Dad manage his pain? I began chugging liters of water to flush the poison out of my system—something about diluting the crystals in the blood, I recalled him saying. I called my parents.
 
-> *“You’ll be fine. You just don't stay hydrated enough.”*
+> *“You’ll be fine. You didn't stay hydrated enough.”*
 
 My gut told me something was off. It had started last Wednesday with a stiffness around my right ankle, which I’d dismissed as either crouching too much or running too aggressively after the triathlon. By the end of the week, the tenderness was hard to ignore, to the point where I’d begun propping it up underneath my desk at work to softly massage it.
 
