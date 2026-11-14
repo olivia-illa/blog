@@ -961,6 +961,10 @@ a:hover {
   color: var(--footer-color);
 }
 
+.currently-watching {
+  margin-bottom: var(--latest-gap);
+}
+
 .latest-col > .latest-list {
   margin-top: 0;
 }
@@ -999,6 +1003,18 @@ a:hover {
 .scrollable-col-content {
   scrollbar-width: thin;
   scrollbar-color: color-mix(in srgb, var(--link-color) 35%, transparent) transparent;
+}
+
+/* Draft-only Custom theme experiment; normal themes retain the grid rules. */
+html.home[data-theme="custom"] .home-grid::before {
+  display: none;
+}
+
+html.home[data-theme="custom"] .home-grid > section,
+html.home[data-theme="custom"] .home-grid h2,
+html.home[data-theme="custom"] .home-grid .clipping-item,
+html.home[data-theme="custom"] .home-grid .give-me-10-item {
+  border-color: transparent;
 }
 
 /* ==========================================================================

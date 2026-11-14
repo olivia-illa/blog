@@ -55,6 +55,7 @@ body_class: home
 {% assign newest_update = updated_posts | first %}
 {% assign newest_update_date = newest_update.last_modified_at | default: newest_update.date %}
 <div class="latest-summary">
+  <div class="currently-watching">Recent 👀 The Rehearsal S2, Fruit Fly (2026)</div>
   I was here on <time datetime="{{ newest_update_date | date_to_xmlschema }}">{{ newest_update_date | date: "%Y-%m-%d" }}</time> and have made {{ site.posts.size }} scribbles.
 </div>
 </section>
