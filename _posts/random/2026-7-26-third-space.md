@@ -20,7 +20,9 @@ In search of accessible third spaces that meet the criteria:
 
 🌟 Approved locations with ratings 🌟
 
-## Esoothman
+<br>
+
+## 🥐 Esoothman
 * **Rating:** 9.1 / 10
 * **Price:** Less than $10 for 3 hours per person
 * **Hours:** Open 24/7
@@ -29,7 +31,9 @@ In search of accessible third spaces that meet the criteria:
 * **Atmosphere:** Extremely silent with barely-there soft piano
 
 
-## Louisa Coffee (Banqiao)
+<br>
+
+## 🥐 Louisa Coffee (Banqiao)
 * **Rating:** 7.5 / 10
 * **Price:** No minimum spend
 * **Hours:** Open till 9:00 PM (2F open till 8:00 PM)
@@ -39,7 +43,9 @@ In search of accessible third spaces that meet the criteria:
 
 
 
-## McDonald's (Guting)
+<br>
+
+## 🥐 McDonald's (Guting)
 * **Rating:** 5.5 / 10
 * **Price:** No minimum spend
 * **Hours:** Open till 3:00 AM
@@ -49,7 +55,9 @@ In search of accessible third spaces that meet the criteria:
 
 
 
-## Eslite Cafe (Songyan)
+<br>
+
+## 🥐 Eslite Cafe (Songyan)
 * **Rating:** 7 / 10
 * **Wifi:** none
 * **Price:** $7 minimum, or $1 if you have a [Premium Card](https://meet.eslite.com/hk/tc/catering/202309180003) bestie
@@ -57,3 +65,16 @@ In search of accessible third spaces that meet the criteria:
 * **Food:** Ordered a hot honey oat latte
 * **Seating:** 3-seaters facing the floor length windows and 4-seaters with back support chairs. Some couch seatings too in the back, I believe.
 * **Atmosphere:** Lots of chatters during dinner hours. Calms down after 8pm. Unfortunately, we did encounter a talkative, guessing econ and liberal art professors, elderly couple to our right and an annoyed young couple (or were they mother and son?!!) to our left. Otherwise, most patrons stay long hours for the same reason--$1 drinks and blocked time on a Tuesday evening.
+
+
+<br>
+
+## 🥐 [CHUZI Dialogue](https://maps.app.goo.gl/Hn1zesdBwS9KB4u99)
+* **Rating:** 9.5 / 10
+- **Price:** One drink minimum. Flat white for $5. 
+- **Hours:** 12:00- 6:00 PM
+- **Food:** Fresh selection of sourdough slices served with olive oil dip. Basque cheese cake.
+* **Seating:** One 4 seater table, mostly empty, 3 two-seaters, and another long 8 seater table in the back.
+* **Atmosphere:** Hands down my favorite cafe in the neighborhood—somewhere I’d willingly abandon my home cafe to sit all afternoon. Mostly frequented by locals. It has a minimal, bare-walled with wood accent interiors displaying a curated selection of local ceramics, Japanese glass jewelry, bamboo art, and Ikebana bouquets for sale. The barista is always the same soft-spoken, artistic dude who doesn't say much, smiles and observes.
+
+
