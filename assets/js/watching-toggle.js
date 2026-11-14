@@ -1,0 +1,23 @@
+(function () {
+  var humanButton = document.querySelector('.human-toggle');
+  if (humanButton) {
+    humanButton.addEventListener('click', function () {
+      var status = document.querySelector('.human-status');
+      var human = status.textContent !== 'I am only human';
+      status.textContent = human ? 'I am only human' : 'I am not a robot';
+      humanButton.setAttribute('aria-pressed', String(human));
+    });
+  }
+})();
+
+(function () {
+  var button = document.querySelector('.watching-toggle');
+  if (!button) return;
+  var titles = document.getElementById(button.getAttribute('aria-controls'));
+  button.addEventListener('click', function () {
+    var expanded = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(expanded));
+    button.setAttribute('aria-label', expanded ? 'Hide recent watches' : 'Show recent watches');
+    titles.hidden = !expanded;
+  });
+})();

@@ -17,7 +17,7 @@ body_class: home
     <h2>Ni hao</h2>
     <p>Oh hey, you’re in my space!</p>
     <p>But stay for the feisty narrations, sloppy justifications and aimless fixations.</p>
-    <p>For ✅ I am human.</p>
+    <p>For <button type="button" class="human-toggle" aria-pressed="false" aria-label="Toggle human status"><span aria-hidden="true">✅</span></button> <span class="human-status" aria-live="polite">I am not a robot</span>.</p>
     <p>Click around for <a href="{{ '/2026/06/30/facts-about-me.html' | relative_url }}">bits and bobs</a> <a href="{{ '/about-me/' | relative_url }}">about me</a>.</p>
 
     <div class="section-label"><a href="{{ '/recently-edited/' | relative_url }}" class="inherit-link">LATEST</a> ✎﹏﹏﹏﹏</div>
@@ -52,7 +52,7 @@ body_class: home
   <a href="{{ '/latest/' | relative_url }}">read more →</a>
 </div>
 <div class="latest-summary">
-  <div class="currently-watching"><span class="watching-label" tabindex="0">Recent 👀</span><span class="watching-titles"> The Rehearsal S2, Fruit Fly (2026)</span></div>
+  <div class="currently-watching"><span class="watching-label">Recent <button type="button" class="watching-toggle" aria-expanded="false" aria-controls="watching-titles" aria-label="Show recent watches"><span aria-hidden="true">👀</span></button></span><span class="watching-titles" id="watching-titles" hidden> The Rehearsal S2, Fruit Fly (2026)</span></div>
 </div>
 </section>
 

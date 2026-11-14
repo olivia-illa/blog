@@ -44,6 +44,7 @@
   <script src="{{ "/assets/js/relative-dates.js" | relative_url }}" defer></script>
   <script src="{{ "/assets/js/fit-latest.js" | relative_url }}" defer></script>
   <script src="{{ "/assets/js/theme-picker.js" | relative_url }}" defer></script>
+  {% if page.url == "/" %}<script src="{{ "/assets/js/watching-toggle.js" | relative_url }}" defer></script>{% endif %}
   {% feed_meta %}
 </head>
 <body class="{{ page_class }}">

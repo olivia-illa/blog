@@ -1017,13 +1017,22 @@ a:hover {
   margin-top: var(--latest-gap);
 }
 
-.watching-titles {
-  display: none;
+.watching-toggle,
+.human-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
 
-.watching-label:hover + .watching-titles,
-.watching-label:focus-visible + .watching-titles {
-  display: inline;
+.watching-toggle span {
+  display: inline-block;
+}
+
+.watching-toggle[aria-expanded="true"] span {
+  transform: scaleX(-1);
 }
 
 
