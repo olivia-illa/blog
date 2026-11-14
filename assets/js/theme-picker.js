@@ -3,7 +3,7 @@
 // The pick is stored in localStorage and set as data-theme on <html>; the
 // schemes themselves are the :root[data-theme] blocks at the top of
 // assets/css/style.css. "Auto" (data-scheme="") removes both, handing the
-// choice back to the default Lumon palette. The
+// choice back to Lumon in light mode and the dark palette in dark mode. The
 // inline script in _layouts/default.html re-applies a stored pick before first
 // paint on every page; keep its list of schemes in step with SCHEMES here.
 //
@@ -38,7 +38,6 @@
 
   var root = document.documentElement;
   var swatches = Array.prototype.slice.call(picker.querySelectorAll('.theme-swatch'));
-  if (picker.querySelector('.theme-swatch[data-scheme="lumon"]')) SCHEMES.push('lumon');
   if (picker.querySelector('.theme-swatch[data-scheme="custom"]')) SCHEMES.push('custom');
   var tuner = null;   // built lazily, the first time "custom" is picked
   var inputs = {};
@@ -196,7 +195,6 @@
     from.appendChild(document.createTextNode('Start from '));
     var select = document.createElement('select');
     var presets = [['', 'Auto'], ['lombard', 'Lombard'], ['birthday', 'Birthday'], ['sakura', 'Sakura']];
-    if (SCHEMES.indexOf('lumon') !== -1) presets.push(['lumon', 'Lumon']);
     presets.forEach(function (s) {
       var opt = document.createElement('option');
       opt.value = s[0];

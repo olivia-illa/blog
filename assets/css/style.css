@@ -38,7 +38,7 @@
    1. Design tokens
    ========================================================================== */
 
-/* Auto uses Lumon in both light and dark system settings. Explicit themes
+/* Auto uses Lumon in light mode and a dark palette in dark mode. Explicit themes
    override its tokens. Keep the picker and pre-paint script in default.html
    in step with theme-picker.js. Custom colours are draft-only. */
 
@@ -146,6 +146,31 @@
 :root[data-theme="sakura"],
 :root[data-theme="sakura"] * {
   scrollbar-color: #426bc2 var(--bg-color);
+}
+
+
+/* Auto follows the system: Lumon by day, the original dark palette at night. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg-color: #2c1b17;
+    --text-color: #f7cac9;
+    --link-color: #f7cac9;
+    --header-color: #f7cac9;
+    --footer-color: #f7cac9;
+    --section-border: rgba(255, 255, 255, 0.1);
+    --link-hover-bg: #f7cac9;
+    --link-hover-color: #2c1b17;
+    --quote-color: #f7cac9;
+    --meta-color: #bca5a0;
+    --date-muted-color: #bca5a0;
+    --row-border-color: #71544d;
+  }
+
+  :root:not([data-theme]),
+  :root:not([data-theme]) * {
+    scrollbar-color: #aff7bd var(--bg-color);
+  }
 }
 
 
