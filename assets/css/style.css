@@ -232,8 +232,24 @@ nav > a:first-child,
   font-weight: normal;
 }
 
-.site-title:hover + .site-title-hint {
+.site-title:hover + .site-title-hint,
+.site-title:focus-visible + .site-title-hint {
   display: inline;
+}
+
+.home .site-brand {
+  position: relative;
+}
+
+.home .site-title-hint {
+  position: absolute;
+  top: 0.25rem;
+  left: calc(100% + 0.5rem);
+  z-index: 2;
+  width: max-content;
+  max-width: max(8rem, calc(100vw - 26rem));
+  padding: 0.3rem 0;
+  background: var(--bg-color);
 }
 
 .nav-links a {
@@ -246,7 +262,7 @@ nav > a:first-child,
 
 footer {
   margin: 0;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   box-sizing: border-box;
   background-color: inherit;
   text-align: left; /* Left align footer too */
@@ -887,7 +903,7 @@ a:hover {
 
 .home-grid .post-date {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   padding-bottom: 0.4rem;
 }
 
@@ -897,7 +913,7 @@ a:hover {
 
 .home-grid .clipping-source-preview,
 .home-grid .clipping-source-preview a {
-  font-size: 0.7rem !important;
+  font-size: 0.75rem !important;
 }
 
 /* --- Column body: scrolls internally only while the page is locked -------- */
@@ -974,8 +990,9 @@ a:hover {
   margin-bottom: 0 !important;
 }
 
-.latest-col .post-item.bullet-item {
-  margin-bottom: var(--latest-gap);
+.home .latest-col .post-item.bullet-item,
+.home .weeknotes .post-item.bullet-item {
+  margin-bottom: 0.35rem;
 }
 
 .latest-col .post-item.bullet-item:last-child,
@@ -991,14 +1008,24 @@ a:hover {
 .latest-summary {
   flex: 0 0 auto;
   margin-top: var(--latest-gap);
-  font-size: var(--reading-size);
+  font-size: 0.75rem;
   line-height: 1.5;
   color: var(--footer-color);
 }
 
 .currently-watching {
-  margin-bottom: var(--latest-gap);
+  margin-top: var(--latest-gap);
 }
+
+.watching-titles {
+  display: none;
+}
+
+.watching-label:hover + .watching-titles,
+.watching-label:focus-visible + .watching-titles {
+  display: inline;
+}
+
 
 .latest-col > .latest-list {
   margin-top: 0;

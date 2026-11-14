@@ -54,7 +54,12 @@
         <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a><span class="site-title-hint"> (← try again)</span>
       </div>
       {% else %}
-      <span class="site-title">{{ site.title }}</span>
+      {% assign updated_posts = site.posts | recently_edited %}
+      {% assign newest_update = updated_posts | first %}
+      {% assign newest_update_date = newest_update.last_modified_at | default: newest_update.date %}
+      <div class="site-brand">
+        <span class="site-title" tabindex="0" aria-describedby="home-title-hint">{{ site.title }}</span><span class="site-title-hint" id="home-title-hint"> (← I was here on <time datetime="{{ newest_update_date | date_to_xmlschema }}">{{ newest_update_date | date: "%Y-%m-%d" }}</time> and have made {{ site.posts.size }} scribbles)</span>
+      </div>
       {% endif %}
       <div class="nav-links">
         <a href="{{ "/about-me/" | relative_url }}">About</a>
