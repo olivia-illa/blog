@@ -2,10 +2,16 @@
   var humanButton = document.querySelector('.human-toggle');
   if (humanButton) {
     humanButton.addEventListener('click', function () {
+      humanButton.classList.remove('is-poofing');
+      void humanButton.offsetWidth;
+      humanButton.classList.add('is-poofing');
       var status = document.querySelector('.human-status');
       var human = status.textContent !== 'I am only human';
       status.textContent = human ? 'I am only human' : 'I am not a robot';
       humanButton.setAttribute('aria-pressed', String(human));
+    });
+    humanButton.addEventListener('animationend', function () {
+      humanButton.classList.remove('is-poofing');
     });
   }
 })();

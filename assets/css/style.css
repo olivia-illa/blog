@@ -1031,6 +1031,27 @@ a:hover {
   display: inline-block;
 }
 
+.human-toggle span {
+  display: inline-block;
+}
+
+.human-toggle.is-poofing span {
+  animation: tick-poof 420ms ease-in-out;
+}
+
+@keyframes tick-poof {
+  0%, 100% { opacity: 1; transform: scale(1); filter: blur(0); }
+  40% { opacity: 0; transform: scale(0.2); filter: blur(3px); }
+  55% { opacity: 0; transform: scale(0.2); filter: blur(3px); }
+  80% { opacity: 1; transform: scale(1.2); filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .human-toggle.is-poofing span {
+    animation: none;
+  }
+}
+
 .watching-toggle[aria-expanded="true"] span {
   transform: scaleX(-1);
 }
