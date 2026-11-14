@@ -1178,6 +1178,9 @@ a:hover {
 
 .post-long .post-updated {
   margin-top: 0.5em;
+  /* Match the space from the navigation rule to the post heading:
+     nav margin + header padding + heading margin. */
+  margin-bottom: calc(0.6rem + 0.5rem + 1rem);
   display: block;
 }
 
