@@ -41,5 +41,8 @@ I know Dad loves seafood, shellfish especially. Every autumn he begins craving c
 
 > *“I preordered two whole lobsters.”*
 
-I eyed the $53 white meat on the right and the $45 red one on the left. Free fries though. This was going to cost me. And it absolutely did.
+I eyed the $53 claws on the right and the $45 innocent stock on the left. In the center it read: **UNLIMITED FRIES**. This was going to cost me. And it absolutely did.
 
+<br>
+
+**Edits:** I checked [the menu](https://maps.app.goo.gl/289K2mwcYQb3R5iv7) on Maps and found just late last year, it was still $33 on the left 👁️ 👄 👁️
