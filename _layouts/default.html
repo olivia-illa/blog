@@ -19,7 +19,7 @@
     'theme-custom'; the published site treats a stored "custom" as Auto.
   {%- endcomment %}
   {%- if site.show_drafts %}
-  <script>try{var t=localStorage.getItem('theme'),d=document.documentElement;if(t==='birthday'||t==='lombard'||t==='sakura'||t==='custom'){d.dataset.theme=t;if(t==='custom'){var c=JSON.parse(localStorage.getItem('theme-custom')||'{}'),k;for(k in c)if(/^(--[a-z-]+|color-scheme)$/.test(k)&&/^(#[0-9a-f]{6}|light|dark)$/i.test(c[k]))d.style.setProperty(k,c[k])}}}catch(e){}</script>
+  <script>try{var t=localStorage.getItem('theme'),d=document.documentElement;if(t==='birthday'||t==='lombard'||t==='sakura'||t==='lumon'||t==='custom'){d.dataset.theme=t;if(t==='custom'){var c=JSON.parse(localStorage.getItem('theme-custom')||'{}'),k;for(k in c)if(/^(--[a-z-]+|color-scheme)$/.test(k)&&/^(#[0-9a-f]{6}|light|dark)$/i.test(c[k]))d.style.setProperty(k,c[k])}}}catch(e){}</script>
   {%- else %}
   <script>try{var t=localStorage.getItem('theme');if(t==='birthday'||t==='lombard'||t==='sakura')document.documentElement.dataset.theme=t}catch(e){}</script>
   {%- endif %}
@@ -73,6 +73,7 @@
 	    <button type="button" class="theme-swatch" data-scheme="birthday" aria-label="birthday" title="birthday">❀</button>
 	    <button type="button" class="theme-swatch" data-scheme="sakura" aria-label="Sakura" title="Sakura">❁</button>
 	    {%- if site.show_drafts %}
+	    <button type="button" class="theme-swatch" data-scheme="lumon" aria-label="Lumon" title="Lumon (draft)">✳</button>
 	    <button type="button" class="theme-swatch" data-scheme="custom" aria-label="Custom" title="Custom: pick your own colours">✎</button>
 	    {%- endif %}
 	  </div>

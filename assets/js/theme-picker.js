@@ -38,6 +38,7 @@
 
   var root = document.documentElement;
   var swatches = Array.prototype.slice.call(picker.querySelectorAll('.theme-swatch'));
+  if (picker.querySelector('.theme-swatch[data-scheme="lumon"]')) SCHEMES.push('lumon');
   if (picker.querySelector('.theme-swatch[data-scheme="custom"]')) SCHEMES.push('custom');
   var tuner = null;   // built lazily, the first time "custom" is picked
   var inputs = {};
@@ -194,7 +195,9 @@
     var from = document.createElement('label');
     from.appendChild(document.createTextNode('Start from '));
     var select = document.createElement('select');
-    [['', 'Auto'], ['lombard', 'Lombard'], ['birthday', 'Birthday'], ['sakura', 'Sakura']].forEach(function (s) {
+    var presets = [['', 'Auto'], ['lombard', 'Lombard'], ['birthday', 'Birthday'], ['sakura', 'Sakura']];
+    if (SCHEMES.indexOf('lumon') !== -1) presets.push(['lumon', 'Lumon']);
+    presets.forEach(function (s) {
       var opt = document.createElement('option');
       opt.value = s[0];
       opt.textContent = s[1];

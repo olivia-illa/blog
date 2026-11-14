@@ -140,6 +140,31 @@
 }
 
 
+/* Lumon reference palette; the picker exposes this preset only in drafts. */
+:root[data-theme="lumon"] {
+  color-scheme: light;
+  --bg-color: #d8e0e0;
+  --text-color: #1e3e3c;
+  --link-color: #1e3e3c;
+  --header-color: #1e3e3c;
+  --footer-color: #3e5d58;
+  --section-border: #f44323;
+  --link-hover-bg: #1e3e3c;
+  --link-hover-color: #d8e0e0;
+  --quote-color: #3e5d58;
+  --meta-color: #496662;
+  --date-muted-color: #496662;
+  --row-border-color: #f44323;
+}
+
+
+:root[data-theme="lumon"],
+:root[data-theme="lumon"] * {
+  scrollbar-color: var(--section-border) var(--bg-color);
+}
+
+
+
 /* ==========================================================================
    2. Base layout
    ========================================================================== */
