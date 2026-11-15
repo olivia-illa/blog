@@ -10,20 +10,20 @@ body_class: page-dates
   <h1 id="month-index-title" class="calendar-stitched-font">None-sense<br>Library Card</h1>
   <dl class="calendar-card-details">
     <div><dt>Author</dt><dd>{{ site.author | escape }}</dd></div>
-    <div><dt>Title</dt><dd>{{ site.title | escape }}</dd></div>
+    <div><dt>Title</dt><dd>Still Making Sense: A Memoir</dd></div>
   </dl>
-  {% assign current_month = site.time | date: '%Y-%m' %}
   <div class="calendar-library-wrap">
   <table class="calendar-library-card" aria-label="Monthly post archive">
-    <thead><tr><th scope="col">Borrower’s<br>name</th><th scope="col">Date<br>due</th></tr></thead>
+    <thead><tr><th scope="col">Borrowed<br>times</th><th scope="col">This book is due on the latest date stamped.</th></tr></thead>
     <tbody>
     {% for month in page.calendar_months %}
     {% assign month_key = month.url | remove: '/dates/' | remove: '/' %}
-    <tr data-calendar-month="{{ month_key }}"><th scope="row"><a class="calendar-month-stamp" href="{{ month.url | relative_url }}" aria-label="{{ month.name }} {{ month.year }}">{{ month.name | slice: 0, 3 }} {{ month.year }}</a></th><td><span class="calendar-due calendar-stitched-font">{% if month_key < current_month %}due{% endif %}</span></td></tr>
+    <tr data-calendar-month="{{ month_key }}"><td class="calendar-borrowed-count">{{ month.post_count }}</td><th scope="row"><a class="calendar-month-stamp" href="{{ month.url | relative_url }}" aria-label="{{ month.name }} {{ month.year }}">{{ month.last_date }}</a></th></tr>
     {% endfor %}
     </tbody>
   </table>
   </div>
+  <p class="calendar-card-notice">Please keep this card in the book pocket.</p>
 </section>
 {% endif %}
 <section class="post-calendar{% if page.calendar_index %} calendar-root{% endif %}" aria-labelledby="calendar-title">
@@ -89,4 +89,4 @@ body_class: page-dates
     </svg>
   </span>
 </template>
-<script src="{{ '/assets/js/calendar-today.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/calendar-today.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

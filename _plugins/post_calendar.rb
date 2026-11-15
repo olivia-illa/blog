@@ -17,7 +17,8 @@ module Jekyll
       base_data = template.data.dup
       base_data["calendar_months"] = keys.reverse.map do |key|
         first = Date.strptime("#{key}-01", "%Y-%m-%d")
-        { "name" => first.strftime("%B"), "year" => first.year, "url" => "/dates/#{key}/" }
+        { "name" => first.strftime("%B"), "year" => first.year, "url" => "/dates/#{key}/", "post_count" => months[key].size,
+          "last_date" => first.next_month.prev_day.strftime("%b %d %Y") }
       end
       template.data["calendar_months"] = base_data["calendar_months"]
       template.data["calendar_index"] = true
