@@ -5,36 +5,28 @@ permalink: /copy-paste-share/
 body_class: page-compact page-clippings
 ---
 
-<ul class="post-list">
+<div class="clippings-edition"><span>collected words from the world wide web</span><span>and your thoughts?</span></div>
+<div class="clippings-masthead" role="heading" aria-level="1"><span>Copy!</span> <span>Paste!</span> <span>Share!</span></div>
+<div class="clippings-deck"><span>A curated collection of my browser history</span><div role="navigation" class="clippings-topics" aria-label="Clipping topics">
+{% assign clipping_tags = '' | split: ',' %}
+{% for post in site.posts %}
+  {% include is-clipping-post.html post=post %}
+  {% if is_clipping_post %}{% assign clipping_tags = clipping_tags | concat: post.tags %}{% endif %}
+{% endfor %}
+{% assign clipping_tags = clipping_tags | uniq | sort_natural %}
+{% for tag in clipping_tags %}<a class="inherit-link" href="{{ '/tag/' | relative_url }}?t={{ tag | uri_escape }}">#{{ tag }}</a>{% endfor %}
+</div></div>
+<div class="clippings-paper">
   {% for post in site.posts %}
     {% include is-clipping-post.html post=post %}
     {% unless is_clipping_post %}{% continue %}{% endunless %}
-    <li class="post-item clipping-item">
-      <div class="clipping-meta">
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </div>
-      <div class="clipping-preview post-body">
-        {% assign blocks = post.content | split: "</p>" %}
-        {% assign first_quote_block = blocks[0] | strip_html | strip %}
-        <blockquote>
-          <a href="{{ post.url | relative_url }}">
-            {{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}
-          </a>
-        </blockquote>
-        {% if post.source_title %}
-          <div class="clipping-source-preview">
-            Source:
-            {% if post.source_url %}
-              <a href="{{ post.source_url }}" target="_blank" rel="noopener">{{ post.source_title }}</a>
-            {% else %}
-              <span>{{ post.source_title }}</span>
-            {% endif %}
-          </div>
-        {% endif %}
-        {% include post-tags.html tags=post.tags %}
-      </div>
-    </li>
-  {% else %}
-    <p>No clippings yet.</p>
+    <section class="paper-clipping">
+      <div class="paper-byline"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%A, %B %-d, %Y" }}</time>{% if post.source_publisher %}<span>{{ post.source_publisher }}</span>{% endif %}</div>
+      <h2 class="paper-source">{% if post.source_url %}<a href="{{ post.source_url }}" target="_blank" rel="noopener">{{ post.source_title | default: post.title }}</a>{% else %}{{ post.source_title | default: post.title }}{% endif %}</h2>
+      {% assign blocks = post.content | markdownify | split: "</p>" %}
+      {% assign first_quote_block = blocks[0] | strip_html | strip %}
+      <blockquote class="paper-quote"><a href="{{ post.url | relative_url }}">{{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}</a></blockquote>
+      <div class="paper-foot"><a href="{{ post.url | relative_url }}">Read clipping ↗</a>{% include post-tags.html tags=post.tags %}</div>
+    </section>
   {% endfor %}
-</ul>
+</div>
