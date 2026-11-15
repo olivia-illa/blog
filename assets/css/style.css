@@ -996,7 +996,7 @@ a:hover {
 @media (max-width: 599px) {
   .home-grid::before { display: none; }
   .home-grid > section { position: relative; }
-  .home-grid > section:not(:first-child) { border-top: 0; }
+  .home-grid > section:not(:first-child) { border-top: 0; padding-top: 0 !important; }
   .home-grid > section:not(:first-child)::before {
     content: "";
     position: absolute;
@@ -1006,7 +1006,7 @@ a:hover {
     border-top: 1px solid var(--section-border);
     pointer-events: none;
   }
-  .home .home-grid h2 { position: relative; border-bottom: 0; }
+  .home .home-grid h2 { position: relative; border-bottom: 0; margin-top: 0 !important; padding-top: .45rem !important; padding-bottom: .45rem; }
   .home .home-grid h2::after {
     content: "";
     position: absolute;
@@ -1295,6 +1295,12 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .page-edited .list-row .post-date {
   width: auto;
   margin-right: 0.75rem;
+}
+
+.list-row .list-date-mobile { display: none; }
+@media (max-width: 599px) {
+  .list-row .list-date-desktop { display: none; }
+  .page-compact .list-row .list-date-mobile { display: inline-block; width: 5.65rem; margin-right: .2rem; }
 }
 
 /* Sized to its text; shrinks and truncates with an ellipsis once the row is

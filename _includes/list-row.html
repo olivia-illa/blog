@@ -15,11 +15,16 @@
     <!-- Date (fixed width so titles align vertically) -->
     {% if include.updated %}
       {% assign updated_at = row.last_modified_at | default: row.date %}
-      <time class="post-date js-format-date" data-date-format="numeric" datetime="{{ updated_at | date_to_xmlschema }}">{{ updated_at | date: "%Y-%m-%d %H:%M" }}</time>
+      <time class="post-date list-date-desktop js-format-date" data-date-format="numeric" datetime="{{ updated_at | date_to_xmlschema }}">{{ updated_at | date: "%Y-%m-%d %H:%M" }}</time>
     {% elsif include.numeric_date %}
-      <time class="post-date" datetime="{{ row.date | date_to_xmlschema }}">{{ row.date | date: "%Y-%m-%d" }}</time>
+      <time class="post-date list-date-desktop" datetime="{{ row.date | date_to_xmlschema }}">{{ row.date | date: "%Y-%m-%d" }}</time>
     {% else %}
-      <span class="post-date">{{ row.date | date: "%b %-d, %Y" }}</span>
+      <span class="post-date list-date-desktop">{{ row.date | date: "%b %-d, %Y" }}</span>
+    {% endif %}
+    {% if include.updated %}
+      <time class="post-date list-date-mobile js-format-date" data-date-format="mobile-list" datetime="{{ updated_at | date_to_xmlschema }}">{{ updated_at | date: "%d %b ’%y" }}</time>
+    {% else %}
+      <time class="post-date list-date-mobile" datetime="{{ row.date | date_to_xmlschema }}">{{ row.date | date: "%d %b ’%y" }}</time>
     {% endif %}
 
     <!-- Title, or the first paragraph for untitled thoughts -->

@@ -22,7 +22,10 @@
     if (!iso) return;
     var date = new Date(iso);
     if (isNaN(date.getTime())) return;
-    if (timeEl.getAttribute('data-date-format') === 'numeric') {
+    if (timeEl.getAttribute('data-date-format') === 'mobile-list') {
+      var shortMonth = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(date).slice(0, 3);
+      timeEl.textContent = String(date.getDate()).padStart(2, '0') + ' ' + shortMonth + ' ’' + String(date.getFullYear()).slice(-2);
+    } else if (timeEl.getAttribute('data-date-format') === 'numeric') {
       var year = String(date.getFullYear());
       var month = String(date.getMonth() + 1).padStart(2, '0');
       var day = String(date.getDate()).padStart(2, '0');
