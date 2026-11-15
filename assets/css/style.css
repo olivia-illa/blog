@@ -1421,6 +1421,13 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .paper-foot { margin-top: auto; font-size: .65rem; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .5rem; }
 .paper-foot .post-tags { margin: 0; font-size: inherit; }
 @media (max-width: 799px) {
+ .clippings-masthead { font-size: clamp(1.2rem, 5.7vw, 2.4rem); padding: .65rem 0; white-space: nowrap; }
+ .clippings-masthead span { margin: 0 .08em; }
+ .clippings-edition { gap: .5rem; align-items: center; }
+ .clippings-edition > span:first-child { max-width: 70%; }
+ .clippings-deck { gap: .5rem; }
+ .clippings-deck > span { flex-shrink: 1; }
+ .page-clippings .clippings-topics { flex-basis: 100%; justify-content: flex-start; gap: .35rem .65rem; }
  .clippings-paper { grid-template-columns: repeat(2, minmax(0, 1fr)); }
  .paper-clipping, .paper-clipping:nth-child(n) { grid-column: span 1; }
  .paper-clipping:nth-child(3n + 1) { grid-column: span 2; }
