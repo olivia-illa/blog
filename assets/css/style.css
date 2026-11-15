@@ -361,6 +361,13 @@ nav > a:first-child,
   font-style: normal; /* Keep nav links normal */
 }
 
+@media (max-width: 599px) {
+  body > header > nav { flex-direction: column; align-items: flex-start; gap: .35rem; }
+  .site-title { white-space: nowrap; font-size: clamp(1rem, 5.2vw, 1.4rem); }
+  .nav-links { display: flex; align-items: center; gap: 1.25rem; }
+  .nav-links a { margin-left: 0; }
+}
+
 footer {
   position: relative;
   margin: 0;
@@ -983,6 +990,32 @@ a:hover {
   width: 100vw;
   border-top: 1px solid var(--section-border);
   pointer-events: none;
+}
+
+/* Carry each stacked section heading rule through the outer page gutters. */
+@media (max-width: 599px) {
+  .home-grid::before { display: none; }
+  .home-grid > section { position: relative; }
+  .home-grid > section:not(:first-child) { border-top: 0; }
+  .home-grid > section:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    width: 100vw;
+    border-top: 1px solid var(--section-border);
+    pointer-events: none;
+  }
+  .home .home-grid h2 { position: relative; border-bottom: 0; }
+  .home .home-grid h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -1rem;
+    width: 100vw;
+    border-bottom: 1px solid var(--section-border);
+    pointer-events: none;
+  }
 }
 
 /* Standardize preview post link font sizes */
