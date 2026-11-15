@@ -281,10 +281,15 @@ body.page-dates { width: 100%; max-width: none; }
    ========================================================================== */
 
 
+html { overflow-x: clip; }
+
 body {
   font-family: var(--font-mono);
   line-height: 1.5; /* Slightly tighter line height */
-  max-width: 98%; /* Use almost full width */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   margin: 0; /* Left align everything */
   padding: 0.5rem 1rem; /* Significantly reduced padding */
   background-color: var(--bg-color);
@@ -301,10 +306,18 @@ body {
 /* Main fills the space between header and footer.
    min-height: 0 lets it shrink so the home page can scroll columns internally. */
 main {
+  min-width: 0;
   flex: 1 1 auto;
   min-height: 0;
   padding: 0;
 }
+
+/* Long content wraps within the page instead of widening the viewport. */
+.post-body { overflow-wrap: anywhere; }
+img, video, iframe { max-width: 100%; }
+img, video { height: auto; }
+.post-body pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+.post-body table { width: 100%; table-layout: fixed; overflow-wrap: anywhere; }
 
 header {
   padding: 0.5rem 0;
