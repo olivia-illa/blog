@@ -43,6 +43,7 @@ tags: [weeknotes]
 * Extended gridlines to the edges of the page
 * Changed the date format displayed in tags
 * Created a new page for [last edited](https://oliviailla.blog/recently-edited/)
+- *"It's addictive, right?"*
 
 
 
