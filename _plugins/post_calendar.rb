@@ -15,6 +15,12 @@ module Jekyll
 
       source = template.content.dup
       base_data = template.data.dup
+      base_data["calendar_months"] = keys.reverse.map do |key|
+        first = Date.strptime("#{key}-01", "%Y-%m-%d")
+        { "name" => first.strftime("%B"), "year" => first.year, "url" => "/dates/#{key}/" }
+      end
+      template.data["calendar_months"] = base_data["calendar_months"]
+      template.data["calendar_index"] = true
       keys.each_with_index do |key, index|
         first = Date.strptime("#{key}-01", "%Y-%m-%d")
         days = Date.new(first.year, first.month, -1).day
@@ -32,7 +38,7 @@ module Jekyll
         }
         page = PageWithoutAFile.new(site, site.source, "dates/#{key}", "index.html")
         page.content = source
-        page.data = base_data.merge(data).merge("permalink" => "/dates/#{key}/")
+        page.data = base_data.merge(data).merge("permalink" => "/dates/#{key}/", "calendar_index" => false)
         site.pages << page
         template.data.merge!(data) if key == keys.last
       end

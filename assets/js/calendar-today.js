@@ -14,6 +14,9 @@
     const today = `${parts.year}-${parts.month}-${parts.day}`;
     if (today === markedDate) return;
     markedDate = today;
+    document.querySelectorAll('[data-calendar-month]').forEach(row => {
+      row.querySelector('.calendar-due').textContent = row.dataset.calendarMonth < today.slice(0, 7) ? 'due' : '';
+    });
     calendar.querySelector('.calendar-token')?.remove();
     calendar.querySelector('[aria-current="date"]')?.removeAttribute('aria-current');
     const date = calendar.querySelector(`time[datetime="${today}"]`);

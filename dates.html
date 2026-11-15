@@ -5,7 +5,29 @@ permalink: /dates/
 body_class: page-dates
 ---
 {% assign month_posts = page.calendar_posts %}
-<section class="post-calendar" aria-labelledby="calendar-title">
+{% if page.calendar_index %}
+<section class="calendar-month-index" aria-labelledby="month-index-title">
+  <h1 id="month-index-title" class="calendar-stitched-font">None-sense<br>Library Card</h1>
+  <dl class="calendar-card-details">
+    <div><dt>Author</dt><dd>{{ site.author | escape }}</dd></div>
+    <div><dt>Title</dt><dd>{{ site.title | escape }}</dd></div>
+  </dl>
+  {% assign current_month = site.time | date: '%Y-%m' %}
+  <div class="calendar-library-wrap">
+  <table class="calendar-library-card" aria-label="Monthly post archive">
+    <thead><tr><th scope="col">Borrower’s<br>name</th><th scope="col">Date<br>due</th></tr></thead>
+    <tbody>
+    {% for month in page.calendar_months %}
+    {% assign month_key = month.url | remove: '/dates/' | remove: '/' %}
+    <tr data-calendar-month="{{ month_key }}"><th scope="row"><a class="calendar-month-stamp" href="{{ month.url | relative_url }}" aria-label="{{ month.name }} {{ month.year }}">{{ month.name | slice: 0, 3 }} {{ month.year }}</a></th><td><span class="calendar-due calendar-stitched-font">{% if month_key < current_month %}due{% endif %}</span></td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endif %}
+<section class="post-calendar{% if page.calendar_index %} calendar-root{% endif %}" aria-labelledby="calendar-title">
+  {% unless page.calendar_index %}<a class="calendar-back" href="{{ '/dates/' | relative_url }}">← all months</a>{% endunless %}
   <div class="calendar-heading">
     <h1 id="calendar-title"><span class="calendar-stitched-font">{{ page.calendar_name }}<sub class="calendar-year"><svg viewBox="0 0 94 54" role="img" aria-label="{{ page.calendar_year }}"><defs><pattern id="year-stitches" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M.5.5 4.5 4.5M4.5.5.5 4.5" fill="none" stroke="currentColor" stroke-width="1"/></pattern><mask id="year-lettering"><text x="0" y="52" fill="white" class="calendar-year-shape">{{ page.calendar_year }}</text></mask></defs><path d="M0 0h94v64H0z" fill="url(#year-stitches)" mask="url(#year-lettering)"/></svg></sub></span></h1>
     <div class="calendar-month-nav" role="group" aria-label="Browse months">
@@ -29,8 +51,10 @@ body_class: page-dates
         {% assign day = week | times: 7 | plus: weekday | plus: 1 | minus: page.calendar_offset %}
         {% if day >= 1 and day <= page.calendar_days %}
         {% capture date_key %}{{ page.calendar_month }}-{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}
-        <td>
-          <div class="calendar-day"><time datetime="{{ date_key }}">{% capture day_label %}{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}{% include stitch-text.html text=day_label %}</time></div>
+        {% assign has_posts = false %}
+        {% for post in month_posts %}{% assign post_day = post.date | date: '%Y-%m-%d' %}{% if post_day == date_key %}{% assign has_posts = true %}{% break %}{% endif %}{% endfor %}
+        <td{% if has_posts %} class="calendar-has-posts"{% endif %}>
+          <div class="calendar-day"><time datetime="{{ date_key }}"><span class="calendar-mobile-weekday calendar-stitched-font">{{ date_key | date: '%a' }}</span>{% capture day_label %}{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}{% include stitch-text.html text=day_label %}</time></div>
           <ul class="calendar-posts">
             {% for post in month_posts %}
             {% assign post_day = post.date | date: '%Y-%m-%d' %}

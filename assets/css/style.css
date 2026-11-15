@@ -6,10 +6,6 @@
 .page-dates .calendar-table th .calendar-stitched-font { font-size: clamp(.6rem, 1.6vw, 1.5rem); }
 .page-dates { box-sizing: border-box; }
 body.page-dates { width: 100%; max-width: none; }
-.page-dates nav { position: relative; border-bottom: 0; }
-.page-dates nav::after { content: ""; position: absolute; bottom: 0; left: -1rem; width: calc(100% + 2rem); border-bottom: 1px solid var(--section-border); pointer-events: none; }
-.page-dates footer { position: relative; border-top: 0; }
-.page-dates footer::before { content: ""; position: absolute; top: 0; left: -1rem; width: calc(100% + 2rem); border-top: 1px solid var(--section-border); pointer-events: none; }
 .page-dates header, .page-dates footer { flex: 0 0 auto; }
 .page-dates main { min-width: 0; }
 .page-dates .post-calendar { width: 100%; margin: .4rem 0 3rem; }
@@ -57,8 +53,48 @@ body.page-dates { width: 100%; max-width: none; }
 .page-dates .calendar-posts li::before { content: "༝"; position: absolute; left: -.12em; top: 0; font-size: 1.3em; line-height: 1.115; }
 .page-dates .calendar-posts a { text-decoration: underline; text-underline-offset: .15em; }
 .page-dates .calendar-empty { opacity: .3; }
+.page-dates .calendar-month-index,
+.page-dates .calendar-back,
+.page-dates .calendar-mobile-weekday { display: none; }
 @media (max-width: 600px) {
+  .page-dates .calendar-root { display: none; }
+  .page-dates .calendar-month-index { display: block; margin: .6rem 0 2rem; }
+  .page-dates .calendar-month-index h1 { font-size: 2rem; font-weight: 400; line-height: 1.2; margin: 0 0 1rem; }
+  .page-dates .calendar-card-details { margin: 0; border-top: 1px solid var(--text-color); }
+  .page-dates .calendar-card-details > div { padding: .4rem .65rem .5rem; border-bottom: 1px solid var(--text-color); }
+  .page-dates .calendar-card-details dt { font-size: .65rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .2rem; }
+  .page-dates .calendar-card-details dd { margin: 0; font-size: .85rem; }
+  .page-dates .calendar-library-wrap { padding-bottom: 3px; border-bottom: 1px solid var(--section-border); }
+  .page-dates .calendar-library-card { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: .3rem; border-top: 3px double var(--text-color); border-bottom: 3px double var(--text-color); }
+  .page-dates .calendar-library-card th,
+  .page-dates .calendar-library-card td { border: 1px solid var(--text-color); padding: .8rem .5rem; text-align: center; font-weight: 400; }
+  .page-dates .calendar-library-card thead th { font-size: .65rem; line-height: 1.3; text-transform: uppercase; letter-spacing: .05em; background: repeating-linear-gradient(135deg, transparent 0 3px, color-mix(in srgb, var(--section-border) 40%, transparent) 3px 4px); }
+  .page-dates .calendar-library-card thead th:first-child { width: 73%; }
+  .page-dates .calendar-library-card thead th:last-child { width: 27%; }
+  .page-dates .calendar-library-card tbody th { text-align: left; padding: .55rem .65rem; }
+  .page-dates .calendar-library-card tbody td { padding-top: .55rem; padding-bottom: .55rem; }
+  .page-dates .calendar-library-card tbody th a { display: inline-block; font-family: var(--font-mono); font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; transform: rotate(-2deg) scaleX(.85); transform-origin: left center; }
+  .page-dates .calendar-library-card tbody tr:nth-child(even) th a { transform: rotate(1deg) scaleX(.85); }
+  .page-dates .calendar-library-card td { font-size: .65rem; }
+  .page-dates .calendar-due { font-size: 1.2rem; transform: rotate(-8deg); }
+  .page-dates .calendar-back { display: inline-block; font-size: .8rem; margin: .3rem 0 1.2rem; }
   .page-dates .calendar-heading { gap: 1rem; margin-bottom: 1.1rem; }
+  .page-dates .calendar-heading .calendar-stitched-font { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .page-dates .calendar-table thead { display: none; }
+  .page-dates .calendar-table tbody { display: block; }
+  .page-dates .calendar-table tbody::before,
+  .page-dates .calendar-table tbody::after,
+  .page-dates .calendar-table td::after { display: none; }
+  .page-dates .calendar-table td { display: none; }
+  .page-dates .calendar-table td.calendar-has-posts { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: .8rem; min-height: 0; padding: 1rem 0; }
+  .page-dates .calendar-day { justify-content: flex-start; margin: 0; }
+  .page-dates .calendar-mobile-weekday { display: block; font-size: .9rem; margin-bottom: .5rem; }
+  .page-dates .calendar-day .stitch-text { width: 2.6rem; }
+  .page-dates .calendar-posts li { font-size: .9rem; margin-bottom: .65rem; }
+  .page-dates .calendar-posts li:last-child { margin-bottom: 0; }
+  .page-dates .calendar-table td:has(.calendar-token) { padding-bottom: 1rem; min-height: 7.5rem; }
+  .page-dates .calendar-token { top: auto; bottom: .7rem; left: .7rem; right: auto; }
+  .page-dates .calendar-token svg { width: 1.2rem; height: 1.5rem; }
 }
 
 /* ==========================================================================
@@ -242,6 +278,7 @@ body.page-dates { width: 100%; max-width: none; }
    2. Base layout
    ========================================================================== */
 
+
 body {
   font-family: var(--font-mono);
   line-height: 1.5; /* Slightly tighter line height */
@@ -272,10 +309,11 @@ header {
 }
 
 nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--section-border);
+  border-bottom: 0;
   padding-bottom: 0.3rem;
   margin-bottom: 0.6rem; /* Even tighter gap after nav */
 }
@@ -324,6 +362,7 @@ nav > a:first-child,
 }
 
 footer {
+  position: relative;
   margin: 0;
   padding: 1rem 0;
   box-sizing: border-box;
@@ -331,7 +370,7 @@ footer {
   text-align: left; /* Left align footer too */
   font-size: 0.75rem;
   color: var(--footer-color);
-  border-top: 1px solid var(--section-border);
+  border-top: 0;
 
   /* Copyright on the left, colour-scheme picker on the right; the tuner
      panel, when open, wraps onto its own full-width row below */
@@ -341,6 +380,18 @@ footer {
   align-items: center;
   gap: 1rem;
 }
+
+/* Shared page-edge dividers for home, archives, calendar and post layouts. */
+body > header > nav::after,
+body > footer::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  width: 100vw;
+  pointer-events: none;
+}
+body > header > nav::after { bottom: 0; border-bottom: 1px solid var(--section-border); }
+body > footer::before { top: 0; border-top: 1px solid var(--section-border); }
 
 footer p {
   margin: 0;
@@ -808,29 +859,6 @@ a:hover {
   border-bottom: none;
 }
 
-.home nav::after {
-  content: '';
-  position: absolute;
-  left: -1rem;
-  bottom: 0;
-  width: 100vw;
-  border-bottom: 1px solid var(--section-border);
-}
-
-.home footer {
-  position: relative;
-  border-top: none;
-}
-
-.home footer::before {
-  content: '';
-  position: absolute;
-  left: -1rem;
-  top: 0;
-  width: 100vw;
-  border-top: 1px solid var(--section-border);
-}
-
 /* Pull main containers flush under the top header border */
 .home main,
 .home article {
@@ -1092,6 +1120,7 @@ a:hover {
 
 .watching-toggle span {
   display: inline-block;
+  transition: transform 180ms ease;
 }
 
 .human-toggle span {
@@ -1113,9 +1142,11 @@ a:hover {
   .human-toggle.is-poofing span {
     animation: none;
   }
+  .watching-toggle span { transition: none; }
 }
 
-.watching-toggle[aria-expanded="true"] span {
+.watching-toggle:hover span,
+.watching-toggle:focus-visible span {
   transform: scaleX(-1);
 }
 
