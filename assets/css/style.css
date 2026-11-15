@@ -1,6 +1,6 @@
 /* Calendar experiment: November 2026 */
 /* Personal-use demo for typography review; numerals use our original stitches. */
-@font-face { font-family: "CS Crupie Stitched Demo"; src: url("../fonts/cs-crupie-stitched-demo.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "CS Crupie Stitched Demo"; src: url("../fonts/cs-crupie-stitched-demo.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
 .page-dates .calendar-stitched-font { display: block; font-family: "CS Crupie Stitched Demo", Georgia, serif; font-weight: 400; text-transform: uppercase; line-height: 1; }
 .page-dates .calendar-heading .calendar-stitched-font { font-size: clamp(2rem, 4vw, 3.65rem); display: inline-flex; align-items: flex-end; transform: scaleY(1.15); transform-origin: bottom left; }
 .page-dates .calendar-table th .calendar-stitched-font { font-size: clamp(.6rem, 1.6vw, 1.5rem); }
@@ -1286,10 +1286,10 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .page-write .note-stack,
 .page-write .note-stack-hint { display: none; }
 @media (min-width: 800px) {
-  .page-write.notes-enhanced main > article { max-width: none; width: 100%; }
-  .page-write.notes-enhanced .notes-list { display: none; }
-  .page-write.notes-enhanced .note-stack-hint { display: block; font-size: .75rem; margin: .3rem 0 2.5rem; }
-  .page-write.notes-enhanced .note-stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); grid-auto-rows: 135px; gap: 0 0; list-style: none; padding: 0 1.5rem 8rem; margin: 0 0 3rem; isolation: isolate; }
+  .page-write main > article { max-width: none; width: 100%; }
+  .page-write .notes-list { display: none; }
+  .page-write .note-stack-hint { display: block; font-size: .75rem; margin: .3rem 0 2.5rem; }
+  .page-write .note-stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); grid-auto-rows: 135px; gap: 0 0; list-style: none; padding: 0 1.5rem 8rem; margin: 0 0 3rem; isolation: isolate; }
   .page-write .note-card { position: relative; height: 225px; min-width: 0; transform: rotate(-3deg); transition: transform 180ms ease; }
   .page-write .note-card:nth-child(4n + 2) { transform: translateY(18px) rotate(4deg); }
   .page-write .note-card:nth-child(4n + 3) { transform: translateY(-9px) rotate(-1deg); }

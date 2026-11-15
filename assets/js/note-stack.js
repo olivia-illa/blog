@@ -2,7 +2,6 @@
   const stack = document.querySelector('.note-stack');
   if (!stack) return;
   const desktop = matchMedia('(min-width: 800px)');
-  document.documentElement.classList.add('notes-enhanced');
 
   stack.addEventListener('click', event => {
     const link = event.target.closest('.note-card-link');
