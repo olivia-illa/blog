@@ -1,3 +1,53 @@
+/* Calendar experiment: November 2026 */
+/* Personal-use demo for typography review; numerals use our original stitches. */
+@font-face { font-family: "CS Crupie Stitched Demo"; src: url("../fonts/cs-crupie-stitched-demo.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+.page-dates .calendar-stitched-font { display: block; font-family: "CS Crupie Stitched Demo", Georgia, serif; font-weight: 400; text-transform: uppercase; line-height: 1; }
+.page-dates .calendar-heading .calendar-stitched-font { font-size: clamp(2rem, 4vw, 3.65rem); display: inline-flex; align-items: flex-end; transform: scaleY(1.15); transform-origin: bottom left; }
+.page-dates .calendar-table th .calendar-stitched-font { font-size: clamp(.6rem, 1.6vw, 1.5rem); }
+.page-dates { box-sizing: border-box; }
+.page-dates header, .page-dates footer { flex: 0 0 auto; }
+.page-dates main { min-width: 0; }
+.page-dates .post-calendar { width: 100%; margin: .4rem 0 3rem; }
+.page-dates .calendar-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem; }
+.page-dates .calendar-heading h1 { margin: 0; line-height: 1; }
+.page-dates .stitch-text { display: block; width: 100%; height: auto; color: var(--text-color); }
+.page-dates .calendar-year { display: inline-block; width: .8em; font-size: inherit; margin-left: .12em; margin-bottom: .22em; }
+.page-dates .calendar-year svg { display: block; width: 100%; height: auto; overflow: visible; }
+.page-dates .calendar-year-shape { font-family: "CS Crupie Stitched Demo", Georgia, serif; font-size: 60px; font-weight: 700; }
+.page-dates .calendar-table { display: block; width: 100%; border-collapse: collapse; }
+.page-dates .calendar-table thead,
+.page-dates .calendar-table tbody { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.page-dates .calendar-table tr { display: contents; }
+.page-dates .calendar-table tbody { position: relative; grid-auto-rows: 1fr; }
+.page-dates .calendar-table th { padding: 0 0 .8rem; }
+.page-dates .calendar-table th .stitch-text { width: 3.2rem; margin: auto; }
+.page-dates .calendar-table td { position: relative; min-height: 110px; min-width: 0; padding: .7rem; }
+.page-dates .calendar-table tbody::before,
+.page-dates .calendar-table tbody::after,
+.page-dates .calendar-table td::before,
+.page-dates .calendar-table td::after { content: ""; position: absolute; background: var(--text-color); opacity: .6; pointer-events: none; }
+.page-dates .calendar-table tbody::before,
+.page-dates .calendar-table td::before { left: 0; width: 100%; height: 5px; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M0 1h4v2h4V1h4v2h4' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E") repeat-x 0 0 / 16px 5px; }
+.page-dates .calendar-table tbody::before { top: -2px; }
+.page-dates .calendar-table td::before { bottom: -2px; }
+.page-dates .calendar-table tbody::after,
+.page-dates .calendar-table td::after { top: 0; height: 100%; width: 5px; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='16'%3E%3Cpath d='M1 0v4h2v4H1v4h2v4' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E") repeat-y 0 0 / 5px 16px; }
+.page-dates .calendar-table tbody::after { left: -2px; }
+.page-dates .calendar-table td::after { right: -2px; }
+.page-dates .calendar-table td:has(.calendar-token) { padding-bottom: 3rem; }
+.page-dates .calendar-day { display: flex; align-items: flex-start; justify-content: flex-end; gap: .5rem; min-height: 1.2rem; margin: -.4rem -.4rem .4rem 0; }
+.page-dates .calendar-day time { order: 1; }
+.page-dates .calendar-token { position: absolute; right: .5rem; bottom: .4rem; display: inline-flex; color: var(--text-color); transform: rotate(-14deg); }
+.page-dates .calendar-token svg { display: block; width: 2rem; height: 2.5rem; }
+.page-dates .calendar-day .stitch-text { width: 1.65rem; }
+.page-dates .calendar-posts { list-style: none; margin: 0; padding: 0; }
+.page-dates .calendar-posts li { margin: 0 0 .45rem; font-size: .78rem; line-height: 1.45; overflow-wrap: anywhere; }
+.page-dates .calendar-posts a { text-decoration: underline; text-underline-offset: .15em; }
+.page-dates .calendar-empty { opacity: .3; }
+@media (max-width: 600px) {
+  .page-dates .calendar-heading { gap: 1rem; margin-bottom: 1.1rem; }
+}
+
 /* ==========================================================================
    Making Utter Sense — site stylesheet
 

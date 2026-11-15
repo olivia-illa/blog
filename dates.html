@@ -1,0 +1,63 @@
+---
+layout: default
+title: Dates — November 2026
+permalink: /dates/
+body_class: page-dates
+---
+{% assign month_posts = site.posts | sort: 'date' %}
+<section class="post-calendar" aria-labelledby="calendar-title">
+  <div class="calendar-heading">
+    <h1 id="calendar-title"><span class="calendar-stitched-font">November<sub class="calendar-year"><svg viewBox="0 0 94 54" role="img" aria-label="’26"><defs><pattern id="year-stitches" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M.5.5 4.5 4.5M4.5.5.5 4.5" fill="none" stroke="currentColor" stroke-width="1"/></pattern><mask id="year-lettering"><text x="0" y="52" fill="white" class="calendar-year-shape">’26</text></mask></defs><path d="M0 0h94v64H0z" fill="url(#year-stitches)" mask="url(#year-lettering)"/></svg></sub></span></h1>
+  </div>
+  <div class="calendar-scroll">
+  <table class="calendar-table" aria-label="Posts published in November 2026">
+    <thead><tr>
+      {% assign weekdays = 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday' | split: ',' %}
+      {% for weekday in weekdays %}
+      <th scope="col">{% include stitch-text.html text=weekday %}</th>
+      {% endfor %}
+    </tr></thead>
+    <tbody>
+      {% for week in (0..4) %}
+      <tr>
+        {% for weekday in (0..6) %}
+        {% assign day = week | times: 7 | plus: weekday | plus: 1 %}
+        {% if day <= 30 %}
+        {% capture date_key %}2026-11-{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}
+        <td>
+          <div class="calendar-day"><time datetime="{{ date_key }}">{% capture day_label %}{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}{% include stitch-text.html text=day_label %}</time></div>
+          <ul class="calendar-posts">
+            {% for post in month_posts %}
+            {% assign post_day = post.date | date: '%Y-%m-%d' %}
+            {% if post_day == date_key %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </td>
+        {% else %}
+        <td class="calendar-empty" aria-hidden="true"></td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+<template id="calendar-token-template">
+  <span class="calendar-token" role="img" aria-label="You are here — today" title="You are here — today">
+    <svg viewBox="0 0 48 58" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 44 14 12C15 1 33 1 34 12L38 44M10 40C16 46 32 46 38 40M10 44C16 50 32 50 38 44M9 44 8 49C8 57 40 57 40 49L39 44M8 49C15 55 33 55 40 49M14 12C18 16 30 16 34 12"/>
+      {% for row in (0..4) %}
+      {% assign dot_y = row | times: 5 | plus: 17 %}
+      {% for col in (0..3) %}
+      {% assign dot_x = col | times: 5 | plus: 16 %}
+      <circle cx="{{ dot_x }}" cy="{{ dot_y }}" r=".8"/>
+      {% endfor %}
+      {% endfor %}
+      <path d="m14 38-.5 4m5-3-.2 4m5-3v4m5-5 .2 4m4.8-5 .5 4"/>
+    </svg>
+  </span>
+</template>
+<script src="{{ '/assets/js/calendar-today.js' | relative_url }}" defer></script>

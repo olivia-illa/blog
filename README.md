@@ -53,6 +53,30 @@ tags: [scattered-thoughts]
 Your content goes here...
 ```
 
+### Notes (formerly thoughts)
+
+Use `layout: thoughts_style` for notes. Their titles are generated automatically
+from publication order within each day (Taipei time): `notes`, `more notes`,
+`even more notes`, then `even more notes (4)` and onward. The count resets each day.
+Do not add a `title:`; the generated title takes precedence.
+
+For example, create `_posts/thoughts/2026-11-16-notes.md`:
+
+```markdown
+---
+layout: thoughts_style
+date: 2026-11-16 09:00:00 +0800
+tags: [feeling]
+---
+
+Your note goes here...
+```
+
+For another note that day, use a unique filename such as
+`2026-11-16-notes-v2.md` and a later `date:` timestamp. The filename does not
+control the displayed title. Existing thoughts filenames and links still work.
+Post lists that display excerpts continue to show the note's opening text.
+
 ### Tags
 - Use `internet-clippings` to show the post in the "Internet Clippings" section.
 - Use `scattered-thoughts` to show the post in the "Scattered Thoughts" section.

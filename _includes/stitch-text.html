@@ -1,0 +1,12 @@
+{%- assign stitch_numeric = include.text | plus: 0 -%}
+{%- if stitch_numeric == 0 and include.text != '00' -%}
+<span class="calendar-stitched-font">{{ include.text | escape }}</span>
+{%- else -%}
+{%- assign stitch_chars = include.text | upcase | split: '' -%}
+{%- assign stitch_width = stitch_chars.size | times: 6 -%}
+<svg class="stitch-text" viewBox="0 0 {{ stitch_width }} 7" role="img" aria-label="{{ include.text | escape }}">
+  {%- for char in stitch_chars -%}
+  <use href="{{ '/assets/fonts/stitch.svg' | relative_url }}#stitch-{{ char }}" x="{{ forloop.index0 | times: 6 }}" width="6" height="7"/>
+  {%- endfor -%}
+</svg>
+{%- endif -%}
