@@ -5,7 +5,22 @@ permalink: /write-anything/
 body_class: page-compact page-write
 ---
 
-<ul class="post-list">
+<p class="note-stack-hint">Go ahead, pick a random note I left for me.</p>
+<ul class="note-stack" aria-label="Overlapping note previews">
+  {% for post in site.posts %}
+    {% assign post_title_lower = post.title | downcase %}
+    {% if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' %}
+    {% assign note_preview = post.content | markdownify | split: '</p>' | first | strip_html | strip | truncate: 230 %}
+    <li class="note-card">
+      <a class="note-card-link" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %b ’%y' }}</time>
+        <span class="note-card-preview">{{ note_preview }}</span>
+      </a>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+<ul class="post-list notes-list">
   {% for post in site.posts %}
     {% assign post_title_lower = post.title | downcase %}
     {% if post.layout == 'thoughts_style' or post_title_lower == 'thoughts' or post.tags contains 'thoughts' %}
@@ -13,3 +28,4 @@ body_class: page-compact page-write
     {% endif %}
   {% endfor %}
 </ul>
+<script src="{{ '/assets/js/note-stack.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
