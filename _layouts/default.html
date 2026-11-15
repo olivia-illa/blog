@@ -31,7 +31,7 @@
   <link rel="preload" href="{{ '/assets/fonts/cs-crupie-stitched-demo.otf' | relative_url }}" as="font" type="font/otf" crossorigin>
   {% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  {% if page.body_class contains 'page-clippings' %}
+  {% if page.body_class contains 'page-clippings' or page.body_class contains 'page-latest' %}
   <link rel="preload" href="{{ '/assets/fonts/roboto-slab-black.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
   {% endif %}
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
