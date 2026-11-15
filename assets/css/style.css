@@ -5,13 +5,19 @@
 .page-dates .calendar-heading .calendar-stitched-font { font-size: clamp(2rem, 4vw, 3.65rem); display: inline-flex; align-items: flex-end; transform: scaleY(1.15); transform-origin: bottom left; }
 .page-dates .calendar-table th .calendar-stitched-font { font-size: clamp(.6rem, 1.6vw, 1.5rem); }
 .page-dates { box-sizing: border-box; }
+body.page-dates { width: 100%; max-width: none; }
+.page-dates nav { position: relative; border-bottom: 0; }
+.page-dates nav::after { content: ""; position: absolute; bottom: 0; left: -1rem; width: calc(100% + 2rem); border-bottom: 1px solid var(--section-border); pointer-events: none; }
+.page-dates footer { position: relative; border-top: 0; }
+.page-dates footer::before { content: ""; position: absolute; top: 0; left: -1rem; width: calc(100% + 2rem); border-top: 1px solid var(--section-border); pointer-events: none; }
 .page-dates header, .page-dates footer { flex: 0 0 auto; }
 .page-dates main { min-width: 0; }
 .page-dates .post-calendar { width: 100%; margin: .4rem 0 3rem; }
 .page-dates .calendar-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem; }
 .page-dates .calendar-heading h1 { margin: 0; line-height: 1; }
 .page-dates .calendar-month-nav { display: flex; align-items: center; gap: 0; }
-.page-dates .calendar-duck { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 3rem; }
+.page-dates .calendar-duck { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 3rem; color: var(--text-color); }
+.page-dates .calendar-duck-eye { fill: var(--bg-color); }
 .page-dates .calendar-duck svg { display: block; width: 1.75rem; height: 1.75rem; }
 .page-dates .calendar-duck-next svg { transform: scaleX(-1); }
 .page-dates .calendar-duck.is-disabled { opacity: .2; }
