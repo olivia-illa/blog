@@ -281,7 +281,7 @@ body.page-dates { width: 100%; max-width: none; }
    ========================================================================== */
 
 
-html { overflow-x: clip; }
+html { overflow-x: clip; scrollbar-gutter: stable; }
 
 body {
   font-family: var(--font-mono);
@@ -320,7 +320,9 @@ img, video { height: auto; }
 .post-body table { width: 100%; table-layout: fixed; overflow-wrap: anywhere; }
 
 header {
-  padding: 0.5rem 0;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 nav {
@@ -329,8 +331,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 0;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.6rem; /* Even tighter gap after nav */
+  padding: 0.25rem 0 0.5rem;
+  margin-bottom: 0;
 }
 
 nav > a:first-child,
@@ -863,24 +865,6 @@ a:hover {
   }
 }
 
-/* Collapse site header spacing */
-.home header,
-.home nav {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.home header {
-  padding-top: 0;
-}
-
-.home nav {
-  padding-top: 0.25rem;
-  padding-bottom: 0.5rem !important;
-  position: relative;
-  border-bottom: none;
-}
-
 /* Pull main containers flush under the top header border */
 .home main,
 .home article {
@@ -1265,12 +1249,6 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .page-compact .tag-group {
   padding-top: 0 !important;
   margin-top: 0 !important;
-}
-
-.page-compact header,
-.page-compact nav {
-  margin-bottom: 0.2rem !important;
-  padding-bottom: 0.2rem !important;
 }
 
 .page-compact h1,
