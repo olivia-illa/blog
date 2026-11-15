@@ -10,6 +10,12 @@
 .page-dates .post-calendar { width: 100%; margin: .4rem 0 3rem; }
 .page-dates .calendar-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem; }
 .page-dates .calendar-heading h1 { margin: 0; line-height: 1; }
+.page-dates .calendar-month-nav { display: flex; align-items: center; gap: 0; }
+.page-dates .calendar-duck { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 3rem; }
+.page-dates .calendar-duck svg { display: block; width: 1.75rem; height: 1.75rem; }
+.page-dates .calendar-duck-next svg { transform: scaleX(-1); }
+.page-dates .calendar-duck.is-disabled { opacity: .2; }
+.page-dates .calendar-duck:hover { background: none; }
 .page-dates .stitch-text { display: block; width: 100%; height: auto; color: var(--text-color); }
 .page-dates .calendar-year { display: inline-block; width: .8em; font-size: inherit; margin-left: .12em; margin-bottom: .22em; }
 .page-dates .calendar-year svg { display: block; width: 100%; height: auto; overflow: visible; }
@@ -41,7 +47,8 @@
 .page-dates .calendar-token svg { display: block; width: 2rem; height: 2.5rem; }
 .page-dates .calendar-day .stitch-text { width: 1.65rem; }
 .page-dates .calendar-posts { list-style: none; margin: 0; padding: 0; }
-.page-dates .calendar-posts li { margin: 0 0 .45rem; font-size: .78rem; line-height: 1.45; overflow-wrap: anywhere; }
+.page-dates .calendar-posts li { position: relative; padding-left: .55em; margin: 0 0 .45rem; font-size: .78rem; line-height: 1.45; overflow-wrap: anywhere; }
+.page-dates .calendar-posts li::before { content: "༝"; position: absolute; left: -.12em; top: 0; font-size: 1.3em; line-height: 1.115; }
 .page-dates .calendar-posts a { text-decoration: underline; text-underline-offset: .15em; }
 .page-dates .calendar-empty { opacity: .3; }
 @media (max-width: 600px) {

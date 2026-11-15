@@ -4,13 +4,17 @@ title: Dates — November 2026
 permalink: /dates/
 body_class: page-dates
 ---
-{% assign month_posts = site.posts | sort: 'date' %}
+{% assign month_posts = page.calendar_posts %}
 <section class="post-calendar" aria-labelledby="calendar-title">
   <div class="calendar-heading">
-    <h1 id="calendar-title"><span class="calendar-stitched-font">November<sub class="calendar-year"><svg viewBox="0 0 94 54" role="img" aria-label="’26"><defs><pattern id="year-stitches" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M.5.5 4.5 4.5M4.5.5.5 4.5" fill="none" stroke="currentColor" stroke-width="1"/></pattern><mask id="year-lettering"><text x="0" y="52" fill="white" class="calendar-year-shape">’26</text></mask></defs><path d="M0 0h94v64H0z" fill="url(#year-stitches)" mask="url(#year-lettering)"/></svg></sub></span></h1>
+    <h1 id="calendar-title"><span class="calendar-stitched-font">{{ page.calendar_name }}<sub class="calendar-year"><svg viewBox="0 0 94 54" role="img" aria-label="{{ page.calendar_year }}"><defs><pattern id="year-stitches" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M.5.5 4.5 4.5M4.5.5.5 4.5" fill="none" stroke="currentColor" stroke-width="1"/></pattern><mask id="year-lettering"><text x="0" y="52" fill="white" class="calendar-year-shape">{{ page.calendar_year }}</text></mask></defs><path d="M0 0h94v64H0z" fill="url(#year-stitches)" mask="url(#year-lettering)"/></svg></sub></span></h1>
+    <div class="calendar-month-nav" role="group" aria-label="Browse months">
+      {% if page.calendar_previous %}<a class="calendar-duck calendar-duck-previous" href="{{ page.calendar_previous | relative_url }}" aria-label="Previous month with posts">{% include calendar-duck.html %}</a>{% else %}<span class="calendar-duck calendar-duck-previous is-disabled" aria-hidden="true">{% include calendar-duck.html %}</span>{% endif %}
+      {% if page.calendar_next %}<a class="calendar-duck calendar-duck-next" href="{{ page.calendar_next | relative_url }}" aria-label="Next month with posts">{% include calendar-duck.html %}</a>{% else %}<span class="calendar-duck calendar-duck-next is-disabled" aria-hidden="true">{% include calendar-duck.html %}</span>{% endif %}
+    </div>
   </div>
   <div class="calendar-scroll">
-  <table class="calendar-table" aria-label="Posts published in November 2026">
+  <table class="calendar-table" aria-label="Posts published in {{ page.calendar_name }} {{ page.calendar_month | slice: 0, 4 }}">
     <thead><tr>
       {% assign weekdays = 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday' | split: ',' %}
       {% for weekday in weekdays %}
@@ -18,12 +22,13 @@ body_class: page-dates
       {% endfor %}
     </tr></thead>
     <tbody>
-      {% for week in (0..4) %}
+      {% assign last_week = page.calendar_weeks | minus: 1 %}
+      {% for week in (0..last_week) %}
       <tr>
         {% for weekday in (0..6) %}
-        {% assign day = week | times: 7 | plus: weekday | plus: 1 %}
-        {% if day <= 30 %}
-        {% capture date_key %}2026-11-{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}
+        {% assign day = week | times: 7 | plus: weekday | plus: 1 | minus: page.calendar_offset %}
+        {% if day >= 1 and day <= page.calendar_days %}
+        {% capture date_key %}{{ page.calendar_month }}-{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}
         <td>
           <div class="calendar-day"><time datetime="{{ date_key }}">{% capture day_label %}{% if day < 10 %}0{% endif %}{{ day }}{% endcapture %}{% include stitch-text.html text=day_label %}</time></div>
           <ul class="calendar-posts">
