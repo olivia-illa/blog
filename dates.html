@@ -14,7 +14,7 @@ body_class: page-dates
   </dl>
   <div class="calendar-library-wrap">
   <table class="calendar-library-card" aria-label="Monthly post archive">
-    <thead><tr><th scope="col">Borrowed<br>times</th><th scope="col">This book is due on the latest date stamped.</th></tr></thead>
+    <thead><tr><th scope="col">Borrowed<br>times</th><th scope="col">Due on<br>the published date</th></tr></thead>
     <tbody>
     {% for month in page.calendar_months %}
     {% assign month_key = month.url | remove: '/dates/' | remove: '/' %}
