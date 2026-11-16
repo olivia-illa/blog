@@ -19,9 +19,11 @@
       article.classList.add('individual-tag-archive');
       article.replaceChildren(heading, posts);
       document.title = '#' + selected.dataset.tag + ' | ' + document.title.split(' | ').slice(1).join(' | ');
+      document.documentElement.classList.remove('tag-view-loading');
       return;
     }
   }
+  document.documentElement.classList.remove('tag-view-loading');
   const updateButton = () => {
     if (!drawerButton) return;
     const anyOpen = folders.some(folder => folder.open);

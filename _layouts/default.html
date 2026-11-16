@@ -9,6 +9,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.body_class contains 'page-tags' %}
+  <script>if(new URLSearchParams(location.search).has('t')&&new URLSearchParams(location.search).get('view')!=='drawer')document.documentElement.classList.add('tag-view-loading');</script>
+  <style>.tag-view-loading main{visibility:hidden}</style>
+  {% endif %}
   {%- comment -%}
     Applies the reader's saved colour scheme before first paint, so a picked
     scheme never flashes the default one. Must stay inline and above the

@@ -27,4 +27,4 @@ body_class: page-compact page-tags
   </div>
   <div class="cabinet-front"><button type="button" class="close-drawer" aria-label="Open drawer and show all folders" title="Open all folders">open drawer</button></div>
 </section>
-<script src="{{ '/assets/js/tag-folders.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/tag-folders.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer onerror="document.documentElement.classList.remove('tag-view-loading')"></script>

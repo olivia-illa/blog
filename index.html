@@ -7,7 +7,7 @@ body_class: home
 <!-- Home-only layout: on a viewport with room for it the page is locked to
      one screen and never scrolls; only the individual columns overflow
      internally. The first column is the exception: it never scrolls, and
-     assets/js/fit-latest.js drops the posts that do not fit so "drink me"
+     assets/js/fit-latest.js drops the posts that do not fit so "full archive"
      stays visible. On small or short viewports (phones either way up) the
      columns stack and the page scrolls normally instead. Styles: "Page: home"
      in assets/css/style.css. -->
@@ -20,7 +20,7 @@ body_class: home
     <p>For <button type="button" class="human-toggle" aria-pressed="false" aria-label="Toggle human status"><span aria-hidden="true">✅</span></button> <span class="human-status" aria-live="polite">I am not a robot</span>.</p>
     <p>Click around for <a href="{{ '/2026/06/30/facts-about-me.html' | relative_url }}">bits and bobs</a> <a href="{{ '/about-me/' | relative_url }}">about me</a>.</p>
 
-    <div class="section-label"><a href="{{ '/recently-edited/' | relative_url }}" class="inherit-link">LATEST</a> ✎﹏﹏﹏﹏</div>
+    <div class="section-label"><a href="{{ '/recently-edited/' | relative_url }}" class="inherit-link">Latest Meanderings</a> ✎﹏﹏﹏﹏</div>
   </div>
 
 <ul class="post-list latest-list js-fit-list">
@@ -49,7 +49,7 @@ body_class: home
   {% endfor %}
 </ul>
 <div class="see-more">
-  <a href="{{ '/latest/' | relative_url }}">drink me →</a>
+  <a href="{{ '/latest/' | relative_url }}">full archive →</a>
 </div>
 <script id="random-post-urls" type="application/json">[{% for post in site.posts %}{{ post.url | relative_url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]</script>
 <script src="{{ '/assets/js/random-post.js' | relative_url }}" defer></script>
@@ -106,7 +106,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/copy-paste-share/' | relative_url }}">drink me →</a>
+      <a href="{{ '/copy-paste-share/' | relative_url }}">more clippings →</a>
     </div>
   </div>
 </section>
@@ -127,7 +127,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/tag/' | relative_url }}?t=weeknotes">drink me →</a>
+      <a href="{{ '/tag/' | relative_url }}?t=weeknotes">rewind →</a>
     </div>
   </div>
 </section>
@@ -156,7 +156,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/write-anything/' | relative_url }}">drink me →</a>
+      <a href="{{ '/write-anything/' | relative_url }}">more trifles →</a>
     </div>
   </div>
 </section>
