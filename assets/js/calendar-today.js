@@ -22,6 +22,17 @@
     date.closest('td').append(template.content.cloneNode(true));
   }
 
+  calendar.addEventListener('click', event => {
+    const token = event.target.closest('.calendar-token');
+    if (!token) return;
+    token.classList.remove('is-jiggling');
+    void token.offsetWidth;
+    token.classList.add('is-jiggling');
+  });
+  calendar.addEventListener('animationend', event => {
+    if (event.animationName === 'thimble-jiggle') event.target.classList.remove('is-jiggling');
+  });
+
   updateToday();
   setInterval(updateToday, 60000);
   document.addEventListener('visibilitychange', updateToday);

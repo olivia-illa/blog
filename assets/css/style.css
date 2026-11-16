@@ -2288,3 +2288,18 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .page-tags main > article.individual-tag-archive > h1 { display: block; }
 
 .meanderings-pencil { display: inline-block; transform: scaleX(-1); }
+
+/* Click today's thimble for a quick wobble. */
+.page-dates .calendar-token { border: 0; padding: 0; background: none; cursor: pointer; }
+.calendar-token:focus-visible { outline: 1px dashed currentColor; outline-offset: 3px; }
+.calendar-token.is-jiggling svg { animation: thimble-jiggle 550ms ease-in-out; transform-origin: 50% 85%; }
+@keyframes thimble-jiggle {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(18deg) translateY(-3px); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(10deg) translateY(-1px); }
+  80% { transform: rotate(-5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .calendar-token.is-jiggling svg { animation: none; }
+}
