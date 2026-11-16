@@ -29,8 +29,8 @@
     const bounds = scatter.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
     const mobile = bounds.width < 600;
-    const size = Math.min(mobile ? bounds.width * .36 : bounds.width * .23,
-      mobile ? bounds.height * .085 : bounds.height * .46, 320);
+    const size = mobile ? Math.min(bounds.width * .72, 320)
+      : Math.min(bounds.width * .23, bounds.height * .46, 320);
     entries.forEach(({ banana, label, item }) => {
       item.style.width = `${size}px`;
       item.style.removeProperty('left');
@@ -43,14 +43,14 @@
       item.style.marginTop = `${dy}px`;
       const rect = banana.getBoundingClientRect();
       label.classList.toggle('is-compact', mobile);
-      label.style.width = `${Math.min(mobile ? 145 : 210, bounds.width - 16)}px`;
+      label.style.width = `${Math.min(mobile ? 220 : 210, bounds.width - 16)}px`;
       label.style.maxWidth = 'none';
       const width = label.offsetWidth;
       const height = label.offsetHeight;
       // Map the hollow above the SVG's inner curve into screen coordinates.
       // getScreenCTM includes both the fruit rotation and its mirrored SVG.
       const svg = banana.querySelector('svg');
-      const hollow = new DOMPoint(300, -5).matrixTransform(svg.getScreenCTM());
+      const hollow = new DOMPoint(300, mobile ? -65 : -5).matrixTransform(svg.getScreenCTM());
       label.style.left = `${Math.max(bounds.left + 4, Math.min(hollow.x - width / 2, bounds.right - width - 4))}px`;
       label.style.top = `${Math.max(bounds.top + 4, Math.min(hollow.y - height / 2, bounds.bottom - height - 4))}px`;
     });
@@ -61,6 +61,14 @@
     entries.forEach(({ label }) => label.classList.add('is-visible'));
   });
   new ResizeObserver(layout).observe(scatter);
+  let scrollFrame;
+  window.addEventListener('scroll', () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = null;
+      layout();
+    });
+  }, { passive: true });
   window.addEventListener('load', layout);
   document.fonts.ready.then(layout);
   layout();

@@ -2069,3 +2069,21 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-stack li:nth-child(9) { top: 85%; }
   .banana-stack li:nth-child(10) { top: 95%; }
 }
+
+/* Give the phone column full-size fruit and let the page scroll naturally. */
+@media (max-width: 600px) {
+  html.page-edited { height: auto; overflow-y: auto; }
+  body.page-edited { height: auto; min-height: 100dvh; overflow: visible; }
+  .page-edited main { display: block; }
+  .page-edited main > article { display: block; }
+  .banana-edits { display: block; }
+  .banana-stack { height: 2900px; flex: none; }
+}
+
+
+
+/* Larger, clearer phone annotations, set farther into the inner curve. */
+@media (max-width: 600px) {
+  .banana-floating-label.is-compact > span { font-size: 1.05rem; line-height: 1.15; }
+  .banana-floating-label.is-compact time { font-size: .65rem; margin-top: .4rem; }
+}
