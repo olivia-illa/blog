@@ -1,0 +1,20 @@
+{% assign back_post = nil %}
+{% assign next_post = nil %}
+{% assign found_current_post = false %}
+{% for post in site.posts %}
+  {% unless post.layout == page.layout %}{% continue %}{% endunless %}
+  {% if post.url == page.url %}
+    {% assign found_current_post = true %}
+  {% elsif found_current_post %}
+    {% assign next_post = post %}
+    {% break %}
+  {% else %}
+    {% assign back_post = post %}
+  {% endif %}
+{% endfor %}
+{% if back_post or next_post %}
+  <nav class="post-navigation" aria-label="Post navigation">
+    {% if back_post %}<a class="inherit-link" href="{{ back_post.url | relative_url }}"><span class="post-back-arrow" aria-hidden="true">➠</span> back</a>{% endif %}
+    {% if next_post %}<a class="inherit-link" href="{{ next_post.url | relative_url }}">next ➠</a>{% endif %}
+  </nav>
+{% endif %}

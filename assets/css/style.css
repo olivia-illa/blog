@@ -1668,8 +1668,12 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
   margin-bottom: 1rem;
 }
 
-.clipping-post .post-tags {
+.clipping-post .post-tags,
+.post-navigation {
   font-size: 0.85rem;
+}
+
+.clipping-post .post-tags {
   color: var(--date-muted-color);
   margin-top: 1.5rem;
 }
@@ -1693,6 +1697,25 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 }
 
 /* The mandatory attribution line at the foot of a clipping */
+.post-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0 0 .75rem;
+  color: var(--date-muted-color);
+}
+
+.post-navigation > a:first-child {
+  font: inherit;
+  text-transform: none;
+}
+
+.post-back-arrow {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
 .clipping-source {
   margin-top: 1.5em;
   font-size: 0.95rem;
