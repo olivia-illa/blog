@@ -238,7 +238,10 @@ body.page-dates { width: 100%; max-width: none; }
 
 
 :root:not([data-theme]),
-:root:not([data-theme]) *,
+:root:not([data-theme]) * {
+  scrollbar-color: #fe4e96 var(--bg-color);
+}
+
 :root[data-theme="lumon"],
 :root[data-theme="lumon"] * {
   scrollbar-color: #ffed9e var(--bg-color);
@@ -388,7 +391,7 @@ nav > a:first-child,
 footer {
   position: relative;
   margin: 0;
-  padding: 1rem 0;
+  padding: .5rem 0;
   box-sizing: border-box;
   background-color: inherit;
   text-align: left; /* Left align footer too */
