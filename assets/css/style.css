@@ -2139,6 +2139,47 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   }
 }
 
+/* Keep the original centered phone fruit; place captions in the inner space. */
+@media (max-width: 600px) {
+  .banana-stack { height: 2900px; display: block; }
+  .banana-stack li:nth-child(n) { left: 50%; }
+  .banana-floating-label.is-mobile-label { text-align: center; }
+}
+
+/* Phone fruit and caption share a stable, local layout block. */
+@media (max-width: 600px) {
+  .banana-stack { height: auto; display: block; }
+  .banana-stack li:nth-child(n) {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    left: auto;
+    top: auto;
+    margin: 0;
+    transform: none;
+    display: block;
+  }
+  .banana-stack .banana-entry,
+  .banana-stack .banana-entry:hover {
+    position: absolute;
+    width: 72%;
+    max-width: 320px;
+    left: 50%;
+    top: 50%;
+    translate: none;
+    transform: translate(-50%, -50%) rotate(var(--banana-angle));
+  }
+  .banana-stack .banana-floating-label.is-mobile-label {
+    position: absolute;
+    width: min(190px, 53%);
+    max-width: none;
+    opacity: 1;
+    transform: none;
+    translate: none;
+    text-align: center;
+  }
+}
+
 /* A simple filing drawer with independently opening tag folders. */
 .page-tags main > article { max-width: none; width: 100%; }
 .page-tags main > article > h1 { display: none; }

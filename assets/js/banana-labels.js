@@ -30,6 +30,26 @@
     const bounds = scatter.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
     const mobile = matchMedia('(max-width: 600px)').matches;
+    if (mobile) {
+      entries.forEach(({ banana, label, item }) => {
+        item.style.cssText = '';
+        label.style.cssText = '';
+        label.classList.add('is-compact', 'is-mobile-label');
+        label.classList.remove('is-hovered');
+        banana.classList.remove('is-hovered');
+        if (label.parentElement !== item) item.append(label);
+        const svg = banana.querySelector('svg');
+        const hollow = new DOMPoint(300, -80).matrixTransform(svg.getScreenCTM());
+        const local = item.getBoundingClientRect();
+        const left = Math.max(8, Math.min(hollow.x - local.left - label.offsetWidth / 2, local.width - label.offsetWidth - 8));
+        label.style.left = `${left}px`;
+        label.style.top = `${hollow.y - local.top - label.offsetHeight / 2}px`;
+      });
+      return;
+    }
+    entries.forEach(({ label }) => {
+      if (label.parentElement !== document.body) document.body.append(label);
+    });
     const size = mobile ? Math.min(bounds.width * .72, 320)
       : Math.min(bounds.width * .23, bounds.height * .46, 320);
     entries.forEach(({ banana, label, item }) => {
@@ -45,23 +65,6 @@
       const rect = banana.getBoundingClientRect();
       label.classList.toggle('is-compact', mobile);
       label.classList.toggle('is-mobile-label', mobile);
-      if (mobile) {
-        label.classList.remove('is-hovered');
-        banana.classList.remove('is-hovered');
-        // Use the open concave side of the original, centered fruit.
-        const svg = banana.querySelector('svg');
-        const hollow = new DOMPoint(300, -105).matrixTransform(svg.getScreenCTM());
-        if (banana.pathname.endsWith('/invisible-string-p2.html')) {
-          hollow.x -= 16;
-          hollow.y += 16;
-        }
-        label.style.width = `${Math.min(200, bounds.width * .56)}px`;
-        label.style.maxWidth = 'none';
-        const left = Math.max(bounds.left + 4, Math.min(hollow.x - label.offsetWidth / 2, bounds.right - label.offsetWidth - 4));
-        label.style.left = `${left + scrollX}px`;
-        label.style.top = `${hollow.y - label.offsetHeight / 2 + scrollY}px`;
-        return;
-      }
       label.style.width = `${Math.min(mobile ? 220 : 210, bounds.width - 16)}px`;
       label.style.maxWidth = 'none';
       const width = label.offsetWidth;
@@ -79,7 +82,12 @@
     titlesPinned = true;
     entries.forEach(({ label }) => label.classList.add('is-visible'));
   });
-  new ResizeObserver(layout).observe(scatter);
+  let layoutWidth;
+  new ResizeObserver(([entry]) => {
+    if (entry.contentRect.width === layoutWidth) return;
+    layoutWidth = entry.contentRect.width;
+    layout();
+  }).observe(scatter);
   window.addEventListener('load', layout);
   document.fonts.ready.then(layout);
   layout();
