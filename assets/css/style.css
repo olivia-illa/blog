@@ -2286,3 +2286,5 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 /* Individual tag pages use the original compact archive markup and spacing. */
 .page-tags main > article.individual-tag-archive { max-width: 700px; margin: 0; }
 .page-tags main > article.individual-tag-archive > h1 { display: block; }
+
+.meanderings-pencil { display: inline-block; transform: scaleX(-1); }
