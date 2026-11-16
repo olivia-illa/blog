@@ -2080,10 +2080,35 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-stack { height: 2900px; flex: none; }
 }
 
-
+/* Balance the desktop scatter across the open center and lower-left space. */
+@media (min-width: 601px) {
+  .banana-stack li:nth-child(4) { left: 34%; top: 42%; }
+  .banana-stack li:nth-child(5) { left: 61%; top: 42%; }
+  .banana-stack li:nth-child(6) { left: 87%; top: 47%; }
+  .banana-stack li:nth-child(7) { left: 13%; top: 72%; }
+  .banana-stack li:nth-child(8) { left: 40%; top: 77%; }
+  .banana-stack li:nth-child(9) { left: 66%; top: 78%; }
+  .banana-stack li:nth-child(10) { left: 88%; top: 79%; }
+}
 
 /* Larger, clearer phone annotations, set farther into the inner curve. */
 @media (max-width: 600px) {
   .banana-floating-label.is-compact > span { font-size: 1.05rem; line-height: 1.15; }
   .banana-floating-label.is-compact time { font-size: .65rem; margin-top: .4rem; }
+}
+
+/* Give the desktop fruit and captions a looser, more even scatter. */
+@media (min-width: 601px) {
+  .banana-stack li:nth-child(1) { left: 13%; top: 19%; }
+  .banana-stack li:nth-child(2) { left: 43%; top: 17%; }
+  .banana-stack li:nth-child(3) { left: 78%; top: 18%; }
+  .banana-stack li:nth-child(4) { left: 29%; top: 46%; }
+  .banana-stack li:nth-child(5) { left: 57%; top: 44%; }
+  .banana-stack li:nth-child(6) { left: 86%; top: 47%; }
+  .banana-stack li:nth-child(7) { left: 12%; top: 76%; }
+  .banana-stack li:nth-child(8) { left: 38%; top: 79%; }
+  .banana-stack li:nth-child(9) { left: 65%; top: 77%; }
+  .banana-stack li:nth-child(10) { left: 88%; top: 81%; }
+  .banana-floating-label > span { font-size: 1.12rem; line-height: 1.1; }
+  .banana-floating-label time { font-size: .67rem; }
 }

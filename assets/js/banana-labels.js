@@ -50,7 +50,7 @@
       // Map the hollow above the SVG's inner curve into screen coordinates.
       // getScreenCTM includes both the fruit rotation and its mirrored SVG.
       const svg = banana.querySelector('svg');
-      const hollow = new DOMPoint(300, mobile ? -65 : -5).matrixTransform(svg.getScreenCTM());
+      const hollow = new DOMPoint(300, mobile ? -65 : -25).matrixTransform(svg.getScreenCTM());
       label.style.left = `${Math.max(bounds.left + 4, Math.min(hollow.x - width / 2, bounds.right - width - 4))}px`;
       label.style.top = `${Math.max(bounds.top + 4, Math.min(hollow.y - height / 2, bounds.bottom - height - 4))}px`;
     });
