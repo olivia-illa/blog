@@ -9,6 +9,7 @@
     document.body.append(label);
     banana.setAttribute('aria-describedby', label.id);
     const show = () => {
+      if (matchMedia('(max-width: 600px)').matches) return;
       label.classList.add('is-visible', 'is-hovered');
       banana.classList.add('is-hovered');
     };
@@ -28,7 +29,7 @@
   const layout = () => {
     const bounds = scatter.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
-    const mobile = bounds.width < 600;
+    const mobile = matchMedia('(max-width: 600px)').matches;
     const size = mobile ? Math.min(bounds.width * .72, 320)
       : Math.min(bounds.width * .23, bounds.height * .46, 320);
     entries.forEach(({ banana, label, item }) => {
@@ -43,6 +44,24 @@
       item.style.marginTop = `${dy}px`;
       const rect = banana.getBoundingClientRect();
       label.classList.toggle('is-compact', mobile);
+      label.classList.toggle('is-mobile-label', mobile);
+      if (mobile) {
+        label.classList.remove('is-hovered');
+        banana.classList.remove('is-hovered');
+        // Use the open concave side of the original, centered fruit.
+        const svg = banana.querySelector('svg');
+        const hollow = new DOMPoint(300, -105).matrixTransform(svg.getScreenCTM());
+        if (banana.pathname.endsWith('/invisible-string-p2.html')) {
+          hollow.x -= 16;
+          hollow.y += 16;
+        }
+        label.style.width = `${Math.min(200, bounds.width * .56)}px`;
+        label.style.maxWidth = 'none';
+        const left = Math.max(bounds.left + 4, Math.min(hollow.x - label.offsetWidth / 2, bounds.right - label.offsetWidth - 4));
+        label.style.left = `${left + scrollX}px`;
+        label.style.top = `${hollow.y - label.offsetHeight / 2 + scrollY}px`;
+        return;
+      }
       label.style.width = `${Math.min(mobile ? 220 : 210, bounds.width - 16)}px`;
       label.style.maxWidth = 'none';
       const width = label.offsetWidth;
@@ -61,14 +80,6 @@
     entries.forEach(({ label }) => label.classList.add('is-visible'));
   });
   new ResizeObserver(layout).observe(scatter);
-  let scrollFrame;
-  window.addEventListener('scroll', () => {
-    if (scrollFrame) return;
-    scrollFrame = requestAnimationFrame(() => {
-      scrollFrame = null;
-      layout();
-    });
-  }, { passive: true });
   window.addEventListener('load', layout);
   document.fonts.ready.then(layout);
   layout();

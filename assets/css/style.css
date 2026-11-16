@@ -2112,3 +2112,22 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-floating-label > span { font-size: 1.12rem; line-height: 1.1; }
   .banana-floating-label time { font-size: .67rem; }
 }
+
+/* Phone captions belong to the document, so swiping never repositions them. */
+@media (max-width: 600px) {
+  .banana-stack li:nth-child(n) { left: 25%; }
+  .banana-floating-label.is-mobile-label {
+    position: absolute;
+    opacity: 1;
+    translate: none;
+    transition: none;
+    text-align: left;
+  }
+  .banana-entry, .banana-entry.is-hovered { translate: none; transition: none; }
+  .banana-entry:hover { transform: rotate(var(--banana-angle)); }
+}
+
+@media (max-width: 600px) {
+  .banana-stack li:nth-child(n) { left: 50%; }
+  .banana-floating-label.is-mobile-label { text-align: center; }
+}
