@@ -7,7 +7,7 @@ body_class: home
 <!-- Home-only layout: on a viewport with room for it the page is locked to
      one screen and never scrolls; only the individual columns overflow
      internally. The first column is the exception: it never scrolls, and
-     assets/js/fit-latest.js drops the posts that do not fit so "read more"
+     assets/js/fit-latest.js drops the posts that do not fit so "drink me"
      stays visible. On small or short viewports (phones either way up) the
      columns stack and the page scrolls normally instead. Styles: "Page: home"
      in assets/css/style.css. -->
@@ -49,7 +49,7 @@ body_class: home
   {% endfor %}
 </ul>
 <div class="see-more">
-  <a href="{{ '/latest/' | relative_url }}">read more →</a>
+  <a href="{{ '/latest/' | relative_url }}">drink me →</a>
 </div>
 <div class="latest-summary">
   <div class="currently-watching"><span class="watching-label">Recent <button type="button" class="watching-toggle" aria-expanded="false" aria-controls="watching-titles" aria-label="Show recent watches"><span aria-hidden="true">👀</span></button></span><span class="watching-titles" id="watching-titles" hidden> The Rehearsal S2, Fruit Fly (2026)</span></div>
@@ -104,7 +104,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/copy-paste-share/' | relative_url }}">read more →</a>
+      <a href="{{ '/copy-paste-share/' | relative_url }}">drink me →</a>
     </div>
   </div>
 </section>
@@ -125,7 +125,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/tag/' | relative_url }}?t=weeknotes">read more →</a>
+      <a href="{{ '/tag/' | relative_url }}?t=weeknotes">drink me →</a>
     </div>
   </div>
 </section>
@@ -154,7 +154,7 @@ body_class: home
       {% endfor %}
     </ul>
     <div class="see-more">
-      <a href="{{ '/write-anything/' | relative_url }}">read more →</a>
+      <a href="{{ '/write-anything/' | relative_url }}">drink me →</a>
     </div>
   </div>
 </section>
