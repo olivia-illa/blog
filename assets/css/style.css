@@ -1649,11 +1649,11 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 }
 
 .post-thoughts .post-body blockquote {
-  border-left: 2px solid var(--text-color);
+  border: 0;
   margin: 1.5em 0;
   padding-left: 1rem;
-  font-style: italic;
-  color: var(--quote-color);
+  font-style: normal;
+  color: inherit;
 }
 
 .post-thoughts .post-body blockquote p {
