@@ -1754,3 +1754,47 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 }
 
 .order-table .order-price { font-size: var(--order-label-size); }
+
+/* Desktop-only corner lift; SVG and paper cutout share the same geometry. */
+.page-write .note-corner-curl { display: none; }
+.page-write .note-card-link:focus { outline: none; }
+.page-write .note-card-link:focus-visible { outline: 1px dashed var(--text-color); outline-offset: -5px; }
+@media (min-width: 800px) {
+ .page-write .note-corner-curl { display: block; position: absolute; right: 0; bottom: 0; width: 120px; height: 72px; opacity: 0; pointer-events: none; transition: opacity 180ms ease; }
+ .page-write .note-corner-curl svg { display: block; width: 100%; height: 100%; overflow: visible; }
+ .page-write .note-card.is-front:is(:hover, :focus-within) .note-corner-curl { opacity: 1; }
+ .page-write .note-card.is-front:is(:hover, :focus-within) .note-card-link { clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 69px), calc(100% - 2.4px) calc(100% - 68.4px), calc(100% - 10px) calc(100% - 44px), calc(100% - 28px) calc(100% - 22px), calc(100% - 52px) calc(100% - 7px), calc(100% - 80px) 100%, 0 100%); }
+ .page-write .note-curl-paper { stroke: var(--text-color); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+ .page-write .note-curl-shadow { fill: var(--text-color); opacity: .18; stroke: none; }
+ .page-write .note-curl-words { font-family: var(--font-mono); font-size: 6px; fill: var(--text-color); stroke: var(--bg-color); stroke-width: 2px; paint-order: stroke fill; stroke-linejoin: round; }
+ .page-write .note-card.is-front:is(:hover, :focus-within)::before { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .page-write .note-corner-curl { transition: none; } }
+
+@media (min-width: 800px) {
+ .page-write .note-corner-curl { right: -14px; }
+ .page-write .note-card.is-front:is(:hover, :focus-within) .note-card-link { border-right-color: transparent; border-bottom-color: transparent; background: linear-gradient(var(--text-color), var(--text-color)) right top / 1px calc(100% - 72px) no-repeat, linear-gradient(var(--text-color), var(--text-color)) left bottom / calc(100% - 120px) 1px no-repeat, var(--bg-color); clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 72px), calc(100% - 24px) calc(100% - 53px), calc(100% - 60px) calc(100% - 37px), calc(100% - 96px) calc(100% - 31px), calc(100% - 94px) calc(100% - 16px), calc(100% - 105px) calc(100% - 5px), calc(100% - 120px) 100%, 0 100%); }
+}
+
+@media (min-width: 800px) {
+ .page-write .note-card.is-front:is(:hover, :focus-within) .note-card-link {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+  mask-image: linear-gradient(black, black), linear-gradient(black, black), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='72' viewBox='0 0 100 60'%3E%3Cpath d='M0 0H100 Q65 31 20 34 Q25 55 0 60Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% calc(100% - 72px), calc(100% - 120px) 100%, 120px 72px;
+  mask-position: top left, top left, bottom right;
+  mask-repeat: no-repeat;
+ }
+ .page-write .note-curl-words { font-size: 5.5px; stroke-width: 1.3px; }
+}
+
+@media (min-width: 800px) {
+ .page-write .note-corner-curl { right: -13.5px; bottom: .5px; }
+ .page-write .note-card.is-front:is(:hover, :focus-within) .note-card-link {
+  background-origin: border-box;
+  background-size: 1px calc(100% - 72.5px), calc(100% - 120.5px) 1px;
+  mask-size: 100% calc(100% - 72.5px), calc(100% - 120.5px) 100%, 120px 72px;
+  mask-position: top left, top left, right .5px bottom .5px;
+ }
+}
+
+@media (min-width: 800px) { .page-write .note-curl-words { font-size: 6.3px; } }
