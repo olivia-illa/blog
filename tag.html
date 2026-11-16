@@ -5,47 +5,26 @@ permalink: /tag/
 body_class: page-compact page-tags
 ---
 
-{% for tag in site.tags %}
-<div class="tag-group" data-tag="{{ tag[0] }}">
-  <h2 class="tag-group-title"><a href="{{ '/tag/' | relative_url }}?t={{ tag[0] | uri_escape }}">#{{ tag[0] }}</a></h2>
-  <ul class="post-list">
-    {% for post in tag[1] %}
-      {% include list-row.html post=post numeric_date=true %}
+<section class="tag-cabinet" aria-label="Blog tag folders">
+  <p class="folder-instruction">Pull out a folder.</p>
+  <div class="folder-stack">
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+    {% assign tab_column = forloop.index0 | modulo: 3 %}
+    <details class="tag-folder" data-tag="{{ tag[0] | escape }}" style="--tab-column: {{ tab_column }}; --folder-order: {{ forloop.index }};">
+      <summary class="folder-tab"><span class="folder-tab-name">{{ tag[0] | escape }}</span><span class="folder-tab-count">{{ tag[1].size }}</span></summary>
+      <template class="individual-tag-posts"><ul class="post-list">{% for post in tag[1] %}{% include list-row.html post=post numeric_date=true hide_tags=true %}{% endfor %}</ul></template>
+      <div class="folder-contents">
+        <h2><a class="inherit-link" href="{{ '/tag/' | relative_url }}?t={{ tag[0] | uri_escape }}&amp;view=tag">#{{ tag[0] | escape }}</a></h2>
+        <ul class="post-list">
+          {% for post in tag[1] %}
+          {% include list-row.html post=post numeric_date=true hide_tags=true %}
+          {% endfor %}
+        </ul>
+      </div>
+    </details>
     {% endfor %}
-  </ul>
-</div>
-{% endfor %}
-
-<script>
-  (function () {
-    var tag = new URLSearchParams(window.location.search).get('t');
-    if (!tag) return;
-    document.querySelectorAll('.tag-group').forEach(function (group) {
-      if (group.dataset.tag === tag) {
-        // The page <h1> already shows the tag name, so drop the group heading
-        var title = group.querySelector('.tag-group-title');
-        if (title) title.remove();
-      } else {
-        group.remove();
-      }
-    });
-    // Heading becomes the tag name, linking back to the unfiltered index
-    var h1 = document.querySelector('article h1');
-    if (h1) {
-      var link = document.createElement('a');
-      link.href = {{ '/tag/' | relative_url | jsonify }};
-      link.className = 'inherit-link tag-index-link';
-      link.textContent = '#' + tag;
-      // Hint shown on hover; a sibling rather than part of the link so it
-      // stays clear of the link's hover wipe and underline
-      var hint = document.createElement('span');
-      hint.className = 'tag-index-hint';
-      hint.textContent = ' (\u2190 explore)';
-      h1.textContent = '';
-      h1.appendChild(link);
-      h1.appendChild(hint);
-    }
-    var rest = document.title.split(' | ').slice(1).join(' | ');
-    document.title = '#' + tag + (rest ? ' | ' + rest : '');
-  })();
-</script>
+  </div>
+  <div class="cabinet-front"><button type="button" class="close-drawer" aria-label="Open drawer and show all folders" title="Open all folders">open drawer</button></div>
+</section>
+<script src="{{ '/assets/js/tag-folders.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

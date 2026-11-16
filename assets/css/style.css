@@ -2138,3 +2138,110 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
     filter: drop-shadow(3px 5px 3px color-mix(in srgb, var(--text-color) 20%, transparent));
   }
 }
+
+/* A simple filing drawer with independently opening tag folders. */
+.page-tags main > article { max-width: none; width: 100%; }
+.page-tags main > article > h1 { display: none; }
+.tag-cabinet { max-width: 940px; margin: 1.5rem auto 3rem; padding: 0 1.5rem; }
+.folder-instruction { font-size: .75rem; margin: 0 0 2rem; }
+.folder-stack { position: relative; padding: 0 1.2rem; }
+.tag-folder { position: relative; margin: 0; padding: 0; border: 1px solid var(--text-color); border-radius: 7px 7px 0 0; background: var(--bg-color); color: var(--text-color); min-height: 30px; scroll-margin-top: 1rem; }
+.tag-folder + .tag-folder { margin-top: -1px; }
+.folder-tab { position: relative; display: flex; align-items: center; gap: .6rem; box-sizing: border-box; width: 31%; min-height: 39px; margin-top: -19px; margin-left: calc(2% + var(--tab-column) * 32%); padding: .55rem .9rem .4rem; background: var(--bg-color); border: 1px solid var(--text-color); border-bottom: 0; border-radius: 10px 10px 0 0; cursor: pointer; list-style: none; font-size: .8rem; }
+.folder-tab::-webkit-details-marker { display: none; }
+.folder-tab::before, .folder-tab::after { content: ''; position: absolute; bottom: 0; width: 10px; height: 9px; background: var(--bg-color); }
+.folder-tab::before { left: -1px; }
+.folder-tab::after { right: -1px; }
+.folder-tab-number { font-size: .65rem; }
+.folder-tab-name { flex: 1; overflow-wrap: anywhere; }
+.folder-tab-count { font-size: .6rem; }
+.folder-tab:focus-visible { outline: 2px dashed var(--text-color); outline-offset: 3px; }
+.tag-folder[open] { z-index: 5; margin-top: 1.25rem; margin-bottom: 1.5rem; box-shadow: 4px 7px 9px color-mix(in srgb, var(--text-color) 20%, transparent); }
+.tag-folder[open] .folder-tab { background: var(--text-color); color: var(--bg-color); }
+.tag-folder[open] .folder-tab::before, .tag-folder[open] .folder-tab::after { background: var(--text-color); }
+.folder-contents { padding: 1.1rem 1.5rem 1.7rem; }
+.folder-contents h2 { font-size: .9rem; font-weight: normal; margin: 0 0 1rem; }
+.folder-contents .post-list { margin: 0; }
+.cabinet-front { position: relative; z-index: 6; min-height: 65px; margin: -1px -.7rem 0; border: 1px solid var(--text-color); border-top: 4px double var(--text-color); background: var(--bg-color); display: flex; justify-content: center; align-items: center; transform: perspective(400px) rotateX(-8deg); }
+.cabinet-front .close-drawer { background: var(--bg-color); color: var(--text-color); font: inherit; cursor: pointer; display: inline-block; padding: .35rem 1.1rem; border: 1px solid var(--text-color); border-radius: 3px; font-size: .75rem; }
+@media (max-width: 600px) {
+  .tag-cabinet { padding: 0 .25rem; margin-top: 1rem; }
+  .folder-stack { padding: 0 .3rem; }
+  .tag-folder { min-height: 39px; }
+  .folder-tab { min-height: 48px; margin-top: -20px; padding: .35rem .4rem; font-size: .65rem; gap: .25rem; }
+  .folder-tab-number { display: none; }
+  .folder-tab-count { font-size: .5rem; }
+  .folder-contents { padding: 1rem .6rem; }
+  .cabinet-front { margin-left: 0; margin-right: 0; }
+}
+
+.close-drawer:focus-visible { outline: 2px dashed var(--text-color); outline-offset: 4px; }
+.close-drawer:hover { background: var(--text-color); color: var(--bg-color); }
+
+/* Recessed card holder on the drawer front. */
+.cabinet-front .close-drawer {
+  position: relative;
+  border: 1px solid var(--text-color);
+  border-radius: 2px;
+  padding: .65rem 1.65rem;
+  box-shadow: none;
+}
+.cabinet-front .close-drawer::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid currentColor;
+  border-radius: 1px;
+  pointer-events: none;
+}
+.cabinet-front .close-drawer::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  top: 7px;
+  height: 1px;
+  background: currentColor;
+  pointer-events: none;
+}
+
+.single-tag-view .cabinet-front, .single-tag-view .folder-tab { display: none; }
+.single-tag-view .folder-stack { padding: 0; background: none; box-shadow: none; }
+.single-tag-view .folder-stack::before, .single-tag-view .folder-stack::after { display: none; }
+.single-tag-view .tag-folder[open] { margin: 0; border: 0; box-shadow: none; }
+.single-tag-view .folder-contents { padding: 0; }
+
+/* Individual tag lists retain the original left-aligned archive layout. */
+.tag-cabinet.single-tag-view {
+  max-width: none;
+  margin: 1.5rem 0 3rem;
+  padding: 0;
+}
+.single-tag-view .folder-contents h2 { text-align: left; }
+.single-tag-view .tag-folder { width: 100%; }
+
+/* Keep an individual tag's reading column against the left page edge. */
+.tag-cabinet.single-tag-view {
+  width: 100%;
+  max-width: 700px;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 0;
+}
+.single-tag-view .folder-stack,
+.single-tag-view .tag-folder,
+.single-tag-view .folder-contents {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* The label lies on the same plane as the original drawer front. */
+.cabinet-front .close-drawer { transform: none; }
+
+/* Individual tag pages use the original compact archive markup and spacing. */
+.page-tags main > article.individual-tag-archive { max-width: 700px; margin: 0; }
+.page-tags main > article.individual-tag-archive > h1 { display: block; }
