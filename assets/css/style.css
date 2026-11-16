@@ -2131,3 +2131,10 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-stack li:nth-child(n) { left: 50%; }
   .banana-floating-label.is-mobile-label { text-align: center; }
 }
+
+/* A small paper-like lift for desktop bananas. */
+@media (min-width: 601px) and (hover: hover) {
+  .banana-stack li:has(.banana-entry:is(:hover, :focus-visible)) {
+    filter: drop-shadow(3px 5px 3px color-mix(in srgb, var(--text-color) 20%, transparent));
+  }
+}
