@@ -26,7 +26,7 @@ body.page-dates { width: 100%; max-width: none; }
 .page-dates .calendar-table thead,
 .page-dates .calendar-table tbody { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
 .page-dates .calendar-table tr { display: contents; }
-.page-dates .calendar-table tbody { position: relative; grid-auto-rows: 1fr; }
+.page-dates .calendar-table tbody { position: relative; grid-auto-rows: minmax(110px, auto); }
 .page-dates .calendar-table th { padding: 0 0 .8rem; }
 .page-dates .calendar-table th .stitch-text { width: 3.2rem; margin: auto; }
 .page-dates .calendar-table td { position: relative; min-height: 110px; min-width: 0; padding: .7rem; }
@@ -1711,6 +1711,10 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
   text-transform: none;
 }
 
+.post-back-link {
+  background-position: right bottom;
+}
+
 .post-back-arrow {
   display: inline-block;
   transform: scaleX(-1);
@@ -1731,6 +1735,11 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .page-latest main > article { max-width: none; width: 100%; }
 .page-latest main > article > h1 { display: none; }
 .latest-order { box-sizing: border-box; width: 50%; max-width: 700px; margin: 2rem auto 3rem; padding: 1.5rem; border: 1px solid color-mix(in srgb, var(--text-color) 30%, var(--bg-color)); background: var(--bg-color); transform: rotate(-.6deg); transform-origin: top center; box-shadow: 1px 2px 2px color-mix(in srgb, var(--text-color) 18%, transparent), 4px 6px 9px color-mix(in srgb, var(--text-color) 15%, transparent); }
+.latest-order { transition: transform 220ms ease; }
+.latest-order.is-straight { transform: rotate(0deg); }
+@media (prefers-reduced-motion: reduce) {
+  .latest-order { transition: none; }
+}
 .order-masthead { font-family: Arial, Helvetica, sans-serif; font-weight: 900; text-align: center; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 3rem); line-height: 1.1; letter-spacing: .12em; padding: .35rem 0 1rem; }
 .order-intro { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; text-transform: uppercase; letter-spacing: normal; display: flex; justify-content: space-between; gap: 1rem; border-bottom: 2px solid var(--text-color); padding: .5rem 0; font-size: .8rem; }
 .order-instruction { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; text-align: center; text-transform: uppercase; border-top: 1px solid var(--text-color); border-bottom: 3px double var(--text-color); padding: .35rem; margin: 3px 0 0; font-size: .85rem; }
@@ -1828,3 +1837,17 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 }
 
 @media (min-width: 800px) { .page-write .note-curl-words { font-size: 6.3px; } }
+
+/* Homepage clock: jump to a random post. */
+.random-post {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.random-post:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 3px;
+}

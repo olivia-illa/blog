@@ -14,7 +14,7 @@
 {% endfor %}
 {% if back_post or next_post %}
   <nav class="post-navigation" aria-label="Post navigation">
-    {% if back_post %}<a class="inherit-link" href="{{ back_post.url | relative_url }}"><span class="post-back-arrow" aria-hidden="true">➠</span> back</a>{% endif %}
+    {% if back_post %}<a class="inherit-link post-back-link" href="{{ back_post.url | relative_url }}"><span class="post-back-arrow" aria-hidden="true">➠</span> back</a>{% endif %}
     {% if next_post %}<a class="inherit-link" href="{{ next_post.url | relative_url }}">next ➠</a>{% endif %}
   </nav>
 {% endif %}
