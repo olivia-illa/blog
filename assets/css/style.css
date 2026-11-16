@@ -1854,3 +1854,218 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
   outline: 1px solid currentColor;
   outline-offset: 3px;
 }
+
+/* Recent edits scattered like a banana print, in the active theme. */
+.page-edited main > article { max-width: none; width: 100%; }
+.page-edited main > article > h1 { display: none; }
+.banana-edits { width: 100%; margin: 1.5rem 0 3rem; }
+.banana-heading { border: 0; padding: 0; }
+.banana-eyebrow { font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 .6rem; }
+.page-edited .banana-heading h1 { font: inherit; font-size: 1rem !important; font-weight: normal; }
+.banana-heading > p:last-child { font-size: .75rem; margin: 0; }
+.banana-stack { list-style: none; margin: 2rem 0 0; padding: 2rem 1.5rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 2rem; }
+.banana-stack li { min-width: 0; display: flex; align-items: center; justify-content: center; }
+.banana-entry { position: relative; display: block; width: 100%; max-width: 380px; color: var(--text-color); background: none; transform: rotate(var(--banana-angle, -12deg)); transition: transform 180ms ease; }
+.banana-stack li:nth-child(10n + 1) { --banana-angle: -23deg; }
+.banana-stack li:nth-child(10n + 2) { --banana-angle: 18deg; transform: translateY(2rem); }
+.banana-stack li:nth-child(10n + 3) { --banana-angle: -38deg; }
+.banana-stack li:nth-child(10n + 4) { --banana-angle: 30deg; transform: translateX(1rem); }
+.banana-stack li:nth-child(10n + 5) { --banana-angle: -9deg; transform: translateY(1rem); }
+.banana-stack li:nth-child(10n + 6) { --banana-angle: 26deg; }
+.banana-stack li:nth-child(10n + 7) { --banana-angle: -32deg; }
+.banana-stack li:nth-child(10n + 8) { --banana-angle: 12deg; transform: translateY(1.5rem); }
+.banana-stack li:nth-child(10n + 9) { --banana-angle: -19deg; }
+.banana-stack li:nth-child(10n + 10) { --banana-angle: 24deg; grid-column: 2; }
+.banana-single { display: block; width: 100%; height: auto; overflow: visible; }
+.banana-peel { fill: var(--bg-color); stroke: var(--text-color); stroke-width: 3; stroke-linejoin: round; }
+.banana-ink { fill: var(--text-color); }
+.banana-contour { fill: none; stroke: var(--text-color); stroke-width: 2.5; stroke-linecap: round; }
+.banana-entry:hover { color: var(--text-color); transform: rotate(var(--banana-angle)) scale(1.06); }
+.banana-entry:focus-visible { outline: 1px dashed var(--text-color); outline-offset: 6px; }
+@media (max-width: 800px) {
+  .banana-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 1.5rem; padding: 2rem .75rem; }
+  .banana-stack li:nth-child(10n + 10) { grid-column: auto; }
+}
+@media (max-width: 480px) {
+  .banana-stack { gap: 3rem .5rem; padding: 1.5rem .25rem; }
+  .banana-stack li:nth-child(10n + 4) { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .banana-entry { transition: none; }
+}
+
+.banana-hover-title {
+  position: absolute;
+  left: 82%;
+  top: 50%;
+  z-index: 2;
+  width: max-content;
+  max-width: 180px;
+  padding: .4rem .55rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font: inherit;
+  font-size: .8rem;
+  line-height: 1.4;
+  transform: rotate(calc(-1 * var(--banana-angle, -12deg)));
+  opacity: 0;
+  pointer-events: none;
+}
+.banana-entry:is(:hover, :focus-visible) { z-index: 3; }
+.banana-entry:is(:hover, :focus-visible) .banana-hover-title { opacity: 1; }
+.banana-stack li:nth-child(3n) .banana-hover-title { left: auto; right: 82%; }
+@media (max-width: 800px) {
+  .banana-stack li:nth-child(n) .banana-hover-title { left: 70%; right: auto; max-width: 140px; }
+  .banana-stack li:nth-child(even) .banana-hover-title { left: auto; right: 70%; }
+}
+
+/* Keep the banana scatter within one screen, with room for hover titles. */
+html.page-edited { height: 100%; overflow: hidden; }
+body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
+.page-edited > header, .page-edited > footer { flex: 0 0 auto; }
+.page-edited main { display: flex; min-height: 0; }
+.page-edited main > article { display: flex; min-height: 0; }
+.banana-edits { display: flex; flex-direction: column; min-height: 0; margin: 1rem 0 0; }
+.banana-heading { flex: 0 0 auto; }
+.banana-eyebrow { display: none; }
+.banana-stack { position: relative; flex: 1; min-height: 0; display: block; margin: .5rem 0; padding: 0; }
+.banana-stack li:nth-child(n) { position: absolute; width: clamp(110px, 23vw, 320px); height: auto; margin: 0; transform: translate(-50%, -50%); }
+.banana-stack li:nth-child(1) { left: 12%; top: 16%; --banana-angle: -32deg; }
+.banana-stack li:nth-child(2) { left: 43%; top: 12%; --banana-angle: 18deg; }
+.banana-stack li:nth-child(3) { left: 78%; top: 15%; --banana-angle: -23deg; }
+.banana-stack li:nth-child(4) { left: 27%; top: 39%; --banana-angle: 34deg; }
+.banana-stack li:nth-child(5) { left: 59%; top: 40%; --banana-angle: -38deg; }
+.banana-stack li:nth-child(6) { left: 88%; top: 46%; --banana-angle: 28deg; }
+.banana-stack li:nth-child(7) { left: 11%; top: 66%; --banana-angle: -48deg; }
+.banana-stack li:nth-child(8) { left: 40%; top: 77%; --banana-angle: 12deg; }
+.banana-stack li:nth-child(9) { left: 70%; top: 73%; --banana-angle: 40deg; }
+.banana-stack li:nth-child(10) { left: 89%; top: 87%; --banana-angle: -18deg; }
+.banana-stack li:nth-child(n) .banana-hover-title { left: 60%; right: auto; max-width: min(180px, 35vw); }
+.banana-stack li:nth-child(3n) .banana-hover-title,
+.banana-stack li:last-child .banana-hover-title { left: auto; right: 60%; }
+@media (max-width: 600px) {
+  .banana-edits { margin-top: .5rem; }
+  .banana-heading > p:last-child { font-size: .65rem; }
+  .banana-stack li:nth-child(n) { width: 36vw; }
+  .banana-stack li:nth-child(1) { left: 20%; top: 9%; }
+  .banana-stack li:nth-child(2) { left: 70%; top: 12%; }
+  .banana-stack li:nth-child(3) { left: 40%; top: 28%; }
+  .banana-stack li:nth-child(4) { left: 81%; top: 33%; }
+  .banana-stack li:nth-child(5) { left: 16%; top: 46%; }
+  .banana-stack li:nth-child(6) { left: 62%; top: 50%; }
+  .banana-stack li:nth-child(7) { left: 30%; top: 65%; }
+  .banana-stack li:nth-child(8) { left: 80%; top: 70%; }
+  .banana-stack li:nth-child(9) { left: 15%; top: 84%; }
+  .banana-stack li:nth-child(10) { left: 57%; top: 89%; }
+  .banana-stack li:nth-child(n) .banana-hover-title { left: 25%; right: auto; top: 70%; font-size: .65rem; }
+  .banana-stack li:nth-child(even) .banana-hover-title { left: auto; right: 25%; }
+}
+@media (max-height: 550px) and (min-width: 601px) {
+  .banana-stack li:nth-child(n) { width: min(19vw, 34vh); }
+  .banana-heading > p:last-child { display: none; }
+}
+
+.banana-hover-title time {
+  display: block;
+  margin-top: .4rem;
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  line-height: 1.4;
+}
+@media (max-width: 600px) {
+  .banana-stack li:nth-child(n) .banana-hover-title { font-size: 1.25rem; }
+}
+
+/* Labels sit outside the rotated fruit, rather than over its peel. */
+.banana-floating-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  transform: none;
+  z-index: 10;
+  max-width: min(240px, calc(100vw - 28px));
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  line-height: 1.4;
+}
+.banana-floating-label.is-visible { opacity: 1; }
+
+/* Alternate upright, sideways, upside-down and mirrored fruit. */
+.banana-stack li:nth-child(1) { --banana-angle: -62deg; }
+.banana-stack li:nth-child(2) { --banana-angle: 165deg; }
+.banana-stack li:nth-child(3) { --banana-angle: 48deg; }
+.banana-stack li:nth-child(4) { --banana-angle: -155deg; }
+.banana-stack li:nth-child(5) { --banana-angle: 82deg; }
+.banana-stack li:nth-child(6) { --banana-angle: -38deg; }
+.banana-stack li:nth-child(7) { --banana-angle: 130deg; }
+.banana-stack li:nth-child(8) { --banana-angle: -12deg; }
+.banana-stack li:nth-child(9) { --banana-angle: -110deg; }
+.banana-stack li:nth-child(10) { --banana-angle: 172deg; }
+.banana-stack li:nth-child(even) .banana-single { transform: scaleX(-1); }
+.banana-hover-title, .banana-floating-label { font-family: var(--font-mono); font-size: .85rem; line-height: 1.4; }
+
+/* Heavy vintage label lettering, using the blog’s bundled slab serif. */
+.banana-floating-label > span {
+  display: block;
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+
+/* Reserve separate space for every fruit and label, including reveal-all. */
+.banana-entry:hover { transform: rotate(var(--banana-angle)); }
+.banana-floating-label { box-sizing: border-box; padding: .2rem; }
+.banana-floating-label.is-compact > span { font-size: .75rem; line-height: 1.1; }
+.banana-floating-label.is-compact time { font-size: .48rem; margin-top: .2rem; }
+
+/* Move the fruit and its caption together to show their relationship. */
+.banana-entry { translate: 0 0; transition: translate 160ms ease; }
+.banana-floating-label { translate: 0 0; transition: translate 160ms ease; }
+.banana-entry.is-hovered, .banana-floating-label.is-hovered { translate: 0 -5px; }
+@media (prefers-reduced-motion: reduce) {
+  .banana-entry, .banana-floating-label { transition: none; }
+}
+
+/* Transparent lettering floats over the fruit, without a label panel. */
+.banana-floating-label {
+  background: transparent;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0 1px 1px var(--bg-color), 1px 0 1px var(--bg-color), -1px 0 1px var(--bg-color), 0 -1px 1px var(--bg-color);
+}
+.banana-floating-label > span { font-size: 1rem; }
+.banana-floating-label.is-compact > span { font-size: .7rem; }
+
+.banana-floating-label { text-align: left; }
+
+.banana-floating-label { text-align: center; }
+
+/* Phone rows read left to right, from freshest to ripest. */
+@media (max-width: 600px) {
+  .banana-stack li:nth-child(odd) { left: 25%; }
+  .banana-stack li:nth-child(even) { left: 75%; }
+  .banana-stack li:nth-child(1), .banana-stack li:nth-child(2) { top: 10%; }
+  .banana-stack li:nth-child(3), .banana-stack li:nth-child(4) { top: 30%; }
+  .banana-stack li:nth-child(5), .banana-stack li:nth-child(6) { top: 50%; }
+  .banana-stack li:nth-child(7), .banana-stack li:nth-child(8) { top: 70%; }
+  .banana-stack li:nth-child(9), .banana-stack li:nth-child(10) { top: 90%; }
+}
+
+/* One vertical line of bananas on phones. */
+@media (max-width: 600px) {
+  .banana-stack li:nth-child(n) { left: 50%; }
+  .banana-stack li:nth-child(1) { top: 5%; }
+  .banana-stack li:nth-child(2) { top: 15%; }
+  .banana-stack li:nth-child(3) { top: 25%; }
+  .banana-stack li:nth-child(4) { top: 35%; }
+  .banana-stack li:nth-child(5) { top: 45%; }
+  .banana-stack li:nth-child(6) { top: 55%; }
+  .banana-stack li:nth-child(7) { top: 65%; }
+  .banana-stack li:nth-child(8) { top: 75%; }
+  .banana-stack li:nth-child(9) { top: 85%; }
+  .banana-stack li:nth-child(10) { top: 95%; }
+}
