@@ -149,3 +149,28 @@
 .media-shelf .shelf-unfinished .dvd-label { background:transparent; color:inherit; border-color:currentColor; }
 .media-shelf .shelf-unfinished .dvd-label::after { background:var(--spine-ink); }
 .shelf-progress-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+
+/* An inset hairline separates the moulded case edges in the stack. */
+.media-shelf .shelf-dvd summary::before {
+  content:"";
+  position:absolute;
+  inset:-4px -9px;
+  border:1px solid var(--bg-color);
+  border-radius:2px;
+  pointer-events:none;
+}
+
+/* Keep the progress date and scribbles link on one shared baseline. */
+.shelf-note-footer { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; column-gap:1rem; row-gap:.4rem; margin-top:.7rem; }
+.shelf-note .shelf-note-footer .shelf-mention { margin:0; }
+.shelf-note-footer > a { margin-left:auto; text-align:right; }
+
+/* Keep the media label and footer quieter than the note itself. */
+.shelf-note .shelf-status,
+.shelf-note .shelf-credit,
+.shelf-note .shelf-note-footer,
+.shelf-note .shelf-note-footer .shelf-mention,
+.shelf-note .shelf-note-footer > a { font-size:.62rem; }
+
+/* Place the note's media label in its upper-right corner. */
+.shelf-note .shelf-status { display:block; text-align:right; }
