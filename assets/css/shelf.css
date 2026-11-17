@@ -199,3 +199,19 @@
 .shelf-forgotten:nth-child(even) .shelf-cobweb { right:auto; left:0; transform:scaleX(-1); }
 .shelf-forgotten .spine-title,.shelf-forgotten .spine-creator { opacity:.78; }
 @media(max-width:480px) { .shelf-cobweb { width:52px; max-height:52px; } }
+
+/* Birthday keeps book and case fills dark, with cream lettering and outlines. */
+:root[data-theme="birthday"] .media-shelf .shelf-book:nth-child(even),
+:root[data-theme="birthday"] .media-shelf .shelf-dvd {
+  --spine:color-mix(in srgb,var(--text-color) 8%,var(--bg-color));
+  --spine-ink:var(--text-color);
+}
+:root[data-theme="birthday"] .media-shelf .shelf-dvd summary,
+:root[data-theme="birthday"] .media-shelf .shelf-dvd .dvd-label {
+  background:var(--spine);
+  color:var(--spine-ink);
+  border-color:var(--spine-ink);
+}
+:root[data-theme="birthday"] .media-shelf .shelf-dvd .dvd-label::after {
+  background:var(--spine-ink);
+}
