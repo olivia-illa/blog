@@ -26,7 +26,7 @@
 .spine-title { font:bold clamp(.9rem,2vw,1.2rem)/1.15 Georgia,serif; flex:1; }
 .spine-creator { max-width:95px; font:.6rem/1.35 var(--font-mono,monospace); }
 .spine-number { font:.55rem monospace; }
-.shelf-book:nth-child(even) { --spine:var(--text-color); --spine-ink:var(--bg-color); }
+.shelf-book:nth-child(even) { --spine:var(--shelf-solid-fill,var(--text-color)); --spine-ink:var(--shelf-solid-ink,var(--bg-color)); }
 .shelf-book summary { border-block:4px double var(--spine-ink); }
 .shelf-book summary::after { content:''; position:absolute; top:0; bottom:0; left:6px; border-left:1px solid var(--spine-ink); }
 .shelf-book:nth-child(3n) .spine-title { font-style:italic; }
@@ -202,6 +202,91 @@
 .shelf-forgotten:nth-child(even) .shelf-cobweb { right:auto; left:0; transform:scaleX(-1); }
 .shelf-forgotten .spine-title,.shelf-forgotten .spine-creator { opacity:.78; }
 @media(max-width:480px) { .shelf-cobweb { width:52px; max-height:52px; } }
+
+.shelf-heading-y { position:relative; display:inline-block; }
+.shelf-heading .shelf-spider { position:absolute; left:.48em; top:.8em; display:block; color:inherit; text-decoration:none; background:none; line-height:1; font-size:.28em; transform:rotate(-25deg); }
+.shelf-heading .shelf-spider:focus-visible { outline:1px solid currentColor; outline-offset:4px; }
+
+/* Cassette-style cases with paper inserts and moulded end tabs. */
+.media-shelf .shelf-dvd summary {
+  color:var(--shelf-solid-ink,var(--bg-color));
+  background:var(--shelf-solid-fill,var(--text-color));
+  border:1px solid var(--shelf-solid-fill,var(--text-color));
+  border-radius:5px;
+  padding:8px 34px 8px 12px;
+  min-height:70px;
+  gap:8px;
+  box-shadow:inset 0 0 0 2px var(--shelf-solid-ink,var(--bg-color)),inset 0 0 0 4px var(--shelf-solid-fill,var(--text-color));
+}
+.media-shelf .shelf-dvd summary::before {
+  inset:4px 3px;
+  border:1px solid color-mix(in srgb,var(--shelf-solid-ink,var(--bg-color)) 35%,var(--shelf-solid-fill,var(--text-color)));
+  border-radius:3px;
+}
+.media-shelf .shelf-dvd summary::after {
+  content:""; position:absolute; right:7px; top:9px; bottom:9px; width:17px;
+  border-left:1px solid var(--shelf-solid-ink,var(--bg-color));
+  background:linear-gradient(to bottom,transparent 18%,var(--shelf-solid-ink,var(--bg-color)) 19%,transparent 21%,transparent 75%,var(--shelf-solid-ink,var(--bg-color)) 77%,transparent 79%);
+  opacity:.35;
+}
+.media-shelf .shelf-dvd .dvd-label {
+  position:relative; align-self:stretch; min-height:35px; box-sizing:border-box;
+  color:var(--text-color); background:var(--spine); border:1px solid var(--spine);
+  border-radius:4px; padding:7px 12px; gap:14px;
+}
+.media-shelf .shelf-dvd .dvd-label::after { content:none; }
+.media-shelf .shelf-dvd.dvd-design-0 .dvd-label {
+  background:linear-gradient(63deg,var(--text-color) 0 9px,var(--spine) 10px 12px,var(--text-color) 13px 15px,var(--spine) 16px 18px,var(--text-color) 19px 21px,var(--spine) 22px);
+  padding-left:30px;
+}
+.media-shelf .shelf-dvd.dvd-design-1 .dvd-label {
+  background:linear-gradient(to bottom,transparent calc(100% - 8px),color-mix(in srgb,var(--text-color) 22%,transparent) calc(100% - 8px),color-mix(in srgb,var(--text-color) 22%,transparent) calc(100% - 7px),transparent calc(100% - 7px)),var(--spine);
+}
+.media-shelf .shelf-dvd .spine-mark { border-right:0; padding-right:2px; flex-basis:29px; }
+@media(max-width:480px) {
+  .media-shelf .shelf-dvd summary { padding:7px 25px 7px 9px; }
+  .media-shelf .shelf-dvd summary::after { right:5px; width:12px; }
+  .media-shelf .shelf-dvd .dvd-label { padding:7px 9px; gap:4px; }
+  .media-shelf .shelf-dvd.dvd-design-0 .dvd-label { padding-left:25px; }
+}
+
+/* TV box sets use slim DVD cases, distinct from the cassette film spines. */
+.media-shelf .shelf-tv summary {
+  min-height:55px;
+  padding:4px 28px 4px 9px;
+  border-radius:3px 6px 6px 3px;
+  box-shadow:inset 0 1px 0 var(--shelf-solid-ink,var(--bg-color)),inset 0 -2px 0 color-mix(in srgb,var(--shelf-solid-ink,var(--bg-color)) 45%,var(--shelf-solid-fill,var(--text-color)));
+}
+.media-shelf .shelf-tv summary::before {
+  inset:3px 22px 3px 4px;
+  border:1px solid color-mix(in srgb,var(--shelf-solid-ink,var(--bg-color)) 45%,var(--shelf-solid-fill,var(--text-color)));
+  border-radius:1px;
+}
+.media-shelf .shelf-tv summary::after {
+  top:3px; bottom:3px; right:3px; width:17px; opacity:1;
+  border-left:2px solid var(--shelf-solid-fill,var(--text-color));
+  border-radius:0 3px 3px 0;
+  background:repeating-linear-gradient(to bottom,color-mix(in srgb,var(--shelf-solid-fill,var(--text-color)) 82%,var(--shelf-solid-ink,var(--bg-color))) 0 3px,var(--shelf-solid-fill,var(--text-color)) 3px 4px);
+  box-shadow:inset 2px 0 0 color-mix(in srgb,var(--shelf-solid-ink,var(--bg-color)) 40%,var(--shelf-solid-fill,var(--text-color)));
+}
+.media-shelf .shelf-tv .dvd-label,
+.media-shelf .shelf-tv.dvd-design-0 .dvd-label,
+.media-shelf .shelf-tv.dvd-design-1 .dvd-label {
+  min-height:37px; padding:5px 10px; border:0; border-radius:0;
+  background:var(--spine); color:var(--text-color);
+}
+
+.media-shelf .shelf-tv .spine-mark { font-size:.58rem; }
+@media(max-width:480px) {
+  .media-shelf .shelf-tv summary { padding:4px 23px 4px 7px; }
+  .media-shelf .shelf-tv .dvd-label { padding:6px 8px; }
+  .media-shelf .shelf-tv summary::after { width:13px; }
+}
+
+.spine-bluray { display:block; width:31px; height:22px; margin:auto; }
+
+.spine-vhs { display:block; width:31px; height:18px; margin:auto; }
+.spine-publisher { display:block; width:28px; height:34px; margin:auto; }
 
 /* Only continued titles receive a fill distinct from the page background. */
 .media-shelf .shelf-item {
