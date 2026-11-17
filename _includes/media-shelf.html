@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap">
-<link rel="stylesheet" href="{{ '/assets/css/shelf.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/shelf.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <section class="media-shelf" aria-labelledby="shelf-title">
   <div class="shelf-heading"><span class="shelf-kicker">A Room of One’s Own</span><h1 id="shelf-title">{% if page.shelf_log_slug == 'wishlist' or page.shelf_forgotten %}{{ page.shelf_heading }}{% else %}M<span class="shelf-heading-y">Y<a class="shelf-spider" href="{{ '/shelf/forgotten/' | relative_url }}" aria-label="Visit the forgotten shelf">🕷</a></span> SHELF{% endif %}</h1></div>
   <div class="shelf-controls" role="group" aria-label="Filter the shelf" hidden><button type="button" data-medium="all" aria-pressed="true">All</button><button type="button" data-medium="book" aria-pressed="false">Books</button><button type="button" data-medium="dvd" aria-pressed="false">DVDs</button><button type="button" data-medium="tv" aria-pressed="false">TV</button></div>
@@ -29,4 +29,4 @@
   </div>
   <figure class="shelf-quote">{% if page.shelf_log_slug == 'wishlist' %}<blockquote>“We accept the reality of the world with which we're presented. It's as simple as that.”</blockquote><figcaption>— Christof, <cite>The Truman Show</cite></figcaption>{% else %}<blockquote>“The books transported her into new worlds and introduced her to amazing people who lived exciting lives.”</blockquote><figcaption>— <cite>Matilda</cite> by Roald Dahl</figcaption>{% endif %}</figure>
 </section>
-<script src="{{ '/assets/js/shelf.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/shelf.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
