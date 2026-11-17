@@ -1,5 +1,19 @@
 ---
 entries:
+
+  - title: "Ted Lasso"
+    creator: "Jason Sudeikis"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "2020"
+    status: "Wishlist"
+    status_date: ""
+    logged_on: "2026-11-17"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://www.apple.com/tv-pr/originals/ted-lasso/"
+
   - title: "The Things We Never Say"
     creator: "Elizabeth Strout"
     creator_role: "Author"

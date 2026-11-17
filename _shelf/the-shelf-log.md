@@ -5,7 +5,8 @@ entries:
     creator: "Aaron Korsh"
     creator_role: "Executive producer"
     medium: "tv"
-    edition: "2011 · through Season 2"
+    edition: "2011"
+    watched_through: "Season 2"
     status: "Forgotten"
     logged_on: "2026-11-17"
     note: "[Add a note]"
@@ -16,6 +17,7 @@ entries:
     creator_role: "Executive producer"
     medium: "tv"
     edition: "2007"
+    watched_through: "Season 1"
     status: "Forgotten"
     logged_on: "2026-11-17"
     note: "[Add a note]"
@@ -25,7 +27,8 @@ entries:
     creator: "Darren Star"
     creator_role: "Executive producer"
     medium: "tv"
-    edition: "1998 · through S3E10"
+    edition: "1998"
+    watched_through: "S3E10"
     status: "Forgotten"
     logged_on: "2026-11-17"
     note: "[Add a note]"
@@ -230,7 +233,8 @@ entries:
     creator: "Jeffrey Reiner"
     creator_role: "Director"
     medium: "tv"
-    edition: "2018-11-25 · Season 1 · through episode 5"
+    edition: "2018-11-25"
+    watched_through: "S1E5"
     status: "Forgotten"
     status_date: ""
     status_month: "2026-04"
@@ -328,9 +332,9 @@ entries:
     status_date: ""
     status_month: "2026-07"
     logged_on: "2026-07-01"
-    source: ""
+    source: "_posts/clippings/2026-7-27-v2-clips.md"
     notes_url: ""
-    note: "[Add a note]"
+    note: "Girl math is binging 6 episodes and pull all nighters for a swift pass."
     publication_source: "https://www.peacocktv.com/blog/the-traitors-season-4-cast-premiere-date-details"
     credit_source: "https://www.televisionacademy.com/bios/ben-archard"
 
@@ -343,9 +347,9 @@ entries:
     status_date: ""
     status_month: "2026-07"
     logged_on: "2026-07-01"
-    source: ""
+    source: "_posts/thoughts/2026-07-01-thoughts.md"
     notes_url: ""
-    note: "[Add a note]"
+    note: "d thinks he's Clarkson to Gerald when conversing to some, including me."
     publication_source: "https://www.createprimevideo.amazon/uk_uk/showDetails/B0H1FFLYYG"
     credit_source: "https://www.rottentomatoes.com/tv/clarksons_farm/s05"
 
@@ -684,9 +688,9 @@ entries:
     status_date: ""
     status_month: "2026-07"
     logged_on: "2026-07-01"
-    source: ""
+    source: "_posts/clippings/2026-7-19-clips.md"
     notes_url: ""
-    note: "[Add a note]"
+    note: "One man's idea. One man's trick to break Zeus's law forever."
     credit_source: "https://www.odysseymovie.com/synopsis/"
 
   - title: "Project Hail Mary"
@@ -731,9 +735,9 @@ entries:
     status_date: ""
     status_month: "2026-09"
     logged_on: "2026-09-01"
-    source: ""
+    source: "_posts/clippings/2026-09-23-clips-v2.md"
     notes_url: ""
-    note: "[Add a note]"
+    note: "Yet ultimately the dialogues and plot just fell flat for me."
     credit_source: "https://www.siff.net/festival/the-invite"
 
   - title: "Remember Me"
@@ -853,9 +857,9 @@ entries:
     status_date: ""
     status_month: "2026-09"
     logged_on: "2026-09-01"
-    source: ""
+    source: "_posts/clippings/2026-9-26-clips.md"
     notes_url: ""
-    note: "[Add a note]"
+    note: "Some one save me. I might just dedicate my first concert to The 1975."
 
   - title: "Milk Fed"
     creator: "Melissa Broder"
@@ -1079,7 +1083,7 @@ Copy this block into the `entries:` list above. Keep the indentation; keep dates
 - `credit_source`: optional verification URL for author/director/producer credits.
 - `publication_source`: optional verification URL for publication/release information; not a personal scribble link.
 - `edition`: publication/release date or year plus any season or edition, e.g. `2026 · Season 3 · series`. Use `Year to add` if unconfirmed.
-- `status`: `Finished`, `Reading`, `Watching`, or `Forgotten`. Forgotten entries appear only in their own filter, with cobwebs. Change it to `Finished` when done and replace `status_date` with the finish date.
+- `status`: `Finished`, `Reading`, `Watching`, or `Forgotten`. Forgotten entries appear only on `/shelf/forgotten/`, with cobwebs. Change it to `Finished` when done and replace `status_date` with the finish date.
 - `status_date`: date finished, or date you were reading/watching. Leave `""` if unknown; the shelf displays “date not recorded.” Existing post dates have not been invented as finish dates.
 - `status_month`: optional `YYYY-MM` when only the month is known; displayed instead of `status_date`.
 - `logged_on`: controls stack order, newest first. It is not displayed as a finish date.
