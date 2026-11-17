@@ -13,7 +13,7 @@ body_class: page-shelf
   <div class="shelf-stacks">
     <section class="shelf-pile" aria-label="Books, DVDs and TV">
       <div class="shelf-stack">
-      {% assign shelf_log = site.shelf | first %}
+      {% assign shelf_log = site.shelf | where: 'slug', 'the-shelf-log' | first %}
       {% assign items = shelf_log.entries | sort: 'logged_on' | reverse %}
       {% assign dvd_index = 0 %}
       {% assign book_index = 0 %}
