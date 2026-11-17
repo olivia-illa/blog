@@ -7,8 +7,11 @@
 .shelf-heading p { font-size:.85rem; }
 .shelf-controls { display:flex; justify-content:center; gap:.5rem; margin:1.8rem 0 1rem; }
 .shelf-controls[hidden],.shelf-item[hidden] { display:none; }
-.shelf-controls button { font:inherit; font-size:.75rem; color:inherit; background:transparent; border:1px solid currentColor; border-radius:2rem; padding:.4rem .9rem; cursor:pointer; }
-.shelf-controls button[aria-pressed=true] { color:var(--bg-color); background:var(--text-color); }
+.shelf-controls { gap:1.25rem; }
+.shelf-controls button { font:inherit; font-size:.8rem; color:var(--link-color); border:0; border-radius:0; padding:0; cursor:pointer; background-color:transparent; background-image:linear-gradient(var(--link-hover-bg),var(--link-hover-bg)); background-repeat:no-repeat; background-position:left bottom; background-size:0% 100%; transition:background-size .3s ease,color .3s ease; }
+.shelf-controls button[aria-pressed=true] { text-decoration:underline; text-underline-offset:3px; }
+.shelf-controls button:hover,.shelf-controls button:focus-visible { color:var(--link-hover-color); background-size:100% 100%; text-decoration:underline; text-underline-offset:2px; }
+@media(prefers-reduced-motion:reduce) { .shelf-controls button { transition:none; } }
 .shelf-instruction { text-align:center; }
 .shelf-stacks { max-width:620px; margin:3rem auto; }
 .shelf-pile { min-width:0; }
@@ -115,3 +118,18 @@
 .media-shelf .shelf-quote { max-width:520px; margin:3rem auto 0; text-align:center; }
 .media-shelf .shelf-quote blockquote { margin:0; padding:0; border:0; color:var(--text-color); font:inherit; font-size:.85rem; line-height:1.8; }
 .media-shelf .shelf-quote figcaption { margin-top:.7rem; font-size:.72rem; }
+/* Keep the caption, title, and filters together as a compact heading. */
+.media-shelf { margin-top:1.6rem; }
+.shelf-heading .shelf-kicker { display:block; margin:0 0 .65rem; }
+.media-shelf .shelf-heading h1 { margin:0; }
+.media-shelf .shelf-controls { margin:1rem 0 1.15rem; }
+.media-shelf .shelf-instruction { margin:0 auto; max-width:34rem; line-height:1.7; }
+@media(max-width:700px) {
+  .media-shelf { margin-top:1.4rem; }
+  .shelf-heading .shelf-kicker { margin-bottom:.55rem; }
+  .media-shelf .shelf-controls { margin-top:.8rem; margin-bottom:1rem; }
+}
+/* A faint theme-coloured edge lifts expanded notes off the stack. */
+.shelf-note {
+  box-shadow:2px 3px 5px color-mix(in srgb,var(--text-color) 12%,transparent);
+}

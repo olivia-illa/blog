@@ -224,7 +224,7 @@ Copy this block into the `entries:` list above. Keep the indentation; keep dates
 - `status_date`: date finished, or date you were reading/watching. Leave `""` if unknown; the shelf displays “date not recorded.” Existing post dates have not been invented as finish dates.
 - `logged_on`: controls stack order, newest first. It is not displayed as a finish date.
 - `source`: optional existing blog post path, e.g. `_posts/random/2026-10-11-tender-hearts.md`.
-- `notes_url`: optional URL or site path for “Read my notes.” Used when `source` is empty. Leave both empty to omit the link.
+- `notes_url`: optional URL or site path for “Read my scribbles.” Used when `source` is empty. Leave both empty to omit the link.
 - `note`: short text shown inside the spine.
 
 ## To fill in
