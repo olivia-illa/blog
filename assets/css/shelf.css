@@ -203,18 +203,21 @@
 .shelf-forgotten .spine-title,.shelf-forgotten .spine-creator { opacity:.78; }
 @media(max-width:480px) { .shelf-cobweb { width:52px; max-height:52px; } }
 
-/* Birthday keeps book and case fills dark, with cream lettering and outlines. */
-:root[data-theme="birthday"] .media-shelf .shelf-book:nth-child(even),
-:root[data-theme="birthday"] .media-shelf .shelf-dvd {
-  --spine:color-mix(in srgb,var(--text-color) 8%,var(--bg-color));
+/* Only continued titles receive a fill distinct from the page background. */
+.media-shelf .shelf-item {
+  --spine:var(--bg-color);
   --spine-ink:var(--text-color);
+  --shelf-solid-fill:var(--spine);
+  --shelf-solid-ink:var(--text-color);
 }
-:root[data-theme="birthday"] .media-shelf .shelf-dvd summary,
-:root[data-theme="birthday"] .media-shelf .shelf-dvd .dvd-label {
+.media-shelf .shelf-item.shelf-unfinished {
+  --spine:var(--unfinished-spine);
+}
+.media-shelf .shelf-dvd summary,
+.media-shelf .shelf-dvd .dvd-label,
+.media-shelf .shelf-dvd.dvd-design-0 .dvd-label,
+.media-shelf .shelf-dvd.dvd-design-1 .dvd-label {
   background:var(--spine);
   color:var(--spine-ink);
   border-color:var(--spine-ink);
-}
-:root[data-theme="birthday"] .media-shelf .shelf-dvd .dvd-label::after {
-  background:var(--spine-ink);
 }
