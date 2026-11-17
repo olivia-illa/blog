@@ -141,6 +141,9 @@
 
 /* A light accent wash distinguishes unfinished titles without dominating the stack. */
 .media-shelf { --unfinished-accent:var(--section-border); --unfinished-spine:color-mix(in srgb,var(--unfinished-accent) 16%,var(--bg-color)); --unfinished-ink:var(--text-color); }
+:root[data-theme="lombard"] .media-shelf {
+  --unfinished-spine:color-mix(in srgb,white 9%,var(--bg-color));
+}
 @media(prefers-color-scheme:dark) {
   :root:not([data-theme]) .media-shelf { --unfinished-accent:#aff7bd; }
 }

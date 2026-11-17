@@ -180,14 +180,14 @@ body.page-dates { width: 100%; max-width: none; }
 /* Lombard */
 :root[data-theme="lombard"] {
   color-scheme: dark;
-  --bg-color: #55161c;
+  --bg-color: #660d1e;
   --text-color: #88d3ec;
   --link-color: #88d3ec;
   --header-color: #88d3ec;
   --footer-color: #88d3ec;
   --section-border: #848a28;
   --link-hover-bg: #88d3ec;
-  --link-hover-color: #55161c;
+  --link-hover-color: #660d1e;
   --quote-color: #88d3ec;
 }
 
