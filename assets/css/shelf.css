@@ -193,3 +193,9 @@
   0%,100% { transform:translateY(0); }
   50% { transform:translateY(-4px); }
 }
+
+/* Dusty corners on the forgotten shelf; keep titles and controls readable. */
+.shelf-cobweb { position:absolute; right:0; top:0; width:66px; height:100%; max-height:66px; color:var(--spine-ink); opacity:.48; pointer-events:none; z-index:2; }
+.shelf-forgotten:nth-child(even) .shelf-cobweb { right:auto; left:0; transform:scaleX(-1); }
+.shelf-forgotten .spine-title,.shelf-forgotten .spine-creator { opacity:.78; }
+@media(max-width:480px) { .shelf-cobweb { width:52px; max-height:52px; } }

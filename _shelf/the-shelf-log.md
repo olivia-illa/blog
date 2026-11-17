@@ -1,6 +1,156 @@
 ---
 entries:
 
+  - title: "Suits"
+    creator: "Aaron Korsh"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "2011 · through Season 2"
+    status: "Forgotten"
+    logged_on: "2026-11-17"
+    note: "[Add a note]"
+    credit_source: "https://www.nbc.com/suits"
+
+  - title: "Gossip Girl"
+    creator: "Josh Schwartz"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "2007"
+    status: "Forgotten"
+    logged_on: "2026-11-17"
+    note: "[Add a note]"
+    credit_source: "https://www.cwtvpr.com/the-cw/releases/view?id=39811"
+
+  - title: "Sex and the City"
+    creator: "Darren Star"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "1998 · through S3E10"
+    status: "Forgotten"
+    logged_on: "2026-11-17"
+    note: "[Add a note]"
+    credit_source: "https://www.hbo.com/sex-and-the-city"
+
+  - title: "White Chicks"
+    spine_cast: ["Shawn Wayans", "Marlon Wayans"]
+    creator: "Keenen Ivory Wayans"
+    creator_role: "Director"
+    medium: "dvd"
+    edition: "2004"
+    status: "Forgotten"
+    logged_on: "2026-10-01"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+
+  - title: "I Think You Should Leave"
+    creator: "Tim Robinson"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "2023 · Season 3 · episodes 1–3"
+    status: "Watching"
+    status_date: ""
+    status_month: "2026-10"
+    logged_on: "2026-10-01"
+    source: ""
+    notes_url: ""
+    note: "Only watched S3E1–3."
+    credit_source: "https://www.netflix.com/title/80986854"
+
+
+  - title: "Mo"
+    creator: "Mohammed Amer"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "2022"
+    status: "Finished"
+    status_date: ""
+    status_month: "2025-03"
+    logged_on: "2025-03-01"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://about.netflix.com/en/news/new-scripted-comedy-from-mo-amer-and-ramy-youssef-mo-premiere-date-and-first"
+
+
+  - title: "Succession"
+    creator: "Adam McKay"
+    creator_role: "Executive producer"
+    medium: "tv"
+    edition: "2018 · Season 1 · through episode 10"
+    status: "Watching"
+    status_date: ""
+    status_month: "2026-09"
+    logged_on: "2026-09-01"
+    source: ""
+    notes_url: ""
+    note: "Watched through S1E10."
+    credit_source: "https://www.hbomax.com/show/a8484031-f244-4661-9fb7-0932bd1ba872"
+
+
+  - title: "Severance"
+    creator: "Ben Stiller"
+    creator_role: "Director"
+    medium: "tv"
+    edition: "Seasons 1–3"
+    status: "Finished"
+    status_date: ""
+    status_month: ""
+    logged_on: "2025-04-01"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://www.apple.com/tv-pr/originals/severance/"
+
+
+  - title: "One Battle After Another"
+    creator: "Paul Thomas Anderson"
+    creator_role: "Director"
+    spine_cast: ["Leonardo DiCaprio", "Sean Penn"]
+    medium: "dvd"
+    edition: "2025"
+    status: "Finished"
+    status_date: ""
+    status_month: "2025-10"
+    logged_on: "2025-10-01"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://www.onebattleafteranothermovie.com/home/"
+
+
+  - title: "Interstellar"
+    creator: "Christopher Nolan"
+    creator_role: "Director"
+    spine_cast: ["Matthew McConaughey", "Anne Hathaway"]
+    medium: "dvd"
+    edition: "2014"
+    status: "Finished"
+    status_date: ""
+    status_month: "2025-11"
+    logged_on: "2025-11-01"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://www.paramount.com/movies/interstellar"
+
+
+  - title: "Schindler's List"
+    creator: "Steven Spielberg"
+    creator_role: "Director"
+    spine_cast: ["Liam Neeson", "Ralph Fiennes"]
+    medium: "dvd"
+    edition: "1993"
+    status: "Finished"
+    status_date: ""
+    status_month: "2026-01"
+    logged_on: "2026-01-01"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://amblin.com/movie/schindlers-list/"
+
+
   - title: "Culinary Class Wars"
     creator: "Kim Hak-min"
     creator_role: "Director"
@@ -81,7 +231,7 @@ entries:
     creator_role: "Director"
     medium: "tv"
     edition: "2018-11-25 · Season 1 · through episode 5"
-    status: "Watching"
+    status: "Forgotten"
     status_date: ""
     status_month: "2026-04"
     logged_on: "2026-04-01"
@@ -649,21 +799,6 @@ entries:
     note: "[Add a note]"
     credit_source: "https://www.dff.film/video/regisseur-michael-fetter-nathansky-ueber-alle-die-du-bist/"
 
-  - title: "White Chicks"
-    creator: "Keenen Ivory Wayans"
-    creator_role: "Director"
-    spine_cast: ["Shawn Wayans", "Marlon Wayans"]
-    medium: "dvd"
-    edition: "2004"
-    status: "Watching"
-    status_date: ""
-    status_month: "2026-10"
-    logged_on: "2026-10-01"
-    source: ""
-    notes_url: ""
-    note: "[Add a note]"
-    credit_source: "https://catalog.afi.com/Film/63284-WHITE-CHICKS"
-
   - title: "The Devil Wears Prada 2"
     creator: "David Frankel"
     creator_role: "Director"
@@ -944,7 +1079,7 @@ Copy this block into the `entries:` list above. Keep the indentation; keep dates
 - `credit_source`: optional verification URL for author/director/producer credits.
 - `publication_source`: optional verification URL for publication/release information; not a personal scribble link.
 - `edition`: publication/release date or year plus any season or edition, e.g. `2026 · Season 3 · series`. Use `Year to add` if unconfirmed.
-- `status`: `Finished`, `Reading`, or `Watching`. Change it to `Finished` when done and replace `status_date` with the finish date.
+- `status`: `Finished`, `Reading`, `Watching`, or `Forgotten`. Forgotten entries appear only in their own filter, with cobwebs. Change it to `Finished` when done and replace `status_date` with the finish date.
 - `status_date`: date finished, or date you were reading/watching. Leave `""` if unknown; the shelf displays “date not recorded.” Existing post dates have not been invented as finish dates.
 - `status_month`: optional `YYYY-MM` when only the month is known; displayed instead of `status_date`.
 - `logged_on`: controls stack order, newest first. It is not displayed as a finish date.
