@@ -509,6 +509,7 @@ entries:
     credit_source: "https://www.clinteastwood.net/filmography/sully/"
 
   - title: "The Truman Show"
+    wishlist_link: true
     creator: "Peter Weir"
     creator_role: "Director"
     spine_cast: ["Jim Carrey", "Ed Harris"]

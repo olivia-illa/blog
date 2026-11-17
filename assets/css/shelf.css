@@ -174,3 +174,22 @@
 
 /* Place the note's media label in its upper-right corner. */
 .shelf-note .shelf-status { display:block; text-align:right; }
+
+.shelf-cloud { display:inline-block; text-decoration:none; font-size:1.35rem; line-height:1.4; }
+.shelf-cloud:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+
+/* The cloud floats without the site's link-hover wipe. */
+.shelf-note a.shelf-cloud,
+.shelf-note a.shelf-cloud:hover {
+  color:inherit;
+  background:none;
+  text-decoration:none;
+  transition:none;
+}
+@media(prefers-reduced-motion:no-preference) {
+  .shelf-cloud { animation:shelf-cloud-float 4s ease-in-out infinite; }
+}
+@keyframes shelf-cloud-float {
+  0%,100% { transform:translateY(0); }
+  50% { transform:translateY(-4px); }
+}
