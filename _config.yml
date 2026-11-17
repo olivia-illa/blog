@@ -29,3 +29,8 @@ exclude:
   - gemset.nix
   - result
 
+
+# Editable media log; its instructions are not published as a page.
+collections:
+  shelf:
+    output: false

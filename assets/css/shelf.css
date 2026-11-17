@@ -1,0 +1,117 @@
+.page-shelf main { width:100%; min-width:0; }
+.media-shelf { max-width:760px; margin:2rem auto 4rem; }
+.shelf-heading { text-align:center; }
+.shelf-kicker,.shelf-instruction,.shelf-footnote,.shelf-status,.shelf-mention { font-size:.72rem; }
+.shelf-kicker { letter-spacing:.12em; text-transform:uppercase; }
+.shelf-heading h1 { font:400 clamp(3rem,8vw,5rem)/1.1 Georgia,serif; margin:.5rem 0; }
+.shelf-heading p { font-size:.85rem; }
+.shelf-controls { display:flex; justify-content:center; gap:.5rem; margin:1.8rem 0 1rem; }
+.shelf-controls[hidden],.shelf-item[hidden] { display:none; }
+.shelf-controls button { font:inherit; font-size:.75rem; color:inherit; background:transparent; border:1px solid currentColor; border-radius:2rem; padding:.4rem .9rem; cursor:pointer; }
+.shelf-controls button[aria-pressed=true] { color:var(--bg-color); background:var(--text-color); }
+.shelf-instruction { text-align:center; }
+.shelf-stacks { max-width:620px; margin:3rem auto; }
+.shelf-pile { min-width:0; }
+.shelf-stack { padding:0 12px; }
+.shelf-item { --spine:var(--bg-color); --spine-ink:var(--text-color); position:relative; margin:0; color:var(--spine-ink); }
+.shelf-item summary { position:relative; display:flex; align-items:center; gap:12px; width:calc(100% - var(--size)*12px); min-height:calc(57px + var(--size)*10px); margin-inline:auto; padding:10px 13px; box-sizing:border-box; color:var(--spine-ink); background:var(--spine); border:1px solid var(--spine-ink); border-radius:2px 5px 5px 2px; transform:translateX(calc(var(--shift)*7px)); cursor:pointer; list-style:none; }
+.shelf-item summary::-webkit-details-marker { display:none; }
+.shelf-item summary:hover,.shelf-item[open] summary { transform:translateX(0); }
+.shelf-item summary:focus-visible { outline:3px solid var(--text-color); outline-offset:3px; z-index:1; }
+.spine-mark { flex:0 0 30px; text-align:center; font:1.2rem Georgia,serif; border-right:1px solid currentColor; padding-right:10px; }
+.spine-mark small { display:block; margin-top:3px; font:.45rem/1.3 var(--font-mono,monospace); letter-spacing:.04em; }
+.spine-title { font:bold clamp(.9rem,2vw,1.2rem)/1.15 Georgia,serif; flex:1; }
+.spine-creator { max-width:95px; font:.6rem/1.35 var(--font-mono,monospace); }
+.spine-number { font:.55rem monospace; }
+.shelf-book:nth-child(even) { --spine:var(--text-color); --spine-ink:var(--bg-color); }
+.shelf-book summary { border-block:4px double var(--spine-ink); }
+.shelf-book summary::after { content:''; position:absolute; top:0; bottom:0; left:6px; border-left:1px solid var(--spine-ink); }
+.shelf-book:nth-child(3n) .spine-title { font-style:italic; }
+.shelf-dvd summary { min-height:50px; border:7px solid var(--text-color); border-inline-width:12px; border-radius:3px; padding:5px 9px; }
+.shelf-dvd .spine-mark { font:bold italic .65rem/.9 Arial,sans-serif; }
+.shelf-dvd .spine-mark small { font-style:normal; }
+.shelf-dvd .spine-title { font:600 .85rem/1.2 var(--font-mono,monospace); }
+.shelf-dvd .spine-number { border-left:3px double currentColor; padding-left:7px; }
+.shelf-dvd:nth-child(3n) .spine-title { font:italic 1.1rem/1.15 Georgia,serif; }
+.shelf-note { color:var(--text-color); background:var(--bg-color); border:1px solid var(--text-color); padding:1.2rem; margin:8px 0 12px; font-size:.8rem; line-height:1.7; }
+.shelf-note h3 { font:1.4rem Georgia,serif; margin:.5rem 0; }
+.shelf-note p { margin:.7rem 0; }
+.shelf-ledge { height:1px; background:var(--text-color); margin-top:3px; }
+.shelf-footnote { text-align:center; line-height:1.7; }
+@media(max-width:700px) { .media-shelf { margin-top:1.5rem; } .shelf-stacks { margin:2rem auto; } .spine-title { font-size:1rem; } .spine-creator { max-width:75px; } }
+@media(max-width:380px) { .spine-creator { display:none; } .spine-title { font-size:.9rem; } }
+@media(prefers-reduced-motion:no-preference) { .shelf-item summary { transition:transform .18s; } }
+/* Alternate the stack's edges without tilting the spine lettering. */
+.shelf-stack { padding-inline:22px; }
+.shelf-item summary { transform:translateX(-13px); }
+.shelf-item:nth-child(even) summary { transform:translateX(14px); }
+.shelf-item:nth-child(4n) summary { transform:translateX(20px); }
+.shelf-item:nth-child(5n) summary { transform:translateX(-20px); }
+.shelf-item summary:hover,.shelf-item[open] summary { transform:translateX(0); }
+@media(max-width:480px) {
+  .shelf-stack { padding-inline:16px; }
+  .shelf-item summary { transform:translateX(-9px); }
+  .shelf-item:nth-child(even) summary { transform:translateX(10px); }
+  .shelf-item:nth-child(4n) summary { transform:translateX(14px); }
+  .shelf-item:nth-child(5n) summary { transform:translateX(-14px); }
+  .shelf-item summary:hover,.shelf-item[open] summary { transform:translateX(0); }
+}
+/* Two flat DVD labels, alternating independently of the books. */
+.shelf-dvd summary { min-height:64px; gap:10px; padding:5px 8px; }
+.shelf-dvd .dvd-label { display:flex; align-items:center; gap:10px; flex:1; min-width:0; padding:6px 9px; border:1px solid currentColor; border-radius:2px; }
+.shelf-dvd .spine-title { font:italic 1rem/1.15 Georgia,serif; }
+.shelf-dvd .spine-number { display:flex; align-items:center; align-self:stretch; justify-content:center; min-width:23px; border:1px solid currentColor; padding:0 3px; }
+.shelf-dvd.dvd-design-0 summary { background:var(--text-color); color:var(--bg-color); }
+.shelf-dvd.dvd-design-0 .dvd-label { background:var(--bg-color); color:var(--text-color); border-color:var(--bg-color); border-radius:0; position:relative; padding-right:34px; }
+.shelf-dvd.dvd-design-0 .dvd-label::after { content:''; position:absolute; inset:0 0 0 auto; width:25px; background:var(--text-color); clip-path:polygon(40% 0,60% 0,20% 100%,0 100%,40% 0,75% 0,95% 0,55% 100%,35% 100%,75% 0,100% 0,100% 100%,70% 100%); }
+.shelf-dvd.dvd-design-0 .spine-title { font:600 .85rem/1.2 var(--font-mono,monospace); }
+@media(max-width:480px) {
+  .shelf-dvd .spine-creator { display:none; }
+  .shelf-dvd .dvd-label { padding:5px 7px; }
+  .shelf-dvd.dvd-design-0 .dvd-label { padding-right:29px; }
+  .shelf-dvd .spine-title { font-size:.95rem; }
+  .shelf-dvd.dvd-design-0 .spine-title { font-size:.75rem; }
+}
+
+.spine-bird { display:block; width:25px; height:33px; margin-inline:auto; }
+
+/* Leave some spines unbranded, like an assorted personal collection. */
+.shelf-item.spine-unbranded .spine-mark { display:none; }
+
+/* Spine lettering uses the blog's usual type throughout. */
+.media-shelf .shelf-item .spine-title {
+  font-family:var(--font-mono);
+  font-size:.9rem;
+  font-weight:400;
+  font-style:normal;
+  line-height:1.15;
+  letter-spacing:0;
+  text-transform:none;
+}
+.media-shelf .spine-creator,.media-shelf .spine-number,.media-shelf .spine-mark small {
+  font-family:var(--font-mono);
+}
+@media(max-width:480px) {
+  .media-shelf .shelf-item .spine-title { font-size:.85rem; }
+}
+
+.media-shelf .shelf-heading h1 {
+  font-family:"IM Fell English",Georgia,serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:.02em;
+}
+
+/* Credits remain visible at every screen size. */
+.media-shelf .shelf-item .spine-creator { display:block; max-width:115px; overflow-wrap:anywhere; }
+@media(max-width:480px) {
+ .media-shelf .shelf-item .spine-creator { max-width:none; font-size:.55rem; }
+ .media-shelf .shelf-book summary { flex-wrap:wrap; }
+ .media-shelf .shelf-book .spine-title { flex-basis:65%; }
+ .media-shelf .shelf-book .spine-creator { flex-basis:100%; }
+ .media-shelf .shelf-dvd .dvd-label { flex-direction:column; align-items:flex-start; gap:4px; }
+}
+
+.media-shelf .shelf-quote { max-width:520px; margin:3rem auto 0; text-align:center; }
+.media-shelf .shelf-quote blockquote { margin:0; padding:0; border:0; color:var(--text-color); font:inherit; font-size:.85rem; line-height:1.8; }
+.media-shelf .shelf-quote figcaption { margin-top:.7rem; font-size:.72rem; }
