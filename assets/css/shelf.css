@@ -301,6 +301,9 @@
 :root:is(:not([data-theme]), [data-theme="lumon"], [data-theme="sakura"]) .media-shelf .shelf-unfinished :is(.spine-title,.spine-creator) {
   color:var(--bg-color);
 }
+:root[data-theme="birthday"] .media-shelf .shelf-unfinished :is(.spine-title,.spine-creator) {
+  color:var(--text-color);
+}
 .media-shelf .shelf-dvd summary,
 .media-shelf .shelf-dvd .dvd-label,
 .media-shelf .shelf-dvd.dvd-design-0 .dvd-label,
