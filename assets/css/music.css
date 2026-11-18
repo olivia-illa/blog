@@ -65,3 +65,30 @@ html.page-music::-webkit-scrollbar, body.page-music::-webkit-scrollbar, .page-mu
 
 .music-shelf-plank { overflow:hidden; background:var(--bg-color); border-top:3px solid var(--text-color); border-bottom:3px solid var(--text-color); box-sizing:border-box; }
 .music-shelf-plank path { display:none; }
+
+@media (min-width:601px) {
+  html.page-music { height:100%; overflow:hidden; }
+  body.page-music { height:100dvh; min-height:0; overflow:hidden; }
+  .page-music main { position:relative; display:flex; flex-direction:column; min-height:0; }
+  .music-teleport { position:static; flex:0 0 auto; padding:.7rem 0 .4rem; }
+  .music-room { display:grid; grid-template-rows:repeat(2,minmax(0,1fr)); flex:1; min-height:0; margin:0 -1rem; }
+  .music-shelf { min-height:0; margin:0; }
+  .music-shelf-scroll { height:100%; padding:0; box-sizing:border-box; container-type:size; overflow-y:hidden; }
+  .music-shelf-track { height:100%; min-height:100%; padding:50px clamp(1.5rem,5vw,5rem) 58px; }
+  .shelf-album { width:clamp(60px,calc(100cqh - 145px),230px); flex-basis:clamp(60px,calc(100cqh - 145px),230px); }
+  .album-caption { margin-bottom:1rem; }
+  .album-caption h2 { font-size:.7rem; line-height:1.4; }
+  .music-shelf-plank { bottom:42px; }
+  .shelf-bracket { bottom:0; height:45px; width:20px; }
+  .shelf-album > .shelf-bracket-middle { bottom:-58px; }
+  .music-shelf::before,.music-shelf::after { bottom:42px; }
+  .page-music footer { flex:0 0 auto; }
+}
+
+/* Once the reader clicks, covers stay upright for the rest of this visit. */
+.music-room.covers-settled .shelf-album .album-art,
+.music-room.covers-settled .album-link:is(:hover,:focus-visible) .album-art {
+  transform:none;
+  transition:none;
+  animation:none;
+}

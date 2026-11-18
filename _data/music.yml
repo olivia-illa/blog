@@ -1,5 +1,13 @@
 # Add entries here. Optional: cover (image URL or /assets/... path), note,
 # shelf (singles or albums), and url (a listening link). Entries appear in this order.
+- title: "Pegasus (ft. Phoebe Bridgers)"
+  artist: "Arlo Parks, Phoebe Bridgers"
+  format: Song
+  url: https://open.spotify.com/track/79rDSeSX1tm97qaYDmPSnD
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/be/dd/e3/bedde35d-a3dc-6d1c-7b4b-e69911aa5fad/5400863101916_cover.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
 - title: you seem pretty sad for a girl so in love
   artist: Olivia Rodrigo
   url: https://open.spotify.com/album/3WZZF72ihlKPZBS4zSsNHl
@@ -8,6 +16,7 @@
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg
   shelf: albums
   note: ""
+
 - title: Sincerity Is Scary
   artist: The 1975
   url: https://open.spotify.com/track/2a4aUMVIy5VJG6dEGTKIVe
@@ -16,6 +25,7 @@
   cover: https://f4.bcbits.com/img/a0101245125_10.jpg
   shelf: singles
   note: ""
+
 - title: Being Funny in a Foreign Language
   artist: The 1975
   url: https://open.spotify.com/album/0kvoCDiWdZ7eHPW7xvdg3z
@@ -25,34 +35,18 @@
   shelf: albums
   note: ""
 
-- title: "Anything He Was"
-  artist: "Tiny Habits"
-  format: Song
-  url: https://open.spotify.com/search/Anything%20He%20Was%20Tiny%20Habits
-  cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9c/04/dc/9c04dc0a-f2e7-48f0-35a7-3cc568c2f143/823375232070_Cover.jpg/600x600bb.jpg
-  shelf: singles
-  note: ""
-
 - title: "It Ain’t Over ’Til It’s Over"
   artist: "Lenny Kravitz"
   format: Song
-  url: https://open.spotify.com/search/It%20Ain%E2%80%99t%20Over%20%E2%80%99Til%20It%E2%80%99s%20Over%20Lenny%20Kravitz
+  url: https://open.spotify.com/track/6VnpKLtfNH4Dk09YSGPSyR
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/af/7b/6e/af7b6ebc-dd7b-93aa-7764-5054ae90d63c/13UMGIM87323.rgb.jpg/600x600bb.jpg
-  shelf: singles
-  note: ""
-
-- title: "hate that i made you love me"
-  artist: "Ariana Grande"
-  format: Song
-  url: https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
-  cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/56/f4/96/56f49612-02dd-83f4-44fe-d2118cc70707/26UMGIM51129.rgb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
 
 - title: "Carolina in My Mind"
   artist: "James Taylor"
   format: Song
-  url: https://open.spotify.com/search/Carolina%20in%20My%20Mind%20James%20Taylor
+  url: https://open.spotify.com/track/2T5Ch09nefwckOu5NQvjIk
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/98/74/40/98744095-a46e-eccd-ab81-ec9789d884d4/mzi.modzlreh.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -60,7 +54,7 @@
 - title: "Creep"
   artist: "Radiohead"
   format: Song
-  url: https://open.spotify.com/search/Creep%20Radiohead
+  url: https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/78/a4/ec/78a4ec7b-c6d6-c9c8-441b-660486e56a89/634904077969.png/600x600bb.jpg
   shelf: singles
   note: ""
@@ -68,7 +62,7 @@
 - title: "When A Good Man Cries"
   artist: "CMAT"
   format: Song
-  url: https://open.spotify.com/search/When%20A%20Good%20Man%20Cries%20CMAT
+  url: https://open.spotify.com/track/6VXIZWHmdOTHIFhsSkYFgQ
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0e/06/d7/0e06d714-e7ca-8709-cea0-7a2a0c025c92/199538434699.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -76,7 +70,7 @@
 - title: "Reason To Stay"
   artist: "Olivia Dean"
   format: Song
-  url: https://open.spotify.com/search/Reason%20To%20Stay%20Olivia%20Dean
+  url: https://open.spotify.com/track/56DxR1jHbX6xlGwZdUuN0v
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/31/ed/42/31ed42f4-663c-5acc-e194-a795a032d993/19UMGIM50845.rgb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -84,7 +78,7 @@
 - title: "The Dream"
   artist: "The Favors, FINNEAS, Ashe"
   format: Album
-  url: https://open.spotify.com/search/The%20Dream%20The%20Favors%2C%20FINNEAS%2C%20Ashe
+  url: https://open.spotify.com/album/48M39K7MWoYxykqTE2brIi
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/59/71/32597154-2d4d-158e-fe5b-64ac24de72de/25UMGIM73476.rgb.jpg/600x600bb.jpg
   shelf: albums
   note: ""
@@ -92,7 +86,7 @@
 - title: "Torn"
   artist: "Natalie Imbruglia"
   format: Song
-  url: https://open.spotify.com/search/Torn%20Natalie%20Imbruglia
+  url: https://open.spotify.com/track/0KDaN0HL3TcJVTbXlQCEsS
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/11/5d/f1/115df15e-e05f-b0f1-ae66-3ad2c5e969b4/mzi.ihaejhxb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -100,7 +94,7 @@
 - title: "End of Beginning"
   artist: "Djo"
   format: Song
-  url: https://open.spotify.com/search/End%20of%20Beginning%20Djo
+  url: https://open.spotify.com/track/3qhlB30KknSejmIvZZLjOD
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9d/58/bb/9d58bb3a-c6b5-4c3d-fbba-50872d2712f4/5056494917336.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -108,23 +102,15 @@
 - title: "WHERE IS MY HUSBAND!"
   artist: "RAYE"
   format: Song
-  url: https://open.spotify.com/search/WHERE%20IS%20MY%20HUSBAND%21%20RAYE
+  url: https://open.spotify.com/track/55lijDD6OAjLFFUHU9tcDm
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/69/10/8a/69108a18-55ec-d774-a653-90b2242733db/199538765458.jpg/600x600bb.jpg
   shelf: singles
-  note: ""
-
-- title: "Man’s Best Friend"
-  artist: "Sabrina Carpenter"
-  format: Album
-  url: https://open.spotify.com/search/Man%27s%20Best%20Friend%20Sabrina%20Carpenter
-  cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1f/60/6e/1f606e12-c37f-4218-5e20-602286429c31/25UMGIM81699.rgb.jpg/600x600bb.jpg
-  shelf: albums
   note: ""
 
 - title: "Bewitched"
   artist: "Laufey"
   format: Album
-  url: https://open.spotify.com/search/Bewitched%20Laufey
+  url: https://open.spotify.com/album/1rpCHilZQkw84A3Y9czvMO
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1f/de/6c/1fde6cb4-9703-c214-cdc6-8ecf7d0f0aa0/197189040030.jpg/600x600bb.jpg
   shelf: albums
   note: ""
@@ -132,7 +118,7 @@
 - title: "Red"
   artist: "Taylor Swift"
   format: Album
-  url: https://open.spotify.com/search/Red%20Taylor%20Swift
+  url: https://open.spotify.com/album/1EoDsNmgTLtmwe1BDAVxV5
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/25/0d/7e/250d7e42-3a2f-19ac-f865-f1e04a4a1f97/12UMDIM01007.rgb.jpg/600x600bb.jpg
   shelf: albums
   note: ""
@@ -140,7 +126,7 @@
 - title: "Endless Summer Vacation"
   artist: "Miley Cyrus"
   format: Album
-  url: https://open.spotify.com/search/Endless%20Summer%20Vacation%20Miley%20Cyrus
+  url: https://open.spotify.com/album/0HiZ8fNXwJOQcrf5iflrdz
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8c/67/ff/8c67ff91-31c3-3fef-1884-ce3ec89f3af4/196589946874.jpg/600x600bb.jpg
   shelf: albums
   note: ""
@@ -148,7 +134,7 @@
 - title: "Not Strong Enough"
   artist: "boygenius"
   format: Song
-  url: https://open.spotify.com/search/Not%20Strong%20Enough%20boygenius
+  url: https://open.spotify.com/track/09DR0sHnQUhHOiSNttc1mv
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/ad/fc/81/adfc819e-00b2-3cb5-deb2-931a5b6da3fa/22UM1IM44998.rgb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -156,7 +142,7 @@
 - title: "You’re Here That’s the Thing"
   artist: "beabadoobee"
   format: Song
-  url: https://open.spotify.com/search/You%E2%80%99re%20Here%20That%E2%80%99s%20the%20Thing%20beabadoobee
+  url: https://open.spotify.com/track/68SSN8C0cJmUEXJkGyNYqe
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/15/13/6b/15136b77-3a59-2f4e-d0ae-588f8d64802b/196922094361_Cover.jpg/600x600bb.jpg
   shelf: singles
   note: ""
@@ -164,7 +150,72 @@
 - title: "HIT ME HARD AND SOFT"
   artist: "Billie Eilish"
   format: Album
-  url: https://open.spotify.com/search/HIT%20ME%20HARD%20AND%20SOFT%20Billie%20Eilish
+  url: https://open.spotify.com/album/7aJuG4TFXa2hmE4z1yxc3n
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg
   shelf: albums
+  note: ""
+
+- title: "The Blower’s Daughter"
+  artist: "Damien Rice"
+  format: Song
+  url: https://open.spotify.com/track/5yyRH93h4Pm6tXXYTxt7ea
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music/7f/b2/df/mzi.tadwdynv.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Pretty Boy"
+  artist: "M2M"
+  format: Song
+  url: https://open.spotify.com/track/5pgdZyYh16sAUkDjrqGPej
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f6/64/47/f66447d5-8862-8a92-94e9-e4afb50e9fa1/mzi.dvbeqcxa.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Waitress (Original Broadway Cast Recording)"
+  artist: "Original Broadway Cast of Waitress"
+  format: Album
+  url: https://open.spotify.com/album/1E1tdqqLmyi03P0TJhGuw8
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/16/50/93/16509371-267f-9923-a46c-5ac94d51f9f3/093624920106.jpg/600x600bb.jpg
+  shelf: albums
+  note: ""
+
+- title: "MAYHEM"
+  artist: "Lady Gaga"
+  format: Album
+  url: https://open.spotify.com/album/2MHUaRi9OCyTN02SoyRRBJ
+  cover: https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02b0860cf0a98e09663c82290c
+  shelf: albums
+  note: ""
+
+- title: "Mamma Mia! The Movie Soundtrack"
+  artist: "Cast of Mamma Mia! The Movie"
+  format: Album
+  year: 2008
+  url: https://open.spotify.com/album/6QtnCAFmqOwR75jOOmU7k9
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02ddc54feece71dda4290d0579
+  shelf: albums
+  note: ""
+
+- title: "Daniel"
+  artist: "Elton John"
+  format: Song
+  url: https://open.spotify.com/track/1BvJmtaXsqtH438BcDPeBb
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/49/cd/b8/49cdb8de-4752-8cec-f795-b7547930990d/06UMGIM34697.rgb.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Alley Rose"
+  artist: "Conan Gray"
+  format: Song
+  url: https://open.spotify.com/track/4h2KgbKNdOSVC3IJnFOFoV
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0223e2af3e96fa7af0bd297e38
+  shelf: singles
+  note: ""
+
+- title: "Anything He Was"
+  artist: "Tiny Habits"
+  format: Song
+  url: https://open.spotify.com/track/5jEf7MDPf8Bo4blM8Otusr
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9c/04/dc/9c04dc0a-f2e7-48f0-35a7-3cc568c2f143/823375232070_Cover.jpg/600x600bb.jpg
+  shelf: singles
   note: ""

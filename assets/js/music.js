@@ -1,5 +1,8 @@
 (function () {
   'use strict';
+  document.addEventListener('click', () => {
+    document.querySelector('.music-room')?.classList.add('covers-settled');
+  }, { once: true, capture: true });
   document.querySelectorAll('.music-room .album-art img').forEach(img => {
     img.addEventListener('error', () => { img.hidden = true; });
   });

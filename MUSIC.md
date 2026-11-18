@@ -14,7 +14,7 @@ Edit `_data/music.yml` to add, remove, or reorder music. Each entry starts with 
 - title: "Song title"
   artist: "Artist name"
   format: Song
-  url: https://open.spotify.com/search/Song%20title%20Artist%20name
+  url: https://open.spotify.com/track/PASTE_TRACK_ID_HERE
   cover: /assets/images/music/song-cover.jpg
   shelf: singles
   note: "Your optional notes here."
@@ -32,7 +32,7 @@ For an album, change `format` to `Album` and `shelf` to `albums`:
   note: ""
 ```
 
-Replace the example URL and image path before saving. You can paste a Spotify song or album link from its Share menu, or use a Spotify search URL. In search URLs, spaces are written as `%20`.
+Replace the example URL and image path before saving. Paste a direct Spotify song or album link from its Share menu. Use `/track/` links for songs and `/album/` links for albums; avoid `/search/` links so visitors land on the release itself. Spotify may still require them to press Play.
 
 Keep indentation consistent: two spaces before each field after the title. Double quotes are useful for titles with punctuation; escape any double quote inside the text as `\"`.
 
