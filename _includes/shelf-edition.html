@@ -1,0 +1,10 @@
+{%- assign edition = include.edition | append: '' -%}
+{%- assign edition_length = edition | size -%}
+{%- assign date_separator = edition | slice: 4, 1 -%}
+{%- if date_separator == '-' and edition_length == 10 -%}
+  {{- edition | date: '%b %Y' | escape -}}
+{%- elsif date_separator == '-' and edition_length == 7 -%}
+  {{- edition | append: '-01' | date: '%b %Y' | escape -}}
+{%- else -%}
+  {{- edition | escape -}}
+{%- endif -%}
