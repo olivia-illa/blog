@@ -16,7 +16,7 @@
 .shelf-stacks { max-width:620px; margin:3rem auto; }
 .shelf-pile { min-width:0; }
 .shelf-stack { padding:0 12px; }
-.shelf-item { --spine:var(--bg-color); --spine-ink:var(--text-color); position:relative; margin:0; color:var(--spine-ink); }
+.shelf-item { position:relative; margin:0; color:var(--spine-ink); }
 .shelf-item summary { position:relative; display:flex; align-items:center; gap:12px; width:calc(100% - var(--size)*12px); min-height:calc(57px + var(--size)*10px); margin-inline:auto; padding:10px 13px; box-sizing:border-box; color:var(--spine-ink); background:var(--spine); border:1px solid var(--spine-ink); border-radius:2px 5px 5px 2px; transform:translateX(calc(var(--shift)*7px)); cursor:pointer; list-style:none; }
 .shelf-item summary::-webkit-details-marker { display:none; }
 .shelf-item summary:hover,.shelf-item[open] summary { transform:translateX(0); }
@@ -26,7 +26,6 @@
 .spine-title { font:bold clamp(.9rem,2vw,1.2rem)/1.15 Georgia,serif; flex:1; }
 .spine-creator { max-width:95px; font:.6rem/1.35 var(--font-mono,monospace); }
 .spine-number { font:.55rem monospace; }
-.shelf-book:nth-child(even) { --spine:var(--shelf-solid-fill,var(--text-color)); --spine-ink:var(--shelf-solid-ink,var(--bg-color)); }
 .shelf-book summary { border-block:4px double var(--spine-ink); }
 .shelf-book summary::after { content:''; position:absolute; top:0; bottom:0; left:6px; border-left:1px solid var(--spine-ink); }
 .shelf-book:nth-child(3n) .spine-title { font-style:italic; }
@@ -139,15 +138,14 @@
   box-shadow:2px 3px 5px color-mix(in srgb,var(--text-color) 12%,transparent);
 }
 
-/* A light accent wash distinguishes unfinished titles without dominating the stack. */
-.media-shelf { --unfinished-accent:var(--section-border); --unfinished-spine:color-mix(in srgb,var(--unfinished-accent) 16%,var(--bg-color)); --unfinished-ink:var(--text-color); }
-:root[data-theme="lombard"] .media-shelf {
-  --unfinished-spine:color-mix(in srgb,white 9%,var(--bg-color));
+/* Use each theme's accent to mark titles still in progress. */
+.media-shelf {
+  --unfinished-accent:var(--section-border);
+  --unfinished-ink:light-dark(color-mix(in srgb,var(--text-color) 62%,black),var(--bg-color));
 }
 @media(prefers-color-scheme:dark) {
   :root:not([data-theme]) .media-shelf { --unfinished-accent:#aff7bd; }
 }
-.media-shelf .shelf-unfinished { --spine:var(--unfinished-spine); --spine-ink:var(--unfinished-ink); }
 .media-shelf .shelf-unfinished summary { background:var(--spine); color:var(--spine-ink); border-color:var(--spine-ink); }
 .media-shelf .shelf-unfinished .dvd-label { background:transparent; color:inherit; border-color:currentColor; }
 .media-shelf .shelf-unfinished .dvd-label::after { background:var(--spine-ink); }
@@ -288,7 +286,7 @@
 .spine-vhs { display:block; width:31px; height:18px; margin:auto; }
 .spine-publisher { display:block; width:28px; height:34px; margin:auto; }
 
-/* Only continued titles receive a fill distinct from the page background. */
+/* Use the page background for every spine unless the title is still in progress. */
 .media-shelf .shelf-item {
   --spine:var(--bg-color);
   --spine-ink:var(--text-color);
@@ -296,7 +294,12 @@
   --shelf-solid-ink:var(--text-color);
 }
 .media-shelf .shelf-item.shelf-unfinished {
-  --spine:var(--unfinished-spine);
+  --spine:var(--unfinished-accent);
+  --spine-ink:var(--unfinished-ink);
+  --shelf-solid-ink:var(--spine-ink);
+}
+:root:is(:not([data-theme]), [data-theme="lumon"], [data-theme="sakura"]) .media-shelf .shelf-unfinished :is(.spine-title,.spine-creator) {
+  color:var(--bg-color);
 }
 .media-shelf .shelf-dvd summary,
 .media-shelf .shelf-dvd .dvd-label,

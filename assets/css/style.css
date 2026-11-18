@@ -180,15 +180,15 @@ body.page-dates { width: 100%; max-width: none; }
 /* Lombard */
 :root[data-theme="lombard"] {
   color-scheme: dark;
-  --bg-color: #660d1e;
-  --text-color: #88d3ec;
-  --link-color: #88d3ec;
-  --header-color: #88d3ec;
-  --footer-color: #88d3ec;
-  --section-border: #848a28;
-  --link-hover-bg: #88d3ec;
-  --link-hover-color: #660d1e;
-  --quote-color: #88d3ec;
+  --bg-color: #66023c;
+  --text-color: #cad183;
+  --link-color: var(--text-color);
+  --header-color: var(--text-color);
+  --footer-color: var(--text-color);
+  --section-border: #f3f2ef;
+  --link-hover-bg: var(--text-color);
+  --link-hover-color: var(--bg-color);
+  --quote-color: var(--text-color);
 }
 
 :root[data-theme="birthday"] {
