@@ -12,14 +12,19 @@ body_class: page-music
   <section class="music-shelf" aria-label="Music shelf {{ forloop.index }}">
     <div class="music-shelf-scroll" role="region" aria-label="Shelf {{ forloop.index }} albums, scroll left and right" tabindex="0">
       <div class="music-shelf-track">
-        <svg class="shelf-bracket shelf-bracket-left" viewBox="0 0 24 60" aria-hidden="true"><path d="M3 1 L21 2 L20 57 L2 58 Z"/><circle cx="12" cy="13" r="3"/><circle cx="11" cy="46" r="3"/></svg>
-        <svg class="shelf-bracket shelf-bracket-right" viewBox="0 0 24 60" aria-hidden="true"><path d="M3 2 L21 1 L22 58 L4 57 Z"/><circle cx="12" cy="13" r="3"/><circle cx="13" cy="46" r="3"/></svg>
+        <svg class="shelf-bracket shelf-bracket-left" viewBox="0 0 30 60" aria-hidden="true"><path class="bracket-side" d="M20 3 L28 -3 L27 52 L19 59 Z"/><path class="bracket-front" d="M2 1 L20 3 L19 59 L1 57 Z"/><ellipse cx="10.5" cy="14" rx="2.5" ry="3"/><ellipse cx="9.8" cy="46" rx="2.5" ry="3"/></svg>
+        <svg class="shelf-bracket shelf-bracket-right" viewBox="0 0 30 60" aria-hidden="true"><path class="bracket-side" d="M20 3 L28 -3 L27 52 L19 59 Z"/><path class="bracket-front" d="M2 1 L20 3 L19 59 L1 57 Z"/><ellipse cx="10.5" cy="14" rx="2.5" ry="3"/><ellipse cx="9.8" cy="46" rx="2.5" ry="3"/></svg>
         {% assign shelf_position = 0 %}
         {% for album in site.data.music %}{% if album.shelf == shelf %}
         <article class="shelf-album">
           {% assign add_bracket = false %}
-          {% if shelf == 'singles' %}{% if shelf_position == 2 or shelf_position == 4 or shelf_position == 7 or shelf_position == 10 %}{% assign add_bracket = true %}{% endif %}{% else %}{% if shelf_position == 1 or shelf_position == 3 or shelf_position == 5 %}{% assign add_bracket = true %}{% endif %}{% endif %}
-          {% if add_bracket %}<svg class="shelf-bracket shelf-bracket-middle" viewBox="0 0 24 60" aria-hidden="true"><path d="M3 1 L21 2 L20 57 L2 58 Z"/><circle cx="12" cy="13" r="3"/><circle cx="11" cy="46" r="3"/></svg>{% endif %}
+          {% assign bracket_cycle = shelf_position | modulo: 5 %}
+          {% if shelf == 'singles' %}
+            {% if shelf_position > 0 %}{% if bracket_cycle == 2 or bracket_cycle == 4 %}{% assign add_bracket = true %}{% endif %}{% endif %}
+          {% else %}
+            {% if bracket_cycle == 1 or bracket_cycle == 3 %}{% assign add_bracket = true %}{% endif %}
+          {% endif %}
+          {% if add_bracket %}<svg class="shelf-bracket shelf-bracket-middle" viewBox="0 0 30 60" aria-hidden="true"><path class="bracket-side" d="M20 3 L28 -3 L27 52 L19 59 Z"/><path class="bracket-front" d="M2 1 L20 3 L19 59 L1 57 Z"/><ellipse cx="10.5" cy="14" rx="2.5" ry="3"/><ellipse cx="9.8" cy="46" rx="2.5" ry="3"/></svg>{% endif %}
           {% assign shelf_position = shelf_position | plus: 1 %}
           <a class="album-link" href="{{ album.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Listen to {{ album.title | escape }} by {{ album.artist | escape }} on Spotify">
             <div class="album-art" style="--cover-scale:{{ album.cover_scale | default: 1 }};--cover-offset-x:{{ album.cover_offset_x | default: '0%' }}">
@@ -32,10 +37,14 @@ body_class: page-music
         {% endif %}{% endfor %}
       </div>
     </div>
-    <svg class="music-shelf-plank" viewBox="0 0 1200 18" preserveAspectRatio="none" aria-hidden="true">
-      <path class="shelf-plank-fill" d="M0 2 Q75 0 150 2 T300 2 T450 2 T600 2 T750 2 T900 2 T1050 2 T1200 2 L1200 16 Q1125 18 1050 16 T900 16 T750 16 T600 16 T450 16 T300 16 T150 16 T0 16 Z"/>
-      <path class="shelf-plank-edge" vector-effect="non-scaling-stroke" d="M0 2 Q75 0 150 2 T300 2 T450 2 T600 2 T750 2 T900 2 T1050 2 T1200 2 M0 16 Q75 18 150 16 T300 16 T450 16 T600 16 T750 16 T900 16 T1050 16 T1200 16"/>
-    </svg>
+    <div class="music-shelf-plank" aria-hidden="true">
+      <svg class="shelf-wood-grain" width="100%" height="100%">
+        <defs><pattern id="shelf-grain-{{ forloop.index }}" width="420" height="18" patternUnits="userSpaceOnUse">
+          <path d="M-10 4 C35 1 72 6 118 4 S190 2 226 4 M252 4 Q292 7 332 4 T430 4 M12 11 Q65 14 114 10 T206 10 M237 12 Q275 9 313 12 T412 11 M130 5 C143 2 165 2 177 6 C165 9 143 9 130 5 Z M145 5 Q154 3 163 5 Q154 7 145 5 M342 7 Q370 5 395 7"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#shelf-grain-{{ forloop.index }})"/>
+      </svg>
+    </div>
   </section>
   {% endfor %}
 </section>

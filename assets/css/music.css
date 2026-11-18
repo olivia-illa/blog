@@ -16,7 +16,6 @@ html.page-music::-webkit-scrollbar, body.page-music::-webkit-scrollbar, .page-mu
 .music-shelf-plank { position:absolute; z-index:1; pointer-events:none; left:0; bottom:86px; width:100%; height:18px; overflow:visible; }
 .shelf-plank-fill { fill:var(--bg-color); }
 .shelf-plank-edge { fill:none; stroke:var(--text-color); stroke-width:3; stroke-linecap:round; }
-.music-shelf:nth-child(2) .music-shelf-plank { transform:scaleY(-1); }
 .shelf-bracket { position:absolute; bottom:26px; width:24px; height:55px; color:var(--text-color); overflow:visible; }
 .shelf-bracket-left { left:clamp(15px,2.5vw,35px); }
 .shelf-bracket-right { right:clamp(15px,2.5vw,35px); }
@@ -63,7 +62,7 @@ html.page-music::-webkit-scrollbar, body.page-music::-webkit-scrollbar, .page-mu
   .page-music footer p { font-size:.5rem; margin:.2rem 0; }
 }
 
-.music-shelf-plank { overflow:hidden; background:var(--bg-color); border-top:3px solid var(--text-color); border-bottom:3px solid var(--text-color); box-sizing:border-box; }
+.music-shelf-plank { overflow:hidden; background:var(--bg-color); border-top:1.5px solid var(--text-color); border-bottom:1.5px solid var(--text-color); box-sizing:border-box; }
 .music-shelf-plank path { display:none; }
 
 @media (min-width:601px) {
@@ -92,3 +91,23 @@ html.page-music::-webkit-scrollbar, body.page-music::-webkit-scrollbar, .page-mu
   transition:none;
   animation:none;
 }
+
+/* A slim side face makes the supports read from a slight angle. */
+.shelf-bracket .bracket-side { fill:color-mix(in srgb,var(--text-color) 20%,var(--bg-color)); stroke-width:2; }
+.shelf-bracket .bracket-front { fill:var(--bg-color); stroke-width:2.5; }
+.shelf-bracket ellipse { fill:var(--bg-color); stroke:currentColor; stroke-width:2; }
+
+/* Sparse pen-like grain inside the existing straight shelf outline. */
+.shelf-wood-grain { display:block; width:100%; height:100%; color:var(--text-color); opacity:.48; }
+.shelf-wood-grain path { display:initial; fill:none; stroke:currentColor; stroke-width:.9; stroke-linecap:round; }
+
+/* Lift both shelf rows slightly without changing their spacing. */
+.music-room { position:relative; top:-6px; }
+
+/* Alternate the visible side of the shelf brackets. */
+.shelf-bracket-right { transform:scaleX(-1); }
+.shelf-album:nth-of-type(even) > .shelf-bracket-middle { transform:scaleX(-1); }
+.music-shelf:nth-child(2) .shelf-bracket-left { transform:scaleX(-1); }
+.music-shelf:nth-child(2) .shelf-bracket-right { transform:none; }
+.music-shelf:nth-child(2) .shelf-album > .shelf-bracket-middle { transform:translateX(18px) rotate(2deg); }
+.music-shelf:nth-child(2) .shelf-album:nth-of-type(odd) > .shelf-bracket-middle { transform:translateX(18px) rotate(-2deg) scaleX(-1); }
