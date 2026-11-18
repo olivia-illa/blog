@@ -15,6 +15,7 @@ body_class: page-recipes
 {% endfor %}
 {% assign drawing_height = stack_height | plus: 145 %}
 
+<article class="recipes-gallery" aria-label="Recipes">
 <p class="catalogue-intro-line">It's a taste-test time.</p>
 
 <svg class="recipes-cake" viewBox="-255 0 910 {{ drawing_height }}" preserveAspectRatio="xMidYMid meet" role="group" aria-label="{{ layer_heights.size }}-layer cake with links on selected layers and the candle">
@@ -142,30 +143,18 @@ body_class: page-recipes
     {% assign layer_y = layer_y | plus: height %}
   {% endfor %}
 </svg>
+</article>
 
 <style>
-  body.page-recipes {
-    height: 100dvh;
-    min-height: 0;
-  }
-
-  .page-recipes main {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .page-recipes > :is(header, footer) {
-    flex-shrink: 0;
-  }
-
   .recipes-cake {
     --cake-motion: 420ms;
     display: block;
-    flex: 1 1 0;
     width: 100%;
-    height: 0;
-    min-height: 0;
-    overflow: visible;
+    height: auto;
+  }
+
+  .recipes-cake + .recipes-cake {
+    margin-top: 2rem;
   }
 
   .recipes-cake.show-titles {
@@ -287,18 +276,19 @@ body_class: page-recipes
 </style>
 
 <script>
-  const recipeCake = document.querySelector('.recipes-cake');
-  const cakeBackground = recipeCake.querySelector('.recipes-background');
+  document.querySelectorAll('.recipes-cake').forEach((cake) => {
+    const background = cake.querySelector('.recipes-background');
 
-  recipeCake.closest('main').addEventListener('click', (event) => {
-    if (event.target.closest('a')) return;
-    const showTitles = recipeCake.classList.toggle('show-titles');
-    cakeBackground.setAttribute('aria-pressed', showTitles);
-  });
+    cake.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      const showTitles = cake.classList.toggle('show-titles');
+      background.setAttribute('aria-pressed', showTitles);
+    });
 
-  cakeBackground.addEventListener('keydown', (event) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-    event.preventDefault();
-    cakeBackground.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    background.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      background.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
   });
 </script>
