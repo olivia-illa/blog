@@ -1064,6 +1064,47 @@ a:hover {
   padding-top: 0;
 }
 
+.home-made {
+  margin-top: .75rem;
+}
+
+.home .home-grid .home-made h2 {
+  border-top: 1px solid var(--section-border);
+  border-bottom: 1px solid var(--section-border);
+}
+
+.home-made > .post-list {
+  margin-top: 0;
+}
+
+@media (max-width: 599px) {
+  .home .home-grid .home-made h2 {
+    border: 0;
+  }
+
+  .home .home-grid .home-made h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    width: 100vw;
+    border-top: 1px solid var(--section-border);
+  }
+}
+
+@media (min-width: 600px) and (min-height: 500px) {
+  .home-grid > section.home-weeknotes-column {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-weeknotes-column .weeknotes {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+}
+
 /* --- The "copy paste share" column ---------------------------------------- */
 
 /* index.html renders 10 clippings for the locked desktop layout, where the
@@ -2305,4 +2346,15 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .calendar-token.is-jiggling svg { animation: none; }
+}
+
+.catalogue-intro-line {
+  margin: 0;
+  padding: .7rem 0 .4rem;
+  font: .85rem/1.5 var(--font-mono);
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .catalogue-intro-line { padding-top: .65rem; }
 }

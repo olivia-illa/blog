@@ -1,0 +1,304 @@
+---
+layout: default
+title: Recipes
+permalink: /recipes/
+body_class: page-recipes
+---
+
+{% assign layer_entries = site.posts | concat: site.pages %}
+{% assign cake = site.data["log-recipes"] %}
+{% assign baked_uglies = layer_entries | where: "url", cake.candle_url | first %}
+{% assign layer_heights = cake.layer_heights %}
+{% assign stack_height = 0 %}
+{% for height in layer_heights %}
+  {% assign stack_height = stack_height | plus: height %}
+{% endfor %}
+{% assign drawing_height = stack_height | plus: 145 %}
+
+<p class="catalogue-intro-line">Taste test time. Pick a layer</p>
+
+<svg class="recipes-cake" viewBox="-255 0 910 {{ drawing_height }}" preserveAspectRatio="xMidYMid meet" role="group" aria-label="{{ layer_heights.size }}-layer cake with links on selected layers and the candle">
+  <defs>
+    <linearGradient id="recipes-cast-shadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop class="recipes-shadow-ink" offset="0%" stop-opacity=".16"/>
+      <stop class="recipes-shadow-ink" offset="28%" stop-opacity=".23"/>
+      <stop class="recipes-shadow-ink" offset="72%" stop-opacity=".12"/>
+      <stop class="recipes-shadow-ink" offset="100%" stop-opacity="0"/>
+    </linearGradient>
+    <path id="recipes-pearl" d="M0-2a2 2 0 1 1 0 4a2 2 0 1 1 0-4Z"/>
+    <path id="recipes-rosette" d="M0-2C-9-12 7-13 4-4C15-7 15 7 5 4C10 14-5 15-4 5C-15 9-15-5-5-4Q-2-8 0-2Z"/>
+    <path id="recipes-shell" d="M-8 1C-8-7 4-9 8 0Q4 6-3 5Q-8 5-8 1ZM-4 1Q-1-4 4-2M0 3L4 0"/>
+    <path id="recipes-strawberry" d="M0-5C-6-10-12-6-10 1C-8 7-3 13 1 12C6 11 12 2 10-3C9-7 4-8 0-5ZM0-5Q-5-6-5-12Q-1-11 1-8Q4-13 8-12Q7-8 0-5ZM-5 0l1 1m8-2 1 1m-5 4 1 1"/>
+    <path id="recipes-bow" d="M-3-3Q-19-15-18-2Q-17 7-3 2M3-3Q19-15 18-2Q17 7 3 2M-3 3Q-5 10-10 13M3 3Q7 10 11 11M-3-3Q0-5 3-3L4 2Q0 5-4 2Z"/>
+    <path id="recipes-rose" d="M-10 0Q-14-8-6-9Q0-15 6-9Q14-9 12 0Q15 8 6 9Q0 15-7 9Q-15 7-10 0ZM-8 2Q-7-6 0-7Q8-6 8 1Q6 8-1 7Q-7 5-4 0Q-1-5 4-1Q5 3 0 3"/>
+  </defs>
+  <g class="recipes-stand" transform="translate(200 {{ stack_height | plus: 66 }})" aria-hidden="true">
+    <path class="recipes-shadow" d="M-52 68C-37 61 0 60 36 59C96 56 170 44 218 43C234 43 231 48 218 52C160 70 71 77 11 77C-19 77-47 74-52 68Z"/>
+    <ellipse class="recipes-contact-shadow" cx="3" cy="68" rx="52" ry="5"/>
+    <path class="recipes-plate-foot" d="M-19 10C-13 24-13 42-32 51C-54 59-50 68-21 70C5 72 47 71 49 63C52 56 35 54 25 48C15 41 13 24 19 10Z"/>
+    <path d="M-8 25C-5 37-9 48-19 54M-34 62C-12 67 18 66 36 62"/>
+    <path class="recipes-plate" d="M-155 0C-151-11-92-16-7-15C73-16 147-12 155-2C161 4 156 9 145 10Q136 19 119 17Q105 24 87 21Q72 27 54 24Q37 29 18 25Q1 30-18 26Q-36 29-53 24Q-71 27-87 21Q-106 24-120 17Q-139 18-146 10C-153 8-159 5-155 0Z"/>
+    <path d="M-145 3C-111 13-61 18 0 18C64 18 120 12 145 2"/>
+  </g>
+  <rect class="recipes-background" x="-255" width="910" height="{{ drawing_height }}" role="button" tabindex="0" aria-label="Show all baking post titles" aria-pressed="false"/>
+  {% if baked_uglies %}
+    <a class="recipes-candle" href="{{ baked_uglies.url | relative_url }}" aria-label="{{ baked_uglies.title | escape }}">
+      <g class="recipes-lean" style="--bend-x: 133px; --bend-y: 53px; --bend-angle: 39deg; --bend-origin: 192px 63px" aria-hidden="true">
+      <g transform="translate(192 0)">
+        <rect class="recipes-candle-hit" x="-21" y="0" width="42" height="67"/>
+        <path class="recipes-flame" d="M1 21C-10 16-1 9 1 3C4 10 11 15 1 21Z"/>
+        <path d="M-12 8l-5-5m4 14-7 1m31-10 5-5m-3 14 7 1"/>
+        <path d="M-5 68L-6 30Q0 26 6 29L7 67ZM-5 39l11-5m-11 14 11-5m-11 15 11-5M0 27l1-7"/>
+      </g>
+      </g>
+      <foreignObject class="recipes-label" style="--label-shift-x: 164px; --label-shift-y: 62px" x="222" y="12" width="180" height="50" aria-hidden="true">
+        <div xmlns="http://www.w3.org/1999/xhtml">{{ baked_uglies.title | escape }}</div>
+      </foreignObject>
+    </a>
+  {% endif %}
+  {% assign layer_y = 63 %}
+  {% assign linked_count = 0 %}
+  {% for height in layer_heights %}
+    {% assign vertical_scale = height | divided_by: 54.0 %}
+    {% assign layer_link = cake.layer_links | where: "layer", forloop.index | first %}
+    {% assign linked_post = nil %}
+    {% if layer_link %}
+      {% assign linked_post = layer_entries | where: "url", layer_link.url | first %}
+    {% endif %}
+    {% if linked_post %}
+      <a class="recipes-layer" href="{{ linked_post.url | relative_url }}" aria-label="{{ linked_post.title | escape }}">
+    {% endif %}
+      {% if forloop.index <= 7 %}
+        {% capture bend_x %}{% cycle 'bend_x': 133, 101, 67, 42, 23, 10, 3 %}{% endcapture %}
+        {% capture bend_y %}{% cycle 'bend_y': 53, 38, 24, 14, 7, 2, 0 %}{% endcapture %}
+        <g class="recipes-lean" style="--bend-x: {{ bend_x }}px; --bend-y: {{ bend_y }}px; --bend-angle: {% cycle 'bend_angle': 39, 30, 22, 15, 9, 4, 1.5 %}deg; --bend-origin: 192px {{ layer_y }}px">
+      {% else %}
+        {% assign bend_x = 0 %}
+        {% assign bend_y = 0 %}
+      {% endif %}
+      <g transform="translate({% cycle 192, 205, 198, 212, 209, 199, 191, 199, 207, 201, 195, 200, 209, 204, 198 %} {{ layer_y }}) rotate({% cycle 'cake_lean': -3, 2, -1.5, 0.75 %}) scale({% cycle 'sponge_width': 0.56, 0.64, 0.61, 0.75, 0.79, 0.74, 0.87, 0.83, 0.94, 0.99, 0.91, 0.97, 0.93, 1.02, 1.04 %} {{ vertical_scale }})" aria-hidden="true">
+        <path class="recipes-sponge" d="M-140 7Q-142-1-119-2C-71-8-25 2 22-3C75-9 131-6 138 3C148 13 138 24 143 35Q148 45 125 48C86 49 64 56 18 52C-27 50-87 55-124 48Q-144 46-141 35C-138 25-146 18-140 7Z"/>
+        {% case forloop.index %}
+          {% when 1, 5, 9, 12 %}
+        <path class="recipes-cream" transform="scale(1 0.8)" d="M-140 5C-128 15-117 7-108 10S-92 17-78 12S-59 20-42 14S-19 21-3 15S19 20 37 14S56 20 76 12S98 16 114 9S134 12 140 5C150 9 148 16 139 18C130 21 124 16 116 19C105 23 96 25 86 21C75 18 71 29 59 25C50 22 43 22 35 25C22 31 14 23 3 25C-6 26-9 33-17 29C-27 23-32 24-43 27C-56 31-65 23-76 24C-90 25-98 22-107 20C-117 18-121 25-130 20C-137 17-147 18-147 11Q-147 6-140 5Z"/>
+          {% when 3, 6, 10, 13, 15 %}
+            <path d="M-140 10C-99 17-63 13-22 17C25 21 94 14 141 8"/>
+        {% endcase %}
+        {% case forloop.index %}
+          {% when 2 %}
+            <use href="#recipes-pearl" x="-84" y="28"/>
+            <use href="#recipes-pearl" x="-43" y="32"/>
+            <use href="#recipes-pearl" x="0" y="34"/>
+            <use href="#recipes-pearl" x="43" y="32"/>
+            <use href="#recipes-pearl" x="84" y="28"/>
+          {% when 4, 10, 15 %}
+            <path d="M-109 24Q-80 41-46 30Q-17 44 15 31Q49 42 82 27Q98 32 112 23"/>
+            <use href="#recipes-shell" x="-46" y="30"/>
+            <use href="#recipes-shell" x="15" y="31"/>
+            <use href="#recipes-shell" x="82" y="27"/>
+          {% when 6, 8 %}
+            <use href="#recipes-strawberry" transform="translate(-62 31) rotate(-13)"/>
+            <use href="#recipes-strawberry" transform="translate(0 34) rotate(7)"/>
+            <use href="#recipes-strawberry" transform="translate(64 29) rotate(17)"/>
+          {% when 11 %}
+            <use href="#recipes-bow" x="-70" y="28"/>
+            <use href="#recipes-bow" x="0" y="32"/>
+            <use href="#recipes-bow" x="72" y="27"/>
+          {% when 12 %}
+            <path d="M-99 19q-2 13 1 22m32-21q-3 12 0 24m33-21q-3 13 0 23m33-24q-3 14 0 25m33-26q-3 13 0 24m33-26q-3 12 0 24m33-27q-3 12 0 22"/>
+          {% when 14 %}
+            <path d="M-102 23Q-75 54-51 33Q-25 55 0 34Q27 53 52 31Q80 48 104 21"/>
+            <use href="#recipes-rose" x="-52" y="30"/>
+            <use href="#recipes-rose" x="0" y="32"/>
+            <use href="#recipes-rose" x="52" y="29"/>
+          {% when 3, 5, 7, 9 %}
+        {% cycle 'icing':
+          '<path d="M-111 24Q-82 51-56 27Q-28 53 1 28Q27 51 57 26Q89 47 110 22"/><use href="#recipes-pearl" x="-111" y="24"/><use href="#recipes-pearl" x="-56" y="27"/><use href="#recipes-pearl" x="1" y="28"/><use href="#recipes-pearl" x="57" y="26"/><use href="#recipes-pearl" x="110" y="22"/>',
+          '<use href="#recipes-rosette" x="-76" y="29"/><use href="#recipes-rosette" x="1" y="34"/><use href="#recipes-rosette" x="74" y="29"/><path d="M-53 33q16 12 32 2M23 35q15 9 30-3"/>',
+          '<path d="M-112 29q12-8 25 2t25 2t25 2t25 1t25 0t25-1t25-2t25-2t25-4"/><path d="M-106 36q48 11 107 10q64-1 105-12"/>',
+          '<path d="M-112 24q7 15 15 5t18 4q9 17 17 3t20 1q9 17 19 2t23 1q10 13 19-1t21-1q9 14 16 0t20-3q9 12 17-1t19-5"/>' %}
+        {% endcase %}
+      </g>
+    {% if forloop.index <= 7 %}</g>{% endif %}
+    {% if linked_post %}
+      {% assign label_side = linked_count | modulo: 2 %}
+      {% assign linked_count = linked_count | plus: 1 %}
+      {% if label_side == 0 %}
+        {% assign label_x = -245 %}
+        {% assign label_direction = "left" %}
+        {% assign label_width = 285 %}
+        {% assign label_shift_x = bend_x | divided_by: 2 %}
+      {% else %}
+        {% assign label_x = 405 %}
+        {% assign label_direction = "right" %}
+        {% assign label_width = 242 %}
+        {% assign label_shift_x = bend_x | at_most: 8 %}
+      {% endif %}
+      <foreignObject class="recipes-label recipes-label-{{ label_direction }}" style="--label-shift-x: {{ label_shift_x }}px; --label-shift-y: {{ bend_y }}px" x="{{ label_x }}" y="{{ layer_y | plus: 12 }}" width="{{ label_width }}" height="125" aria-hidden="true">
+        <div xmlns="http://www.w3.org/1999/xhtml">{% assign title_lines = linked_post.title | split: " (" %}{{ title_lines.first | escape }}{% if title_lines.size > 1 %}<br>({{ title_lines | shift | join: " (" | escape }}{% endif %}</div>
+      </foreignObject>
+      </a>
+    {% endif %}
+    {% assign layer_y = layer_y | plus: height %}
+  {% endfor %}
+</svg>
+
+<style>
+  body.page-recipes {
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .page-recipes main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-recipes > :is(header, footer) {
+    flex-shrink: 0;
+  }
+
+  .recipes-cake {
+    --cake-motion: 420ms;
+    display: block;
+    flex: 1 1 0;
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .recipes-cake.show-titles {
+    --cake-motion: 900ms;
+  }
+
+  .recipes-lean {
+    transform-origin: var(--bend-origin);
+    transform: translate(var(--bend-x), var(--bend-y)) rotate(var(--bend-angle));
+    transition: transform var(--cake-motion) ease-in-out;
+  }
+
+  .recipes-cake.show-titles .recipes-lean {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .recipes-cake,
+    .recipes-cake.show-titles { --cake-motion: 0ms; }
+  }
+
+  .recipes-cake :is(path, use) {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-width: 1.7;
+    vector-effect: non-scaling-stroke;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .recipes-cake :is(.recipes-sponge, .recipes-cream, .recipes-layer use) {
+    fill: var(--bg-color);
+  }
+
+  .recipes-stand path:not(.recipes-shadow) {
+    stroke: var(--bg-color);
+  }
+
+  .recipes-stand :is(.recipes-plate, .recipes-plate-foot) {
+    fill: var(--text-color);
+  }
+
+  .recipes-cake .recipes-shadow {
+    fill: url(#recipes-cast-shadow);
+    stroke: none;
+    filter: blur(2px);
+    transition: transform var(--cake-motion) ease-in-out;
+  }
+
+  .recipes-cake.show-titles .recipes-shadow {
+    transform: scaleX(.69);
+  }
+
+  .recipes-shadow-ink {
+    stop-color: var(--text-color);
+  }
+
+  .recipes-contact-shadow {
+    fill: var(--text-color);
+    opacity: .22;
+    filter: blur(1px);
+  }
+
+  .recipes-candle-hit {
+    fill: transparent;
+  }
+
+  .recipes-candle:is(:hover, :focus-visible) .recipes-flame {
+    fill: var(--text-color);
+  }
+
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible) .recipes-sponge {
+    fill: var(--text-color);
+  }
+
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible) :is(path:not(.recipes-sponge, .recipes-cream), use) {
+    stroke: var(--bg-color);
+  }
+
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible) use {
+    fill: var(--text-color);
+  }
+
+  .recipes-background {
+    fill: transparent;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .recipes-cake:has(.recipes-background:focus-visible) .recipes-plate {
+    stroke: var(--text-color);
+    stroke-dasharray: 4 3;
+  }
+
+  .recipes-label {
+    visibility: hidden;
+    pointer-events: none;
+    color: var(--text-color);
+    font: 500 14px/1.2 var(--font-mono);
+    transform: translate(var(--label-shift-x), var(--label-shift-y));
+    transition: transform var(--cake-motion) ease-in-out;
+  }
+
+  .recipes-label-left { text-align: right; }
+
+  .recipes-cake.show-titles .recipes-label {
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+
+  .recipes-cake a:is(:hover, :focus-visible) .recipes-label {
+    visibility: visible;
+  }
+
+  @media (max-width: 38rem) {
+    .recipes-label { font-size: 24px; }
+  }
+</style>
+
+<script>
+  const recipeCake = document.querySelector('.recipes-cake');
+  const cakeBackground = recipeCake.querySelector('.recipes-background');
+
+  recipeCake.closest('main').addEventListener('click', (event) => {
+    if (event.target.closest('a')) return;
+    const showTitles = recipeCake.classList.toggle('show-titles');
+    cakeBackground.setAttribute('aria-pressed', showTitles);
+  });
+
+  cakeBackground.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    cakeBackground.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  });
+</script>
