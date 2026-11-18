@@ -6,21 +6,24 @@
   falling back to an absolute "%b %-d, %Y" date once the post is a week old.
 
   Usage:  {% include relative-date.html date=post.date %}
+  Use days_only=true for an age in whole days, with an optional prefix.
 
   Build-time text is a fallback; relative-dates.js updates it in the reader's
   browser using the timezone-aware datetime and their current clock.
 {%- endcomment -%}
-<time class="js-relative-date" datetime="{{ include.date | date_to_xmlschema }}">
+<time class="js-relative-date"{% if include.days_only %} data-relative-days="{{ include.prefix | escape }}"{% endif %} datetime="{{ include.date | date_to_xmlschema }}">
 {% assign now_seconds = "now" | date: "%s" | plus: 0 %}
 {% assign day_seconds = 86400 %}
 {% assign hour_seconds = 3600 %}
 {% assign minute_seconds = 60 %}
 
 {% assign post_seconds = include.date | date: "%s" | plus: 0 %}
-{% assign diff_seconds = now_seconds | minus: post_seconds %}
+{% assign diff_seconds = now_seconds | minus: post_seconds | at_least: 0 %}
 {% assign diff_days = diff_seconds | divided_by: day_seconds %}
 
-{% if diff_days == 0 %}
+{% if include.days_only %}
+  {{ include.prefix | escape }}{{ diff_days }} {% if diff_days == 1 %}day{% else %}days{% endif %} ago
+{% elsif diff_days == 0 %}
   {% if diff_seconds < hour_seconds %}
     {% assign minutes = diff_seconds | divided_by: minute_seconds %}
     {% if minutes <= 1 %}just now{% else %}{{ minutes }} mins ago{% endif %}

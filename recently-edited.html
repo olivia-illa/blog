@@ -45,7 +45,7 @@ body_class: page-compact page-edited
           <path class="banana-contour" d="M35 39 89 94 C185 205 374 221 539 53"/>
 
         </svg>
-        <span class="banana-hover-title"><span>{{ post.title | escape }}</span><time datetime="{{ edited_at | date_to_xmlschema }}">last edited {{ edited_at | date: '%d %b %Y' }}</time></span>
+        <span class="banana-hover-title"><span>{{ post.title | escape }}</span>{% include relative-date.html date=edited_at days_only=true prefix='last edited ' %}</span>
 
       </a>
     </li>

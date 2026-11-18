@@ -28,5 +28,6 @@
     </section>
   </div>
   <figure class="shelf-quote">{% if page.shelf_log_slug == 'wishlist' %}<blockquote>“We accept the reality of the world with which we're presented. It's as simple as that.”</blockquote><figcaption>— Christof, <cite>The Truman Show</cite></figcaption>{% else %}<blockquote>“The books transported her into new worlds and introduced her to amazing people who lived exciting lives.”</blockquote><figcaption>— <cite>Matilda</cite> by Roald Dahl</figcaption>{% endif %}</figure>
+  {% if page.catalogue_path %}{% include catalogue-edited.html path=page.catalogue_path %}{% endif %}
 </section>
 <script src="{{ '/assets/js/shelf.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

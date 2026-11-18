@@ -1965,6 +1965,13 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-heading > p:last-child { display: none; }
 }
 
+.catalogue-edited {
+  margin: .25rem 0 0;
+  font: .7rem/1.5 var(--font-mono);
+}
+
+.media-shelf .catalogue-edited { text-align: center; }
+
 .banana-hover-title time {
   display: block;
   margin-top: .4rem;
@@ -2005,15 +2012,11 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .banana-stack li:nth-child(even) .banana-single { transform: scaleX(-1); }
 .banana-hover-title, .banana-floating-label { font-family: var(--font-mono); font-size: .85rem; line-height: 1.4; }
 
-/* Heavy vintage label lettering, using the blog’s bundled slab serif. */
 .banana-floating-label > span {
   display: block;
-  font-family: 'Roboto Slab', Georgia, serif;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 1.15rem;
   line-height: 1.05;
-  letter-spacing: -.045em;
-  text-transform: uppercase;
 }
 
 /* Reserve separate space for every fruit and label, including reveal-all. */

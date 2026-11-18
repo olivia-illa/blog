@@ -1,0 +1,4 @@
+{% assign catalogue_date = include.path | catalogue_edit_date %}
+{% if catalogue_date %}
+  <p class="catalogue-edited">{% include relative-date.html date=catalogue_date days_only=true prefix='last edited ' %}</p>
+{% endif %}

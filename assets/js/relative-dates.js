@@ -17,7 +17,8 @@
       var hours = Math.floor(seconds / 3600);
       var days = Math.floor(seconds / 86400);
 
-      if (minutes <= 1) el.textContent = 'just now';
+      if (el.hasAttribute('data-relative-days')) el.textContent = el.dataset.relativeDays + days + (days === 1 ? ' day ago' : ' days ago');
+      else if (minutes <= 1) el.textContent = 'just now';
       else if (hours < 1) el.textContent = minutes + ' mins ago';
       else if (days < 1) el.textContent = hours + (hours === 1 ? ' hour ago' : ' hours ago');
       else if (days === 1) el.textContent = 'Yesterday';
