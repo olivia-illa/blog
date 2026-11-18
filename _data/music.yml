@@ -1,5 +1,13 @@
 # Add entries here. Optional: cover (image URL or /assets/... path), note,
 # shelf (singles or albums), and url (a listening link). Entries appear in this order.
+- title: "Hotel California"
+  artist: "Eagles"
+  format: Song
+  url: https://open.spotify.com/track/40riOy7x9W7GXjyGp4pjAv
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024637341b9f507521afa9a778
+  shelf: singles
+  note: ""
+
 - title: "Pegasus (ft. Phoebe Bridgers)"
   artist: "Arlo Parks, Phoebe Bridgers"
   format: Song
@@ -35,11 +43,11 @@
   shelf: albums
   note: ""
 
-- title: "It Ain’t Over ’Til It’s Over"
-  artist: "Lenny Kravitz"
+- title: "Torn"
+  artist: "Natalie Imbruglia"
   format: Song
-  url: https://open.spotify.com/track/6VnpKLtfNH4Dk09YSGPSyR
-  cover: https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/af/7b/6e/af7b6ebc-dd7b-93aa-7764-5054ae90d63c/13UMGIM87323.rgb.jpg/600x600bb.jpg
+  url: https://open.spotify.com/track/0KDaN0HL3TcJVTbXlQCEsS
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/11/5d/f1/115df15e-e05f-b0f1-ae66-3ad2c5e969b4/mzi.ihaejhxb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
 
@@ -75,11 +83,11 @@
   shelf: albums
   note: ""
 
-- title: "Torn"
-  artist: "Natalie Imbruglia"
+- title: "It Ain’t Over ’Til It’s Over"
+  artist: "Lenny Kravitz"
   format: Song
-  url: https://open.spotify.com/track/0KDaN0HL3TcJVTbXlQCEsS
-  cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/11/5d/f1/115df15e-e05f-b0f1-ae66-3ad2c5e969b4/mzi.ihaejhxb.jpg/600x600bb.jpg
+  url: https://open.spotify.com/track/6VnpKLtfNH4Dk09YSGPSyR
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/af/7b/6e/af7b6ebc-dd7b-93aa-7764-5054ae90d63c/13UMGIM87323.rgb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
 
@@ -204,14 +212,6 @@
   shelf: singles
   note: ""
 
-- title: "Hotel California"
-  artist: "Eagles"
-  format: Song
-  url: https://open.spotify.com/track/40riOy7x9W7GXjyGp4pjAv
-  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024637341b9f507521afa9a778
-  shelf: singles
-  note: ""
-
 - title: "American Pie"
   artist: "Don McLean"
   format: Song
@@ -233,5 +233,77 @@
   format: Song
   url: https://open.spotify.com/track/5oaHpdRs1DuuDKNVrUgBPF
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/eb/f3/00/ebf300a7-22ab-9f61-29ef-9c86acc889b3/16DMGIM07683.rgb.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Banana Pancakes"
+  artist: "Jack Johnson"
+  format: Song
+  url: https://open.spotify.com/track/0BgbobvykXxEvxo2HhCuvM
+  cover: https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02628dba01c669d89586967dc5
+  shelf: singles
+  note: ""
+
+- title: "Way Back Into Love"
+  artist: "Hugh Grant, Haley Bennett"
+  format: Song
+  url: https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0a/e3/46/0ae346ce-4b6b-32bd-6f0e-0dc36be2cdfa/mzi.felihsoi.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "7 Things"
+  artist: "Miley Cyrus"
+  format: Song
+  url: https://open.spotify.com/track/0FpT75cRdvf6va1TARHrl5
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/37/07/b5/3707b598-d352-1157-6cc0-fba6a570f5af/00050087123536.rgb.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Bleeding Love"
+  artist: "Leona Lewis"
+  format: Song
+  url: https://open.spotify.com/track/7wZUrN8oemZfsEd1CGkbXE
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0234fd9eb8cd48e518598aec55
+  shelf: singles
+  note: ""
+
+- title: "Bad Day"
+  artist: "Daniel Powter"
+  format: Song
+  url: https://open.spotify.com/track/0mUyMawtxj1CJ76kn9gIZK
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music/90/db/17/mzi.tiuteyft.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Put Your Records On"
+  artist: "Corinne Bailey Rae"
+  format: Song
+  url: https://open.spotify.com/track/2nGFzvICaeEWjIrBrL2RAx
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d9/cd/24/d9cd2461-82dc-9f9f-6ed3-86bb75d110b9/13UABIM50290.rgb.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Love Song"
+  artist: "Sara Bareilles"
+  format: Song
+  url: https://open.spotify.com/track/4E6cwWJWZw2zWf7VFbH7wf
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8a/22/1c/8a221cd8-015e-6221-c0eb-fc3ccfa5a37c/827969482124.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Big Girls Don't Cry"
+  artist: "Fergie"
+  format: Song
+  url: https://open.spotify.com/track/6dgWWAs5yhWPOtvE1zuoQ1
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0210591d448ff910d4275893a6
+  shelf: singles
+  note: ""
+
+- title: "Hey, Soul Sister"
+  artist: "Train"
+  format: Song
+  url: https://open.spotify.com/track/5i0eU4qWEhgsDcG6xO5yvy
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/fa/e8/28/fae8283a-ad10-a642-1d41-a4b3402da4ba/884977817027.jpg/600x600bb.jpg
   shelf: singles
   note: ""
