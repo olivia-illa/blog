@@ -43,14 +43,6 @@
   shelf: singles
   note: ""
 
-- title: "Carolina in My Mind"
-  artist: "James Taylor"
-  format: Song
-  url: https://open.spotify.com/track/2T5Ch09nefwckOu5NQvjIk
-  cover: https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/98/74/40/98744095-a46e-eccd-ab81-ec9789d884d4/mzi.modzlreh.jpg/600x600bb.jpg
-  shelf: singles
-  note: ""
-
 - title: "Creep"
   artist: "Radiohead"
   format: Song
@@ -204,18 +196,42 @@
   shelf: singles
   note: ""
 
-- title: "Alley Rose"
-  artist: "Conan Gray"
-  format: Song
-  url: https://open.spotify.com/track/4h2KgbKNdOSVC3IJnFOFoV
-  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0223e2af3e96fa7af0bd297e38
-  shelf: singles
-  note: ""
-
 - title: "Anything He Was"
   artist: "Tiny Habits"
   format: Song
   url: https://open.spotify.com/track/5jEf7MDPf8Bo4blM8Otusr
   cover: https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9c/04/dc/9c04dc0a-f2e7-48f0-35a7-3cc568c2f143/823375232070_Cover.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Hotel California"
+  artist: "Eagles"
+  format: Song
+  url: https://open.spotify.com/track/40riOy7x9W7GXjyGp4pjAv
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024637341b9f507521afa9a778
+  shelf: singles
+  note: ""
+
+- title: "American Pie"
+  artist: "Don McLean"
+  format: Song
+  url: https://open.spotify.com/track/1fDsrQ23eTAVFElUMaf38X
+  cover: https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020085dd4362653ef4c54ebbeb
+  shelf: singles
+  note: ""
+
+- title: "i'm so tired..."
+  artist: "Lauv, Troye Sivan"
+  format: Song
+  url: https://open.spotify.com/track/4vjpLMyL3ZO6aphdYr8XYw
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f1/ed/ba/f1edba90-e315-c320-2ca1-530a7c74b941/5056167111702_1.jpg/600x600bb.jpg
+  shelf: singles
+  note: ""
+
+- title: "Our Town"
+  artist: "James Taylor"
+  format: Song
+  url: https://open.spotify.com/track/5oaHpdRs1DuuDKNVrUgBPF
+  cover: https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/eb/f3/00/ebf300a7-22ab-9f61-29ef-9c86acc889b3/16DMGIM07683.rgb.jpg/600x600bb.jpg
   shelf: singles
   note: ""
