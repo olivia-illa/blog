@@ -4,7 +4,7 @@ body_class: page-easter-eggs
 title: "Easter eggs"
 date: 2026-11-18 01:30:00 +0800
 permalink: /drafts/easter-eggs/
-tags: [site-notes]
+tags: [random]
 ---
 
 
