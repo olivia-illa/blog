@@ -1,7 +1,15 @@
 (() => {
   const scatter = document.querySelector('.banana-stack');
   if (!scatter) return;
+  const mobileLayout = matchMedia('(max-width: 600px)');
   let titlesPinned = false;
+  let selectedEntry;
+  const clearSelection = () => {
+    if (!selectedEntry) return;
+    selectedEntry.banana.classList.remove('is-selected');
+    if (!titlesPinned) selectedEntry.label.classList.remove('is-visible');
+    selectedEntry = null;
+  };
   const entries = [...scatter.querySelectorAll('.banana-entry')].map((banana, index) => {
     const label = banana.querySelector('.banana-hover-title');
     label.id = `banana-label-${index}`;
@@ -9,11 +17,12 @@
     document.body.append(label);
     banana.setAttribute('aria-describedby', label.id);
     const show = () => {
-      if (matchMedia('(max-width: 600px)').matches) return;
+      if (mobileLayout.matches) return;
       label.classList.add('is-visible', 'is-hovered');
       banana.classList.add('is-hovered');
     };
     const hide = () => {
+      if (mobileLayout.matches) return;
       label.classList.remove('is-hovered');
       banana.classList.remove('is-hovered');
       if (!titlesPinned) label.classList.remove('is-visible');
@@ -22,14 +31,29 @@
     banana.addEventListener('mouseleave', hide);
     banana.addEventListener('focus', show);
     banana.addEventListener('blur', hide);
-    return { banana, label, item: banana.closest('li') };
+    const entry = { banana, label, item: banana.closest('li') };
+    banana.addEventListener('click', event => {
+      if (!mobileLayout.matches || event.detail === 0 || selectedEntry === entry) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      clearSelection();
+      if (titlesPinned) {
+        titlesPinned = false;
+        entries.forEach(({ label }) => label.classList.remove('is-visible'));
+      }
+      selectedEntry = entry;
+      banana.classList.add('is-selected');
+      label.classList.add('is-visible');
+    });
+    return entry;
   });
 
+  mobileLayout.addEventListener('change', clearSelection);
   // Keep the original scattered positions and one shared fruit size.
   const layout = () => {
     const bounds = scatter.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
-    const mobile = matchMedia('(max-width: 600px)').matches;
+    const mobile = mobileLayout.matches;
     if (mobile) {
       entries.forEach(({ banana, label, item }) => {
         item.style.cssText = '';
@@ -79,6 +103,7 @@
   };
   document.addEventListener('click', event => {
     if (event.target.closest('a, button, input, select, textarea, label')) return;
+    clearSelection();
     titlesPinned = true;
     entries.forEach(({ label }) => label.classList.add('is-visible'));
   });

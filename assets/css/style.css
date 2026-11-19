@@ -2217,10 +2217,15 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
     position: absolute;
     width: min(190px, 53%);
     max-width: none;
-    opacity: 1;
     transform: none;
     translate: none;
     text-align: center;
+  }
+  .banana-stack li:has(.banana-entry:focus-visible) .banana-floating-label {
+    opacity: 1;
+  }
+  .banana-entry.is-selected .banana-peel {
+    fill: color-mix(in srgb, #f5cd55 50%, var(--bg-color));
   }
 }
 
