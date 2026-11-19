@@ -2162,7 +2162,6 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-stack li:nth-child(n) { left: 25%; }
   .banana-floating-label.is-mobile-label {
     position: absolute;
-    opacity: 1;
     translate: none;
     transition: none;
     text-align: left;
@@ -2217,11 +2216,13 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
     position: absolute;
     width: min(190px, 53%);
     max-width: none;
+    visibility: hidden;
     transform: none;
     translate: none;
     text-align: center;
   }
-  .banana-stack li:has(.banana-entry:focus-visible) .banana-floating-label {
+  .banana-stack .banana-entry.is-selected + .banana-floating-label.is-mobile-label {
+    visibility: visible;
     opacity: 1;
   }
   .banana-entry.is-selected .banana-peel {

@@ -7,7 +7,6 @@
   const clearSelection = () => {
     if (!selectedEntry) return;
     selectedEntry.banana.classList.remove('is-selected');
-    if (!titlesPinned) selectedEntry.label.classList.remove('is-visible');
     selectedEntry = null;
   };
   const entries = [...scatter.querySelectorAll('.banana-entry')].map((banana, index) => {
@@ -37,13 +36,8 @@
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       clearSelection();
-      if (titlesPinned) {
-        titlesPinned = false;
-        entries.forEach(({ label }) => label.classList.remove('is-visible'));
-      }
       selectedEntry = entry;
       banana.classList.add('is-selected');
-      label.classList.add('is-visible');
     });
     return entry;
   });
