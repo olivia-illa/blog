@@ -226,15 +226,15 @@ body_class: page-recipes
     fill: var(--text-color);
   }
 
-  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible) .recipes-sponge {
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible, .recipes-layer.is-selected) .recipes-sponge {
     fill: var(--text-color);
   }
 
-  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible) :is(path:not(.recipes-sponge, .recipes-cream), use) {
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible, .recipes-layer.is-selected) :is(path:not(.recipes-sponge, .recipes-cream), use) {
     stroke: var(--bg-color);
   }
 
-  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible) use {
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible, .recipes-layer.is-selected) use {
     fill: var(--text-color);
   }
 
@@ -266,21 +266,89 @@ body_class: page-recipes
     transform: translate(0, 0);
   }
 
-  .recipes-cake a:is(:hover, :focus-visible) .recipes-label {
+  .recipes-cake a:is(:hover, :focus-visible, .is-selected) .recipes-label {
     visibility: visible;
   }
 
+  .recipes-mobile-labels { display: none; }
+
   @media (max-width: 38rem) {
-    .recipes-label { font-size: 24px; }
+    .recipes-cake { width: 95%; margin-inline: auto; }
+    .recipes-mobile-labels { display: inline; }
+    .recipes-cake a .recipes-label { display: none; }
+
+    .recipes-mobile-labels .recipes-label {
+      x: -110px;
+      width: 140px;
+      text-align: right;
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    .recipes-mobile-labels .recipes-label-right {
+      x: 440px;
+      text-align: left;
+    }
+
+    .recipes-cake:not(.show-titles) .recipes-mobile-labels .recipes-label {
+      transform: translateY(var(--label-shift-y));
+    }
+
+    .recipes-mobile-labels .recipes-label.is-selected { visibility: visible; }
+
+    .recipes-mobile-labels .recipes-label > div {
+      overflow-wrap: anywhere;
+    }
   }
 </style>
 
 <script>
+  const phoneCakeLayout = window.matchMedia('(max-width: 38rem)');
+
   document.querySelectorAll('.recipes-cake').forEach((cake) => {
     const background = cake.querySelector('.recipes-background');
 
+    const mobileLabels = document.createElementNS(cake.namespaceURI, 'g');
+    mobileLabels.classList.add('recipes-mobile-labels');
+    const labelsByLink = new Map();
+    cake.querySelectorAll('a .recipes-label').forEach((label) => {
+      const overlay = label.cloneNode(true);
+      labelsByLink.set(label.closest('a'), overlay);
+      mobileLabels.append(overlay);
+    });
+    cake.append(mobileLabels);
+
+    const desktopViewBox = cake.getAttribute('viewBox');
+    const drawingHeight = cake.viewBox.baseVal.height;
+    const updateViewBox = () => {
+      cake.setAttribute('viewBox', phoneCakeLayout.matches ? `-120 0 710 ${drawingHeight}` : desktopViewBox);
+    };
+    updateViewBox();
+    phoneCakeLayout.addEventListener('change', updateViewBox);
+
+    let selectedLayer = null;
+    const clearSelection = () => {
+      selectedLayer?.classList.remove('is-selected');
+      labelsByLink.get(selectedLayer)?.classList.remove('is-selected');
+      selectedLayer = null;
+    };
+
     cake.addEventListener('click', (event) => {
-      if (event.target.closest('a')) return;
+      const link = event.target.closest('a');
+      if (link) {
+        const useTwoTaps = event.pointerType === 'touch' || (phoneCakeLayout.matches && event.detail > 0);
+        if (!useTwoTaps || !link.matches('.recipes-layer') || link === selectedLayer) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        event.preventDefault();
+        clearSelection();
+        link.classList.add('is-selected');
+        labelsByLink.get(link)?.classList.add('is-selected');
+        selectedLayer = link;
+        return;
+      }
+
+      clearSelection();
       const showTitles = cake.classList.toggle('show-titles');
       background.setAttribute('aria-pressed', showTitles);
     });
