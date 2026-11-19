@@ -48,7 +48,11 @@
     return entry;
   });
 
-  mobileLayout.addEventListener('change', clearSelection);
+  mobileLayout.addEventListener('change', () => {
+    titlesPinned = false;
+    clearSelection();
+    entries.forEach(({ label }) => label.classList.remove('is-visible'));
+  });
   // Keep the original scattered positions and one shared fruit size.
   const layout = () => {
     const bounds = scatter.getBoundingClientRect();
@@ -104,6 +108,7 @@
   document.addEventListener('click', event => {
     if (event.target.closest('a, button, input, select, textarea, label')) return;
     clearSelection();
+    if (mobileLayout.matches) return;
     titlesPinned = true;
     entries.forEach(({ label }) => label.classList.add('is-visible'));
   });

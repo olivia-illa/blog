@@ -222,7 +222,7 @@ body_class: page-recipes
     fill: transparent;
   }
 
-  .recipes-candle:is(:hover, :focus-visible) .recipes-flame {
+  .recipes-candle:is(:hover, :focus-visible, .is-selected) .recipes-flame {
     fill: var(--text-color);
   }
 
@@ -273,25 +273,24 @@ body_class: page-recipes
   .recipes-mobile-labels { display: none; }
 
   @media (max-width: 38rem) {
-    .recipes-cake { width: 95%; margin-inline: auto; }
+    .recipes-cake { width: 95%; margin-inline: auto; margin-top: 1.5rem; }
     .recipes-mobile-labels { display: inline; }
     .recipes-cake a .recipes-label { display: none; }
 
     .recipes-mobile-labels .recipes-label {
-      x: -110px;
-      width: 140px;
       text-align: right;
       font-size: 21px;
       font-weight: 600;
     }
 
     .recipes-mobile-labels .recipes-label-right {
-      x: 440px;
       text-align: left;
     }
 
+    .recipes-mobile-labels .recipes-candle-label { text-align: center; }
+
     .recipes-cake:not(.show-titles) .recipes-mobile-labels .recipes-label {
-      transform: translateY(var(--label-shift-y));
+      transform: translate(var(--candle-label-shift, 0px), var(--label-shift-y));
     }
 
     .recipes-mobile-labels .recipes-label.is-selected { visibility: visible; }
@@ -313,7 +312,18 @@ body_class: page-recipes
     const labelsByLink = new Map();
     cake.querySelectorAll('a .recipes-label').forEach((label) => {
       const overlay = label.cloneNode(true);
-      labelsByLink.set(label.closest('a'), overlay);
+      const link = label.closest('a');
+      if (link.matches('.recipes-candle')) {
+        overlay.classList.add('recipes-candle-label');
+        overlay.setAttribute('x', '92');
+        overlay.setAttribute('y', '-44');
+        overlay.setAttribute('width', '200');
+        overlay.style.setProperty('--candle-label-shift', '175px');
+      } else {
+        overlay.setAttribute('x', label.classList.contains('recipes-label-right') ? '440' : '-110');
+        overlay.setAttribute('width', '140');
+      }
+      labelsByLink.set(link, overlay);
       mobileLabels.append(overlay);
     });
     cake.append(mobileLabels);
@@ -321,7 +331,7 @@ body_class: page-recipes
     const desktopViewBox = cake.getAttribute('viewBox');
     const drawingHeight = cake.viewBox.baseVal.height;
     const updateViewBox = () => {
-      cake.setAttribute('viewBox', phoneCakeLayout.matches ? `-120 0 710 ${drawingHeight}` : desktopViewBox);
+      cake.setAttribute('viewBox', phoneCakeLayout.matches ? `-120 -60 710 ${drawingHeight + 60}` : desktopViewBox);
     };
     updateViewBox();
     phoneCakeLayout.addEventListener('change', updateViewBox);
@@ -337,7 +347,8 @@ body_class: page-recipes
       const link = event.target.closest('a');
       if (link) {
         const useTwoTaps = event.pointerType === 'touch' || (phoneCakeLayout.matches && event.detail > 0);
-        if (!useTwoTaps || !link.matches('.recipes-layer') || link === selectedLayer) return;
+        const canPreview = link.matches('.recipes-layer') || (phoneCakeLayout.matches && link.matches('.recipes-candle'));
+        if (!useTwoTaps || !canPreview || link === selectedLayer) return;
         if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
         event.preventDefault();
