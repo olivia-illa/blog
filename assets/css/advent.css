@@ -26,13 +26,14 @@ body.page-advent > main {
 }
 
 .advent-quote :is(blockquote, p) {
+  display: inline;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
 .advent-quote figcaption {
-  margin-top: .15rem;
+  display: inline;
   font-size: .7rem;
 }
 
