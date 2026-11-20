@@ -224,7 +224,7 @@ body.page-advent > main {
   }
 
   .advent-quote {
-    margin-bottom: 0;
+    display: none;
   }
 
   .advent-calendar {
