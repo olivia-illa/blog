@@ -229,6 +229,22 @@ bindAdventIllustration(".advent-ribbon-trigger", (wreath) => {
 bindAdventIllustration(".advent-moon-trigger", (moon) => {
   const house = moon.closest(".advent-house");
   const reduceMotion = adventReducedMotion.matches;
+  const headingBulbs = moon.closest(".advent-calendar").querySelector(".advent-heading-bulbs");
+  if (headingBulbs) {
+    headingBulbs.getAnimations().forEach((animation) => animation.cancel());
+    const glimmer = {
+      strokeWidth: reduceMotion ? "3.1px" : "4.8px",
+      stroke: "light-dark(#e8b000, #ffe15a)",
+    };
+    headingBulbs.animate([
+      { strokeWidth: "3.1px", stroke: "currentColor" },
+      { ...glimmer, offset: .23 },
+      { strokeWidth: "3.1px", stroke: "currentColor", offset: .48 },
+      { ...glimmer, offset: .71 },
+      { strokeWidth: "3.1px", stroke: "currentColor" },
+    ], { duration: 1120, delay: 100 });
+  }
+
   house.querySelectorAll(".advent-sky-star").forEach((star, index) => {
     star.getAnimations().forEach((animation) => animation.cancel());
     star.animate([

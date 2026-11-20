@@ -60,6 +60,23 @@ body_class: page-advent
         <path class="advent-red" d="M-6 2h0m1 2h0m7 2h0m4-3h0" stroke-width="1.55"/>
         <use href="#advent-bow" y="-8" transform="scale(.75)"/>
       </g>
+      <g id="advent-wreath-sprig">
+        <path class="advent-holly" d="M-2.5 1.4q1.4-1.9 1-3.2l1.2.5Q.1-3 1.9-3.5l-.3 1.2 1.7-.4-.6 1.5 1.7.3q-1 1.2-2.3 1.5l.7.8q-2 1-3.2.3Z" stroke-width=".48"/>
+        <path class="advent-leaf-vein" d="M-2 1.3q2.4-.9 4.4-3.2" stroke-width=".4"/>
+      </g>
+      <g id="advent-roof-wreath">
+        <path class="advent-holly" fill-rule="evenodd" d="M0-10q7.6-.3 10 6.9q2.4 7.4-3.6 12.1q-6 4.8-12.9.7q-6.4-3.6-4.1-11.7Q-8.5-9.7 0-10Zm.2 4q-5.7-.2-6.6 5.3q-.7 4.7 3.8 6.9q4.4 2 7.3-1.8q3-3.5.9-7.4Q4.3-5.4.2-6Z"/>
+        {% for sprig in (0..11) %}
+          {% assign wreath_turn = sprig | times: 30 %}
+          {% capture sprig_tilt %}{% cycle 'wreath_sprig_tilt': -20, 8, -13, 15, -6, 1 %}{% endcapture %}
+          <use href="#advent-wreath-sprig" transform="rotate({{ wreath_turn }}) translate(0 -8.1) rotate({{ sprig_tilt }})"/>
+        {% endfor %}
+        <path class="advent-red" d="M-8-2h0m1.2-1h0m-1.3 5.3h0m2 4h0m1.2.5h0m4 2.5h0m1.5.4h0m4.4-1.4h0m2-1.6h0m1.8-4.1h0m1.2-1.2h0m-1.5-4.5h0" stroke-width="1.15"/>
+        <path class="advent-red" d="M-1-8q-.8 4.2-3.3 6q-2.4 1.2-4.3-.5l.1 1.5-1.6.4q3.2 2.4 6.2.7Q-.7-1 0-7.5Zm2 .2q2.2-.2 4.4 1.8q2.5 2.2 4.4.8l-.5 1.3 1.3.6q-3.1 2.1-6.2-.7Q2.5-6 0-6.6Z" stroke-width=".55"/>
+        <path class="advent-red" fill-rule="evenodd" d="M-.3-8.6q-3.2-4.8-6.9-4.7q-3.7.6-2.4 4.2q1.6 3.8 9.3 1.3Zm-1.5-.2q-3.1-3.6-5.6-3.1q-1.7.6-.6 2.4q1.6 1.8 6.2.7ZM.6-8.4q3.2-5 6.8-5q3.8.1 2.7 4.1q-1.9 3.9-9.5 1.7Zm1.6-.5q3.1-3.5 5.7-3.1q1.7.6.6 2.5q-1.8 1.8-6.3.6Z" stroke-width=".55"/>
+        <path d="M-8.2-11.4q-1.2 3.1 3.5 3.2m13.3-3.6q1.4 3.2-3.4 3.8M-1.3-6.9q-1 5.4-5.8 6.5m9.2-6.6q4.6 4.2 7 2.9" fill="none" stroke="var(--advent-snow)" stroke-width=".57"/>
+        <path class="advent-red" d="M-1.4-9.4q1.4-.6 3 .1l.1 2.6q-1.6.7-3.1 0Z" stroke-width=".55"/>
+      </g>
       <g id="advent-gift">
         <path class="advent-wash" d="M-11-5 2-10 11-6V5L-1 10-11 5Z"/>
         <path class="advent-paper" d="M-11-5 2-10 11-6-1-1Z"/>
@@ -254,9 +271,11 @@ body_class: page-advent
         <path d="M5-4h2q4 0 2 3q-1 2-5 2m-12 4h16M-3-7q-3-2-1-5m5 5q2-2 0-4"/>
         <path class="advent-red" d="M-2-2h0" stroke-width="2"/>
       </g>
-      <g id="advent-window-lantern">
-        <path class="advent-lantern-glass" d="M-6-8 0-13l6 5-1 11H-5Z"/>
-        <path d="M-6-8H6M-3-6l1 7m5-7-1 7M-2-12q-1-5 2-5t2 5M-6 4H6"/>
+      <g id="advent-window-pendant" transform="translate(8 0)">
+        <path d="M-.3 7q.7 5 .25 11" stroke-width=".65"/>
+        <path class="advent-lantern-glass" d="M-1.6 23q-1.3 2.7 1.6 3.4q2.5-.8 1.4-3.4Z" stroke-width=".55"/>
+        <path class="advent-paper" d="M-1.8 17.5q1.8-.8 3.8 0q.7 3.1 4 5.6q-6 1.4-12 0q3.1-2.2 4.2-5.6Z" stroke-width=".72"/>
+        <path class="advent-stone-detail" d="M-1 18.4q-.7 2.5-2.6 4m4.5-4q.6 2.4 2.5 3.9"/>
       </g>
       <g id="advent-window-gingerbread">
         <path class="advent-wash" d="M-8-3 0-12l8 9H6v7H-6v-7Z"/>
@@ -295,6 +314,23 @@ body_class: page-advent
         <path class="advent-paper" d="M-3-1h6q-1 2 1 4q-4 4-8 0q2-2 1-4Z"/>
         <path d="M0-1q-1-4-4-8m4 8q1-5 5-8m-4 8v-10m-3 6q-2 0-4-2m9 1q3-1 3-3"/>
         <path class="advent-red" d="M-4-9h0m5-2h0m4 2h0" stroke-width="1.9"/>
+      </g>
+      <g id="advent-florist-blossom">
+        <path class="advent-red" d="M0-1q-1.7-1.6-2 .2q-.4 1.2.9 1.5q-.2 1.7 1.1 1.5q1.2.4 1.1-1.3q1.6-.2 1.2-1.5Q2-2.6 0-1Z" stroke-width=".45"/>
+        <circle cx="0" cy=".25" r=".48" fill="var(--advent-light)" stroke="none"/>
+      </g>
+      <g id="advent-window-florist">
+        <path class="advent-stone-detail" d="M-18 57q16-.7 36 0M-12 53q.4-5-3-9m3 9q-.1-6 2-11m-2 11q2-5 5-7M12 53q-.5-5-3-8m3 8q0-7 2-10m-2 10q2-5 5-7M0 54q-1-3-3-5m3 5q1-3 3-5"/>
+        <path class="advent-holly" d="M-16 51h8l-1 6h-6ZM8 51q4-.8 8 0l-1.4 6H9.4Z" stroke-width=".6"/>
+        <path class="advent-paper" d="M-3 53q3-.7 6 0l-.7 4h-4.5Z" stroke-width=".55"/>
+        <use href="#advent-florist-blossom" x="-15" y="44"/>
+        <use href="#advent-florist-blossom" x="-10" y="42"/>
+        <use href="#advent-florist-blossom" x="-7" y="46"/>
+        <use href="#advent-florist-blossom" x="9" y="45"/>
+        <use href="#advent-florist-blossom" x="14" y="43"/>
+        <use href="#advent-florist-blossom" x="17" y="46"/>
+        <use href="#advent-florist-blossom" transform="translate(-3 49) scale(.68)"/>
+        <use href="#advent-florist-blossom" transform="translate(3 49) scale(.68)"/>
       </g>
       <g id="advent-window-clock">
         <path class="advent-wash" d="M-6 4v-7q0-5 6-5q6 0 6 5v7Z"/>
@@ -584,8 +620,10 @@ body_class: page-advent
         <g transform="translate(0 {% cycle 201, 493 %})">
           <path d="M73 0q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q27 9 54 0"/>
           <path d="M73 3q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q27 9 54 0" stroke-width="3" stroke-dasharray="1 3"/>
-          <use href="#advent-bow" x="73"/><use href="#advent-bow" x="185"/>
-          <use href="#advent-bow" x="297"/><use href="#advent-bow" x="407"/>
+          {% if forloop.first %}
+            <use href="#advent-bow" x="73"/><use href="#advent-bow" x="185"/>
+            <use href="#advent-bow" x="297"/><use href="#advent-bow" x="407"/>
+          {% endif %}
         </g>
       {% endfor %}
       <use href="#advent-bow" x="129" y="305"/><use href="#advent-bow" x="241" y="305"/><use href="#advent-bow" x="353" y="305"/>
@@ -603,7 +641,7 @@ body_class: page-advent
     </g>
 
     {% assign days = "8,19,17,16,22,2,13,10,20,7,12,24,5,4,3,23,9,15,1,21,11,18,6,14" | split: "," %}
-    {% assign window_styles = "ornaments:bookshelf:10,drapes:candles:11,ornaments:horse:-11,valance:tree:-10,wreath:globe:-10,drapes:cocoa:10,bracelet:skates:10,plain:violin:-11,valance:teapot:10,lights:lantern:10,drapes:vase:-10,wreath:gingerbread:-10,plain:small-tree:10,lights:robin:-10,lights:clock:11,drapes:letters:11,valance:collie:10,plain:parcels:-10,ornaments:stocking:-10,wreath:typewriter:-10,lights:none:0,wreath:none:0,ornaments:none:0,valance:none:0" | split: "," %}
+    {% assign window_styles = "ornaments:bookshelf:10,drapes:candles:11,ornaments:horse:-11,valance:tree:-10,wreath:globe:-10,drapes:cocoa:10,bracelet:skates:10,plain:violin:-11,valance:teapot:10,pendant:none:0,drapes:vase:-10,wreath:gingerbread:-10,plain:small-tree:10,lights:robin:-10,lights:clock:11,drapes:letters:11,valance:collie:10,plain:parcels:-10,ornaments:stocking:-10,wreath:typewriter:-10,lights:none:0,wreath:none:0,ornaments:florist:0,valance:none:0" | split: "," %}
     {% assign sill_styles = "wreath,ironwork,planter,wreath,stonework,flowers,planter,swag,ironwork,flowers,stonework,stonework,flowers,planter,swag,ironwork,wreath,stonework" | split: "," %}
     {% for day in days %}
       {% assign position = forloop.index0 %}
@@ -667,7 +705,7 @@ body_class: page-advent
             <use class="advent-lit-panes" href="#{{ shape }}-glass"/>
             <use class="advent-festive-panes" href="#{{ shape }}-glass" fill="url(#advent-festive-{{ festive_light }})"/>
             {% case upper_trim %}
-              {% when 'drapes', 'valance', 'lights' %}
+              {% when 'drapes', 'valance', 'lights', 'pendant' %}
                 <use href="#advent-window-{{ upper_trim }}" aria-hidden="true"/>
               {% when 'wreath' %}
                 <use href="#advent-wreath" transform="translate(0 17) scale(.75)" aria-hidden="true"/>
@@ -679,10 +717,12 @@ body_class: page-advent
                 <use href="#advent-window-tree" transform="translate({{ detail_x }} 25) scale(.93)" aria-hidden="true"/>
               {% when 'small-tree' %}
                 <use href="#advent-window-tree" transform="translate({{ detail_x }} 34) scale(.62)" aria-hidden="true"/>
-              {% when 'cocoa', 'lantern', 'gingerbread', 'stocking', 'teapot', 'horse', 'skates', 'globe', 'robin', 'vase', 'clock', 'letters', 'typewriter' %}
+              {% when 'cocoa', 'gingerbread', 'stocking', 'teapot', 'horse', 'skates', 'globe', 'robin', 'vase', 'clock', 'letters', 'typewriter' %}
                 <use href="#advent-window-{{ sill_detail }}" transform="translate({{ detail_x }} 48) scale(.83)" aria-hidden="true"/>
               {% when 'candles', 'parcels' %}
                 <use href="#advent-window-{{ sill_detail }}" transform="translate({{ detail_x }} 48) scale(.8)" aria-hidden="true"/>
+              {% when 'florist' %}
+                <use href="#advent-window-florist" aria-hidden="true"/>
               {% when 'violin' %}
                 <use href="#advent-window-violin" transform="translate({{ detail_x }} 24) rotate(-12) scale(.67)" aria-hidden="true"/>
               {% when 'bookshelf' %}
@@ -890,9 +930,9 @@ body_class: page-advent
         <path class="advent-shooting-spark" d="M0-5q.7 3.7 4.1 4.4Q.8.1.1 4.8q-.8-3.6-4.2-4.7Q-.8-.7 0-5Z"/>
       </g>
     </g>
-    <g class="advent-character advent-ribbon-trigger" role="button" tabindex="0" aria-label="Wrap the house in a Christmas ribbon" transform="translate(240 174) scale(1.24)">
-      <rect class="advent-character-hit" x="-11" y="-13" width="22" height="24" rx="4"/>
-      <use href="#advent-wreath" aria-hidden="true"/>
+    <g class="advent-character advent-ribbon-trigger" role="button" tabindex="0" aria-label="Wrap the house in a Christmas ribbon" transform="translate(240 174) scale(1.34)">
+      <rect class="advent-character-hit" x="-12" y="-15" width="24" height="27" rx="4"/>
+      <use href="#advent-roof-wreath" aria-hidden="true"/>
     </g>
     <g class="advent-house-ribbon" aria-hidden="true">
       <defs>

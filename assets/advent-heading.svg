@@ -12,7 +12,7 @@
       Q275 24 280 24Q286 23 282 32Q278 42 273 40Q269 38 272 33M285 24Q278 42 286 39L294 32
       Q299 25 301 21Q297 22 297 28Q304 36 298 40Q291 44 289 37Q296 40 305 35"/>
     <path stroke-width="1.35" d="M208 18l1-.5M227 24l14-1"/>
-    <path stroke-width="3.1" d="M12 12h0m10 5h0m13 4h0m4 13h0m18 5h0m15-10h0m18-3h0m13 9h0m13 3h0m-12 10h0m48-36h0m-13 19h0m10 10h0m18-20h0m8 14h0m16-6h0m12 9h0m15 3h0m13-14h0m21 3h0m13 8h0m14-13h0m8 14h0m13-12h0"/>
+    <path class="advent-heading-bulbs" stroke-width="3.1" d="M12 12h0m10 5h0m13 4h0m4 13h0m18 5h0m15-10h0m18-3h0m13 9h0m13 3h0m-12 10h0m48-36h0m-13 19h0m10 10h0m18-20h0m8 14h0m16-6h0m12 9h0m15 3h0m13-14h0m21 3h0m13 8h0m14-13h0m8 14h0m13-12h0"/>
   </g>
   <text x="240" y="68" font-family="Baskerville, 'Times New Roman', serif" text-anchor="middle"
     font-size="14" letter-spacing="2.4" fill="currentColor">ADVENT CALENDAR 2026</text>
