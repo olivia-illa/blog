@@ -4,6 +4,7 @@ html.page-advent {
 
 body.page-advent > main {
   display: flex;
+  flex-direction: column;
 }
 
 .advent-calendar {
@@ -12,11 +13,34 @@ body.page-advent > main {
   text-align: center;
 }
 
+.advent-intro-line {
+  flex: 0 0 auto;
+}
+
+.advent-quote {
+  flex: 0 0 auto;
+  max-width: 100ch;
+  margin: -.2rem auto .55rem;
+  text-align: center;
+  font: italic .78rem/1.35 Georgia, serif;
+}
+
+.advent-quote :is(blockquote, p) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.advent-quote figcaption {
+  margin-top: .15rem;
+  font-size: .7rem;
+}
+
 .advent-calendar h1 {
   position: relative;
   z-index: 1;
-  margin: 0.25rem 0 0;
-  transform: translateY(clamp(1.25rem, 5vw, 2.75rem));
+  margin: 0;
+  transform: translateY(.5rem);
 }
 
 .advent-heading-trigger {
@@ -51,7 +75,7 @@ body.page-advent > main {
   --advent-cat-ink: light-dark(#272225, var(--advent-snow));
   --advent-cat-coat: light-dark(var(--advent-snow), #272225);
   display: block;
-  width: min(100%, 40rem);
+  width: min(100%, 46rem);
   margin: 0 auto;
   color: var(--text-color);
   fill: none;
@@ -158,11 +182,24 @@ body.page-advent > main {
   stroke: none;
 }
 
-.advent-sign-lettering {
-  fill: var(--advent-red);
+.advent-sign-frame {
+  fill: color-mix(in srgb, var(--advent-red) 52%, var(--bg-color));
+  stroke-width: .65;
+}
+
+.advent-sign-board {
+  fill: color-mix(in srgb, #272225 88%, var(--bg-color));
+  stroke-width: .45;
+}
+
+.advent-sign-chalk {
+  stroke: var(--advent-snow);
+  stroke-width: .48;
+}
+
+.advent-ground-snow {
+  fill: color-mix(in srgb, var(--advent-snow) 67%, var(--bg-color));
   stroke: none;
-  text-anchor: middle;
-  font: bold 5.4px Georgia, serif;
 }
 
 @media (min-width: 768px) {
@@ -175,9 +212,26 @@ body.page-advent > main {
     flex-shrink: 0;
   }
 
+  body.page-advent > main {
+    position: relative;
+    padding-block: .35rem .65rem;
+  }
+
+  .advent-intro-line {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+  }
+
+  .advent-quote {
+    margin-bottom: 0;
+  }
+
   .advent-calendar {
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);
+    flex: 1 1 0;
+    min-height: 0;
     margin-bottom: 0;
   }
 
@@ -254,6 +308,16 @@ body.page-advent > footer::before { top: -6px; }
   fill: color-mix(in srgb, var(--advent-red) 64%, var(--bg-color));
 }
 
+.advent-shop-joinery {
+  fill: color-mix(in srgb, var(--advent-red) 32%, var(--bg-color));
+  stroke-width: .8;
+}
+
+.advent-storefront-21 .advent-shop-joinery,
+.advent-storefront-22 .advent-shop-joinery {
+  fill: color-mix(in srgb, var(--text-color) 24%, var(--bg-color));
+}
+
 .advent-shop-scroll {
   fill: none;
   stroke: var(--advent-red);
@@ -292,8 +356,7 @@ body.page-advent > footer::before { top: -6px; }
 
 .advent-snowfall {
   fill: var(--advent-snow);
-  stroke: color-mix(in srgb, var(--text-color) 28%, var(--bg-color));
-  stroke-width: .45;
+  stroke: none;
   pointer-events: none;
 }
 
@@ -538,6 +601,11 @@ body.page-advent > footer::before { top: -6px; }
 }
 
 @media (max-width: 767px) {
+  .advent-house {
+    width: calc(100% + 1rem);
+    margin-inline: -.5rem;
+  }
+
   .advent-house :is(.advent-door, .advent-character, .advent-snow-trigger) {
     touch-action: manipulation;
   }

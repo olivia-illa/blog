@@ -152,6 +152,14 @@ bindAdventIllustration(".advent-snowman-trigger", (snowman) => {
 });
 
 bindAdventIllustration(".advent-lamp-trigger", (lamp) => {
+  const glass = lamp.querySelector(".advent-lantern-glass");
+  const warm = "var(--advent-light)";
+  const dim = "color-mix(in srgb, var(--advent-light) 52%, var(--bg-color))";
+  const bright = "color-mix(in srgb, var(--advent-light) 64%, white)";
+  const fills = adventReducedMotion.matches ? [warm, bright, warm] : [warm, dim, bright, dim, bright, warm];
+  glass.getAnimations().forEach((animation) => animation.cancel());
+  glass.animate(fills.map((fill) => ({ fill })), { duration: 580 });
+
   const house = lamp.closest(".advent-house");
   const isFestive = house.classList.toggle("has-festive-lights");
 
