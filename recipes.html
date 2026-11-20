@@ -87,11 +87,11 @@ body_class: page-recipes
         {% endcase %}
         {% case forloop.index %}
           {% when 2 %}
-            <use href="#recipes-pearl" x="-84" y="28"/>
-            <use href="#recipes-pearl" x="-43" y="32"/>
-            <use href="#recipes-pearl" x="0" y="34"/>
-            <use href="#recipes-pearl" x="43" y="32"/>
-            <use href="#recipes-pearl" x="84" y="28"/>
+            <circle class="recipes-layer-dot" cx="-84" cy="28" r="5.5"/>
+            <circle class="recipes-layer-dot" cx="-43" cy="32" r="5.5"/>
+            <circle class="recipes-layer-dot" cx="0" cy="34" r="5.5"/>
+            <circle class="recipes-layer-dot" cx="43" cy="32" r="5.5"/>
+            <circle class="recipes-layer-dot" cx="84" cy="28" r="5.5"/>
           {% when 4, 10, 15 %}
             <path d="M-109 24Q-80 41-46 30Q-17 44 15 31Q49 42 82 27Q98 32 112 23"/>
             <use href="#recipes-shell" x="-46" y="30"/>
@@ -238,6 +238,12 @@ body_class: page-recipes
     fill: var(--text-color);
   }
 
+  .recipes-layer-dot { fill: var(--text-color); }
+
+  :is(.show-titles .recipes-layer, .recipes-layer:hover, .recipes-layer:focus-visible, .recipes-layer.is-selected) .recipes-layer-dot {
+    fill: var(--bg-color);
+  }
+
   .recipes-background {
     fill: transparent;
     cursor: pointer;
@@ -274,6 +280,7 @@ body_class: page-recipes
 
   @media (max-width: 38rem) {
     .recipes-cake { width: 95%; margin-inline: auto; margin-top: 0.5rem; }
+    .recipes-cake.show-titles .recipes-flame { fill: var(--text-color); }
     .recipes-mobile-labels { display: inline; }
     .recipes-cake a .recipes-label { display: none; }
 
