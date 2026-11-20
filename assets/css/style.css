@@ -2189,37 +2189,51 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .banana-floating-label.is-mobile-label { text-align: center; }
 }
 
-/* Phone fruit and caption share a stable, local layout block. */
+/* Keep each phone caption in flow with its own banana. */
 @media (max-width: 600px) {
-  .banana-stack { height: auto; display: block; }
+  .banana-stack { height: auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; }
   .banana-stack li:nth-child(n) {
     position: relative;
     width: 100%;
-    height: 340px;
+    height: auto;
     left: auto;
     top: auto;
     margin: 0;
     transform: none;
-    display: block;
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: .65rem;
   }
   .banana-stack .banana-entry,
   .banana-stack .banana-entry:hover {
-    position: absolute;
+    position: relative;
+    display: grid;
+    align-items: center;
     width: 72%;
     max-width: 320px;
-    left: 50%;
-    top: 50%;
+    aspect-ratio: 1;
     translate: none;
-    transform: translate(-50%, -50%) rotate(var(--banana-angle));
+    transform: none;
+    pointer-events: none;
   }
-  .banana-stack .banana-floating-label.is-mobile-label {
-    position: absolute;
-    width: min(190px, 53%);
+  .banana-stack .banana-single {
+    rotate: var(--banana-angle);
+    pointer-events: none;
+  }
+  .banana-stack .banana-peel {
+    pointer-events: visiblePainted;
+  }
+  .banana-stack li .banana-floating-label.is-mobile-label {
+    position: static;
+    width: min(100%, 340px);
     max-width: none;
     visibility: hidden;
     transform: none;
     translate: none;
     text-align: center;
+    overflow-wrap: anywhere;
   }
   .banana-stack .banana-entry.is-selected + .banana-floating-label.is-mobile-label,
   .banana-stack .banana-floating-label.is-mobile-label.is-visible {
