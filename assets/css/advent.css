@@ -142,3 +142,14 @@
   text-anchor: middle;
   font: bold 5.4px Georgia, serif;
 }
+
+body.page-advent > header > nav::after,
+body.page-advent > footer::before {
+  height: 13px;
+  border: 0;
+  pointer-events: none;
+  background: center / 200px 13px repeat-x url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 13'%3E%3Cpath d='M0 6C14-1 22 13 37 8S48-2 52 2S47 12 60 8S78 2 91 6S110 11 121 5S137 2 136 7S129 11 131 5S147 1 160 7S180 12 200 6' fill='none' stroke='%23757b59' stroke-width='1'/%3E%3Cpath d='M5 4h0m18 4h0m14 0h0m15-6h0m15 4h0m20-1h0m15 4h0m18-3h0m15 4h0m14-6h0m18 6h0m21 0h0' fill='none' stroke='%23b93646' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+body.page-advent > header > nav::after { bottom: -6px; }
+body.page-advent > footer::before { top: -6px; }
