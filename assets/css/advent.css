@@ -19,11 +19,27 @@ body.page-advent > main {
   transform: translateY(clamp(1.25rem, 5vw, 2.75rem));
 }
 
+.advent-heading-trigger {
+  display: block;
+  width: min(100%, 32rem);
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.advent-heading-trigger:focus-visible {
+  outline: 1px dashed var(--text-color);
+  outline-offset: 4px;
+}
+
 .advent-heading {
   color: #b93646;
   color: light-dark(#b93646, var(--text-color));
   display: block;
-  width: min(100%, 32rem);
+  width: 100%;
   height: auto;
   margin: 0 auto;
 }
@@ -129,7 +145,7 @@ body.page-advent > main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .advent-panel { transition: none; }
+  .advent-panel { transition-timing-function: ease-out; }
 }
 
 .advent-red {
@@ -332,7 +348,7 @@ body.page-advent > footer::before { top: -6px; }
 @media (prefers-reduced-motion: reduce) {
   .advent-lit-panes,
   .advent-festive-panes {
-    transition: none;
+    transition-duration: 220ms;
   }
 }
 
@@ -388,7 +404,10 @@ body.page-advent > footer::before { top: -6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .advent-elf-motion { transition: none; }
+  .advent-elf-motion {
+    transform: translateY(14px);
+    transition-timing-function: ease-out;
+  }
 }
 
 .advent-caroler {
@@ -411,7 +430,10 @@ body.page-advent > footer::before { top: -6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .advent-caroler { transition: none; }
+  .advent-caroler {
+    transform: translateX(var(--caroler-hide-x));
+    transition-timing-function: ease-out;
+  }
 }
 
 .advent-house-ribbon {
@@ -513,4 +535,23 @@ body.page-advent > footer::before { top: -6px; }
 .advent-tree-wash {
   fill: color-mix(in srgb, var(--text-color) 16%, var(--bg-color));
   stroke: none;
+}
+
+@media (max-width: 767px) {
+  .advent-house :is(.advent-door, .advent-character, .advent-snow-trigger) {
+    touch-action: manipulation;
+  }
+
+  .advent-house :is(.advent-character-hit, .advent-tree-hit) {
+    pointer-events: all;
+  }
+
+  .advent-character-hit {
+    stroke: transparent;
+    stroke-width: 5;
+  }
+
+  .advent-character:focus-visible .advent-character-hit {
+    stroke-width: 1;
+  }
 }

@@ -13,7 +13,9 @@ body_class: page-advent
 <link rel="stylesheet" href="{{ '/assets/css/advent.css' | relative_url }}">
 <article class="advent-calendar">
   <h1>
-    {% include_relative assets/advent-heading.svg %}
+    <button class="advent-heading-trigger" type="button" aria-label="Merry Christmas · Advent Calendar 2026 — play the Christmas animations">
+      {% include_relative assets/advent-heading.svg %}
+    </button>
   </h1>
   <svg class="advent-house" viewBox="0 0 480 650" role="group" aria-label="Snowy townhouse with 24 numbered windows and doors">
     <defs>

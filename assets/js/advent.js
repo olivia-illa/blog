@@ -42,28 +42,29 @@ window.addEventListener("pageshow", () => {
 
 const adventSnowflakes = document.querySelectorAll(".advent-snowfall circle");
 const adventReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const adventRibbonDuration = 8900;
 
-function startAdventSnowfall(tree) {
+function startAdventSnowfall(...trees) {
   const reduceMotion = adventReducedMotion.matches;
-  if (!reduceMotion) {
+  trees.forEach((tree) => {
     const boughs = tree.querySelector(".advent-background-tree");
-    boughs.getAnimations().forEach((animation) => animation.cancel());
-    boughs.animate([
-      { transform: "rotate(0deg)" },
-      { transform: "rotate(-2.8deg)" },
-      { transform: "rotate(2.1deg)" },
-      { transform: "rotate(-1.4deg)" },
-      { transform: "rotate(.8deg)" },
-      { transform: "rotate(0deg)" },
-    ], { duration: 640, easing: "ease-out" });
-  }
+    replayAdventMotion(boughs, reduceMotion
+      ? ["rotate(0deg)", "rotate(-1.15deg)", "rotate(.8deg)", "rotate(0deg)"]
+      : ["rotate(0deg)", "rotate(-2.8deg)", "rotate(2.1deg)", "rotate(-1.4deg)",
+        "rotate(.8deg)", "rotate(0deg)"], 640);
+  });
 
   adventSnowflakes.forEach((flake, index) => {
     flake.getAnimations().forEach((animation) => animation.cancel());
 
     const drift = index % 2 === 0 ? 18 : -12;
     const keyframes = reduceMotion
-      ? [{ opacity: 0 }, { opacity: .85 }, { opacity: 0 }]
+      ? [
+          { opacity: 0, transform: "translateY(-16px)" },
+          { opacity: .8, offset: .27 },
+          { opacity: .75, offset: .75 },
+          { opacity: 0, transform: "translateY(55px)" },
+        ]
       : [
           { opacity: 0, transform: "translate(0, -95px)" },
           { opacity: .9, offset: .22 },
@@ -72,8 +73,8 @@ function startAdventSnowfall(tree) {
         ];
 
     flake.animate(keyframes, {
-      duration: reduceMotion ? 1600 : 2800 + (index % 7) * 260,
-      delay: reduceMotion ? 0 : (index % 11) * 110,
+      duration: reduceMotion ? 2550 : 2800 + (index % 7) * 260,
+      delay: (index % 11) * (reduceMotion ? 45 : 110),
     });
   });
 }
@@ -94,7 +95,7 @@ function replayAdventMotion(element, transforms, duration) {
   element.getAnimations().forEach((animation) => animation.cancel());
   element.animate(transforms.map((transform) => ({ transform })), {
     duration,
-    easing: adventReducedMotion.matches ? "steps(1, end)" : "ease-in-out",
+    easing: "ease-in-out",
   });
 }
 
@@ -125,8 +126,10 @@ bindAdventIllustration(".advent-cat-trigger", (cat) => {
   const retreat = `translate(${direction * 10}px, -5px) rotate(${direction * 9}deg) scale(.99, 1.04)`;
 
   if (adventReducedMotion.matches) {
-    replayAdventMotion(body, [resting, crouch, resting], 850);
-    replayAdventMotion(partner, [resting, retreat, resting], 850);
+    const lean = `translate(${direction * 5}px, -3px) rotate(0deg) scale(1)`;
+    const nudge = `translate(${direction * 5}px, 0) rotate(0deg) scale(1)`;
+    replayAdventMotion(body, [resting, crouch, lean, nudge, resting], 1180);
+    replayAdventMotion(partner, [resting, resting, nudge, resting], 1180);
     return;
   }
 
@@ -137,7 +140,8 @@ bindAdventIllustration(".advent-cat-trigger", (cat) => {
 bindAdventIllustration(".advent-snowman-trigger", (snowman) => {
   const body = snowman.querySelector(".advent-snowman-motion");
   const hat = snowman.querySelector(".advent-hat-motion");
-  replayAdventMotion(body, ["rotate(0deg)", "rotate(-13deg)", "rotate(-13deg)", "rotate(0deg)"], 1550);
+  const bow = adventReducedMotion.matches ? "-7deg" : "-13deg";
+  replayAdventMotion(body, ["rotate(0deg)", `rotate(${bow})`, `rotate(${bow})`, "rotate(0deg)"], 1550);
   replayAdventMotion(hat, [
     "translate(0, 0) rotate(0deg)",
     "translate(6px, -8px) rotate(12deg)",
@@ -158,19 +162,22 @@ bindAdventIllustration(".advent-lamp-trigger", (lamp) => {
 
 bindAdventIllustration(".advent-gift-trigger", (tree) => {
   tree.classList.add("has-tree-presents");
-  if (adventReducedMotion.matches) return;
-
+  const reduceMotion = adventReducedMotion.matches;
   const branches = tree.querySelector(".advent-christmas-tree-motion");
-  replayAdventMotion(branches, [
-    "rotate(0deg)", "rotate(-5deg)", "rotate(4deg)", "rotate(-3deg)",
-    "rotate(2deg)", "rotate(0deg)",
-  ], 680);
+  replayAdventMotion(branches, reduceMotion
+    ? ["rotate(0deg)", "rotate(-2deg)", "rotate(1.4deg)", "rotate(0deg)"]
+    : ["rotate(0deg)", "rotate(-5deg)", "rotate(4deg)", "rotate(-3deg)",
+      "rotate(2deg)", "rotate(0deg)"], 680);
 
   tree.querySelectorAll(".advent-falling-present").forEach((gift, index) => {
     gift.getAnimations().forEach((animation) => animation.cancel());
     const inward = (1 - index) * 10;
     const height = 37 + (index % 2) * 12;
-    gift.animate([
+    gift.animate(reduceMotion ? [
+      { opacity: 0, transform: `translate(${inward / 2}px, -${height - 9}px)` },
+      { opacity: 1, offset: .26 },
+      { opacity: 1, transform: "translate(0, 0)" },
+    ] : [
       { opacity: 0, transform: `translate(${inward}px, -${height}px) rotate(${inward}deg)` },
       { opacity: 1, offset: .24 },
       { opacity: 1, transform: "translate(0, 1px) rotate(0deg)", offset: .77 },
@@ -192,8 +199,8 @@ bindAdventIllustration(".advent-ribbon-trigger", (wreath) => {
 
   ribbon.querySelectorAll(".advent-ribbon-reveal").forEach((band, index) => {
     band.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], {
-      duration: reduceMotion ? 0 : 760,
-      delay: reduceMotion ? 0 : index * 510,
+      duration: 760,
+      delay: index * 510,
       fill: "forwards",
       easing: "ease-in-out",
     });
@@ -207,13 +214,13 @@ bindAdventIllustration(".advent-ribbon-trigger", (wreath) => {
   ];
 
   ribbon.querySelectorAll(".advent-ribbon-piece").forEach((piece, index) => {
-    piece.animate(reduceMotion ? [{ opacity: 1 }] : [
+    piece.animate(reduceMotion ? [{ opacity: 0 }, { opacity: 1 }] : [
       { opacity: 0, transform: folds[index] },
       { opacity: 1, offset: .42 },
       { opacity: 1, transform: "rotate(0deg) scale(1)" },
     ], {
-      duration: reduceMotion ? 0 : 560,
-      delay: reduceMotion ? 0 : 950 + index * 145,
+      duration: 560,
+      delay: 950 + index * 145,
       fill: "forwards",
       easing: "cubic-bezier(.24, .66, .42, 1)",
     });
@@ -223,7 +230,7 @@ bindAdventIllustration(".advent-ribbon-trigger", (wreath) => {
     { opacity: 1 },
     { opacity: 1, offset: .64 },
     { opacity: 0 },
-  ], { duration: 8900 });
+  ], { duration: adventRibbonDuration });
 });
 
 bindAdventIllustration(".advent-moon-trigger", (moon) => {
@@ -259,7 +266,9 @@ bindAdventIllustration(".advent-moon-trigger", (moon) => {
   const shootingStar = house.querySelector(".advent-shooting-star");
   shootingStar.getAnimations().forEach((animation) => animation.cancel());
   shootingStar.animate(reduceMotion ? [
-    { opacity: 0 }, { opacity: 1 }, { opacity: 0 },
+    { opacity: 0, transform: "translate(0, 0)" },
+    { opacity: .9, offset: .25 },
+    { opacity: 0, transform: "translate(-90px, 20px)" },
   ] : [
     { opacity: 0, transform: "translate(0, 0)" },
     { opacity: 1, offset: .19 },
@@ -274,14 +283,20 @@ bindAdventIllustration(".advent-santa-trigger", (chimney) => {
 
   const onRoof = "translate(43px, 38px) rotate(19deg)";
   const reduceMotion = adventReducedMotion.matches;
-  santa.animate(reduceMotion ? [{ opacity: 1, transform: onRoof }] : [
+  santa.animate(reduceMotion ? [
+    { opacity: 0, transform: "translate(0, 43px) rotate(0deg)" },
+    { opacity: 1, transform: "translate(0, 17px) rotate(0deg)", offset: .13 },
+    { opacity: 1, transform: "translate(0, -2px) rotate(0deg)", offset: .36 },
+    { opacity: 1, transform: "translate(27px, 17px) rotate(19deg)", offset: .63 },
+    { opacity: 1, transform: onRoof },
+  ] : [
     { opacity: 0, transform: "translate(0, 43px)" },
     { opacity: 1, transform: "translate(0, 17px)", offset: .13 },
     { opacity: 1, transform: "translate(0, -2px)", offset: .30 },
     { opacity: 1, transform: "translate(16px, 0) rotate(46deg)", offset: .44 },
     { opacity: 1, transform: "translate(31px, 25px) rotate(28deg)", offset: .61 },
     { opacity: 1, transform: onRoof },
-  ], { duration: reduceMotion ? 0 : 3000, fill: "forwards" });
+  ], { duration: 3000, fill: "forwards" });
 });
 
 bindAdventIllustration(".advent-nutcracker-trigger", (chimney) => {
@@ -299,7 +314,14 @@ bindAdventIllustration(".advent-nutcracker-trigger", (chimney) => {
     const sway = Math.sign(reach);
     const landing = `translate(${x}px, ${y}px) rotate(${angle}deg)`;
 
-    nutcracker.animate(reduceMotion ? [{ opacity: 1, transform: landing }] : [
+    nutcracker.animate(reduceMotion ? [
+      { opacity: 0, transform: "translate(0, 32px)" },
+      { opacity: 0, transform: "translate(0, 16px)", offset: .08 },
+      { opacity: 1, transform: `translate(${reach}px, ${apex}px)`, offset: .24 },
+      { opacity: 1, transform: `translate(${(x + reach) / 2}px, 284px)`, offset: .68 },
+      { opacity: 1, transform: `translate(${x}px, ${y - 28}px)`, offset: .9 },
+      { opacity: 1, transform: landing },
+    ] : [
       { opacity: 0, transform: "translate(0, 32px) rotate(0deg)" },
       { opacity: 0, transform: "translate(0, 16px) rotate(0deg)", offset: .08 },
       { opacity: 1, transform: `translate(${reach}px, ${apex}px) rotate(${sway * 12}deg)`, offset: .24 },
@@ -308,6 +330,38 @@ bindAdventIllustration(".advent-nutcracker-trigger", (chimney) => {
       { opacity: 1, transform: landing, offset: .87 },
       { opacity: 1, transform: `translate(${x}px, ${y - 9}px) rotate(${angle - sway * 8}deg)`, offset: .93 },
       { opacity: 1, transform: landing },
-    ], { duration: reduceMotion ? 0 : 2450, delay: reduceMotion ? 0 : index * 340, fill: "both" });
+    ], { duration: 2450, delay: index * 340, fill: "both" });
   });
+});
+
+let adventShowPlaying = false;
+document.querySelector(".advent-heading-trigger")?.addEventListener("click", (event) => {
+  if (adventShowPlaying) return;
+  adventShowPlaying = true;
+
+  const house = event.currentTarget.closest(".advent-calendar").querySelector(".advent-house");
+  const play = (selector) => house.querySelector(selector)?.dispatchEvent(new MouseEvent("click"));
+
+  house.querySelectorAll(".advent-elf-trigger, .advent-carol-trigger").forEach((bush) => {
+    bush.setAttribute("aria-pressed", "false");
+  });
+  if (!house.classList.contains("has-festive-lights")) play(".advent-lamp-trigger");
+  play(".advent-moon-trigger");
+  startAdventSnowfall(...house.querySelectorAll(".advent-snow-trigger"));
+
+  window.setTimeout(() => {
+    play(".advent-cat-trigger");
+    play(".advent-santa-trigger");
+    play(".advent-nutcracker-trigger");
+  }, 380);
+  window.setTimeout(() => {
+    play(".advent-gift-trigger");
+    play(".advent-snowman-trigger");
+    play('.advent-elf-trigger[aria-pressed="false"]');
+    play('.advent-carol-trigger[aria-pressed="false"]');
+  }, 1250);
+  window.setTimeout(() => {
+    play(".advent-ribbon-trigger");
+    window.setTimeout(() => { adventShowPlaying = false; }, adventRibbonDuration);
+  }, 5300);
 });
