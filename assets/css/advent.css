@@ -1,0 +1,144 @@
+.advent-calendar {
+  text-align: center;
+}
+
+.advent-calendar h1 {
+  margin-bottom: 0;
+}
+
+.advent-heading {
+  display: block;
+  width: min(100%, 32rem);
+  height: auto;
+  margin: 0 auto;
+}
+
+.advent-house {
+  --advent-red: #b93646;
+  --advent-light: #ffe4ad;
+  --advent-snow: color-mix(in srgb, white 88%, var(--bg-color));
+  display: block;
+  width: min(100%, 32rem);
+  margin: 0 auto;
+  color: var(--text-color);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.advent-facade {
+  fill: color-mix(in srgb, var(--advent-red) 30%, var(--bg-color));
+}
+
+.advent-roof {
+  fill: color-mix(in srgb, var(--text-color) 75%, var(--bg-color));
+}
+
+.advent-light-stop { stop-color: var(--advent-light); }
+.advent-lantern-glow { fill: url("#advent-lantern-light"); stroke: none; }
+.advent-lantern-glass { fill: var(--advent-light); }
+.advent-lit-panes { fill: url("#advent-window-light"); }
+
+.advent-hatch { fill: url("#advent-hatching"); stroke: none; }
+.advent-bricks { fill: url("#advent-bricks"); stroke: none; }
+.advent-paper { fill: var(--bg-color); }
+.advent-wash { fill: color-mix(in srgb, var(--text-color) 9%, var(--bg-color)); }
+.advent-recess { fill: var(--bg-color); }
+.advent-door { cursor: pointer; }
+.advent-window-casing {
+  fill: none;
+  stroke: var(--bg-color);
+  stroke-width: 6;
+}
+
+.advent-door:is(:hover, :focus-visible) .advent-window-casing {
+  stroke: var(--advent-light);
+}
+
+.advent-panel {
+  fill: var(--bg-color);
+  transition: transform 320ms ease-in-out;
+}
+
+.advent-glass-glints {
+  fill: none;
+  stroke: var(--advent-snow);
+  stroke-width: 1.1;
+}
+
+.advent-falling-snow {
+  stroke: var(--advent-snow);
+  stroke-width: 2.4;
+  opacity: .85;
+}
+
+.advent-leaf-frame { fill: var(--bg-color); stroke-width: 1.15; }
+
+.advent-window-hardware {
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.advent-panel .advent-glazing-bars {
+  fill: none;
+  stroke-width: .9;
+}
+
+.advent-window-number {
+  pointer-events: none;
+  fill: var(--advent-red);
+  stroke: none;
+  text-anchor: middle;
+  font: bold 19px Georgia, serif;
+}
+
+.advent-panel-left { transform-origin: -18px 30px; }
+.advent-panel-right { transform-origin: 18px 30px; }
+
+.advent-door.is-opening .advent-panel-left {
+  transform: scaleX(.14) skewY(11deg);
+}
+
+.advent-door.is-opening .advent-panel-right {
+  transform: scaleX(.14) skewY(-11deg);
+}
+
+.advent-door.is-opening :is(.advent-window-number, .advent-hinge-line) {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advent-panel { transition: none; }
+}
+
+.advent-red {
+  fill: var(--advent-red);
+  stroke: var(--advent-red);
+}
+
+.advent-tiles {
+  fill: url("#advent-tiles");
+  stroke: none;
+}
+
+.advent-snow {
+  stroke-width: 2.3;
+  opacity: .6;
+}
+
+
+.advent-tree-garland {
+  fill: none;
+  stroke: var(--bg-color);
+  stroke-width: 2.3;
+  stroke-dasharray: .6 1.15;
+}
+
+.advent-sign-lettering {
+  fill: var(--advent-red);
+  stroke: none;
+  text-anchor: middle;
+  font: bold 5.4px Georgia, serif;
+}
