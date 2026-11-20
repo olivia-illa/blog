@@ -1,12 +1,27 @@
+html.page-advent {
+  scrollbar-gutter: stable both-edges;
+}
+
+body.page-advent > main {
+  display: flex;
+}
+
 .advent-calendar {
+  width: 100%;
+  margin: 0 auto auto;
   text-align: center;
 }
 
 .advent-calendar h1 {
-  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  margin: 0.25rem 0 0;
+  transform: translateY(clamp(1.25rem, 5vw, 2.75rem));
 }
 
 .advent-heading {
+  color: #b93646;
+  color: light-dark(#b93646, var(--text-color));
   display: block;
   width: min(100%, 32rem);
   height: auto;
@@ -18,7 +33,7 @@
   --advent-light: #ffe4ad;
   --advent-snow: color-mix(in srgb, white 88%, var(--bg-color));
   display: block;
-  width: min(100%, 32rem);
+  width: min(100%, 40rem);
   margin: 0 auto;
   color: var(--text-color);
   fill: none;
@@ -29,10 +44,12 @@
 }
 
 .advent-facade {
+  stroke-width: 1.65;
   fill: color-mix(in srgb, var(--advent-red) 30%, var(--bg-color));
 }
 
 .advent-roof {
+  stroke-width: 1.8;
   fill: color-mix(in srgb, var(--text-color) 75%, var(--bg-color));
 }
 
@@ -47,14 +64,20 @@
 .advent-wash { fill: color-mix(in srgb, var(--text-color) 9%, var(--bg-color)); }
 .advent-recess { fill: var(--bg-color); }
 .advent-door { cursor: pointer; }
+.advent-door:focus { outline: none; }
 .advent-window-casing {
   fill: none;
   stroke: var(--bg-color);
   stroke-width: 6;
 }
 
-.advent-door:is(:hover, :focus-visible) .advent-window-casing {
+.advent-door:hover .advent-window-casing {
   stroke: var(--advent-light);
+}
+
+.advent-door:focus-visible .advent-window-casing {
+  stroke: var(--text-color);
+  stroke-dasharray: 2 3;
 }
 
 .advent-panel {
@@ -74,7 +97,7 @@
   opacity: .85;
 }
 
-.advent-leaf-frame { fill: var(--bg-color); stroke-width: 1.15; }
+.advent-leaf-frame { fill: var(--bg-color); stroke-width: 1.65; }
 
 .advent-window-hardware {
   fill: none;
@@ -143,6 +166,34 @@
   font: bold 5.4px Georgia, serif;
 }
 
+@media (min-width: 768px) {
+  body.page-advent {
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  body.page-advent > :is(header, footer) {
+    flex-shrink: 0;
+  }
+
+  .advent-calendar {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    margin-bottom: 0;
+  }
+
+  .advent-house {
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+.advent-step-snow {
+  fill: none;
+  stroke: var(--advent-snow);
+  stroke-width: 1.8;
+}
+
 body.page-advent > header > nav::after,
 body.page-advent > footer::before {
   height: 13px;
@@ -153,3 +204,50 @@ body.page-advent > footer::before {
 
 body.page-advent > header > nav::after { bottom: -6px; }
 body.page-advent > footer::before { top: -6px; }
+
+.advent-cat { fill: #272225; stroke: none; }
+.advent-cat-tail { stroke: #272225; stroke-width: 2.8; }
+.advent-spotted-cat { fill: var(--advent-snow); stroke-width: 1.15; }
+.advent-spotted-tail-edge { stroke-width: 3.2; }
+.advent-spotted-tail { stroke: var(--advent-snow); stroke-width: 1.65; }
+.advent-cat-face { stroke: #272225; stroke-width: 1.7; }
+.advent-cat-eye { fill: var(--advent-light); stroke: none; }
+
+.advent-evergreen {
+  stroke: color-mix(in srgb, var(--text-color) 76%, var(--bg-color));
+  stroke-width: 3.1;
+}
+
+.advent-holly {
+  fill: color-mix(in srgb, var(--text-color) 33%, var(--bg-color));
+  stroke-width: .75;
+}
+
+.advent-leaf-vein {
+  stroke-width: .55;
+  opacity: .65;
+}
+
+.advent-drape {
+  fill: var(--bg-color);
+  fill-opacity: .63;
+  stroke-width: .75;
+}
+
+.advent-drape-folds {
+  stroke-width: .6;
+  opacity: .65;
+}
+.advent-stone-detail { stroke-width: .65; }
+.advent-balcony-cap { stroke-width: 1.35; }
+
+.advent-sill-snow,
+.advent-snow-flurries {
+  stroke: var(--advent-snow);
+  stroke-width: 2.6;
+}
+
+.advent-gift-tie {
+  fill: none;
+  stroke: var(--advent-red);
+}

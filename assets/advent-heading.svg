@@ -1,47 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 67">
-  <defs>
-    <path id="stitch" d="M.22.18Q2.12.46 2.5 2.7Q2.88.46 4.78.18Q5 2.98 2.5 4.94Q0 2.98 .22.18Z" fill="#b93646"/>
-    <pattern id="stitch-5" width="5" height="5" patternUnits="userSpaceOnUse">
-      <use href="#stitch"/>
-    </pattern>
-    <pattern id="stitch-4" width="4" height="4" patternUnits="userSpaceOnUse">
-      <use href="#stitch" transform="scale(.8)"/>
-    </pattern>
-  </defs>
-  <g transform="translate(36.75 2) scale(1)" fill="url(#stitch-5)">
-    <path transform="translate(0)" d="M0 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM5 5h5v5h-5ZM15 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM10 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM10 15h5v5h-5ZM20 15h5v5h-5ZM0 20h5v5h-5ZM20 20h5v5h-5ZM0 25h5v5h-5ZM20 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(27.25)" d="M0 0h5v5h-5ZM5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM0 10h5v5h-5ZM0 15h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM0 20h5v5h-5ZM0 25h5v5h-5ZM0 30h5v5h-5ZM5 30h5v5h-5ZM10 30h5v5h-5ZM15 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(54.5)" d="M0 0h5v5h-5ZM5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM0 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM0 20h5v5h-5ZM10 20h5v5h-5ZM0 25h5v5h-5ZM15 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(81.75)" d="M0 0h5v5h-5ZM5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM0 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM0 20h5v5h-5ZM10 20h5v5h-5ZM0 25h5v5h-5ZM15 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(109)" d="M0 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM20 5h5v5h-5ZM5 10h5v5h-5ZM15 10h5v5h-5ZM10 15h5v5h-5ZM10 20h5v5h-5ZM10 25h5v5h-5ZM10 30h5v5h-5Z"/>
-    <path transform="translate(163.5)" d="M5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM0 10h5v5h-5ZM0 15h5v5h-5ZM0 20h5v5h-5ZM0 25h5v5h-5ZM5 30h5v5h-5ZM10 30h5v5h-5ZM15 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(190.75)" d="M0 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM20 15h5v5h-5ZM0 20h5v5h-5ZM20 20h5v5h-5ZM0 25h5v5h-5ZM20 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(218)" d="M0 0h5v5h-5ZM5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM0 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM0 20h5v5h-5ZM10 20h5v5h-5ZM0 25h5v5h-5ZM15 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(245.25)" d="M0 0h5v5h-5ZM5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM20 0h5v5h-5ZM10 5h5v5h-5ZM10 10h5v5h-5ZM10 15h5v5h-5ZM10 20h5v5h-5ZM10 25h5v5h-5ZM0 30h5v5h-5ZM5 30h5v5h-5ZM10 30h5v5h-5ZM15 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(272.5)" d="M5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM0 10h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM20 20h5v5h-5ZM20 25h5v5h-5ZM0 30h5v5h-5ZM5 30h5v5h-5ZM10 30h5v5h-5ZM15 30h5v5h-5Z"/>
-    <path transform="translate(299.75)" d="M0 0h5v5h-5ZM5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM20 0h5v5h-5ZM10 5h5v5h-5ZM10 10h5v5h-5ZM10 15h5v5h-5ZM10 20h5v5h-5ZM10 25h5v5h-5ZM10 30h5v5h-5Z"/>
-    <path transform="translate(327)" d="M0 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM5 5h5v5h-5ZM15 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM10 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM10 15h5v5h-5ZM20 15h5v5h-5ZM0 20h5v5h-5ZM20 20h5v5h-5ZM0 25h5v5h-5ZM20 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(354.25)" d="M5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM0 5h5v5h-5ZM20 5h5v5h-5ZM0 10h5v5h-5ZM20 10h5v5h-5ZM0 15h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM20 15h5v5h-5ZM0 20h5v5h-5ZM20 20h5v5h-5ZM0 25h5v5h-5ZM20 25h5v5h-5ZM0 30h5v5h-5ZM20 30h5v5h-5Z"/>
-    <path transform="translate(381.5)" d="M5 0h5v5h-5ZM10 0h5v5h-5ZM15 0h5v5h-5ZM20 0h5v5h-5ZM0 5h5v5h-5ZM0 10h5v5h-5ZM5 15h5v5h-5ZM10 15h5v5h-5ZM15 15h5v5h-5ZM20 20h5v5h-5ZM20 25h5v5h-5ZM0 30h5v5h-5ZM5 30h5v5h-5ZM10 30h5v5h-5ZM15 30h5v5h-5Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" class="advent-heading" viewBox="0 0 480 73" role="img" aria-labelledby="advent-heading-title">
+  <title id="advent-heading-title">Merry Christmas · Advent Calendar 2026</title>
+  <g transform="translate(35.65 1) scale(1.34 1)" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Merry -->
+    <path d="M0 21C3 10 13 6 16 11Q19 16 9 40Q14 27 24 13Q30 5 31 13Q32 21 23 38Q30 24 38 15Q47 6 45 17L39 34Q37 42 44 39L51 32
+      Q58 32 61 27Q64 21 59 22Q53 23 51 32Q49 42 57 40Q62 39 67 32L72 23Q68 28 73 29Q78 28 78 25Q76 31 74 36Q72 43 79 39L85 33L90 23Q86 28 91 29Q96 28 96 25Q94 31 92 36Q90 43 97 39L103 33
+      Q106 29 107 24Q99 41 108 39Q114 38 120 23Q117 34 112 45Q107 54 102 50Q98 46 111 42L126 36"/>
+    <!-- Christmas -->
+    <path d="M157 19Q163 17 161 11Q159 5 152 9Q142 14 138 29Q135 42 145 42Q153 42 158 35L164 29
+      Q172 19 174 12Q175 5 171 7Q166 12 160 39Q170 23 175 24Q178 25 174 34Q170 44 178 39L184 33L189 23Q185 28 190 29Q195 28 195 25Q193 31 191 36Q189 43 196 39L202 33L206 24Q201 34 201 37Q202 44 210 37L215 31
+      Q222 25 223 21Q218 23 220 29Q227 37 220 40Q214 43 211 37Q218 39 227 35L233 29Q243 9 239 10Q235 11 231 27Q225 44 234 40L242 33L246 24L241 39Q250 24 254 24Q257 24 252 36Q260 23 264 24Q268 24 263 33Q259 43 267 39L272 34
+      Q275 24 280 24Q286 23 282 32Q278 42 273 40Q269 38 272 33M285 24Q278 42 286 39L294 32
+      Q299 25 301 21Q297 22 297 28Q304 36 298 40Q291 44 289 37Q296 40 305 35"/>
+    <path stroke-width="1.35" d="M208 18l1-.5M227 24l14-1"/>
+    <path stroke-width="3.1" d="M12 12h0m10 5h0m13 4h0m4 13h0m18 5h0m15-10h0m18-3h0m13 9h0m13 3h0m-12 10h0m48-36h0m-13 19h0m10 10h0m18-20h0m8 14h0m16-6h0m12 9h0m15 3h0m13-14h0m21 3h0m13 8h0m14-13h0m8 14h0m13-12h0"/>
   </g>
-  <g transform="translate(68.491 42) scale(0.79)" fill="url(#stitch-4)">
-    <path transform="translate(0)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(21.8)" d="M0 0h4v4h-4ZM4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4Z"/>
-    <path transform="translate(43.6)" d="M0 0h4v4h-4ZM16 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM4 20h4v4h-4ZM12 20h4v4h-4ZM8 24h4v4h-4Z"/>
-    <path transform="translate(65.4)" d="M0 0h4v4h-4ZM4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM16 0h4v4h-4ZM0 4h4v4h-4ZM0 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM0 16h4v4h-4ZM0 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(87.2)" d="M0 0h4v4h-4ZM16 0h4v4h-4ZM0 4h4v4h-4ZM4 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM8 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM12 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(109)" d="M0 0h4v4h-4ZM4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM16 0h4v4h-4ZM8 4h4v4h-4ZM8 8h4v4h-4ZM8 12h4v4h-4ZM8 16h4v4h-4ZM8 20h4v4h-4ZM8 24h4v4h-4Z"/>
-    <path transform="translate(152.6)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM16 0h4v4h-4ZM0 4h4v4h-4ZM0 8h4v4h-4ZM0 12h4v4h-4ZM0 16h4v4h-4ZM0 20h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(174.4)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(196.2)" d="M0 0h4v4h-4ZM0 4h4v4h-4ZM0 8h4v4h-4ZM0 12h4v4h-4ZM0 16h4v4h-4ZM0 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(218)" d="M0 0h4v4h-4ZM4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM16 0h4v4h-4ZM0 4h4v4h-4ZM0 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM0 16h4v4h-4ZM0 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(239.8)" d="M0 0h4v4h-4ZM16 0h4v4h-4ZM0 4h4v4h-4ZM4 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM8 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM12 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(261.6)" d="M0 0h4v4h-4ZM4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4Z"/>
-    <path transform="translate(283.4)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM0 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(305.2)" d="M0 0h4v4h-4ZM4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM0 16h4v4h-4ZM8 16h4v4h-4ZM0 20h4v4h-4ZM12 20h4v4h-4ZM0 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(348.8)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM16 8h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM4 16h4v4h-4ZM0 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(370.6)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM0 8h4v4h-4ZM16 8h4v4h-4ZM0 12h4v4h-4ZM16 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4Z"/>
-    <path transform="translate(392.4)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM16 4h4v4h-4ZM16 8h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM4 16h4v4h-4ZM0 20h4v4h-4ZM0 24h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4ZM16 24h4v4h-4Z"/>
-    <path transform="translate(414.2)" d="M4 0h4v4h-4ZM8 0h4v4h-4ZM12 0h4v4h-4ZM0 4h4v4h-4ZM0 8h4v4h-4ZM0 12h4v4h-4ZM4 12h4v4h-4ZM8 12h4v4h-4ZM12 12h4v4h-4ZM0 16h4v4h-4ZM16 16h4v4h-4ZM0 20h4v4h-4ZM16 20h4v4h-4ZM4 24h4v4h-4ZM8 24h4v4h-4ZM12 24h4v4h-4Z"/>
-  </g>
+  <text x="240" y="68" font-family="Baskerville, 'Times New Roman', serif" text-anchor="middle"
+    font-size="14" letter-spacing="2.4" fill="currentColor">ADVENT CALENDAR 2026</text>
 </svg>

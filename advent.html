@@ -13,7 +13,7 @@ body_class: page-advent
 <link rel="stylesheet" href="{{ '/assets/css/advent.css' | relative_url }}">
 <article class="advent-calendar">
   <h1>
-    <img class="advent-heading" src="{{ '/assets/advent-heading.svg' | relative_url }}" width="480" height="67" alt="Merry Christmas. Advent Calendar 2026.">
+    {% include_relative assets/advent-heading.svg %}
   </h1>
   <svg class="advent-house" viewBox="0 0 480 650" role="group" aria-label="Snowy townhouse with 24 numbered windows and doors">
     <defs>
@@ -37,13 +37,24 @@ body_class: page-advent
         <path d="M0 0q5 9 10 0q5 9 10 0M-5 7Q0 16 5 7q5 9 10 0q5 9 10 0" stroke="var(--bg-color)" stroke-width=".7" opacity=".62"/>
       </pattern>
       <path id="advent-bow" class="advent-red" d="M0 0Q-7-6-7-1Q-8 3-1 1L-4 7-1 6 0 3 3 7 5 6 1 1Q8 4 7-1Q7-6 0 0Z"/>
+      <g id="advent-holly-leaf">
+        <path class="advent-holly" d="M0 0Q2-3 4-2L5-4Q7-3 9-4Q8-2 10-1L12 0L9 1Q7 1 7 3Q5 2 4 3Q2 3 0 0Z"/>
+        <path class="advent-leaf-vein" d="M1 0q4-1 8 0"/>
+      </g>
       <g id="advent-wreath">
-        <circle r="8" class="advent-paper"/>
-        <circle r="6" fill="none" stroke-dasharray="1 2" stroke-width="3"/>
-        <use href="#advent-bow" y="-7" transform="scale(.85)"/>
+        {% for angle in (0..7) %}
+          {% assign rotation = angle | times: 45 %}
+          <use href="#advent-holly-leaf" transform="rotate({{ rotation }}) translate(0 -7) rotate(35) scale(.52)"/>
+        {% endfor %}
+        <path class="advent-red" d="M-6 2h0m1 2h0m7 2h0m4-3h0" stroke-width="1.55"/>
+        <use href="#advent-bow" y="-8" transform="scale(.75)"/>
       </g>
       <g id="advent-gift">
-        <path d="M-10-6H10V9H-10ZM-12-10H12V-6H-12ZM0-10V9m0-19q-12-1-8-6t8 6q12-1 8-6t-8 6"/>
+        <path class="advent-wash" d="M-11-5 2-10 11-6V5L-1 10-11 5Z"/>
+        <path class="advent-paper" d="M-11-5 2-10 11-6-1-1Z"/>
+        <path d="M-1-1v11m4-4 5-2m-17-3 4 2"/>
+        <path class="advent-red" d="M-6-7 4-3V8l-2 1V-2l-10-4Z"/>
+        <path class="advent-gift-tie" d="M0-6q-7 1-6-3q1-3 6 3q-1-5 2-5q4 0-2 5m0 0-2 2m2-2 4 1"/>
       </g>
       <g id="advent-bauble">
         <circle r="9" cy="2"/>
@@ -54,11 +65,6 @@ body_class: page-advent
       </g>
       <clipPath id="advent-left-leaf"><rect x="-26" y="-15" width="26" height="108"/></clipPath>
       <clipPath id="advent-right-leaf"><rect x="0" y="-15" width="26" height="108"/></clipPath>
-      <g id="advent-sprig">
-        <path d="M-11 3Q0 2 11-4M-5 2q-6-4-7-8q5 0 8 7q1-7 4-10q2 5-2 10q7-8 11-7q-2 4-9 7q6 0 10 2q-5 2-12-1"/>
-        <circle class="advent-red" cx="1" cy="3" r="1.1"/>
-        <circle class="advent-red" cx="4" cy="2" r="1.1"/>
-      </g>
       <g id="advent-topiary">
         <path class="advent-paper" d="M-9 0H9L7 17Q0 19-7 17Z"/>
         <path d="M-7 4H7M-4 8l1 6m7-6-1 6M0 0v-12"/>
@@ -75,14 +81,11 @@ body_class: page-advent
         <path d="M-4-31h0m7 0h0m-2 3 7 2-7 1m-5-1q1 2 3 2M0-15h0m1 5h0m-1 5h0" stroke-width="1.6"/>
       </g>
       <g id="advent-sidewalk-sign">
-        <path class="advent-wash" d="M7-32L19 0h-4L6-22M-10-9l-3 10h-4l3-12m22 1 3 11h4l-2-13"/>
-        <path class="advent-paper" d="M-12-35q12-3 24 0l3 26q-15-2-30 0Z"/>
-        <path d="M-10-32q10-2 20 0l2 19q-12-1-24 0Z"/>
+        <path class="advent-wash" d="M11-34l8 5 6 28-4 1-7-25Z"/>
+        <path d="M12-10l10 4"/>
+        <path class="advent-paper" d="M-13-35q12-2 25 0l2 35h-4l-1-9H-9l-1 9h-4Z"/>
+        <path class="advent-wash" d="M-10-32q10-1 19 0l1 20h-21Z"/>
         <text class="advent-sign-lettering" x="0" y="-24">Frohes<tspan x="0" dy="7">Fest!</tspan></text>
-      </g>
-      <g id="advent-entry-rail">
-        <path d="M0 1v-22q8-4 16-3h45q5 0 5 5v18M9 0v-22m9 22v-23m9 23v-23m9 23v-23m9 23v-23m9 23v-23"/>
-        <path d="M-2-22q4-4 16-5h47q8 0 8 7"/>
       </g>
       <path id="advent-arch" d="M-23 60V22C-23 10-12 0 0 0S23 10 23 22V60Z"/>
       <path id="advent-window" d="M-23 60V3Q0 0 23 3V60Z"/>
@@ -103,8 +106,7 @@ body_class: page-advent
         <path d="M-2-1v4m4-4v4"/>
       </g>
       <g id="advent-corbels">
-        <path class="advent-paper" d="M-23 0h8l-2 8-4 2Zm38 0h8l-2 10-4-2Z"/>
-        <path d="M-20 2l1 5m39-5-1 5"/>
+        <path class="advent-paper" d="M-20 0h5l-2 4h-3Zm35 0h5v4h-3Z"/>
       </g>
       <g id="advent-finial">
         <path class="advent-paper" d="M-5 0h10v-5H-5Zm2-5-2-5 5-8 5 8-2 5Z"/>
@@ -116,43 +118,143 @@ body_class: page-advent
       <clipPath id="advent-arch-opening"><use href="#advent-arch-glass"/></clipPath>
       <clipPath id="advent-window-opening"><use href="#advent-window-glass"/></clipPath>
       <clipPath id="advent-entry-opening"><use href="#advent-entry-glass"/></clipPath>
+      <g id="advent-window-drapes">
+        <path class="advent-drape" d="M-18 6h17q-3 24-12 30q1 8 3 16h-8Zm36 0H1q3 24 12 30q-1 8-3 16h8Z"/>
+        <path class="advent-drape-folds" d="M-15 9q-1 17 2 25m4-24q-1 12-3 18m-2 11-2 11M15 9q1 17-2 25M9 10q1 12 3 18m2 11 2 11M-18 35h6m24 0h6"/>
+      </g>
+      <g id="advent-window-tree">
+        <path class="advent-holly" d="M0 0q-1 6-5 10l3-1q-2 6-6 10l4-1q-2 6-7 10q5 2 10 0q5 2 10 0q-5-5-7-10l4 1q-4-4-6-10l3 1Q1 6 0 0Z"/>
+        <path class="advent-leaf-vein" d="M-4 15q3 1 6-1m-8 9q6 1 10-2"/>
+        <path class="advent-red" d="M-3 14h0m5 5h0m-6 5h0m7 2h0" stroke-width="2"/>
+      </g>
+      <g id="advent-window-dog">
+        <path class="advent-wash" d="M-5 6Q-5 0 0 0Q5 0 5 6Z"/>
+        <path class="advent-holly" d="M-3-7q-4-3-5 3q-1 5 2 5l3-2Zm6 0q4-3 5 3q1 5-2 5L3-1Z"/>
+        <path class="advent-paper" d="M-5-3q0-5 5-5t5 5q1 5-5 6q-6-1-5-6Z"/>
+        <path class="advent-red" d="M-4 2q4 2 8 0l-1 2H1l1 3H0l-2-3h-1Z"/>
+        <path d="M-2-3h0m4 0h0M0-1h0" stroke-width="1.45"/>
+      </g>
+      <g id="advent-window-puppy">
+        <path class="advent-wash" d="M-4 6q0-5 4-5t4 5Z"/>
+        <path class="advent-paper" d="M-4-4l-1-5 4 3q2-1 3 0l4-3-1 6q1 5-5 6q-5-1-4-7Z"/>
+        <path d="M-2-3h0m4 0h0M0-1h0" stroke-width="1.35"/>
+      </g>
+      <g id="advent-window-books">
+        <path class="advent-paper" d="M-8-4H8v4H-8Zm2 4H9v4H-6Z"/>
+        <path class="advent-holly" d="M-7-9H5v5H-7Z"/>
+        <path d="M-5-7h6m-6 5H5m-8 4H5"/>
+      </g>
+      <g id="advent-window-cocoa">
+        <path class="advent-paper" d="M-7-5H5L3 4H-5Z"/>
+        <path d="M5-4h2q4 0 2 3q-1 2-5 2m-12 4h16M-3-7q-3-2-1-5m5 5q2-2 0-4"/>
+        <path class="advent-red" d="M-2-2h0" stroke-width="2"/>
+      </g>
+      <g id="advent-window-lantern">
+        <path class="advent-lantern-glass" d="M-6-8 0-13l6 5-1 11H-5Z"/>
+        <path d="M-6-8H6M-3-6l1 7m5-7-1 7M-2-12q-1-5 2-5t2 5M-6 4H6"/>
+      </g>
+      <g id="advent-window-gingerbread">
+        <path class="advent-wash" d="M-8-3 0-12l8 9H6v7H-6v-7Z"/>
+        <path class="advent-paper" d="M-1 4V0q1-2 3 0v4"/>
+        <path d="M-8-3 0-10l8 7m-12 1h0m8 0h0" stroke-width="1.35"/>
+      </g>
+      <g id="advent-window-stocking">
+        <path class="advent-red" d="M-4-9h7v8q0 5-6 5q-6 0-5-3l4-3Z"/>
+        <path class="advent-paper" d="M-5-11H4v3H-5Z"/>
+        <path d="M1-11q1-5 3-3q1 2-2 3"/>
+      </g>
+      <g id="advent-window-valance">
+        <path class="advent-drape" d="M-18 8h36v9q-5 5-10 0q-8 6-16 0q-5 5-10 0Z"/>
+        <path class="advent-drape-folds" d="M-13 10v7m8-7 1 7m8-7-1 7m10-7v7"/>
+      </g>
+      <g id="advent-window-lights">
+        <path class="advent-drape-folds" d="M-18 10q9 12 18 2q9 10 18-2"/>
+        <path class="advent-red" d="M-14 14h0m6 2h0m13-1h0m8 0h0" stroke-width="2"/>
+      </g>
+      <g id="advent-window-candles">
+        <use href="#advent-candle" transform="translate(-5 1) scale(.64)"/>
+        <use href="#advent-candle" transform="translate(5 2) scale(.46)"/>
+      </g>
+      <g id="advent-window-parcels">
+        <use href="#advent-gift" transform="translate(-3 0) scale(.58)"/>
+        <use href="#advent-gift" transform="translate(7 2) scale(.36)"/>
+      </g>
+      <g id="advent-window-ornaments">
+        <path class="advent-drape-folds" d="M-9-7v9m9-9v4m8-4v12"/>
+        <use href="#advent-bauble" transform="translate(-9 7) scale(.43)"/>
+        <use href="#advent-bauble" transform="translate(0 2) scale(.36)"/>
+        <use href="#advent-bauble" transform="translate(8 9) scale(.35)"/>
+      </g>
       <g id="advent-glass-glints">
         <path d="M-16 28l5 5m-5-2 2 2m27-4 3 3m-30 15 2 2m26-3 2 2"/>
       </g>
       <g id="advent-sill">
         <path class="advent-paper" d="M-25 0q12 1 25 0t25 0v3l-3 2h-44l-3-2Z"/>
-        <path d="M-21 3h42"/>
+        <path class="advent-stone-detail" d="M-21 3h42"/>
+        <path class="advent-sill-snow" d="M-23-.6q8-1 16 0q10 .5 15-.4q7-.5 15 .2"/>
       </g>
       <g id="advent-star">
         <path d="M-8 0H8M0-8V8M-5-5 5 5m0-10-10 10"/>
       </g>
-      <g id="advent-balcony">
-        <path class="advent-paper" d="M-27 0Q0 4 27 0L25 19Q0 23-25 19Z"/>
-        <path d="M-20 4l2 13m5-12 1 13m6-12 1 13m5-13v13m6-13-1 13m8-14-1 13m8-14-2 13"/>
+      <g id="advent-sill-ironwork">
+        <path class="advent-paper" d="M-20 10q20 3 40 0l2 2q-22 4-44 0Z"/>
+        <path d="M-21 0q21 2 42 0m-40 1 1 9m36 0 1-9" stroke-width="1.35"/>
+        <path class="advent-stone-detail" d="M-15 2q-2 5 0 8m5-8q-2 5 0 9m5-9q-1 5 0 9m5-9v9m5-9q1 5 0 9m5-9q2 5 0 9m5-9q2 5 0 8"/>
       </g>
-      <g id="advent-awning">
-        <path class="advent-paper" d="M-29 2-3-12Q0-15 3-12L29 2v5L0-5-29 7Z"/>
-        <path d="M-23 1-2-10m5 1L23 2"/>
+      <g id="advent-sill-stonework">
+        <path class="advent-paper" d="M-22 0h44l-3 7h-38Z"/>
+        <path class="advent-stone-detail" d="M-18 3h12m12 0h12M-4 4l4-3 4 3-4 3Z"/>
+      </g>
+      <g id="advent-sill-planter">
+        <use href="#advent-holly-leaf" transform="translate(-15 -1) rotate(-22)"/>
+        <use href="#advent-holly-leaf" transform="translate(-5 -2) rotate(-66)"/>
+        <use href="#advent-holly-leaf" transform="translate(2 -3) rotate(-35)"/>
+        <use href="#advent-holly-leaf" transform="translate(6 -2) rotate(8)"/>
+        <path class="advent-paper" d="M-17-1h34l-3 8h-28Z"/>
+        <path class="advent-stone-detail" d="M-14 2h28m-23 1v3m6-3v3m6-3v3m6-3v3"/>
+        <use href="#advent-bow" transform="translate(0 1) scale(.55)"/>
+      </g>
+      <g id="advent-balcony">
+        <path class="advent-paper" d="M-24 0h48l-2 13q-22 3-44 0Z"/>
+        <path class="advent-balcony-cap" d="M-23 3h46"/>
+        <path class="advent-stone-detail" d="M-20 5l1 6m6-6 1 7m5-7v7m14-7v7m6-7-1 7m8-7-1 6"/>
       </g>
       <g id="advent-tree">
-        <path class="advent-paper" d="M-15-4Q0-7 15-4L11 14Q0 18-11 14Z"/>
-        <path d="M-14 1Q0 4 14 1m-22 4 2 8m6-7v9m8-10-2 8"/>
-        <path class="advent-wash" d="M0-67Q-3-57-11-49Q-15-45-13-43Q-11-41-7-45Q-10-38-17-33Q-21-29-19-27Q-17-25-12-29Q-16-21-23-16Q-26-13-23-10Q-20-9-15-13Q-20-8-16-6Q-12-5-7-10Q-9-5-4-5Q0-5 3-9Q5-5 9-5Q13-6 11-10Q18-5 21-8Q23-10 17-15Q22-12 24-15Q25-17 20-21Q15-25 12-31Q17-27 19-30Q20-32 16-36Q10-40 7-47Q12-43 14-46Q16-48 10-53Q4-58 0-67Z"/>
-        <path d="M-7-40q4 1 7-4q3 4 7 3m-17 12q5 3 9-3q3 5 9 3m-22 11q6 3 11-3q5 6 12 3M-4-48v3m12 8v3m-19 8v3m22-1v3M1-16v3"/>
-        <circle class="advent-paper" cx="-4" cy="-43" r="2.4"/>
-        <circle class="advent-red" cx="8" cy="-32" r="2.7"/>
-        <circle class="advent-red" cx="-11" cy="-21" r="2.6"/>
-        <circle class="advent-paper" cx="11" cy="-19" r="2.4"/>
-        <circle class="advent-red" cx="1" cy="-11" r="2.5"/>
-        <path class="advent-tree-garland" d="M-8-48q7 4 17 2m-21 11q8 1 15-4m-16 10q11 6 27 3m-31 11q14 4 34-3"/>
-        <path d="M-3-53l1-3m5 17 1-3m-15 8-2 2m19 12 2-2m-13 9-2 2m17-1 2 2"/>
-        <circle class="advent-lantern-glass" cx="4" cy="-47" r="1.6"/>
-        <circle class="advent-lantern-glass" cx="-5" cy="-28" r="1.6"/>
-        <circle class="advent-lantern-glass" cx="16" cy="-14" r="1.6"/>
-        <path class="advent-lantern-glass" d="M0-77l2 5 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1Z"/>
-        <use href="#advent-bow" transform="translate(-2 -53) scale(.68)"/>
-        <use href="#advent-gift" transform="translate(-12 -13) rotate(-12) scale(.23)"/>
-        <use href="#advent-bauble" transform="translate(11 -23) rotate(8) scale(.26)"/>
+        <path class="advent-paper" d="M-13 0h27l-3 14q-11 4-21 0Z"/>
+        <path d="M-8 4l2 9m7-8v10m7-11-1 9M-2-6v6"/>
+        <path class="advent-wash" d="M1-64q-5 10-14 17q-3 3-1 4q4 0 8-2q-6 10-15 16q-4 3-1 5q6 0 11-4q-6 10-16 16q-5 3-2 5q6 2 13-3q-3 5 0 6q8 0 13-5q-1 4 2 5q8-1 12-6q5 5 12 3q3-2-2-6q5 3 8 1q2-2-2-5q-9-6-15-13q6 3 9 0q2-2-2-5q-8-6-13-13q5 2 7 0q2-2-2-5q-6-5-10-11Z"/>
+        <path d="M-7-44q4-2 7-6m4 8 4 4m-20 10 6-5m10 4 7 5m-27 12 6-5m11 0 4 4"/>
+        <path class="advent-tree-garland" d="M-9-43q8 1 17-5m-25 20q14 1 31-8m-36 23q20 2 40-8"/>
+        <path d="M0-63v-4M-5-39v5m13-7v9m-19 10v4m14-8v10m13-3v5"/>
+        <circle class="advent-red" cx="-5" cy="-32" r="2.6"/>
+        <circle class="advent-lantern-glass" cx="8" cy="-29" r="2.6"/>
+        <circle class="advent-red" cx="-11" cy="-15" r="2.7"/>
+        <circle class="advent-lantern-glass" cx="3" cy="-13" r="2.5"/>
+        <circle class="advent-red" cx="16" cy="-11" r="2.3"/>
+        <path class="advent-lantern-glass" d="M0-75l1.7 4.4 4.6.3-3.5 3 1.1 4.5-3.9-2.5-3.9 2.5 1.1-4.5-3.5-3 4.6-.3Z"/>
+        <path class="advent-paper" d="M-15-1q7-2 16-1q6-1 14 0v4q-15 3-30 0Z"/>
+      </g>
+      <g id="advent-roof-cat">
+        <path class="advent-cat-tail" d="M-14-12C-22-11-25-16-26-22C-27-28-32-28-34-24"/>
+        <path class="advent-cat" d="M-17-13C-12-18-4-15 2-15C7-15 10-17 13-20L14-25L18-21L22-23L23-17L28-14Q29-11 25-10L18-10Q13-8 11-4L15 0Q16 2 12 2L7-3L5-8Q0-6-6-7L-10 0Q-11 2-15 1L-12-3L-12-8Q-16-7-18-2L-18 1Q-20 3-23 1L-21-6Z"/>
+        <circle class="advent-cat-eye" cx="22" cy="-15" r=".85"/>
+      </g>
+      <g id="advent-roof-cat-spotted">
+        <path class="advent-spotted-tail-edge" d="M12-6q10 0 11-8q1-4-3-5"/>
+        <path class="advent-spotted-tail" d="M12-6q10 0 11-8q1-4-3-5"/>
+        <path class="advent-spotted-cat" d="M-8-12l-4-6-1 6q-4 1-5 5q0 3 4 3h5q2 3 6 3h14q6 0 6-5q0-8-8-10q-7-2-13 3l-1-5Z"/>
+        <path class="advent-cat" d="M0-13q4-4 9-2q6 2 5 6q-1 4-6 3q-8 0-8-7Z"/>
+        <path class="advent-spotted-cat" d="M-6-5q-4 0-7-2l-5-4q-3-2-4 0q-1 1 2 3l7 6q3 2 7 1"/>
+        <path class="advent-cat-face" d="M-13-9h0m-4 2h0"/>
+      </g>
+      <g id="advent-evergreen-swag">
+        <path class="advent-evergreen" d="M0 0Q28 15 56 0"/>
+        <use href="#advent-holly-leaf" transform="translate(2 0) rotate(24)"/>
+        <use href="#advent-holly-leaf" transform="translate(13 4) rotate(-16)"/>
+        <use href="#advent-holly-leaf" transform="translate(24 7) rotate(16)"/>
+        <use href="#advent-holly-leaf" transform="translate(35 6) rotate(-21)"/>
+        <use href="#advent-holly-leaf" transform="translate(45 3) rotate(-16)"/>
+        <path class="advent-red" d="M14 6h0m15 2h0m14-3h0" stroke-width="2.1"/>
       </g>
       <g id="advent-lamp">
         <path d="M0-12q-16-12-22-2q-3 6 5 7m-7-5v13"/>
@@ -165,8 +267,8 @@ body_class: page-advent
       <use href="#advent-star" transform="translate(44 40) scale(.75)"/>
       <use href="#advent-star" transform="translate(116 101) scale(.6)"/>
       <use href="#advent-star" transform="translate(358 88) scale(.55)"/>
-      <use href="#advent-star" transform="translate(434 42) scale(.75)"/>
-      <path class="advent-lantern-glass" d="M399 28q-13 10-5 21q5 6 14 3q-13 10-23-2q-9-13 14-22Z"/>
+      <use href="#advent-star" transform="translate(454 42) scale(.75)"/>
+      <path class="advent-lantern-glass" d="M421 28q-13 10-5 21q5 6 14 3q-13 10-23-2q-9-13 14-22Z"/>
       <path class="advent-wash" d="M75 127V83h14v44m308 0V74h14v53"/>
       <path d="M75 95h14m-14 10h14m-14 10h14m-8-29v9m3 0v10m-3 0v10m316-27h14m-14 11h14m-14 10h14m-14 10h14m-8-41v10m4 0v11m-4 0v10m4 0v10"/>
       <path class="advent-paper" d="M71 79q2-5 10-4q9-2 12 3v8q-5 2-10-1q-5 3-12 0ZM393 71q2-5 11-4q8-2 11 3v8q-5 2-11-1q-5 3-11 0Z"/>
@@ -179,39 +281,33 @@ body_class: page-advent
       <path class="advent-tiles" d="M43 202 74 125Q239 120 406 125l31 77Z"/>
       <path class="advent-paper" d="M72 121Q152 118 217 120T332 120l74 1 10 14q-8 9-20 3t-22 0q-12 5-28 0t-41 1q-19 4-34-1t-35 0q-23 5-38-1t-43 1q-19 4-32-1t-33 2q-13 4-25-2Z"/>
       <path class="advent-paper" d="M40 195q33-5 65-1t69 0 72 1 76-1 74 1q26-3 44 0v10H40Z"/>
-      <path d="M203 176q37 16 74 0m-66-8q29 14 57 0m-37 8q-12-20-21-15m34 17q12-20 26-17"/>
       <path class="advent-paper" d="M210 171l30-32 30 32h-6v21h-48v-21Z"/>
       <path d="M214 169l26-27 26 27m-44 21h36"/>
       <use href="#advent-finial" x="240" y="139"/>
       <path d="M93 127v-12h105m84 0h106v12M101 116v8m12-8v8m12-8v8m12-8v8m12-8v8m12-8v8m12-8v8m12-8v8m110-8v8m12-8v8m12-8v8m12-8v8m12-8v8m12-8v8m12-8v8m12-8v8"/>
       <use href="#advent-finial" x="94" y="118"/><use href="#advent-finial" x="388" y="118"/>
+      <use href="#advent-roof-cat" transform="translate(235 119) scale(.56)"/>
+      <use href="#advent-roof-cat-spotted" transform="translate(268 120) scale(.69)"/>
       <use href="#advent-wreath" transform="translate(240 173) scale(1.4)"/>
       <path class="advent-snow" d="M52 68h0m75 12h0m28-24h0m36 45h0m24-53h0m48 24h0m37 25h0m42-37h0m38 45h0m57 27h0M24 183h0m17 53h0m-14 52h0m12 66h0m-20 59h0m20 41h0m-19 26h0m434-4h0m-15-61h0m18-67h0m-20-48h0m19-51h0m-13-67h0"/>
 
       <path class="advent-paper" d="M49 298h382v9H49Zm0 96h382v9H49Zm0 96h382v9H49Z"/>
-      <path d="M57 307q31 27 61 0q31 27 61 0q31 27 61 0q31 27 61 0q31 27 61 0q31 27 61 0"/>
-      <path d="M58 312q29 29 60 0q31 29 61 0q31 29 61 0q31 29 61 0q31 29 61 0q31 29 60 0" stroke-dasharray="2 4" stroke-width="3"/>
-      <g aria-hidden="true">
-        {% for sprig in (1..12) %}
-          {% assign sprig_x = forloop.index0 | times: 29 | plus: 79 %}
-          <use href="#advent-sprig" x="{{ sprig_x }}" y="318"/>
-        {% endfor %}
-      </g>
+      {% for swag in (1..6) %}
+        {% assign swag_x = forloop.index0 | times: 56 | plus: 73 %}
+        <use href="#advent-evergreen-swag" x="{{ swag_x }}" y="305"/>
+      {% endfor %}
       {% for garland_y in (1..2) %}
-        <g transform="translate(0 {% cycle 205, 489 %})">
-          <path d="M73 0q28 18 56 0q28 18 56 0q28 18 56 0q28 18 56 0q28 18 56 0q27 18 54 0"/>
-          <path d="M73 3q28 18 56 0q28 18 56 0q28 18 56 0q28 18 56 0q28 18 56 0q27 18 54 0" stroke-width="3" stroke-dasharray="1 3"/>
+        <g transform="translate(0 {% cycle 201, 493 %})">
+          <path d="M73 0q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q27 9 54 0"/>
+          <path d="M73 3q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q28 9 56 0q27 9 54 0" stroke-width="3" stroke-dasharray="1 3"/>
           <use href="#advent-bow" x="73"/><use href="#advent-bow" x="185"/>
           <use href="#advent-bow" x="297"/><use href="#advent-bow" x="407"/>
         </g>
       {% endfor %}
-      <use href="#advent-bow" x="118" y="309"/><use href="#advent-bow" x="240" y="309"/><use href="#advent-bow" x="362" y="309"/>
+      <use href="#advent-bow" x="129" y="305"/><use href="#advent-bow" x="241" y="305"/><use href="#advent-bow" x="353" y="305"/>
       <path class="advent-hatch" d="M70 501h340v9H70Z"/>
-      <path class="advent-paper" d="M73 490q26-7 50 0m52 0q23-7 47 0m38 0q24-7 47 0m52 0q23-7 48 0"/>
       <path class="advent-paper" d="M142 513h16v74h-16Zm90 0h16v74h-16Zm90 0h16v74h-16Z"/>
       <path d="M140 514h20m-18 6h16m-12 4v55m4-55v55m4-55v55m-14 3h20m-20 5h20m70-73h20m-18 6h16m-12 4v55m4-55v55m4-55v55m-14 3h20m-20 5h20m70-73h20m-18 6h16m-12 4v55m4-55v55m4-55v55m-14 3h20m-20 5h20"/>
-      <use href="#advent-sprig" transform="translate(150 549) rotate(90)"/>
-      <use href="#advent-sprig" transform="translate(330 549) rotate(-90)"/>
       <ellipse class="advent-lantern-glow" cx="33" cy="529" rx="30" ry="35"/>
       <ellipse class="advent-lantern-glow" cx="447" cy="529" rx="30" ry="35"/>
       <use href="#advent-lamp" x="57" y="512"/>
@@ -219,6 +315,8 @@ body_class: page-advent
     </g>
 
     {% assign days = "8,19,4,16,22,2,13,10,20,7,12,24,5,17,3,23,9,15,1,21,11,18,6,14" | split: "," %}
+    {% assign window_styles = "ornaments:books:10,drapes:candles:11,lights:parcels:-10,valance:tree:-10,wreath:candles:-10,drapes:cocoa:10,ornaments:parcels:10,plain:puppy:-11,valance:candles:10,lights:lantern:10,drapes:parcels:-10,wreath:gingerbread:-10,plain:small-tree:10,ornaments:candle:-11,lights:candles:11,drapes:candle:11,valance:dogs:10,plain:parcels:-10,ornaments:stocking:-10,wreath:parcels:-10,lights:none:0,wreath:none:0,ornaments:none:0,valance:none:0" | split: "," %}
+    {% assign sill_styles = "stonework,ironwork,planter,wreath,stonework,flowers,planter,swag,ironwork,flowers,stonework,wreath,flowers,planter,swag,ironwork,wreath,stonework" | split: "," %}
     {% for day in days %}
       {% assign position = forloop.index0 %}
       {% assign shape = 'advent-arch' %}
@@ -247,21 +345,49 @@ body_class: page-advent
       {% endfor %}
       <g transform="translate({{ x }} {{ y }})">
         {% if position >= 2 and position < 8 %}
-          <use href="#advent-awning" aria-hidden="true"/>
+          <path class="advent-paper" d="M-26-1h52v4h-52Z" aria-hidden="true"/>
         {% elsif position < 20 %}
           <path class="advent-paper" d="M-27 6v-4q27-17 54 0v4Q0-9-27 6Z" aria-hidden="true"/>
           {% if position >= 14 %}
             <use href="#advent-keystone" y="-7" aria-hidden="true"/>
           {% endif %}
         {% endif %}
-        {% capture surprise %}{% cycle 'advent-gift', 'advent-star', 'advent-bauble', 'advent-candle' %}{% endcapture %}
-        {% assign wreath_position = position | modulo: 2 %}
+        {% capture surprise %}{% cycle 'advent-window-stocking', 'advent-star', 'advent-bauble', 'advent-candle' %}{% endcapture %}
+        {% assign window_style = window_styles[position] | split: ":" %}
+        {% assign upper_trim = window_style[0] %}
+        {% assign sill_detail = window_style[1] %}
+        {% assign detail_x = window_style[2] %}
         {% capture door %}
           <use class="advent-window-casing" href="#{{ shape }}"/>
           <use class="advent-leaf-frame" href="#{{ shape }}"/>
           <use class="advent-recess" href="#{{ shape }}-glass"/>
           {% capture leaf %}
             <use class="advent-lit-panes" href="#{{ shape }}-glass"/>
+            {% case upper_trim %}
+              {% when 'drapes', 'valance', 'lights' %}
+                <use href="#advent-window-{{ upper_trim }}" aria-hidden="true"/>
+              {% when 'wreath' %}
+                <use href="#advent-wreath" transform="translate(0 17) scale(.75)" aria-hidden="true"/>
+              {% when 'ornaments' %}
+                <use href="#advent-window-ornaments" y="16" aria-hidden="true"/>
+            {% endcase %}
+            {% case sill_detail %}
+              {% when 'tree' %}
+                <use href="#advent-window-tree" transform="translate({{ detail_x }} 25) scale(.93)" aria-hidden="true"/>
+              {% when 'small-tree' %}
+                <use href="#advent-window-tree" transform="translate({{ detail_x }} 34) scale(.62)" aria-hidden="true"/>
+              {% when 'books', 'cocoa', 'lantern', 'gingerbread', 'stocking' %}
+                <use href="#advent-window-{{ sill_detail }}" transform="translate({{ detail_x }} 48) scale(.83)" aria-hidden="true"/>
+              {% when 'candles', 'parcels' %}
+                <use href="#advent-window-{{ sill_detail }}" transform="translate({{ detail_x }} 48) scale(.8)" aria-hidden="true"/>
+              {% when 'candle' %}
+                <use href="#advent-candle" transform="translate({{ detail_x }} 47) scale(.49)" aria-hidden="true"/>
+              {% when 'puppy' %}
+                <use href="#advent-window-puppy" transform="translate({{ detail_x }} 46)" aria-hidden="true"/>
+              {% when 'dogs' %}
+                <use href="#advent-window-dog" transform="translate({{ detail_x }} 46)" aria-hidden="true"/>
+                <use href="#advent-window-puppy" transform="translate(-10 47) scale(.82)" aria-hidden="true"/>
+            {% endcase %}
             <use class="advent-glass-glints" href="#advent-glass-glints" aria-hidden="true"/>
             <path class="advent-glazing-bars" d="M-18 23h36m-36 2h36M-18 49h36"/>
             {% if shape == 'advent-window' %}
@@ -301,33 +427,51 @@ body_class: page-advent
         {% endif %}
       </g>
       {% if position >= 2 and position < 20 %}
-        <use href="#advent-corbels" x="{{ x }}" y="{{ y | plus: 77 }}" aria-hidden="true" pointer-events="none"/>
-        <use href="#advent-balcony" x="{{ x }}" y="{{ y | plus: 59 }}" aria-hidden="true" pointer-events="none"/>
-        {% if wreath_position == 1 %}
-          <use href="#advent-flowerbox" x="{{ x }}" y="{{ y | plus: 64 }}" aria-hidden="true" pointer-events="none"/>
-        {% else %}
-          <use href="#advent-wreath" x="{{ x }}" y="{{ y | plus: 71 }}" aria-hidden="true" pointer-events="none"/>
-        {% endif %}
+        {% assign sill_index = position | minus: 2 %}
+        {% assign sill_style = sill_styles[sill_index] %}
+        <g transform="translate({{ x }} {{ y | plus: 62 }})" aria-hidden="true" pointer-events="none">
+          {% case sill_style %}
+            {% when 'stonework', 'ironwork' %}
+              <use href="#advent-sill-{{ sill_style }}"/>
+            {% when 'planter' %}
+              <use href="#advent-sill-planter" y="5"/>
+            {% when 'flowers' %}
+              <use href="#advent-flowerbox" y="5"/>
+            {% when 'swag' %}
+              <use href="#advent-evergreen-swag" transform="translate(-20 1) scale(.71)"/>
+              <use href="#advent-bow" transform="translate(0 6) scale(.65)"/>
+            {% when 'wreath' %}
+              <use href="#advent-corbels" y="12"/>
+              <use href="#advent-balcony"/>
+              <use href="#advent-wreath" transform="translate(0 6) scale(.66)"/>
+          {% endcase %}
+        </g>
       {% elsif position >= 20 %}
         <use href="#advent-shop-awning" x="{{ x }}" y="{{ y | plus: 5 }}" aria-hidden="true" pointer-events="none"/>
       {% endif %}
     {% endfor %}
 
     <g aria-hidden="true" pointer-events="none">
+      <path class="advent-snow-flurries" d="M112 144h0m95 46h0m125-44h0m49 81h0M76 279h0m144-15h0m80 34h0m115 5h0M79 387h0m91-44h0m126 23h0m83 48h0m-243 37h0m111 34h0m171-13h0"/>
       <path class="advent-falling-snow" d="M35 154h0m11 22h0m17-22h0m24 27h0m100-23h0m30-33h0m101 39h0m65 18h0m49-26h0m10 37h0M75 230h0m55 22h0m58-35h0m117 68h0m60-36h0m52 27h0M65 339h0m64 31h0m101-30h0m86 47h0m84-20h0m37-23h0M43 421h0m77 13h0m56-13h0m64 54h0m86-40h0m36 36h0m74-30h0M37 481h0m41 28h0m94 62h0m57-36h0m80-18h0m90 37h0m48-60h0"/>
       <path class="advent-paper" d="M60 590H420l9 12v6H51v-6Z"/>
       <path d="M53 602h374m-303-12-5 12m63-12-2 12m120-12 2 12m54-12 5 12"/>
-      <path class="advent-wash" d="M184 603h112l4 7v4H180v-4Zm-4 11h120l5 7v4H175v-4Zm-5 11h130l5 7v4H170v-4Z"/>
-      <path d="M181 610h118m-123 11h128m-133 11h138"/>
+      <g transform="translate(240 600)">
+        <path class="advent-wash" d="M-58 26Q-56 20-45 16H45Q56 20 58 26V29Q57 35 0 35T-58 29Z"/>
+        <path class="advent-paper" d="M-58 26Q-56 20-45 16H45Q56 20 58 26Q57 31 0 31T-58 26Z"/>
+        <path class="advent-wash" d="M-49 18Q-47 12-38 8H38Q47 12 49 18V21Q47 26 0 26T-49 21Z"/>
+        <path class="advent-paper" d="M-49 18Q-47 12-38 8H38Q47 12 49 18Q47 22 0 22T-49 18Z"/>
+        <path class="advent-wash" d="M-39 9Q-38 4-31 1H31Q38 4 39 9V12Q37 17 0 17T-39 12Z"/>
+        <path class="advent-paper" d="M-39 9Q-38 4-31 1H31Q38 4 39 9Q37 13 0 13T-39 9Z"/>
+        <path class="advent-stone-detail" d="M-18 13v3m30 6v4m-31 5v3"/>
+        <path class="advent-step-snow" d="M-28 7q7 2 14 2m29 9 10-1m-65 9q8 2 16 2m35 0q8 0 16-1"/>
+      </g>
       <path class="advent-paper" d="M51 603q13-4 28-3q10 3 27 1q13-2 23 2q-13 6-36 3q-20 3-42 0Zm300 0q17-4 30-2q17 2 26-1q12 0 22 3v3q-21 3-39 0q-23 3-39-3Z"/>
-      <use href="#advent-entry-rail" x="112" y="602"/>
-      <use href="#advent-entry-rail" transform="translate(368 602) scale(-1 1)"/>
-      <use href="#advent-topiary" x="168" y="593"/>
-      <use href="#advent-topiary" x="312" y="593"/>
-      <use href="#advent-tree" transform="translate(44 603) rotate(-3) scale(1.15)"/>
+      <use href="#advent-topiary" x="148" y="590"/>
+      <use href="#advent-topiary" x="332" y="590"/>
+      <use href="#advent-tree" transform="translate(42 615)"/>
       <use href="#advent-sidewalk-sign" transform="translate(89 620) rotate(-5)"/>
       <use href="#advent-snowman" x="391" y="621"/>
-      <path d="M208 633h64m-59-3h54" opacity=".45"/>
     </g>
   </svg>
 </article>
