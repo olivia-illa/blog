@@ -143,6 +143,25 @@ bindAdventIllustration(".advent-lamp-trigger", (lamp) => {
 });
 
 bindAdventIllustration(".advent-gift-trigger", (tree) => {
-  const isRevealed = tree.getAttribute("aria-pressed") === "true";
-  tree.setAttribute("aria-pressed", String(!isRevealed));
+  tree.classList.add("has-tree-presents");
+  if (adventReducedMotion.matches) return;
+
+  const branches = tree.querySelector(".advent-christmas-tree-motion");
+  replayAdventMotion(branches, [
+    "rotate(0deg)", "rotate(-5deg)", "rotate(4deg)", "rotate(-3deg)",
+    "rotate(2deg)", "rotate(0deg)",
+  ], 680);
+
+  tree.querySelectorAll(".advent-falling-present").forEach((gift, index) => {
+    gift.getAnimations().forEach((animation) => animation.cancel());
+    const inward = (1 - index) * 10;
+    const height = 37 + (index % 2) * 12;
+    gift.animate([
+      { opacity: 0, transform: `translate(${inward}px, -${height}px) rotate(${inward}deg)` },
+      { opacity: 1, offset: .24 },
+      { opacity: 1, transform: "translate(0, 1px) rotate(0deg)", offset: .77 },
+      { opacity: 1, transform: "translate(0, -4px) rotate(-3deg)", offset: .89 },
+      { opacity: 1, transform: "translate(0, 0) rotate(0deg)" },
+    ], { duration: 600, delay: 170 + index * 95, fill: "backwards", easing: "ease-in" });
+  });
 });

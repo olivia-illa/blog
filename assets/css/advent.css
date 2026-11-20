@@ -124,7 +124,7 @@ body.page-advent > main {
   transform: scaleX(.14) skewY(-11deg);
 }
 
-.advent-door.is-opening :is(.advent-window-number, .advent-hinge-line) {
+.advent-door.is-opening :is(.advent-window-number, .advent-hinge-line, .advent-closed-window-decoration) {
   visibility: hidden;
 }
 
@@ -350,17 +350,34 @@ body.page-advent > footer::before { top: -6px; }
 }
 
 .advent-tree-presents {
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 260ms ease-out, transform 260ms ease-out;
+  visibility: hidden;
   pointer-events: none;
 }
 
-.advent-gift-trigger[aria-pressed="true"] .advent-tree-presents {
-  opacity: 1;
-  transform: translateY(0);
+.advent-gift-trigger.has-tree-presents .advent-tree-presents {
+  visibility: visible;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .advent-tree-presents { transition: none; }
+.advent-christmas-tree-motion {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.advent-falling-present {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.advent-collie-black { fill: #272225; stroke: none; }
+.advent-collie-white { fill: var(--advent-snow); stroke: none; }
+
+.advent-closed-window-decoration {
+  pointer-events: none;
+}
+
+.advent-bracelet-letter {
+  fill: var(--text-color);
+  stroke: none;
+  text-anchor: middle;
+  font: bold 3px Arial, sans-serif;
 }
