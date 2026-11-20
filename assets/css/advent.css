@@ -142,14 +142,6 @@ body.page-advent > main {
   stroke: none;
 }
 
-
-.advent-tree-garland {
-  fill: none;
-  stroke: var(--bg-color);
-  stroke-width: 2.3;
-  stroke-dasharray: .6 1.15;
-}
-
 .advent-sign-lettering {
   fill: var(--advent-red);
   stroke: none;
@@ -250,11 +242,6 @@ body.page-advent > footer::before { top: -6px; }
   fill: none;
   stroke: var(--advent-red);
   stroke-width: 1.65;
-}
-
-.advent-tree-depth {
-  fill: color-mix(in srgb, var(--text-color) 53%, var(--bg-color));
-  stroke: none;
 }
 
 .advent-snow-trigger {
@@ -380,4 +367,150 @@ body.page-advent > footer::before { top: -6px; }
   stroke: none;
   text-anchor: middle;
   font: bold 3px Arial, sans-serif;
+}
+
+.advent-bark-marks {
+  opacity: 0;
+  stroke: var(--advent-red);
+  stroke-width: 1;
+}
+
+.advent-elf-motion {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(26px);
+  transition: opacity 180ms ease, transform 380ms cubic-bezier(.2, .8, .35, 1.14);
+}
+
+.advent-elf-trigger[aria-pressed="true"] .advent-elf-motion {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advent-elf-motion { transition: none; }
+}
+
+.advent-caroler {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(var(--caroler-hide-x), -4px);
+  transition: opacity 280ms ease, transform 1100ms cubic-bezier(.24, .52, .36, 1);
+}
+
+.advent-caroler-left { --caroler-hide-x: 22px; }
+.advent-caroler-right { --caroler-hide-x: -22px; }
+
+.advent-carol-trigger[aria-pressed="true"] .advent-caroler {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.advent-carol-trigger[aria-pressed="true"] .advent-caroler-right {
+  transition-delay: 160ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advent-caroler { transition: none; }
+}
+
+.advent-house-ribbon {
+  --advent-ribbon-red: #c4212e;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.advent-ribbon-reveal {
+  fill: none;
+  stroke: white;
+  stroke-width: 22;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.advent-ribbon-band-edge {
+  fill: none;
+  stroke: var(--advent-ribbon-red);
+  stroke-width: 18;
+}
+
+.advent-ribbon-band {
+  fill: none;
+  stroke: color-mix(in srgb, var(--advent-ribbon-red) 96%, var(--bg-color));
+  stroke-width: 15;
+}
+
+.advent-ribbon-stitch {
+  fill: none;
+  stroke: color-mix(in srgb, var(--advent-ribbon-red) 62%, var(--advent-snow));
+  stroke-width: .65;
+  stroke-dasharray: .008 .005;
+  opacity: .82;
+}
+
+.advent-ribbon-piece {
+  opacity: 0;
+  transform-origin: 0 0;
+}
+
+.advent-ribbon-loop {
+  fill: color-mix(in srgb, var(--advent-ribbon-red) 96%, var(--bg-color));
+  stroke: color-mix(in srgb, var(--advent-ribbon-red) 83%, #301014);
+  stroke-width: 1.4;
+}
+
+.advent-ribbon-back {
+  fill: color-mix(in srgb, var(--advent-ribbon-red) 78%, #301014);
+}
+
+.advent-ribbon-crease-fill {
+  fill: color-mix(in srgb, var(--advent-ribbon-red) 71%, #301014);
+  stroke: none;
+  opacity: .78;
+}
+
+.advent-ribbon-knot {
+  fill: color-mix(in srgb, var(--advent-ribbon-red) 91%, #301014);
+  stroke: var(--advent-ribbon-red);
+  stroke-width: 1.25;
+}
+
+.advent-ribbon-fold {
+  fill: none;
+  stroke: color-mix(in srgb, var(--advent-ribbon-red) 69%, var(--advent-snow));
+  stroke-width: .8;
+}
+
+.advent-shooting-star {
+  opacity: 0;
+}
+
+.advent-shooting-tail {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: .8;
+  opacity: .72;
+}
+
+.advent-shooting-spark {
+  fill: var(--advent-light);
+  stroke: var(--text-color);
+  stroke-width: .7;
+}
+
+.advent-santa-motion {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.advent-nutcracker-motion {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.advent-tree-wash {
+  fill: color-mix(in srgb, var(--text-color) 16%, var(--bg-color));
+  stroke: none;
 }
