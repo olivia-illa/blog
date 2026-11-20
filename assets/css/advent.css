@@ -32,6 +32,8 @@ body.page-advent > main {
   --advent-red: #b93646;
   --advent-light: #ffe4ad;
   --advent-snow: color-mix(in srgb, white 88%, var(--bg-color));
+  --advent-cat-ink: light-dark(#272225, var(--advent-snow));
+  --advent-cat-coat: light-dark(var(--advent-snow), #272225);
   display: block;
   width: min(100%, 40rem);
   margin: 0 auto;
@@ -91,12 +93,6 @@ body.page-advent > main {
   stroke-width: 1.1;
 }
 
-.advent-falling-snow {
-  stroke: var(--advent-snow);
-  stroke-width: 2.4;
-  opacity: .85;
-}
-
 .advent-leaf-frame { fill: var(--bg-color); stroke-width: 1.65; }
 
 .advent-window-hardware {
@@ -144,11 +140,6 @@ body.page-advent > main {
 .advent-tiles {
   fill: url("#advent-tiles");
   stroke: none;
-}
-
-.advent-snow {
-  stroke-width: 2.3;
-  opacity: .6;
 }
 
 
@@ -205,13 +196,13 @@ body.page-advent > footer::before {
 body.page-advent > header > nav::after { bottom: -6px; }
 body.page-advent > footer::before { top: -6px; }
 
-.advent-cat { fill: #272225; stroke: none; }
-.advent-cat-tail { stroke: #272225; stroke-width: 2.8; }
-.advent-spotted-cat { fill: var(--advent-snow); stroke-width: 1.15; }
+.advent-cat { fill: var(--advent-cat-ink); stroke: none; }
+.advent-cat-tail { stroke: var(--advent-cat-ink); stroke-width: 2.8; }
+.advent-spotted-cat { fill: var(--advent-cat-coat); stroke-width: 1.15; }
 .advent-spotted-tail-edge { stroke-width: 3.2; }
-.advent-spotted-tail { stroke: var(--advent-snow); stroke-width: 1.65; }
-.advent-cat-face { stroke: #272225; stroke-width: 1.7; }
-.advent-cat-eye { fill: var(--advent-light); stroke: none; }
+.advent-spotted-tail { stroke: var(--advent-cat-coat); stroke-width: 1.65; }
+.advent-cat-face { stroke: var(--advent-cat-ink); stroke-width: 1.7; }
+.advent-cat-eye { fill: light-dark(var(--advent-light), #272225); stroke: none; }
 
 .advent-evergreen {
   stroke: color-mix(in srgb, var(--text-color) 76%, var(--bg-color));
@@ -241,8 +232,7 @@ body.page-advent > footer::before { top: -6px; }
 .advent-stone-detail { stroke-width: .65; }
 .advent-balcony-cap { stroke-width: 1.35; }
 
-.advent-sill-snow,
-.advent-snow-flurries {
+.advent-sill-snow {
   stroke: var(--advent-snow);
   stroke-width: 2.6;
 }
@@ -250,4 +240,127 @@ body.page-advent > footer::before { top: -6px; }
 .advent-gift-tie {
   fill: none;
   stroke: var(--advent-red);
+}
+
+.advent-shop-frame {
+  fill: color-mix(in srgb, var(--advent-red) 64%, var(--bg-color));
+}
+
+.advent-shop-scroll {
+  fill: none;
+  stroke: var(--advent-red);
+  stroke-width: 1.65;
+}
+
+.advent-tree-depth {
+  fill: color-mix(in srgb, var(--text-color) 53%, var(--bg-color));
+  stroke: none;
+}
+
+.advent-snow-trigger {
+  cursor: pointer;
+}
+
+.advent-snow-trigger:focus {
+  outline: none;
+}
+
+.advent-snow-trigger:focus-visible .advent-background-tree {
+  stroke: var(--advent-red);
+}
+
+.advent-tree-hit {
+  fill: transparent;
+  stroke: none;
+}
+
+.advent-background-tree {
+  opacity: .52;
+}
+
+.advent-snow-trigger:is(:hover, :focus-visible) .advent-background-tree {
+  opacity: .9;
+}
+
+.advent-tree-lights {
+  stroke: var(--advent-light);
+  stroke-width: 2.5;
+}
+
+.advent-snowfall {
+  fill: var(--advent-snow);
+  stroke: color-mix(in srgb, var(--text-color) 28%, var(--bg-color));
+  stroke-width: .45;
+  pointer-events: none;
+}
+
+.advent-snowfall circle {
+  opacity: 0;
+}
+
+.advent-character {
+  cursor: pointer;
+}
+
+.advent-character-hit {
+  fill: transparent;
+  stroke: none;
+}
+
+.advent-character:focus { outline: none; }
+
+.advent-character:focus-visible .advent-character-hit {
+  stroke: var(--text-color);
+  stroke-dasharray: 2 3;
+}
+
+.advent-cat-motion,
+.advent-hat-motion {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.advent-snowman-motion {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.advent-festive-panes {
+  opacity: 0;
+}
+
+.advent-lit-panes,
+.advent-festive-panes {
+  transition: opacity 360ms ease;
+}
+
+.advent-house.has-festive-lights .advent-lit-panes {
+  opacity: 0;
+}
+
+.advent-house.has-festive-lights .advent-festive-panes {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advent-lit-panes,
+  .advent-festive-panes {
+    transition: none;
+  }
+}
+
+.advent-tree-presents {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 260ms ease-out, transform 260ms ease-out;
+  pointer-events: none;
+}
+
+.advent-gift-trigger[aria-pressed="true"] .advent-tree-presents {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advent-tree-presents { transition: none; }
 }
