@@ -2221,7 +2221,8 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
     translate: none;
     text-align: center;
   }
-  .banana-stack .banana-entry.is-selected + .banana-floating-label.is-mobile-label {
+  .banana-stack .banana-entry.is-selected + .banana-floating-label.is-mobile-label,
+  .banana-stack .banana-floating-label.is-mobile-label.is-visible {
     visibility: visible;
     opacity: 1;
   }

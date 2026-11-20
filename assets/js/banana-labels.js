@@ -36,6 +36,10 @@
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       clearSelection();
+      if (titlesPinned) {
+        titlesPinned = false;
+        entries.forEach(({ label }) => label.classList.remove('is-visible'));
+      }
       selectedEntry = entry;
       banana.classList.add('is-selected');
     });
@@ -61,11 +65,54 @@
         banana.classList.remove('is-hovered');
         if (label.parentElement !== item) item.append(label);
         const svg = banana.querySelector('svg');
-        const hollow = new DOMPoint(300, -80).matrixTransform(svg.getScreenCTM());
+        const gap = 14;
+        const labelHeight = label.offsetHeight;
+        const fruitHeight = svg.getBoundingClientRect().height;
+        item.style.minHeight = `${Math.ceil(fruitHeight + 2 * (labelHeight + gap))}px`;
+
+        const fruit = svg.getBoundingClientRect();
+        const matrix = svg.getScreenCTM();
+        const hollow = new DOMPoint(300, -80).matrixTransform(matrix);
+        // The rotated SVG box includes blank corners. Measure the peel itself.
+        const outline = svg.querySelector('defs > path');
+        const length = outline.getTotalLength();
+        const peelPoints = Array.from({ length: 65 }, (_, step) =>
+          outline.getPointAtLength(length * step / 64).matrixTransform(matrix)
+        );
+        const peelX = peelPoints.map(point => point.x);
+        const peelY = peelPoints.map(point => point.y);
+        const peelCenter = (Math.min(...peelX) + Math.max(...peelX)) / 2;
         const local = item.getBoundingClientRect();
-        const left = Math.max(8, Math.min(hollow.x - local.left - label.offsetWidth / 2, local.width - label.offsetWidth - 8));
+        const fruitCenterY = fruit.top + fruit.height / 2;
+        const opensLeft = hollow.x < peelCenter;
+        if (Math.abs(hollow.x - peelCenter) > 0.65 * Math.abs(hollow.y - fruitCenterY)) {
+          label.style.width = 'min(125px, 32%)';
+          const captionWidth = label.offsetWidth;
+          const captionHeight = label.offsetHeight;
+          const openingDirection = Math.sign(hollow.y - fruitCenterY);
+          for (const offset of [0, 12, -12, 24, -24]) {
+            const sideTop = hollow.y + offset * openingDirection - captionHeight / 2;
+            const sideBottom = sideTop + captionHeight;
+            if (sideTop < local.top + 8 || sideBottom > local.bottom - 8) continue;
+            const rim = peelPoints.filter(point => point.y >= sideTop - gap && point.y <= sideBottom + gap);
+            if (!rim.length) continue;
+            const rimX = rim.map(point => point.x);
+            const sideLeft = opensLeft
+              ? Math.min(...rimX) - gap - captionWidth
+              : Math.max(...rimX) + gap;
+            if (sideLeft >= local.left + 8 && sideLeft + captionWidth <= local.right - 8) {
+              label.style.left = `${sideLeft - local.left}px`;
+              label.style.top = `${sideTop - local.top}px`;
+              return;
+            }
+          }
+          label.style.removeProperty('width');
+        }
+        const left = Math.max(8, Math.min(peelCenter - local.left - label.offsetWidth / 2, local.width - label.offsetWidth - 8));
+        const above = hollow.y < fruitCenterY;
+        const top = above ? Math.min(...peelY) - gap - labelHeight : Math.max(...peelY) + gap;
         label.style.left = `${left}px`;
-        label.style.top = `${hollow.y - local.top - label.offsetHeight / 2}px`;
+        label.style.top = `${top - local.top}px`;
       });
       return;
     }
@@ -78,6 +125,7 @@
       item.style.width = `${size}px`;
       item.style.removeProperty('left');
       item.style.removeProperty('top');
+      item.style.removeProperty('min-height');
       item.style.margin = '0';
       const initial = banana.getBoundingClientRect();
       const dx = initial.left < bounds.left ? bounds.left - initial.left : initial.right > bounds.right ? bounds.right - initial.right : 0;
@@ -102,7 +150,6 @@
   document.addEventListener('click', event => {
     if (event.target.closest('a, button, input, select, textarea, label')) return;
     clearSelection();
-    if (mobileLayout.matches) return;
     titlesPinned = true;
     entries.forEach(({ label }) => label.classList.add('is-visible'));
   });
