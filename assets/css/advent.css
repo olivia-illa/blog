@@ -9,7 +9,7 @@ body.page-advent > main {
 
 .advent-calendar {
   width: 100%;
-  margin: 0 auto auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -20,7 +20,7 @@ body.page-advent > main {
 .advent-quote {
   flex: 0 0 auto;
   max-width: 100ch;
-  margin: -.2rem auto .55rem;
+  margin: .35rem auto .55rem;
   text-align: center;
   font: italic .78rem/1.35 Georgia, serif;
 }
