@@ -6,7 +6,7 @@ tags: [weeknotes]
 ---
 
 
-## COOKING / EATING
+## COOKING & EATING
 
 * d treated me to his lunch pick, Shanghainese Dumplings [漢來上海湯包](https://maps.app.goo.gl/hbJMrNZ4fxkguBjV6) 
 * Celebrated Dad’s 60th in advance at [LE BLANC](https://maps.app.goo.gl/fWXCe6pm28fDKnGi6)
@@ -55,7 +55,7 @@ tags: [weeknotes]
 * Did 95% of the drafting when all they had to do was proofread; ended up having to DM each person individually for a response (my time's employed for personalized concierge)
 * Microsoft services went down, and so did my counterparts (and shares). *Noted! (shuts screen)*
 
-## Consuming
+## CONSUMING
 * [Investigating The President](https://youtu.be/W4PIkmjwGsQ?si=f5GV8els29VPiUgv): coffeezilla is my go to
 * [Hello (again) Internet](https://youtu.be/Zlh2gD7p5xE?si=FiqGdZCReAqTp6K_) **Hello Internet!** Mat Pat in politics! Excited to tune in the projects he has lined up.
 * [He's Gone](https://youtu.be/MCoAnPZ8_ms?si=9UqLjX9Tq8CirQSv) Streams are too different from pods.

@@ -6,7 +6,7 @@ tags: [weeknotes]
 ---
 
 
-## COOKING/ EATING
+## COOKING & EATING
 
 - The first meal d had was at our usual. *“Do you think the rainbow roll shrank more?”*
 - Enjoyed milkfish soup that reminded me of the mini road trip to 台南 then 高雄 for grandpa’s birthday in June.  

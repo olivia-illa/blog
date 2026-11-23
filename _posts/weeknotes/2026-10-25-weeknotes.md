@@ -6,7 +6,7 @@ tags: [weeknotes]
 ---
 
 
-## COOKING / EATING
+## COOKING & EATING
 - Made Claire’s apple galette for the dozenth time. Put together the apple compote using [Trader Joe’s Apple Pie Spread](https://www.traderjoes.com/home/products/pdp/apple-pie-spread-081698), fresh apples, and apple vinegar. *"What’s that smell? Detergent?"*
 - Dad made steamed [tuskfish](https://en.wikipedia.org/wiki/Azurio_tuskfish) (石老); improvising by swapping out 破布子 for 剝皮辣椒. *Add a dash of fish sauce to bring out the freshness.*  
 - Whipped up a creamy tuna with baked potato, onions and carrot stacked underneath. The sauce mix (poured over directly) consisted of mayonnaise (surprised it hadn't gone bad), heavy cream, grated sharp cheese, boiled potato water, and a packet of [Lachs Sahne gratin](https://de.openfoodfacts.org/produkt/4000345033950/lachs-sahne-gratin-kaufland), you're welcome.
