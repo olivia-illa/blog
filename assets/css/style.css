@@ -1077,7 +1077,15 @@ a:hover {
   margin-top: 0;
 }
 
+.weeknotes-rewind {
+  display: none;
+}
+
 @media (max-width: 599px) {
+  .weeknotes-rewind {
+    display: block;
+  }
+
   .home .home-grid .home-made h2 {
     border: 0;
   }
