@@ -41,12 +41,18 @@ for (const segment of courses.querySelectorAll('.movement-segment')) {
   segment.addEventListener('focusout', restore);
 }
 
-const lanes = Array.from(courses.querySelectorAll('.movement-track'), (track) => ({
-  track,
-  athlete: track.querySelector('.movement-athlete'),
-  isSwimming: track.parentElement.classList.contains('movement-lane--swimming'),
-  isRunning: track.parentElement.classList.contains('movement-lane--running')
-}));
+const lanes = Array.from(courses.querySelectorAll('.movement-track'), (track) => {
+  const athlete = track.querySelector('.movement-athlete');
+  const drawing = athlete.querySelector('svg');
+  return {
+    track,
+    athlete,
+    drawing,
+    finishY: Number(drawing.dataset.finishY),
+    isSwimming: track.parentElement.classList.contains('movement-lane--swimming'),
+    isRunning: track.parentElement.classList.contains('movement-lane--running')
+  };
+});
 
 let animationFrame;
 
@@ -56,12 +62,16 @@ function moveAthletes() {
   const viewportHeight = window.innerHeight;
   const pageTravel = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
 
-  for (const { track, athlete, isSwimming, isRunning } of lanes) {
+  for (const { track, athlete, drawing, finishY, isSwimming, isRunning } of lanes) {
     const bounds = track.getBoundingClientRect();
     const finishViewportFraction = isSwimming ? .4 : .88;
     const finish = Math.min(pageTravel, Math.max(1, bounds.bottom + scrollTop - viewportHeight * finishViewportFraction));
     const progress = Math.max(0, Math.min(1, scrollTop / finish));
-    const travel = Math.max(0, track.clientHeight - athlete.offsetHeight);
+    // Match the SVG's centered aspect-ratio fit so the visible figure reaches the edge.
+    const { width, height } = drawing.viewBox.baseVal;
+    const scale = Math.min(drawing.clientWidth / width, drawing.clientHeight / height);
+    const drawingTop = (drawing.clientHeight - height * scale) / 2;
+    const travel = Math.max(0, track.clientHeight - drawingTop - finishY * scale);
     const sway = Math.sin(progress * Math.PI * (isSwimming ? 2 : 4));
     athlete.style.setProperty('--athlete-position', `${travel * progress}px`);
     if (isRunning) {

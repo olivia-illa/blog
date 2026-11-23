@@ -1,0 +1,13 @@
+{%- if include.sport == 'cycling' -%}
+  {{ include.km | times: 3600.0 | divided_by: include.seconds | round: 1 }} km/h
+{%- else -%}
+  {%- assign pace_distance = include.km | times: 1.0 -%}
+  {%- assign pace_unit = 'km' -%}
+  {%- if include.sport == 'swimming' -%}
+    {%- assign pace_distance = pace_distance | times: 10 -%}
+    {%- assign pace_unit = '100 m' -%}
+  {%- endif -%}
+  {%- assign pace = include.seconds | divided_by: pace_distance | round -%}
+  {%- assign pace_remainder = pace | modulo: 60 -%}
+  {{ pace | divided_by: 60 }}:{% if pace_remainder < 10 %}0{% endif %}{{ pace_remainder }} / {{ pace_unit }}
+{%- endif -%}

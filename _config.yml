@@ -30,7 +30,9 @@ exclude:
   - result
 
 
-# Editable media log; its instructions are not published as a page.
+# Editable logs with unpublished instructions.
 collections:
   shelf:
+    output: false
+  race_logs:
     output: false

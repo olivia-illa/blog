@@ -13,15 +13,16 @@ body_class: page-movement
   {% capture movement_courses %}
   <div class="movement-courses">
     {% assign sports = 'swimming,cycling,running' | split: ',' %}
+    {% assign race_log = site.race_logs | where: 'slug', 'race-log' | first %}
     {% assign logged_km = 0 %}
     {% for sport in sports %}
-      {% assign races = site.data.movement[sport] %}
+      {% assign races = race_log[sport] | sort: 'date' %}
       {% assign total = 0 %}
       {% assign timed_km = 0.0 %}
       {% assign timed_seconds = 0 %}
       {% for race in races %}
         {% assign total = total | plus: race.km %}
-        {% if race.time %}
+        {% if race.time and race.time != '' %}
           {% assign split = race.time | split: ':' %}
           {% assign hours = split[0] | times: 3600 %}
           {% assign minutes = split[1] | times: 60 %}
@@ -35,28 +36,11 @@ body_class: page-movement
       {% else %}
         {% assign pixels_per_km = 4 %}
       {% endif %}
-      {% if timed_km > 0 %}
-        {% capture average_pace %}
-          {%- if sport == 'cycling' -%}
-            {{ timed_km | times: 3600 | divided_by: timed_seconds | round: 1 }} km/h
-          {%- else -%}
-            {%- assign pace_km = timed_km -%}
-            {%- assign unit = 'km' -%}
-            {%- if sport == 'swimming' -%}
-              {%- assign pace_km = timed_km | times: 10 -%}
-              {%- assign unit = '100 m' -%}
-            {%- endif -%}
-            {%- assign pace = timed_seconds | divided_by: pace_km | round -%}
-            {%- assign seconds = pace | modulo: 60 -%}
-            {{ pace | divided_by: 60 }}:{% if seconds < 10 %}0{% endif %}{{ seconds }} / {{ unit }}
-          {%- endif -%}
-        {% endcapture %}
-      {% endif %}
       <section class="movement-lane movement-lane--{{ sport }}" aria-labelledby="movement-{{ sport }}">
         <header class="movement-lane-heading">
           <h2 id="movement-{{ sport }}">{{ sport | capitalize }}</h2>
           <p class="movement-total">{{ total | round: 2 }} <small>km</small></p>
-          {% if timed_km > 0 %}<p class="movement-average"><span>average</span> {{ average_pace | strip }}</p>{% endif %}
+          {% if timed_seconds > 0 %}<p class="movement-average"><span>average</span> {% include movement-pace.html sport=sport km=timed_km seconds=timed_seconds %}</p>{% endif %}
         </header>
         <div class="movement-start">Start</div>
         <div class="movement-track">
@@ -97,7 +81,15 @@ body_class: page-movement
                 <span>{{ race.km }} km</span>
                 <span class="movement-race-pace">
                   {% if sport == 'cycling' %}average speed{% else %}average pace{% endif %}<br>
-                  {{ race.pace | default: 'No time recorded' }}
+                  {% assign split = race.time | split: ':' %}
+                  {% assign hours = split[0] | times: 3600 %}
+                  {% assign minutes = split[1] | times: 60 %}
+                  {% assign elapsed = hours | plus: minutes | plus: split[2] %}
+                  {% if elapsed > 0 %}
+                    {% include movement-pace.html sport=sport km=race.km seconds=elapsed %}
+                  {% else %}
+                    No time recorded
+                  {% endif %}
                 </span>
               </div>
             </div>

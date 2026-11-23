@@ -1,4 +1,9 @@
-<svg viewBox="0 0 108 146" focusable="false">
+{% case include.sport %}
+  {% when 'swimming' %}{% assign athlete_finish_y = 124 %}
+  {% when 'cycling' %}{% assign athlete_finish_y = 135 %}
+  {% when 'running' %}{% assign athlete_finish_y = 111 %}
+{% endcase %}
+<svg viewBox="0 0 108 146" data-finish-y="{{ athlete_finish_y }}" focusable="false">
   {% case include.sport %}
   {% when 'swimming' %}
     <g transform="rotate(-9 52 69)">
