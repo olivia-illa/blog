@@ -1,3 +1,8 @@
+.page-movement main {
+  cursor: default;
+  caret-color: transparent;
+}
+
 .movement {
   box-sizing: border-box;
   max-width: 66rem;
@@ -21,11 +26,15 @@
   font: italic 900 clamp(2.35rem, 7.5vw, 5.75rem)/.96 'Arial Black', system-ui, sans-serif;
   letter-spacing: -.075em;
   text-shadow:
-    -.055em 0 0 color-mix(in srgb, currentColor 30%, transparent),
-    -.11em 0 .015em color-mix(in srgb, currentColor 20%, transparent),
-    -.18em 0 .025em color-mix(in srgb, currentColor 12%, transparent);
+    -.045em 0 0 color-mix(in srgb, currentColor 23%, transparent),
+    -.095em 0 .015em color-mix(in srgb, currentColor 13%, transparent);
   text-wrap: balance;
   text-transform: uppercase;
+}
+
+.movement-heading p {
+  margin: .85rem auto 0;
+  font-family: var(--font-mono);
 }
 
 .movement-courses {
@@ -35,14 +44,53 @@
   align-items: start;
 }
 
+.movement-taiwan,
+.movement-taiwan-trigger { display: none; }
+
+@media (min-width: 64rem) {
+  .movement-title { position: relative; display: inline-block; }
+  .movement-title-race { display: none; }
+
+  .movement-taiwan-trigger { display: inline; }
+
+  .movement-taiwan {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: calc(100% + 1rem);
+    box-sizing: border-box;
+    width: 6rem;
+    padding: .2rem .15rem .2rem .5rem;
+    background: var(--paper);
+    text-align: center;
+    font-size: .625rem;
+    line-height: 1.25;
+  }
+
+  .movement-title:has(.movement-taiwan-trigger:hover) .movement-taiwan,
+  .movement-title:has(.movement-taiwan-trigger:focus-visible) .movement-taiwan,
+  .movement-taiwan:hover { display: block; }
+
+  .movement-taiwan::before {
+    content: "";
+    position: absolute;
+    inset: 0 100% 0 auto;
+    width: 1rem;
+  }
+
+  .movement-taiwan svg { display: block; width: 100%; max-width: 2.8rem; margin: 0 auto .2rem; }
+  .movement-taiwan p { margin: .2rem 0; }
+  .movement-taiwan-loops { display: block; font-size: 1rem; line-height: 1.15; }
+}
+
 .movement-lane {
-  --course: #317b9a;
-  --stripe: #e0f4eb;
+  --course: #386b80;
+  --stripe: #f1ecd9;
   min-width: 0;
 }
 
-.movement-lane--cycling { --course: #374744; --stripe: #f8d27e; }
-.movement-lane--running { --course: #a34636; --stripe: #fff0d7; }
+.movement-lane--cycling { --course: #365345; --stripe: #f1dca6; }
+.movement-lane--running { --course: #944e3d; --stripe: #faebd1; }
 
 .movement-lane-heading { text-align: center; margin-bottom: .85rem; }
 .movement-lane-heading h2 { color: var(--ink); border: 0; letter-spacing: normal; font: 800 clamp(.85rem, 2.6vw, 1.45rem)/1.2 system-ui, sans-serif; }
@@ -53,9 +101,16 @@
 .movement-average span { display: block; }
 .movement-total small { font-size: .75rem; }
 
+@media (min-width: 40rem) {
+  .movement-average span { display: inline; }
+}
+
+.movement-start,
+.movement-track { background-image: url("../images/race-track-grain.png"); }
+
 .movement-start {
   padding: .5rem 0;
-  background: var(--course);
+  background-color: var(--course);
   color: var(--stripe);
   border-inline: 2px solid var(--stripe);
   border-bottom: 2px solid var(--stripe);
@@ -67,7 +122,6 @@
 .movement-track {
   position: relative;
   background-color: var(--course);
-  background-image: repeating-linear-gradient(108deg, transparent 0 7px, #ffffff0c 7px 8px);
   border-inline: 3px solid var(--stripe);
   border-bottom: 3px solid var(--stripe);
 }
@@ -83,12 +137,21 @@
 }
 
 .movement-lane--swimming .movement-track {
-  border-image: repeating-linear-gradient(#eef3da 0 7px, #b64338 7px 14px) 1;
+  border-image: repeating-linear-gradient(#eef3da 0 5px, #b64338 5px 11px, #eef3da 11px 16px, #244f83 16px 24px) 1;
+  background-image:
+    url("../images/race-pool-ripples.svg"),
+    url("../images/race-track-grain.png"),
+    linear-gradient(90deg, #2c6480, #3b7895 24%, #356e8b 72%, #2c6480);
+  background-size: 100% 8.25rem, auto, 100% 100%;
 }
 
 .movement-lane--swimming .movement-track::before {
-  width: 5px;
-  background: #123b63;
+  content: none;
+}
+
+.movement-lane--cycling .movement-start,
+.movement-lane--cycling .movement-track {
+  background-image: url("../images/race-cycling-ink.png");
 }
 
 .movement-lane--cycling .movement-track::before {
@@ -120,7 +183,6 @@
   width: 85%;
   height: 100%;
   margin-inline: auto;
-  filter: drop-shadow(3px 4px 0 #14212745);
 }
 
 .movement-segment { position: relative; height: var(--segment-height); }
@@ -133,14 +195,14 @@
   height: 100%;
   padding: 0 .25rem .15rem;
   border: 0;
-  border-bottom: 1px solid var(--stripe);
+  border-bottom: 1px solid color-mix(in srgb, var(--stripe) 55%, transparent);
   background: transparent;
   color: var(--stripe);
-  font: 600 clamp(.7rem, 1.7vw, .9rem)/1.2 'IBM Plex Mono', monospace;
+  font: 500 clamp(.7rem, 1.7vw, .85rem)/1.2 'IBM Plex Mono', monospace;
   cursor: pointer;
 }
 
-.movement-race span { background: var(--course); padding: .12em .26em; }
+.movement-race span { padding: .12em .26em; }
 .movement-race:focus-visible { outline: 2px solid var(--stripe); outline-offset: -3px; }
 
 .movement-stats {
@@ -151,8 +213,7 @@
   display: grid;
   gap: .25rem;
   background: var(--paper);
-  border: 1px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 45%, var(--paper));
   font-size: .83rem;
   line-height: 1.35;
   text-align: start;
@@ -166,12 +227,12 @@
   overflow-wrap: anywhere;
   text-wrap: pretty;
 }
-.movement-race-pace { border-top: 1px solid currentColor; padding-top: .3rem; font-weight: 600; }
+.movement-race-pace { margin-top: .15rem; font-weight: 500; }
 .movement-race:focus-visible + .movement-stats,
 .movement-race[aria-expanded='true'] + .movement-stats { visibility: visible; }
 
 @media (hover: hover) {
-  .movement-race:hover { background: #ffffff1f; }
+  .movement-race { cursor: default; }
   .movement-segment:hover .movement-stats { visibility: visible; }
 }
 

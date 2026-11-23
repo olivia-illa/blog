@@ -10,13 +10,10 @@ body_class: page-movement
 
 <p class="catalogue-intro-line">always on the run</p>
 <article class="movement">
-  <header class="movement-heading">
-    <h1>{{ page.title | escape }}</h1>
-    <p><em>Every day, it gets a little easier. But you gotta do it every day. That's the hard part.</em></p>
-  </header>
-
+  {% capture movement_courses %}
   <div class="movement-courses">
     {% assign sports = 'swimming,cycling,running' | split: ',' %}
+    {% assign logged_km = 0 %}
     {% for sport in sports %}
       {% assign races = site.data.movement[sport] %}
       {% assign total = 0 %}
@@ -32,6 +29,7 @@ body_class: page-movement
           {% assign timed_km = timed_km | plus: race.km %}
         {% endif %}
       {% endfor %}
+      {% assign logged_km = logged_km | plus: total %}
       {% if sport == 'swimming' %}
         {% assign pixels_per_km = 100 %}
       {% else %}
@@ -58,9 +56,9 @@ body_class: page-movement
         <header class="movement-lane-heading">
           <h2 id="movement-{{ sport }}">{{ sport | capitalize }}</h2>
           <p class="movement-total">{{ total | round: 2 }} <small>km</small></p>
-          {% if timed_km > 0 %}<p class="movement-average"><span>Average</span> {{ average_pace | strip }}</p>{% endif %}
+          {% if timed_km > 0 %}<p class="movement-average"><span>average</span> {{ average_pace | strip }}</p>{% endif %}
         </header>
-        <div class="movement-start">0 km</div>
+        <div class="movement-start">Start</div>
         <div class="movement-track">
           <div class="movement-athlete-layer" aria-hidden="true">
             <div class="movement-athlete">{% include movement-athlete.html sport=sport %}</div>
@@ -72,14 +70,14 @@ body_class: page-movement
             {% assign category = race.category %}
             {% if category == 'Triathlon individual' %}
               {% assign category = 'Triathlon' %}
+            {% elsif category == 'Triathlon relay (cycling)' or category == 'Triathlon relay (running)' %}
+              {% assign category = 'Triathlon relay' %}
             {% elsif sport == 'running' %}
               {% case category %}
                 {% when 'Marathon' %}
                   {% assign category = 'Full' %}
                 {% when 'Half marathon' %}
                   {% assign category = 'Half' %}
-                {% when 'Triathlon relay (running)' %}
-                  {% assign category = 'Triathlon relay' %}
                 {% else %}
                   {% if race.km == 10 %}
                     {% assign category = 'Challenge' %}
@@ -98,7 +96,7 @@ body_class: page-movement
                 <span>{{ race.date | date: '%-d %b %Y' }}{% if category != '' %} · {{ category | escape }}{% endif %}</span>
                 <span>{{ race.km }} km</span>
                 <span class="movement-race-pace">
-                  {% if sport == 'cycling' %}Average speed{% else %}Average pace{% endif %}<br>
+                  {% if sport == 'cycling' %}average speed{% else %}average pace{% endif %}<br>
                   {{ race.pace | default: 'No time recorded' }}
                 </span>
               </div>
@@ -108,4 +106,25 @@ body_class: page-movement
       </section>
     {% endfor %}
   </div>
+  {% endcapture %}
+  <header class="movement-heading">
+    <div class="movement-title">
+      <h1>{{ page.title | remove: ' RACE' | escape }} <span class="movement-title-race">RACE</span><span class="movement-taiwan-trigger" tabindex="0" aria-describedby="movement-taiwan">RACE</span></h1>
+      {% assign taiwan_route_km = 960.8 %}
+      {% assign taiwan_loops = logged_km | divided_by: taiwan_route_km %}
+      {% assign loop_progress = taiwan_loops | times: 100 | at_most: 100 %}
+      <aside id="movement-taiwan" class="movement-taiwan" aria-label="Taiwan distance comparison">
+        <svg viewBox="0 0 120 150" aria-hidden="true" focusable="false">
+          <ellipse cx="60" cy="75" rx="51" ry="67" fill="none" stroke="currentColor" stroke-opacity=".24" stroke-width="3"/>
+          <path d="M60 8a51 67 0 1 1 0 134 51 67 0 1 1 0-134Z" pathLength="100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="{{ loop_progress }} 100"/>
+          <path d="M79 29q10 0 12 9l-8 12q-1 14-9 26l-9 24-9 22-7-10q-12-9-17-24 2-16 14-28 8-15 22-23Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+        </svg>
+        <p><strong class="movement-taiwan-loops">{{ taiwan_loops | round: 2 }}×</strong> around Taiwan</p>
+        <p>{{ logged_km | round: 2 }} km logged</p>
+      </aside>
+    </div>
+    <p><em>Every day, it gets a little easier. But you gotta do it every day. That's the hard part.</em></p>
+  </header>
+
+  {{ movement_courses }}
 </article>

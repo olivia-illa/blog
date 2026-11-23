@@ -1,4 +1,5 @@
 const courses = document.querySelector('.movement-courses');
+const hoverInput = window.matchMedia('(hover: hover)');
 let pinnedRace;
 
 function closeRace() {
@@ -7,6 +8,7 @@ function closeRace() {
 }
 
 courses.addEventListener('click', (event) => {
+  if (event.pointerType === 'mouse' || (!event.pointerType && hoverInput.matches)) return;
   const race = event.target.closest('.movement-race');
   if (!race) return;
 
