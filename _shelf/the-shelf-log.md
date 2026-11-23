@@ -848,6 +848,21 @@ entries:
     note: "[Add a note]"
     credit_source: "https://www.endofoakstreet.com/"
 
+  - title: "The Revenant"
+    creator: "Alejandro González Iñárritu"
+    creator_role: "Director"
+    spine_cast: ["Leonardo DiCaprio", "Tom Hardy"]
+    medium: "dvd"
+    edition: "2015"
+    status: "Watching"
+    status_date: ""
+    status_month: "2026-11"
+    logged_on: "2026-11-23"
+    source: ""
+    notes_url: ""
+    note: "[Add a note]"
+    credit_source: "https://www.20thcenturystudios.com/movies/the-revenant/"
+
   - title: "At Their Very Best"
     creator: "The 1975"
     creator_role: "Artist"
