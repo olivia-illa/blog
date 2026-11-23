@@ -6,11 +6,13 @@
   --ink: var(--text-color);
   color: var(--ink);
   padding: clamp(.65rem, 4.5vw, 3.2rem);
+  padding-top: clamp(.65rem, 1.6vw, 1.25rem);
 }
 
 .movement-heading {
   padding: 0 0 clamp(1.5rem, 4vw, 3rem);
   margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 .movement-heading h1 {

@@ -12,6 +12,7 @@ body_class: page-movement
 <article class="movement">
   <header class="movement-heading">
     <h1>{{ page.title | escape }}</h1>
+    <p><em>Every day, it gets a little easier. But you gotta do it every day. That's the hard part.</em></p>
   </header>
 
   <div class="movement-courses">
@@ -69,14 +70,16 @@ body_class: page-movement
             {% assign cumulative = cumulative | plus: race.km %}
             {% assign segment_height = race.km | times: pixels_per_km %}
             {% assign category = race.category %}
-            {% if sport == 'running' %}
+            {% if category == 'Triathlon individual' %}
+              {% assign category = 'Triathlon' %}
+            {% elsif sport == 'running' %}
               {% case category %}
                 {% when 'Marathon' %}
                   {% assign category = 'Full' %}
                 {% when 'Half marathon' %}
                   {% assign category = 'Half' %}
                 {% when 'Triathlon relay (running)' %}
-                  {% assign category = 'Relay' %}
+                  {% assign category = 'Triathlon relay' %}
                 {% else %}
                   {% if race.km == 10 %}
                     {% assign category = 'Challenge' %}
@@ -84,8 +87,6 @@ body_class: page-movement
                     {% assign category = '' %}
                   {% endif %}
               {% endcase %}
-            {% elsif category == 'Triathlon individual' %}
-              {% assign category = 'Triathlon' %}
             {% endif %}
             {% capture stats_id %}movement-{{ sport }}-{{ forloop.index }}{% endcapture %}
             <div class="movement-segment" style="--segment-height: {{ segment_height }}px">
