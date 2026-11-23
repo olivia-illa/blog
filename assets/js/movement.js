@@ -43,7 +43,9 @@ for (const segment of courses.querySelectorAll('.movement-segment')) {
 
 const lanes = Array.from(courses.querySelectorAll('.movement-track'), (track) => ({
   track,
-  athlete: track.querySelector('.movement-athlete')
+  athlete: track.querySelector('.movement-athlete'),
+  isSwimming: track.parentElement.classList.contains('movement-lane--swimming'),
+  isRunning: track.parentElement.classList.contains('movement-lane--running')
 }));
 
 let animationFrame;
@@ -54,12 +56,20 @@ function moveAthletes() {
   const viewportHeight = window.innerHeight;
   const pageTravel = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
 
-  for (const { track, athlete } of lanes) {
+  for (const { track, athlete, isSwimming, isRunning } of lanes) {
     const bounds = track.getBoundingClientRect();
-    const finish = Math.min(pageTravel, Math.max(1, bounds.bottom + scrollTop - viewportHeight * 0.88));
+    const finishViewportFraction = isSwimming ? .4 : .88;
+    const finish = Math.min(pageTravel, Math.max(1, bounds.bottom + scrollTop - viewportHeight * finishViewportFraction));
     const progress = Math.max(0, Math.min(1, scrollTop / finish));
     const travel = Math.max(0, track.clientHeight - athlete.offsetHeight);
+    const sway = Math.sin(progress * Math.PI * (isSwimming ? 2 : 4));
     athlete.style.setProperty('--athlete-position', `${travel * progress}px`);
+    if (isRunning) {
+      athlete.style.setProperty('--athlete-turn', `${sway * 5}deg`);
+    } else {
+      const drift = Math.min(isSwimming ? 6 : 14, bounds.width * .085);
+      athlete.style.setProperty('--athlete-drift', `${sway * drift}px`);
+    }
     athlete.classList.add('is-travelling');
   }
 }

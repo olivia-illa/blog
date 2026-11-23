@@ -37,6 +37,10 @@
   font-family: var(--font-mono);
 }
 
+@media (max-width: 599px) {
+  .movement-heading p { font-size: .85rem; }
+}
+
 .movement-courses {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -122,8 +126,7 @@
 .movement-track {
   position: relative;
   background-color: var(--course);
-  border-inline: 3px solid var(--stripe);
-  border-bottom: 3px solid var(--stripe);
+  border-inline: 2px solid var(--stripe);
 }
 
 .movement-track::before {
@@ -175,7 +178,19 @@
 .movement-athlete.is-travelling {
   position: absolute;
   inset: 0 0 auto;
-  transform: translateY(var(--athlete-position));
+  transform: translate(var(--athlete-drift, 0px), var(--athlete-position)) rotate(var(--athlete-turn, 0deg));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .movement-lane--swimming .movement-athlete.is-travelling {
+    transition: transform 120ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .movement-athlete.is-travelling {
+    transform: translateY(var(--athlete-position));
+  }
 }
 
 .movement-athlete svg {
@@ -203,6 +218,7 @@
 }
 
 .movement-race span { padding: .12em .26em; }
+.movement-segment:last-child .movement-race { border-bottom: 0; }
 .movement-race:focus-visible { outline: 2px solid var(--stripe); outline-offset: -3px; }
 
 .movement-stats {
