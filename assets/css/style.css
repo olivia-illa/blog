@@ -439,6 +439,13 @@ footer p {
   display: none;
 }
 
+@media (max-width: 599px) {
+  body > footer > .theme-picker {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
+
 .theme-swatch {
   padding: 0;
   border: 0;
