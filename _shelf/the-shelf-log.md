@@ -824,11 +824,11 @@ entries:
     spine_cast: ["Brad Pitt", "Morgan Freeman"]
     medium: "dvd"
     edition: "1995"
-    status: "Watching"
+    status: "Finished"
     status_date: ""
     status_month: "2026-11"
     logged_on: "2026-11-01"
-    source: ""
+    source: "_posts/thoughts/2026-11-15-more-notes.md"
     notes_url: ""
     note: "[Add a note]"
     credit_source: "https://infoicaa.mcu.es/CatalogoICAA/es-es/Peliculas/GetPdf?Pelicula=108695"
