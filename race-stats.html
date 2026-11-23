@@ -1,0 +1,110 @@
+---
+layout: default
+title: MY PACE, MY RACE
+permalink: /race-stats/
+body_class: page-movement
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/movement.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script src="{{ '/assets/js/movement.js' | relative_url }}" defer></script>
+
+<p class="catalogue-intro-line">always on the run</p>
+<article class="movement">
+  <header class="movement-heading">
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="movement-courses">
+    {% assign sports = 'swimming,cycling,running' | split: ',' %}
+    {% for sport in sports %}
+      {% assign races = site.data.movement[sport] %}
+      {% assign total = 0 %}
+      {% assign timed_km = 0.0 %}
+      {% assign timed_seconds = 0 %}
+      {% for race in races %}
+        {% assign total = total | plus: race.km %}
+        {% if race.time %}
+          {% assign split = race.time | split: ':' %}
+          {% assign hours = split[0] | times: 3600 %}
+          {% assign minutes = split[1] | times: 60 %}
+          {% assign timed_seconds = timed_seconds | plus: hours | plus: minutes | plus: split[2] %}
+          {% assign timed_km = timed_km | plus: race.km %}
+        {% endif %}
+      {% endfor %}
+      {% if sport == 'swimming' %}
+        {% assign pixels_per_km = 100 %}
+      {% else %}
+        {% assign pixels_per_km = 4 %}
+      {% endif %}
+      {% if timed_km > 0 %}
+        {% capture average_pace %}
+          {%- if sport == 'cycling' -%}
+            {{ timed_km | times: 3600 | divided_by: timed_seconds | round: 1 }} km/h
+          {%- else -%}
+            {%- assign pace_km = timed_km -%}
+            {%- assign unit = 'km' -%}
+            {%- if sport == 'swimming' -%}
+              {%- assign pace_km = timed_km | times: 10 -%}
+              {%- assign unit = '100 m' -%}
+            {%- endif -%}
+            {%- assign pace = timed_seconds | divided_by: pace_km | round -%}
+            {%- assign seconds = pace | modulo: 60 -%}
+            {{ pace | divided_by: 60 }}:{% if seconds < 10 %}0{% endif %}{{ seconds }} / {{ unit }}
+          {%- endif -%}
+        {% endcapture %}
+      {% endif %}
+      <section class="movement-lane movement-lane--{{ sport }}" aria-labelledby="movement-{{ sport }}">
+        <header class="movement-lane-heading">
+          <h2 id="movement-{{ sport }}">{{ sport | capitalize }}</h2>
+          <p class="movement-total">{{ total | round: 2 }} <small>km</small></p>
+          {% if timed_km > 0 %}<p class="movement-average"><span>Average</span> {{ average_pace | strip }}</p>{% endif %}
+        </header>
+        <div class="movement-start">0 km</div>
+        <div class="movement-track">
+          <div class="movement-athlete-layer" aria-hidden="true">
+            <div class="movement-athlete">{% include movement-athlete.html sport=sport %}</div>
+          </div>
+          {% assign cumulative = 0 %}
+          {% for race in races %}
+            {% assign cumulative = cumulative | plus: race.km %}
+            {% assign segment_height = race.km | times: pixels_per_km %}
+            {% assign category = race.category %}
+            {% if sport == 'running' %}
+              {% case category %}
+                {% when 'Marathon' %}
+                  {% assign category = 'Full' %}
+                {% when 'Half marathon' %}
+                  {% assign category = 'Half' %}
+                {% when 'Triathlon relay (running)' %}
+                  {% assign category = 'Relay' %}
+                {% else %}
+                  {% if race.km == 10 %}
+                    {% assign category = 'Challenge' %}
+                  {% else %}
+                    {% assign category = '' %}
+                  {% endif %}
+              {% endcase %}
+            {% elsif category == 'Triathlon individual' %}
+              {% assign category = 'Triathlon' %}
+            {% endif %}
+            {% capture stats_id %}movement-{{ sport }}-{{ forloop.index }}{% endcapture %}
+            <div class="movement-segment" style="--segment-height: {{ segment_height }}px">
+              <button class="movement-race" type="button" aria-label="{{ race.event | escape }}, {{ race.date | date: '%Y' }}" aria-describedby="{{ stats_id }}" aria-expanded="false">
+                <span aria-hidden="true">{{ cumulative | round: 2 }}k</span>
+              </button>
+              <div class="movement-stats" id="{{ stats_id }}">
+                <strong class="movement-race-name">{{ race.event | escape }}</strong>
+                <span>{{ race.date | date: '%-d %b %Y' }}{% if category != '' %} · {{ category | escape }}{% endif %}</span>
+                <span>{{ race.km }} km</span>
+                <span class="movement-race-pace">
+                  {% if sport == 'cycling' %}Average speed{% else %}Average pace{% endif %}<br>
+                  {{ race.pace | default: 'No time recorded' }}
+                </span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</article>

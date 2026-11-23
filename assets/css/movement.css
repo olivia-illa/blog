@@ -1,0 +1,184 @@
+.movement {
+  box-sizing: border-box;
+  max-width: 66rem;
+  margin-inline: auto;
+  --paper: var(--bg-color);
+  --ink: var(--text-color);
+  color: var(--ink);
+  padding: clamp(.65rem, 4.5vw, 3.2rem);
+}
+
+.movement-heading {
+  padding: 0 0 clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 1.2rem;
+}
+
+.movement-heading h1 {
+  margin: 0 0 .6rem;
+  color: var(--header-color);
+  font: italic 900 clamp(2.35rem, 7.5vw, 5.75rem)/.96 'Arial Black', system-ui, sans-serif;
+  letter-spacing: -.075em;
+  text-shadow:
+    -.055em 0 0 color-mix(in srgb, currentColor 30%, transparent),
+    -.11em 0 .015em color-mix(in srgb, currentColor 20%, transparent),
+    -.18em 0 .025em color-mix(in srgb, currentColor 12%, transparent);
+  text-wrap: balance;
+  text-transform: uppercase;
+}
+
+.movement-courses {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.3rem, 2vw, 1.25rem);
+  align-items: start;
+}
+
+.movement-lane {
+  --course: #317b9a;
+  --stripe: #e0f4eb;
+  min-width: 0;
+}
+
+.movement-lane--cycling { --course: #374744; --stripe: #f8d27e; }
+.movement-lane--running { --course: #a34636; --stripe: #fff0d7; }
+
+.movement-lane-heading { text-align: center; margin-bottom: .85rem; }
+.movement-lane-heading h2 { color: var(--ink); border: 0; letter-spacing: normal; font: 800 clamp(.85rem, 2.6vw, 1.45rem)/1.2 system-ui, sans-serif; }
+.movement-lane-heading h2,
+.movement-lane-heading p { margin: 0; }
+.movement-total { font-size: clamp(.85rem, 2.5vw, 1.45rem); font-weight: 600; }
+.movement-average { font-size: clamp(.65rem, 2.6vw, .875rem); }
+.movement-average span { display: block; }
+.movement-total small { font-size: .75rem; }
+
+.movement-start {
+  padding: .5rem 0;
+  background: var(--course);
+  color: var(--stripe);
+  border-inline: 2px solid var(--stripe);
+  border-bottom: 2px solid var(--stripe);
+  text-align: center;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.movement-track {
+  position: relative;
+  background-color: var(--course);
+  background-image: repeating-linear-gradient(108deg, transparent 0 7px, #ffffff0c 7px 8px);
+  border-inline: 3px solid var(--stripe);
+  border-bottom: 3px solid var(--stripe);
+}
+
+.movement-track::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 50%;
+  width: 2px;
+  background: var(--stripe);
+  opacity: .65;
+  pointer-events: none;
+}
+
+.movement-lane--swimming .movement-track {
+  border-image: repeating-linear-gradient(#eef3da 0 7px, #b64338 7px 14px) 1;
+}
+
+.movement-lane--swimming .movement-track::before {
+  width: 5px;
+  background: #123b63;
+}
+
+.movement-lane--cycling .movement-track::before {
+  background: repeating-linear-gradient(var(--stripe) 0 15px, transparent 15px 33px);
+}
+
+.movement-athlete-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.movement-athlete {
+  --athlete-height: clamp(4rem, 13vw, 8.5rem);
+  position: sticky;
+  top: 4rem;
+  height: var(--athlete-height);
+}
+
+.movement-athlete.is-travelling {
+  position: absolute;
+  inset: 0 0 auto;
+  transform: translateY(var(--athlete-position));
+}
+
+.movement-athlete svg {
+  display: block;
+  width: 85%;
+  height: 100%;
+  margin-inline: auto;
+  filter: drop-shadow(3px 4px 0 #14212745);
+}
+
+.movement-segment { position: relative; height: var(--segment-height); }
+
+.movement-race {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  padding: 0 .25rem .15rem;
+  border: 0;
+  border-bottom: 1px solid var(--stripe);
+  background: transparent;
+  color: var(--stripe);
+  font: 600 clamp(.7rem, 1.7vw, .9rem)/1.2 'IBM Plex Mono', monospace;
+  cursor: pointer;
+}
+
+.movement-race span { background: var(--course); padding: .12em .26em; }
+.movement-race:focus-visible { outline: 2px solid var(--stripe); outline-offset: -3px; }
+
+.movement-stats {
+  position: absolute;
+  z-index: 2;
+  inset: .3rem .3rem auto;
+  padding: .65rem;
+  display: grid;
+  gap: .25rem;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: .83rem;
+  line-height: 1.35;
+  text-align: start;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.movement-race-name {
+  font-size: 1rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+.movement-race-pace { border-top: 1px solid currentColor; padding-top: .3rem; font-weight: 600; }
+.movement-race:focus-visible + .movement-stats,
+.movement-race[aria-expanded='true'] + .movement-stats { visibility: visible; }
+
+@media (hover: hover) {
+  .movement-race:hover { background: #ffffff1f; }
+  .movement-segment:hover .movement-stats { visibility: visible; }
+}
+
+.movement-segment.is-dismissed .movement-stats { visibility: hidden; }
+
+@media (max-width: 48rem) {
+  .movement-stats {
+    position: fixed;
+    inset: auto 1rem calc(1rem + env(safe-area-inset-bottom));
+    z-index: 5;
+  }
+}

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 96 132" focusable="false">
+  {% case include.sport %}
+  {% when 'swimming' %}
+    <path d="M34 21Q25 34 28 49M60 14Q72 30 68 43M27 61Q10 69 18 87M69 69Q84 79 78 92M33 106Q45 119 61 112" fill="none" stroke="#e8f6ee" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+    <path d="m45 57-4-23 3-17m10 40 5-21-4-14M40 72 26 83l1 14m30-24 9 18-6 30" fill="none" stroke="#cf895d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M40 52Q48 48 57 52L62 76Q53 84 35 75Z" fill="#142f4b"/>
+    <ellipse cx="48" cy="80" rx="9" ry="11" fill="#f36550"/>
+    <path d="M41 84q7 3 14 0" fill="none" stroke="#142f4b" stroke-width="3"/>
+  {% when 'cycling' %}
+    <path d="M52 12v26m0 56v28" stroke="#202928" stroke-width="8" stroke-linecap="round"/>
+    <path d="M52 39v52m-14-8h28l5-4m-33 4-5-4" fill="none" stroke="#e8f6ee" stroke-width="4" stroke-linecap="round"/>
+    <path d="M44 50 37 38l3-12m19 24 8-10-5-6M39 60l-4 15 3 8m25-23 4 15-3 8" fill="none" stroke="#c88961" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M43 40Q51 35 60 40L63 54H40Z" fill="#243035"/>
+    <path d="M40 51Q51 45 63 51L67 69Q52 78 36 69Z" fill="#f47d70"/>
+    <path d="M37 64q15 5 29 0" fill="none" stroke="#ffe2d5" stroke-width="3"/>
+    <ellipse cx="52" cy="72" rx="10" ry="13" fill="#eef0d6"/>
+    <path d="M52 63v15m-4-13-2 8m10-8 2 8" fill="none" stroke="#5c6458" stroke-width="1.5" stroke-linecap="round"/>
+  {% when 'running' %}
+    <path d="M47 49 38 31l4-16m14 36 12 22-8 23M36 62 21 68l5 17m35-23 12-4 1-14" fill="none" stroke="#d89369" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m44 14 1-7m15 89-3 10" stroke="#f5ebd7" stroke-width="10" stroke-linecap="round"/>
+    <path d="M43 43q10-2 17 6l2 12-23-4Z" fill="#193246"/>
+    <path d="M40 51q13-4 23 9l-3 12q-14 6-26-3Z" fill="#f2c65f"/>
+    <path d="m37 63 24 5" stroke="#fcf0d5" stroke-width="3"/>
+    <path d="M45 73q-10 5-7 16" fill="none" stroke="#252522" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="49" cy="75" rx="10" ry="11" fill="#252522"/>
+    <path d="M40 74q8 5 18 2" fill="none" stroke="#ed765a" stroke-width="3"/>
+  {% endcase %}
+</svg>
