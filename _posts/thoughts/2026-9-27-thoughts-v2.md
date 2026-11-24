@@ -1,7 +1,7 @@
 ---
 layout: thoughts_style
 date: 2026-09-27 13:40:00 +0800
-tags: [random]
+tags: [fangirl]
 ---
 
 Strange. I thought I had a sticker of an mad rabbit flipping the table with a lightening strike behind. 

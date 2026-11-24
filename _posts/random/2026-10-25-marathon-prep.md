@@ -2,7 +2,7 @@
 layout: post
 title: "Last Minute Marathon Prep"
 date: 2026-10-25 22:24:00 +0800
-tags: [random]
+tags: [wordvomit]
 ---
 
 To whoever's running their first marathon: this should **NOT** be your official checklist. Watch [YouTube](https://www.youtube.com/@kofuzi), lurk in Reddit groups, check the official race website, or heck, prompt G before you come to me.
