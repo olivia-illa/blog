@@ -1,5 +1,6 @@
 const courses = document.querySelector('.movement-courses');
 const hoverInput = window.matchMedia('(hover: hover)');
+const tapLayout = window.matchMedia('(max-width: 48rem)');
 let pinnedRace;
 
 function closeRace() {
@@ -8,7 +9,7 @@ function closeRace() {
 }
 
 courses.addEventListener('click', (event) => {
-  if (event.pointerType === 'mouse' || (!event.pointerType && hoverInput.matches)) return;
+  if (!tapLayout.matches && (event.pointerType === 'mouse' || (!event.pointerType && hoverInput.matches))) return;
   const race = event.target.closest('.movement-race');
   if (!race) return;
 
@@ -25,6 +26,8 @@ courses.addEventListener('click', (event) => {
 document.addEventListener('click', (event) => {
   if (pinnedRace && !pinnedRace.contains(event.target)) closeRace();
 });
+
+tapLayout.addEventListener('change', closeRace);
 
 document.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') return;

@@ -248,7 +248,7 @@
 .movement-race:focus-visible + .movement-stats,
 .movement-race[aria-expanded='true'] + .movement-stats { visibility: visible; }
 
-@media (hover: hover) {
+@media (hover: hover) and (width > 48rem) {
   .movement-race { cursor: default; }
   .movement-segment:hover .movement-stats { visibility: visible; }
 }
