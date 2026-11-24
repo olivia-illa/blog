@@ -34,11 +34,6 @@
 
 .movement-heading p {
   margin: .85rem auto 0;
-  font-family: var(--font-mono);
-}
-
-@media (max-width: 599px) {
-  .movement-heading p { font-size: .85rem; }
 }
 
 .movement-courses {

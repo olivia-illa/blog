@@ -1917,8 +1917,7 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .banana-edits { width: 100%; margin: 1.5rem 0 3rem; }
 .banana-heading { border: 0; padding: 0; }
 .banana-eyebrow { font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 .6rem; }
-.page-edited .banana-heading h1 { font: inherit; font-size: 1rem !important; font-weight: normal; }
-.banana-heading > p:last-child { font-size: .75rem; margin: 0; }
+.banana-heading > .catalogue-subtitle { margin: 0; }
 .banana-stack { list-style: none; margin: 2rem 0 0; padding: 2rem 1.5rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 2rem; }
 .banana-stack li { min-width: 0; display: flex; align-items: center; justify-content: center; }
 .banana-entry { position: relative; display: block; width: 100%; max-width: 380px; color: var(--text-color); background: none; transform: rotate(var(--banana-angle, -12deg)); transition: transform 180ms ease; }
@@ -1981,7 +1980,7 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .page-edited > header, .page-edited > footer { flex: 0 0 auto; }
 .page-edited main { display: flex; min-height: 0; }
 .page-edited main > article { display: flex; min-height: 0; }
-.banana-edits { display: flex; flex-direction: column; min-height: 0; margin: 1rem 0 0; }
+.banana-edits { display: flex; flex-direction: column; min-height: 0; margin: 0; }
 .banana-heading { flex: 0 0 auto; }
 .banana-eyebrow { display: none; }
 .banana-stack { position: relative; flex: 1; min-height: 0; display: block; margin: .5rem 0; padding: 0; }
@@ -2000,8 +1999,6 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .banana-stack li:nth-child(3n) .banana-hover-title,
 .banana-stack li:last-child .banana-hover-title { left: auto; right: 60%; }
 @media (max-width: 600px) {
-  .banana-edits { margin-top: .5rem; }
-  .banana-heading > p:last-child { font-size: .65rem; }
   .banana-stack li:nth-child(n) { width: 36vw; }
   .banana-stack li:nth-child(1) { left: 20%; top: 9%; }
   .banana-stack li:nth-child(2) { left: 70%; top: 12%; }
@@ -2384,11 +2381,17 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   .calendar-token.is-jiggling svg { animation: none; }
 }
 
+.catalogue-intro-line,
+.catalogue-subtitle {
+  font: .85rem/1.5 var(--font-mono);
+  color: var(--text-color);
+}
+
 .catalogue-intro-line {
   margin: 0;
   padding: .7rem 0 .4rem;
-  font: .85rem/1.5 var(--font-mono);
-  color: var(--text-color);
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 @media (max-width: 600px) {

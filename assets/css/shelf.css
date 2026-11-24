@@ -1,7 +1,7 @@
 .page-shelf main { width:100%; min-width:0; }
 .media-shelf { max-width:760px; margin:2rem auto 4rem; }
 .shelf-heading { text-align:center; }
-.shelf-kicker,.shelf-instruction,.shelf-footnote,.shelf-status,.shelf-mention { font-size:.72rem; }
+.shelf-kicker,.shelf-instruction:not(.catalogue-subtitle),.shelf-footnote,.shelf-status,.shelf-mention { font-size:.72rem; }
 .shelf-kicker { letter-spacing:.12em; text-transform:uppercase; }
 .shelf-heading h1 { font:400 clamp(3rem,8vw,5rem)/1.1 Georgia,serif; margin:.5rem 0; }
 .shelf-heading p { font-size:.85rem; }
@@ -127,7 +127,8 @@
 .shelf-heading .shelf-kicker { display:block; margin:0 0 .65rem; }
 .media-shelf .shelf-heading h1 { margin:0; }
 .media-shelf .shelf-controls { margin:1rem 0 1.15rem; }
-.media-shelf .shelf-instruction { margin:0 auto; max-width:34rem; line-height:1.7; }
+.media-shelf .shelf-instruction { margin:0 auto; max-width:34rem; }
+.media-shelf .shelf-instruction:not(.catalogue-subtitle) { line-height:1.7; }
 @media(max-width:700px) {
   .media-shelf { margin-top:1.4rem; }
   .shelf-heading .shelf-kicker { margin-bottom:.55rem; }

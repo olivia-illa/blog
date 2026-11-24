@@ -2,7 +2,7 @@
 layout: page
 title: shhh I made edits
 permalink: /recently-edited/
-body_class: page-compact page-edited
+body_class: page-edited
 ---
 
 {% assign random_posts = site.posts | where_exp: "post", "post.path contains '_posts/random/'" %}
@@ -10,8 +10,8 @@ body_class: page-compact page-edited
 <section class="banana-edits" aria-labelledby="banana-heading">
   <header class="banana-heading">
     <p class="banana-eyebrow">Freshly reconsidered</p>
-    <h1 id="banana-heading">shhh I made edits</h1>
-    <p>Eat them fresh before they become banana bread.</p>
+    <h1 class="catalogue-intro-line" id="banana-heading">shhh I made edits</h1>
+    <p class="catalogue-subtitle">Have them fresh before they become banana bread.</p>
   </header>
   <ol class="banana-stack">
     {% for post in edited_posts limit:10 %}

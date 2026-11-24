@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/shelf.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% if page.url == '/shelf/' %}<p class="catalogue-intro-line"><em>a room of one’s own</em></p>{% endif %}
 <section class="media-shelf" aria-labelledby="shelf-title">
-  <div class="shelf-heading"><span class="shelf-kicker">A Room of One’s Own</span><h1 id="shelf-title">{% if page.shelf_log_slug == 'wishlist' or page.shelf_forgotten %}{{ page.shelf_heading }}{% else %}M<span class="shelf-heading-y">Y<a class="shelf-spider" href="{{ '/shelf/forgotten/' | relative_url }}" aria-label="Visit the forgotten shelf">🕷</a></span> SHELF{% endif %}</h1></div>
+  <div class="shelf-heading">{% unless page.url == '/shelf/' %}<span class="shelf-kicker">A Room of One’s Own</span>{% endunless %}<h1 id="shelf-title">{% if page.shelf_log_slug == 'wishlist' or page.shelf_forgotten %}{{ page.shelf_heading }}{% else %}M<span class="shelf-heading-y">Y<a class="shelf-spider" href="{{ '/shelf/forgotten/' | relative_url }}" aria-label="Visit the forgotten shelf">🕷</a></span> SHELF{% endif %}</h1></div>
   <div class="shelf-controls" role="group" aria-label="Filter the shelf" hidden><button type="button" data-medium="all" aria-pressed="true">All</button><button type="button" data-medium="book" aria-pressed="false">Books</button><button type="button" data-medium="dvd" aria-pressed="false">DVDs</button><button type="button" data-medium="tv" aria-pressed="false">TV</button></div>
-  <p class="shelf-instruction">{{ page.shelf_instruction | default: 'Grab one, just don’t doodle on my books or CDs.' }}</p>
+  <p class="shelf-instruction{% if page.url == '/shelf/' %} catalogue-subtitle{% endif %}">{{ page.shelf_instruction | default: 'Grab one, just don’t doodle on my books or CDs.' }}</p>
   <div class="shelf-stacks">
     <section class="shelf-pile" aria-label="Books, DVDs and TV">
       <div class="shelf-stack">
