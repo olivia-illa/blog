@@ -1,0 +1,47 @@
+- title: Wires Connected
+  url: /music/
+  paths:
+    - music.html
+    - _data/music.yml
+    - assets/css/music.css
+    - assets/js/music.js
+- title: My Shelves
+  url: /shelf/
+  paths:
+    - shelf.html
+    - _shelf/the-shelf-log.md
+    - _includes/media-shelf.html
+    - _includes/shelf-edition.html
+    - _includes/shelf-publisher-mark.html
+    - assets/css/shelf.css
+    - assets/js/shelf.js
+- title: Dessert Person
+  url: /recipes/
+  paths:
+    - recipes.html
+    - _data/log-recipes.yml
+- title: MY PACE, MY RACE
+  url: /race-stats/
+  paths:
+    - race-stats.html
+    - _race_logs/race-log.md
+    - _includes/movement-athlete.html
+    - _includes/movement-pace.html
+    - assets/css/movement.css
+    - assets/js/movement.js
+    - assets/images/race-cycling-ink.png
+    - assets/images/race-pool-ripples.svg
+    - assets/images/race-track-grain.png
+- title: Advent Calendar
+  url: /advent/
+  paths:
+    - advent.html
+    - assets/advent-heading.svg
+    - assets/css/advent.css
+    - assets/js/advent.js
+- title: Going Bananas
+  url: /recently-edited/
+  paths:
+    - recently-edited.html
+    - _posts/random
+    - assets/js/banana-labels.js

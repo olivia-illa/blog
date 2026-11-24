@@ -10,7 +10,7 @@ Do you still write more than [20% of the code](https://x.com/mitsuhiko/status/21
 
 I cannot speak for d (though he did spot the post on Mastodon), but I’ve made a few observations, whether it was on the subway when he'd pull out his laptop (these days it's just his phone) or after dinner, when all I’d hear is the *CLICKETY-CLACK* of endless typing and squealing late into the night.
 
-Some of these observations have been modified for comedic effect, though I've kept them as close as possible to what I actually overheard:
+Some of these observations have been modified for comedic effect, though I've kept them as close as possible to what I have experienced:
 
 - Converts the agent’s responses into the format of a math explanation video
 - Runs agents on his phone while keeping his laptop on *never go to sleep* mode
@@ -21,3 +21,4 @@ Some of these observations have been modified for comedic effect, though I've ke
 - Uses the laptop's front camera to give the agent eyes so it can identify what a flashing error on a keyboard means and how to resolve it
 - Checks the agent’s thought process on his phone and course-corrects in real time
 - "May I pull the latest remote changes and rebase your local commits, automatically preserving your uncommitted edits?" Yes, don't ask me again.
+- "Good morning, o! How can I help?"
