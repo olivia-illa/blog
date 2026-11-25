@@ -6,9 +6,9 @@
   const ripples = spoon.querySelector('.soup-scoop-ripples');
   const note = spoon.querySelector('.soup-note');
   const announcement = document.querySelector('.soup-announcement');
-  const motionToggle = document.querySelector('.soup-motion-toggle');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(pointer: fine)');
+  const touchScreen = window.matchMedia('(pointer: coarse)');
   const messages = [
     { text: 'thank you', lang: 'en' },
     { text: '謝謝', lang: 'zh-Hant' },
@@ -37,15 +37,11 @@
     { time: 650, position: 'translate(4 -20) rotate(-4 203 173)' },
     { time: 780, position: 'translate(0 0)' }
   ];
-  let motionOverride = false;
   let next = 0;
   let scooping = false;
   let letterTimer;
+  let reducedMotionTimer;
   let lastLetterTick;
-
-  function motionEnabled() {
-    return !reducedMotion.matches || motionOverride;
-  }
 
   function floatLetters() {
     const tick = Math.floor(performance.now() / letterFrameDuration);
@@ -54,7 +50,7 @@
     letters.forEach((letter, index) => {
       const phase = (index % 3) * 2;
       const frame = (tick + phase) % letterOffsets.length;
-      const offset = letterOffsets[frame];
+      const offset = reducedMotion.matches ? Math.sign(letterOffsets[frame]) : letterOffsets[frame];
       const transform = finePointer.matches
         ? 'translate(' + letterDrift[frame] + ' ' + offset * 1.35 + ') rotate(' + letterTilt[frame] + ' 7 -7)'
         : 'translate(0 ' + offset + ')';
@@ -62,17 +58,22 @@
     });
   }
 
-  function syncLetterMotion() {
+  function stopLetterMotion() {
     window.clearInterval(letterTimer);
-    motionToggle.hidden = !reducedMotion.matches;
-    motionToggle.setAttribute('aria-pressed', String(motionOverride));
-    if (!motionEnabled()) {
-      letters.forEach(letter => letter.removeAttribute('transform'));
-      lastLetterTick = undefined;
-      return;
-    }
+    window.clearTimeout(reducedMotionTimer);
+    letters.forEach(letter => letter.removeAttribute('transform'));
+    lastLetterTick = undefined;
+  }
+
+  function syncLetterMotion() {
+    stopLetterMotion();
+    if (reducedMotion.matches && !touchScreen.matches) return;
+
     floatLetters();
     letterTimer = window.setInterval(floatLetters, letterFrameDuration);
+    if (reducedMotion.matches) {
+      reducedMotionTimer = window.setTimeout(stopLetterMotion, letterFrameDuration * letterOffsets.length);
+    }
   }
 
   function revealNote() {
@@ -84,10 +85,6 @@
     announcement.textContent = message.text;
   }
 
-  motionToggle.addEventListener('click', () => {
-    motionOverride = !motionOverride;
-    syncLetterMotion();
-  });
   syncLetterMotion();
   if (reducedMotion.addEventListener) {
     reducedMotion.addEventListener('change', syncLetterMotion);
@@ -98,7 +95,7 @@
   spoon.disabled = false;
   spoon.addEventListener('click', () => {
     if (scooping) return;
-    if (!motionEnabled()) {
+    if (reducedMotion.matches) {
       revealNote();
       return;
     }

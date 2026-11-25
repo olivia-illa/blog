@@ -14,17 +14,6 @@
   margin-bottom: .35rem;
 }
 
-.soup-motion-toggle {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-color);
-  font: inherit;
-  font-size: .85rem;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .soup-subtitle {
   margin: 0 0 1.15rem;
 }
