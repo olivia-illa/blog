@@ -1,6 +1,16 @@
 ---
 entries:
 
+  - title: "The Altruists"
+    creator: "Graham Moore"
+    creator_role: "Creator"
+    medium: "tv"
+    edition: "2026 · Limited series"
+    status: "Watching"
+    logged_on: "2026-11-24"
+    note: "[Add a note]"
+    credit_source: "https://media.netflix.com/en/only-on-netflix/81681910"
+
   - title: "Suits"
     creator: "Aaron Korsh"
     creator_role: "Executive producer"

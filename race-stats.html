@@ -42,7 +42,7 @@ body_class: page-movement
           <p class="movement-total">{{ total | round: 2 }} <small>km</small></p>
           {% if timed_seconds > 0 %}<p class="movement-average"><span>average</span> {% include movement-pace.html sport=sport km=timed_km seconds=timed_seconds %}</p>{% endif %}
         </header>
-        <div class="movement-start">Start</div>
+        <div class="movement-start">Start <span class="movement-scale">({{ pixels_per_km }} px/k)</span></div>
         <div class="movement-track">
           <div class="movement-athlete-layer" aria-hidden="true">
             <div class="movement-athlete">{% include movement-athlete.html sport=sport %}</div>

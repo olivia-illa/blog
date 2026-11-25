@@ -1511,6 +1511,10 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 
 /* --- Shared by post.html, thoughts_style.html, clippings_style.html ------- */
 
+.post-article {
+  margin-inline: .375rem;
+}
+
 /* Headings never carry the border/underline the base h2 rule adds */
 .post-article h1,
 .post-article h2,
@@ -1587,12 +1591,19 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
   white-space: nowrap;
 }
 
-/* Custom ⊹ bullets with wide spacing. Not applied to clippings, whose lists
-   keep the browser default. */
+/* Give ordinary lists the same inset across post layouts. */
+.post-article .post-body :is(ul, ol:not(.footnotes-list)) {
+  padding-inline-start: clamp(2.4rem, 6vw, 2.65rem);
+}
+
+.post-article .post-body li > :is(ul, ol:not(.footnotes-list)) {
+  padding-inline-start: 1.5rem;
+}
+
+/* Custom bullets for long-form and thoughts posts. */
 .post-long .post-body ul,
 .post-thoughts .post-body ul {
   list-style-type: "⊹ ";  /* Sets the default marker and adds a tiny trailing space */
-  padding-left: 1.5em;    /* Ensures proper indentation for the custom character */
   margin-top: 1em;
 }
 
@@ -1627,9 +1638,20 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
   line-height: 1.7;
 }
 
+.page-useful-links .post-article > h1,
+.page-useful-links .post-body h2 {
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.page-useful-links .post-article > h1 { margin: .7rem 0 .5rem; }
+.page-useful-links .post-body h2 { margin: 1.1rem 0 .5rem; padding: 0; }
+.page-useful-links .post-body ul { margin: .5rem 0 1.1rem; }
+.page-useful-links .post-body ul li { margin-bottom: .45em; }
+
 /* Keep nested lists or numbered lists clean with wider breathing room */
 .post-long .post-body ol {
-  padding-left: 1.5em;
   margin-top: 1em;
   margin-bottom: 1.35rem;
 }
@@ -2261,7 +2283,6 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .page-tags main > article { max-width: none; width: 100%; }
 .page-tags main > article > h1 { display: none; }
 .tag-cabinet { max-width: 940px; margin: 1.5rem auto 3rem; padding: 0 1.5rem; }
-.folder-instruction { font-size: .75rem; margin: 0 0 2rem; }
 .folder-stack { position: relative; padding: 0 1.2rem; }
 .tag-folder { position: relative; margin: 0; padding: 0; border: 1px solid var(--text-color); border-radius: 7px 7px 0 0; background: var(--bg-color); color: var(--text-color); min-height: 30px; scroll-margin-top: 1rem; }
 .tag-folder + .tag-folder { margin-top: -1px; }

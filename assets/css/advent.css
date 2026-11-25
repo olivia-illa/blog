@@ -18,6 +18,7 @@ body.page-advent > main {
   max-width: 100ch;
   margin: .35rem auto .55rem;
   text-align: center;
+  font-size: .7rem;
   font-style: italic;
 }
 
@@ -30,8 +31,9 @@ body.page-advent > main {
 
 .advent-quote figcaption {
   display: inline;
-  font-size: .7rem;
 }
+
+.advent-quote .catalogue-subtitle { font-size: inherit; }
 
 .advent-calendar h1 {
   position: relative;

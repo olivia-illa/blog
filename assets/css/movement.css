@@ -108,7 +108,7 @@
 .movement-track { background-image: url("../images/race-track-grain.png"); }
 
 .movement-start {
-  padding: .5rem 0;
+  padding: .5rem .15rem;
   background-color: var(--course);
   color: var(--stripe);
   border-inline: 2px solid var(--stripe);
@@ -116,6 +116,14 @@
   text-align: center;
   font-size: .875rem;
   font-weight: 600;
+}
+
+.movement-scale {
+  display: block;
+  font-size: .6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .movement-track {
