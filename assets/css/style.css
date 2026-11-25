@@ -324,6 +324,7 @@ img, video { height: auto; }
 .nvda-timeline-title { display: block; margin-bottom: 1em; }
 .nvda-timeline-line { display: grid; grid-template-columns: min(19ch, 50%) minmax(0, 1fr); }
 .nvda-timeline-line > span { min-width: 0; white-space: pre-wrap; }
+.nvda-timeline-price { display: block; }
 .post-body table { width: 100%; table-layout: fixed; overflow-wrap: anywhere; }
 .post-body .nvda-insider-trading { border-collapse: collapse; }
 .nvda-insider-trading th,
