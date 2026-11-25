@@ -5,7 +5,7 @@ date: 2026-11-24 18:14:00 +0800
 tags: [wordvomit]
 ---
 
-I’ve been a fashionista (cringe) since late elementary when Mom would bring me to Why and 1/2 whole sells in warehouses where we’d go thro past seasonal items, and sales. to I started thrifting when Shopee was first introduced here. It used to have a lot a more 
+
 
 
 
@@ -89,5 +89,5 @@ I need to switch up my bags more often.
 - Old Guess faux leather baguette bag
 - Secondhand Miu Miu cardholders
 - Kenneth Cole
-- 
+- [Otello](https://maps.app.goo.gl/a9scEFrh6z3WUzQ27), Barcelona
 

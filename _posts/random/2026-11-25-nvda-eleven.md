@@ -96,7 +96,7 @@ tags: [money]
 
 * [r/taiwan reacts to Huang’s return](https://www.reddit.com/r/taiwan/comments/1y40qgq/now_that_jensen_huang_is_back_as_nvidias_ceo_how/). “Jensen is very much beloved in Taiwan.” “I think money matters. […] When a man controls your work security, bonus, and stock performance, he is a god.”
 
-## Jensen AI MVs
+## Jensen featured in MVs
 
 - Shaggy’s [“It Wasn’t Me”](https://x.com/seanboisselle/status/2119918839114985597)
 - ROSÉ and Bruno Mars’ [“APT.”](https://x.com/walkingwithai96/status/2119967281593930034)
@@ -105,7 +105,7 @@ tags: [money]
 - George Michael’s [“Careless Whisper”](https://x.com/moondriift/status/2120086456844558732).
 - [N.V.D.A.](https://www.youtube.com/watch?v=wPyuMjIL-tg)
 
-## More Jensen links
+## More links
 
 - [Ranking Jensen](https://x.com/dummerspast39/status/2120983929821774142)
 - [Jensen in *The Office*](https://www.youtube.com/watch?v=5I7fK9_eKEI)
