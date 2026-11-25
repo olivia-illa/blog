@@ -2,8 +2,12 @@
   --soup-ink: light-dark(#a73531, #ef8a7d);
   --soup-paper: var(--bg-color);
   max-width: 34rem;
-  margin: 2rem auto 3rem;
+  margin: 1.6rem auto 3rem;
   text-align: center;
+}
+
+@media (max-width: 700px) {
+  .alphabet-soup { margin-top: 1.4rem; }
 }
 
 .alphabet-soup .soup-title {
@@ -16,7 +20,7 @@
 
 .soup-title svg {
   display: block;
-  width: min(100%, clamp(18rem, 72vw, 27rem));
+  width: min(100%, clamp(19rem, 76vw, 29rem));
   margin-inline: auto;
   overflow: visible;
   fill: none;
@@ -149,6 +153,10 @@
   font: 600 16px "IBM Plex Mono", monospace;
 }
 
+.soup-note:lang(sv) {
+  font-size: 13px;
+}
+
 .soup-spoon {
   position: absolute;
   inset: 0;
@@ -168,6 +176,10 @@
   transform-origin: 203px 173px;
 }
 
+.soup-spoon:focus {
+  outline: none;
+}
+
 .soup-spoon:focus-visible .soup-spoon-metal {
   stroke-width: 5;
 }
@@ -175,6 +187,11 @@
 .soup-submission {
   display: inline-block;
   margin-top: 3.25rem;
+}
+
+.soup-submission-prompt {
+  margin: .25rem 0 0;
+  font-size: inherit;
 }
 
 .soup-announcement {

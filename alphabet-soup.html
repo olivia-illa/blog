@@ -7,6 +7,7 @@ permalink: /alphabet-soup/
 <link rel="stylesheet" href="{{ '/assets/css/alphabet-soup.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <script src="{{ '/assets/js/alphabet-soup.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
+<p class="catalogue-intro-line" id="soup-instructions">scoop up a soggy happy note</p>
 <section class="alphabet-soup">
   <h1 class="soup-title" aria-label="Letter Soup">
     <svg viewBox="0 0 326 63" aria-hidden="true">
@@ -29,7 +30,6 @@ permalink: /alphabet-soup/
     </svg>
   </h1>
   <p class="soup-subtitle">a guestbook</p>
-  <p id="soup-instructions">scoop up a soggy happy note</p>
 
   <div class="soup-drawing">
     <svg viewBox="0 0 440 315" aria-hidden="true">
@@ -158,5 +158,6 @@ permalink: /alphabet-soup/
   </div>
 
   <p class="soup-announcement" role="status"></p>
-  <a class="soup-submission" href="mailto:blahblah@oliviailla.blog?subject=Letter%20Soup">add a word to the soup</a>
+  <a class="soup-submission" href="mailto:blahblah@oliviailla.blog?subject=Letter%20Soup" aria-describedby="soup-submission-prompt">add a word to the soup</a>
+  <p class="catalogue-subtitle soup-submission-prompt" id="soup-submission-prompt">(tell me how you feel about the blog)</p>
 </section>

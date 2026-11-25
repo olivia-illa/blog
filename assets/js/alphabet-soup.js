@@ -7,11 +7,16 @@
   const announcement = document.querySelector('.soup-announcement');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const messages = [
-    { text: 'Danke', lang: 'de' },
-    { text: 'Gracias', lang: 'es' },
-    { text: 'Thank you', lang: 'en' },
+    { text: 'thank you', lang: 'en' },
     { text: '謝謝', lang: 'zh-Hant' },
-    { text: 'Merci', lang: 'fr' }
+    { text: 'gracias', lang: 'es' },
+    { text: 'dank je', lang: 'nl' },
+    { text: 'merci', lang: 'fr' },
+    { text: 'obrigado', lang: 'pt' },
+    { text: 'ありがとう', lang: 'ja' },
+    { text: 'ขอบคุณ', lang: 'th' },
+    { text: '감사합니다', lang: 'ko' },
+    { text: 'tack så mycket', lang: 'sv' }
   ];
   const resting = 'translate(0, 0) rotate(0deg)';
   const dipped = 'translate(-24px, 35px) rotate(12deg)';
