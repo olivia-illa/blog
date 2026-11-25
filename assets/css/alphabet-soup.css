@@ -1,7 +1,6 @@
 .alphabet-soup {
-  --soup-ink: #8b2427;
-  --soup-tomato: #bd352f;
-  --soup-paper: #fff5e7;
+  --soup-ink: light-dark(#a73531, #ef8a7d);
+  --soup-paper: var(--bg-color);
   max-width: 34rem;
   margin: 2rem auto 3rem;
   text-align: center;
@@ -11,9 +10,13 @@
   margin-bottom: .35rem;
 }
 
+.soup-subtitle {
+  margin: 0 0 1.15rem;
+}
+
 .soup-title svg {
   display: block;
-  width: min(100%, 20rem);
+  width: min(100%, clamp(18rem, 72vw, 27rem));
   margin-inline: auto;
   overflow: visible;
   fill: none;
@@ -21,26 +24,15 @@
   stroke-linejoin: round;
 }
 
-.soup-title-subtitle {
-  display: block;
-  margin-top: .2rem;
-  font: 500 1rem "IBM Plex Mono", monospace;
-  text-transform: none;
-}
-
 .soup-title-pasta {
   stroke: var(--soup-ink);
-  stroke-width: 9;
+  stroke-width: 6.5;
 }
 
-.soup-title-surface {
-  fill: var(--soup-tomato);
-}
-
-.soup-title-glints {
-  stroke: var(--soup-paper);
-  stroke-width: 1.5;
-  opacity: .48;
+.soup-title-ripples {
+  stroke: var(--soup-ink);
+  stroke-width: 1.65;
+  opacity: .55;
 }
 
 .soup-scoop-ripples {
@@ -88,12 +80,12 @@
 
 .soup-bowl-stripe {
   fill: none;
-  stroke: var(--soup-tomato);
+  stroke: var(--soup-ink);
   stroke-linecap: round;
   stroke-width: 3.5;
 }
 
-.soup-broth { fill: var(--soup-tomato); }
+.soup-broth { fill: var(--soup-ink); }
 .soup-spoon-metal {
   fill: var(--soup-paper);
 }
@@ -115,7 +107,18 @@
 .soup-spoon-shine { stroke: var(--soup-ink); opacity: .22; }
 .soup-spoonful { fill: var(--soup-ink); }
 
-.soup-pasta {
+.soup-spill-broth {
+  fill: var(--soup-ink);
+  stroke: var(--soup-ink);
+  stroke-width: 1.7;
+}
+
+.soup-spilled-pasta-dry {
+  stroke: var(--soup-ink);
+}
+
+.soup-pasta,
+.soup-spilled-pasta {
   fill: none;
   stroke: var(--soup-paper);
   stroke-width: 4.15;
@@ -167,6 +170,11 @@
 
 .soup-spoon:focus-visible .soup-spoon-metal {
   stroke-width: 5;
+}
+
+.soup-submission {
+  display: inline-block;
+  margin-top: 3.25rem;
 }
 
 .soup-announcement {
