@@ -1,0 +1,144 @@
+---
+layout: default
+title: Letter Soup
+permalink: /alphabet-soup/
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/alphabet-soup.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script src="{{ '/assets/js/alphabet-soup.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+
+<section class="alphabet-soup">
+  <h1 class="soup-title" aria-label="Letter Soup">
+    <svg viewBox="-18 -4 391 61" aria-hidden="true">
+      <defs>
+        <g id="soup-title-letters">
+          <path d="M13 12Q11 24 13 39Q21 40 33 38"/>
+          <path d="M63 11Q52 10 43 13L44 39 64 38M45 25L59 24"/>
+          <path d="M74 12Q86 10 97 12M85 13L86 39"/>
+          <path d="M108 11Q119 12 131 10M119 13L118 38"/>
+          <path d="M162 12Q151 11 141 13L142 40 162 39M143 25L157 26"/>
+          <path d="M173 39L174 12C198 8 201 28 175 27M183 27Q188 31 195 40"/>
+          <path d="M236 14C221 5 211 19 224 24C246 29 231 45 218 37"/>
+          <path d="M258 11C243 11 240 36 253 39C269 44 278 12 258 11Z"/>
+          <path d="M281 12Q275 39 290 40Q302 40 303 13"/>
+          <path d="M318 40L317 12C327 8 339 11 339 19Q338 28 318 28"/>
+        </g>
+      </defs>
+      <path class="soup-title-surface" d="M10 39C20 34 38 35 51 36C61 37 68 40 65 43C60 49 41 47 30 48C17 49 5 47 6 43Q6 41 10 39ZM101 40C108 34 126 35 136 37C145 39 157 37 162 41C167 46 157 50 147 50C135 50 126 47 115 49C105 50 94 46 101 40ZM184 40C194 34 207 35 220 37C231 39 240 36 247 40C254 45 244 50 232 49C218 47 209 51 197 50C187 50 177 46 184 40ZM272 39C280 36 287 37 296 38C307 39 318 34 328 37C338 39 342 44 335 47C325 51 310 46 302 48C291 51 279 50 272 47Q265 44 272 39Z"/>
+      <use href="#soup-title-letters" class="soup-title-pasta"/>
+      <path class="soup-title-glints" d="M14 44Q22 46 31 44M49 44l6-1M106 45q7 3 15 1m22 0 7 1M191 46q9 2 18 0m22 0 7 1M278 45q6 2 12 1m30-2 7 1"/>
+    </svg>
+  </h1>
+  <p id="soup-instructions">scoop up a soggy happy note</p>
+
+  <div class="soup-drawing">
+    <svg viewBox="0 0 440 315" aria-hidden="true">
+      <defs>
+        <pattern id="soup-bowl-stipple" width="9" height="9" patternUnits="userSpaceOnUse">
+          <path d="M2 2h.01m4 4h.01" stroke="var(--soup-ink)" stroke-width="1.6" stroke-linecap="round"/>
+        </pattern>
+        <path id="soup-letter-A" d="M0 0Q2-9 6-15Q10-11 13 0M3-5L10-6"/>
+        <path id="soup-letter-B" d="M1 0L2-15C14-17 15-8 3-8C16-10 16 2 2 0"/>
+        <path id="soup-letter-C" d="M13-13C6-19 0-12 1-6Q3 3 12-1"/>
+        <path id="soup-letter-D" d="M1 0L2-14C16-18 18 1 2 0"/>
+        <path id="soup-letter-E" d="M12-15L2-14 1 0 12-1M3-7L10-8"/>
+        <path id="soup-letter-F" d="M2 0L2-14 13-15M3-8L10-8"/>
+        <path id="soup-letter-G" d="M13-13C3-20-3-7 3-2Q8 3 13-1L13-6 8-6"/>
+        <path id="soup-letter-H" d="M1 0L2-15M12-15L13 0M3-7L11-8"/>
+        <path id="soup-letter-I" d="M1-15L9-15M5-14L5 0M1 0L9-1"/>
+        <path id="soup-letter-J" d="M3-15L12-15M10-14Q12 4 2-1"/>
+        <path id="soup-letter-K" d="M2 0L2-15M13-15L3-7 14 0"/>
+        <path id="soup-letter-L" d="M2-15L1 0 12-1"/>
+        <path id="soup-letter-M" d="M1 0L3-15 8-7 13-15 15 0"/>
+        <path id="soup-letter-N" d="M2 0L2-15Q9-8 13 0L13-15"/>
+        <path id="soup-letter-O" d="M8-15C0-16-2-3 5 0C16 4 19-15 8-15Z"/>
+        <path id="soup-letter-P" d="M2 0L2-15C16-18 19-6 3-7"/>
+        <path id="soup-letter-Q" d="M8-15C0-16-2-3 5 0C16 4 19-15 8-15ZM9-5L15 2"/>
+        <path id="soup-letter-R" d="M2 0L2-15C16-18 17-7 3-7M7-7L15 0"/>
+        <path id="soup-letter-S" d="M13-13C5-20-3-10 5-8C21-4 10 5 1-2"/>
+        <path id="soup-letter-T" d="M0-14Q7-16 15-15M7-14L8 0"/>
+        <path id="soup-letter-U" d="M2-15C-1 4 14 6 14-15"/>
+        <path id="soup-letter-V" d="M1-15Q5-5 8 0L14-15"/>
+        <path id="soup-letter-W" d="M1-15L4 0 9-8 14 0 17-15"/>
+        <path id="soup-letter-X" d="M1-15L14 0M14-15L1 0"/>
+        <path id="soup-letter-Y" d="M0-15L7-8 14-15M7-8L8 0"/>
+        <path id="soup-letter-Z" d="M1-14L14-15 1 0 14-1"/>
+        <filter id="soup-ink-edge" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency=".085" numOctaves="2" seed="8"/>
+          <feDisplacementMap in="SourceGraphic" scale="2.65" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <path id="soup-surface" d="M195 52C271 49 336 113 335 190C334 269 274 330 197 330C119 332 56 276 55 193C51 117 113 53 195 52Z"/>
+        <clipPath id="soup-surface-clip"><use href="#soup-surface"/></clipPath>
+        <path id="soup-dab" d="M-23 5Q-15-8 5-9Q17-9 23-2Q11-3 5 2Q-9 9-23 5Z"/>
+        <path id="soup-oil" d="M-9 2Q-3-3 4-3M8-3l2 1" fill="none" stroke="var(--soup-paper)" stroke-width="2.4" stroke-linecap="round"/>
+      </defs>
+      <g filter="url(#soup-ink-edge)">
+        <path class="soup-bowl-shadow" d="M82 282C104 268 170 266 221 269C282 269 327 280 323 291C319 304 264 310 204 309C149 309 103 304 87 296Q73 290 82 282Z"/>
+        <path class="soup-ceramic" d="M29 148C36 192 47 230 72 257C91 279 112 291 148 294Q196 298 241 294C275 292 297 279 316 256C340 228 352 193 361 148Z"/>
+        <path class="soup-bowl-stipple" d="M73 256C105 278 145 287 194 288C245 288 283 278 315 258C295 281 272 292 241 294C214 296 164 297 146 294C112 291 90 279 73 256Z"/>
+        <path class="soup-bowl-stripe" d="M63 244C97 267 144 277 195 278C245 278 294 267 325 243"/>
+      </g>
+      <g transform="translate(0 40) scale(1 .56)" filter="url(#soup-ink-edge)">
+        <path class="soup-ceramic" d="M195 22C289 21 363 96 363 190C364 284 290 357 196 357C102 357 27 285 27 191C26 98 100 23 195 22Z"/>
+        <path class="soup-rim-line" d="M195 44C278 44 344 110 344 191C343 274 278 339 196 339C114 340 47 275 46 192C45 111 112 45 195 44Z"/>
+        <path class="soup-rim-hatching" d="M53 109l6 3m-2-11 6 4m-2-11 6 4m-1-11 5 4m5-16 5 6m1-12 5 5m214 233 5 6m-12-1 5 6m-12-1 4 6m-13-1 4 6m-14-1 4 6m-13-3 4 7"/>
+        <path class="soup-rim-gloss" d="M39 156Q49 116 82 83M87 78Q123 40 179 34M190 33l16-1M326 264Q300 310 250 329M241 333q-14 5-27 7M42 151q4-17 14-33"/>
+        <use href="#soup-surface" class="soup-broth"/>
+        <g clip-path="url(#soup-surface-clip)">
+          <path class="soup-sauce-swirl" d="M85 203C89 166 113 142 142 133M98 217C105 190 120 179 144 173M214 294C247 294 275 277 287 255M255 179C278 173 306 181 315 194"/>
+          <path d="M78 239C62 199 79 151 97 133M104 124l5-5m14-13 12-6M216 67Q239 69 258 78M273 87q18 7 29 25M141 310q22 10 49 11m14 0 10-2m92-70 9-18m3-12 3-12" class="soup-ripples"/>
+          <path class="soup-bubbles" d="M111 171l4-2m3 61 3-3m51-124 4 1m37 24 3 2m90 29 3 1m-37 76 4-1m-47 39 2 3m-57-16 4 1m-74-24 2 3m83-41 2-2m76 76 3-3"/>
+
+          {% assign brush_marks = "101,118,-44;145,94,14;188,76,-12;227,94,42;264,105,-26;291,128,35;308,156,44;320,191,-27;315,219,21;295,253,-34;275,282,24;245,302,-32;209,313,5;169,310,22;128,291,57;102,260,35;77,229,60;75,197,-26;85,157,-43;117,181,29;131,227,48;146,263,25;171,226,-38;175,278,23;201,258,-27;239,245,26;271,227,-35;298,203,30;246,130,-16;209,123,8;166,128,-23;122,142,-10" | split: ";" %}
+          <g class="soup-brush-marks">
+            {% for mark in brush_marks %}
+              {% assign dab = mark | split: "," %}
+              <use href="#soup-dab" transform="translate({{ dab[0] }} {{ dab[1] }}) rotate({{ dab[2] }})"/>
+              {% assign sheen = forloop.index0 | modulo: 3 %}
+              {% if sheen == 0 %}
+                <use href="#soup-oil" class="soup-oil" transform="translate({{ dab[0] }} {{ dab[1] }}) rotate({{ dab[2] }})"/>
+              {% endif %}
+            {% endfor %}
+          </g>
+
+          {% assign pasta = "R,104,154,-22;A,132,122,16;C,156,99,-12;O,192,84,13;M,239,98,-18;U,282,141,25;K,80,172,18;D,118,185,-14;N,150,158,22;S,301,184,-20;H,89,235,19;I,126,216,-22;B,160,236,16;T,203,228,-16;G,247,241,18;E,283,223,-14;L,108,266,28;P,143,282,-14;Y,173,268,25;F,206,269,-20;W,238,287,15;J,269,279,-20;V,191,300,14;Q,282,256,30;X,312,214,-21;Z,122,247,12;A,173,192,-23;C,222,294,18;S,145,197,-11;O,262,205,14;U,111,114,-35;T,125,165,48;O,101,204,25;L,143,225,-32;E,160,307,-31;C,135,303,17;T,218,320,-18;R,256,312,-39;O,292,278,19;U,311,240,37;A,321,174,26;C,308,144,-38;S,280,101,22;E,264,123,-24;N,224,123,34;U,203,111,-43;Y,176,118,33;O,152,126,-28;A,189,145,15;S,218,250,31;C,191,250,-44;I,231,218,30;U,172,216,-30;P,265,257,35;T,258,178,-26" | split: ";" %}
+          <g class="soup-pasta">
+            {% for letter in pasta %}
+              {% assign piece = letter | split: "," %}
+              <g transform="translate({{ piece[1] }} {{ piece[2] }}) rotate({{ piece[3] }}) scale({% cycle '1.1 .95', '.95 1.05', '1 .89', '1.02 1.1' %})">
+                <use href="#soup-letter-{{ piece[0] }}"/>
+              </g>
+            {% endfor %}
+          </g>
+        </g>
+      </g>
+    </svg>
+
+    <button class="soup-spoon" type="button" aria-label="Scoop up a note" aria-describedby="soup-instructions" disabled>
+      <svg viewBox="0 0 440 315" aria-hidden="true">
+        <defs>
+          <clipPath id="soup-spoon-submerged">
+            <path d="M0 0H440V380H285V170Q265 171 245 176T210 178Q174 175 126 181H0Z"/>
+          </clipPath>
+        </defs>
+        <g transform="translate(0 -21)">
+          <g class="soup-spoon-motion">
+            <g class="soup-spoon-art">
+              <g transform="translate(203 173) scale(.9 .65) translate(-203 -173)">
+                <path class="soup-spoon-metal" d="M281 151C315 148 350 138 394 128Q411 124 416 132Q422 142 403 146C358 155 317 164 287 173C275 176 272 192 257 205C232 227 184 231 154 212C132 198 124 172 137 149C153 122 194 115 232 123C258 128 271 151 281 151Z"/>
+                <path class="soup-spoonful" d="M144 152C159 127 197 122 229 130C253 136 270 153 269 172C267 196 242 212 218 216C192 221 164 216 149 201C135 187 135 167 144 152Z"/>
+                <path class="soup-spoon-shine" d="M136 165Q141 145 156 136M142 199Q152 211 171 217M284 160Q344 148 397 134"/>
+                <path class="soup-sauce-swirl soup-spoon-gloss" d="M146 175Q146 155 166 143m7-3 8-2M220 208q23-5 34-20m3-5 2-5"/>
+              </g>
+              <text class="soup-note" x="203" y="173" dy=".35em" text-anchor="middle"></text>
+            </g>
+          </g>
+          <path class="soup-scoop-ripples" d="M115 212Q133 205 147 209M156 215Q187 224 223 215M230 212Q253 208 269 214M145 231Q173 239 196 234m8-2 11-3"/>
+        </g>
+      </svg>
+    </button>
+  </div>
+
+  <p class="soup-announcement" role="status"></p>
+  <a href="mailto:blahblah@oliviailla.blog?subject=Letter%20Soup">Add a word to the soup</a>
+</section>

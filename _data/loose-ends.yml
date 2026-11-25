@@ -45,3 +45,9 @@
     - recently-edited.html
     - _posts/random
     - assets/js/banana-labels.js
+- title: Letter Soup
+  url: /alphabet-soup/
+  paths:
+    - alphabet-soup.html
+    - assets/css/alphabet-soup.css
+    - assets/js/alphabet-soup.js
