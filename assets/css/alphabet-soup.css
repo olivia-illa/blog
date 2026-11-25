@@ -21,6 +21,13 @@
   stroke-linejoin: round;
 }
 
+.soup-title-subtitle {
+  display: block;
+  margin-top: .2rem;
+  font: 500 1rem "IBM Plex Mono", monospace;
+  text-transform: none;
+}
+
 .soup-title-pasta {
   stroke: var(--soup-ink);
   stroke-width: 9;
