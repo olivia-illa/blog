@@ -10,7 +10,7 @@ body_class: page-advent
 {% assign advent_year = page.advent_year | default: build_year %}
 {% assign december = advent_year | append: "-12-" %}
 
-<link rel="stylesheet" href="{{ '/assets/css/advent.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/advent.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <p class="catalogue-intro-line advent-intro-line">let me try blogmas</p>
 <article class="advent-calendar">
   <h1>
@@ -27,6 +27,11 @@ body_class: page-advent
         <stop class="advent-light-stop" offset="0" stop-opacity=".92"/>
         <stop class="advent-light-stop" offset=".52" stop-opacity=".65"/>
         <stop class="advent-light-stop" offset="1" stop-opacity=".08"/>
+      </radialGradient>
+      <radialGradient id="advent-window-halo">
+        <stop class="advent-light-stop" offset="0" stop-opacity=".7"/>
+        <stop class="advent-light-stop" offset=".64" stop-opacity=".5"/>
+        <stop class="advent-light-stop" offset="1" stop-opacity="0"/>
       </radialGradient>
       {% assign festive_colors = "#ffd477,#ff9eae,#a8dfa8,#a5d9f9,#c5b5fb,#ffb585" | split: "," %}
       {% for color in festive_colors %}
@@ -716,13 +721,21 @@ body_class: page-advent
           {% assign sill_detail = 'cocoa-cafe' %}
         {% endif %}
         {% assign detail_x = window_style[2] %}
+        {% assign glow_delay = position | modulo: 7 | times: -0.51 %}
+        {% assign glow_duration = position | modulo: 5 | times: 0.48 | plus: 3.15 %}
+        {% assign glow_strength = position | modulo: 4 | times: 0.09 | plus: 0.73 %}
+        {% assign glow_scale = position | modulo: 3 | times: 0.07 | plus: 1.08 %}
+        {% assign pane_strength = position | modulo: 6 | times: 0.028 | plus: 0.19 %}
+        {% capture glow_style %}--advent-glow-delay: {{ glow_delay }}s; --advent-glow-duration: {{ glow_duration }}s; --advent-glow-strength: {{ glow_strength }}; --advent-glow-scale: {{ glow_scale }}; --advent-pane-strength: {{ pane_strength }}{% endcapture %}
         {% capture door %}
+          <ellipse class="advent-window-halo" cx="0" cy="32" rx="34" ry="40" style="{{ glow_style }}" aria-hidden="true"/>
           <use class="advent-window-casing" href="#{{ shape }}"/>
           <use class="advent-leaf-frame{% if position >= 20 %} advent-shop-frame{% endif %}" href="#{{ shape }}"/>
           <use class="advent-recess" href="#{{ shape }}-glass"/>
           {% capture leaf %}
             <use class="advent-lit-panes" href="#{{ shape }}-glass"/>
             <use class="advent-festive-panes" href="#{{ shape }}-glass" fill="url(#advent-festive-{{ festive_light }})"/>
+            <use class="advent-pane-shimmer" href="#{{ shape }}-glass" style="{{ glow_style }}" aria-hidden="true"/>
             {% case upper_trim %}
               {% when 'drapes', 'valance', 'lights', 'pendant' %}
                 <use href="#advent-window-{{ upper_trim }}" aria-hidden="true"/>

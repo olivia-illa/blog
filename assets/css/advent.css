@@ -95,6 +95,30 @@ body.page-advent > main {
 }
 
 .advent-light-stop { stop-color: var(--advent-light); }
+.advent-window-halo { fill: url("#advent-window-halo"); stroke: none; pointer-events: none; }
+.advent-pane-shimmer { fill: var(--advent-light); stroke: none; opacity: .08; pointer-events: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .advent-window-halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: advent-window-glow var(--advent-glow-duration, 3.8s) ease-in-out var(--advent-glow-delay, 0s) infinite;
+  }
+  .advent-pane-shimmer {
+    animation: advent-pane-glow var(--advent-glow-duration, 3.8s) ease-in-out var(--advent-glow-delay, 0s) infinite;
+  }
+}
+
+@keyframes advent-window-glow {
+  0%, 100% { opacity: .2; transform: scale(.9); }
+  44% { opacity: var(--advent-glow-strength, 1); transform: scale(var(--advent-glow-scale, 1.15)); }
+}
+
+@keyframes advent-pane-glow {
+  0%, 100% { opacity: .02; }
+  44% { opacity: var(--advent-pane-strength, .29); }
+}
+
 .advent-lantern-glow { fill: url("#advent-lantern-light"); stroke: none; }
 .advent-lantern-glass { fill: var(--advent-light); }
 .advent-lit-panes { fill: url("#advent-window-light"); }
