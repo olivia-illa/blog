@@ -8,6 +8,7 @@
   const announcement = document.querySelector('.soup-announcement');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(pointer: fine)');
+  const mobileLayout = window.matchMedia('(max-width: 700px)');
   const touchScreen = window.matchMedia('(pointer: coarse)');
   const messages = [
     { text: 'thank you', lang: 'en' },
@@ -40,40 +41,41 @@
   let next = 0;
   let scooping = false;
   let letterTimer;
-  let reducedMotionTimer;
   let lastLetterTick;
 
-  function floatLetters() {
+  function usesMobileMotion() {
+    return mobileLayout.matches || touchScreen.matches;
+  }
+
+  function floatSoup() {
     const tick = Math.floor(performance.now() / letterFrameDuration);
     if (tick === lastLetterTick) return;
     lastLetterTick = tick;
     letters.forEach((letter, index) => {
       const phase = (index % 3) * 2;
       const frame = (tick + phase) % letterOffsets.length;
-      const offset = reducedMotion.matches ? Math.sign(letterOffsets[frame]) : letterOffsets[frame];
-      const transform = finePointer.matches
+      const offset = reducedMotion.matches ? Math.round(letterOffsets[frame] / 2) : letterOffsets[frame];
+      const transform = !usesMobileMotion() && finePointer.matches
         ? 'translate(' + letterDrift[frame] + ' ' + offset * 1.35 + ') rotate(' + letterTilt[frame] + ' 7 -7)'
         : 'translate(0 ' + offset + ')';
       letter.setAttribute('transform', transform);
     });
-  }
 
-  function stopLetterMotion() {
-    window.clearInterval(letterTimer);
-    window.clearTimeout(reducedMotionTimer);
-    letters.forEach(letter => letter.removeAttribute('transform'));
-    lastLetterTick = undefined;
-  }
-
-  function syncLetterMotion() {
-    stopLetterMotion();
-    if (reducedMotion.matches && !touchScreen.matches) return;
-
-    floatLetters();
-    letterTimer = window.setInterval(floatLetters, letterFrameDuration);
-    if (reducedMotion.matches) {
-      reducedMotionTimer = window.setTimeout(stopLetterMotion, letterFrameDuration * letterOffsets.length);
+    if (usesMobileMotion() && !scooping) {
+      const offset = letterOffsets[tick % letterOffsets.length] / 2;
+      motion.setAttribute('transform', 'translate(0 ' + offset + ')');
     }
+  }
+
+  function syncSoupMotion() {
+    window.clearInterval(letterTimer);
+    letters.forEach(letter => letter.removeAttribute('transform'));
+    if (!scooping) motion.removeAttribute('transform');
+    lastLetterTick = undefined;
+
+    if (reducedMotion.matches && !usesMobileMotion()) return;
+    floatSoup();
+    letterTimer = window.setInterval(floatSoup, letterFrameDuration);
   }
 
   function revealNote() {
@@ -85,17 +87,19 @@
     announcement.textContent = message.text;
   }
 
-  syncLetterMotion();
-  if (reducedMotion.addEventListener) {
-    reducedMotion.addEventListener('change', syncLetterMotion);
-  } else {
-    reducedMotion.addListener(syncLetterMotion);
+  syncSoupMotion();
+  for (const preference of [reducedMotion, mobileLayout, touchScreen]) {
+    if (preference.addEventListener) {
+      preference.addEventListener('change', syncSoupMotion);
+    } else {
+      preference.addListener(syncSoupMotion);
+    }
   }
 
   spoon.disabled = false;
   spoon.addEventListener('click', () => {
     if (scooping) return;
-    if (reducedMotion.matches) {
+    if (reducedMotion.matches && !usesMobileMotion()) {
       revealNote();
       return;
     }
@@ -140,6 +144,8 @@
         motion.removeAttribute('transform');
         ripples.style.removeProperty('opacity');
         scooping = false;
+        lastLetterTick = undefined;
+        floatSoup();
       }
     }
 

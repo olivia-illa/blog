@@ -6,10 +6,6 @@
   text-align: center;
 }
 
-@media (max-width: 700px) {
-  .alphabet-soup { margin-top: 1.4rem; }
-}
-
 .alphabet-soup .soup-title {
   margin-bottom: .35rem;
 }
@@ -181,6 +177,17 @@
 .soup-submission-prompt {
   margin: .25rem 0 0;
   font-size: inherit;
+}
+
+@media (max-width: 700px) {
+  .alphabet-soup { margin-top: 1.4rem; }
+
+  #soup-instructions,
+  .soup-subtitle,
+  .soup-submission,
+  .soup-submission-prompt {
+    font-size: .85rem;
+  }
 }
 
 .soup-announcement {
