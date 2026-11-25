@@ -134,20 +134,6 @@
   filter: drop-shadow(.65px 1.45px 0 var(--soup-ink));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .soup-pasta use {
-    animation: soup-letter-float 3.6s steps(5, end) infinite alternate;
-  }
-
-  .soup-pasta g:nth-child(3n + 1) use { animation-delay: -1.3s; }
-  .soup-pasta g:nth-child(3n + 2) use { animation-delay: -3.7s; }
-
-  @keyframes soup-letter-float {
-    from { transform: translateY(1px); }
-    to { transform: translateY(-2px); }
-  }
-}
-
 .soup-note {
   fill: var(--soup-paper);
   font: 600 16px "IBM Plex Mono", monospace;
@@ -164,6 +150,7 @@
   padding: 0;
   border: 0;
   background: transparent;
+  -webkit-tap-highlight-color: transparent;
   pointer-events: none;
 }
 
@@ -172,8 +159,10 @@
   pointer-events: visiblePainted;
 }
 
-.soup-spoon-motion {
-  transform-origin: 203px 173px;
+@media (pointer: coarse) {
+  .soup-spoon:not(:disabled) {
+    pointer-events: auto;
+  }
 }
 
 .soup-spoon:focus {

@@ -1,5 +1,6 @@
 (() => {
   const spoon = document.querySelector('.soup-spoon');
+  const letters = Array.from(document.querySelectorAll('.soup-pasta use'));
   const motion = spoon.querySelector('.soup-spoon-motion');
   const art = spoon.querySelector('.soup-spoon-art');
   const ripples = spoon.querySelector('.soup-scoop-ripples');
@@ -18,11 +19,44 @@
     { text: '감사합니다', lang: 'ko' },
     { text: 'tack så mycket', lang: 'sv' }
   ];
-  const resting = 'translate(0, 0) rotate(0deg)';
-  const dipped = 'translate(-24px, 35px) rotate(12deg)';
-  const lifted = 'translate(8px, -27px) rotate(-9deg)';
+  const letterOffsets = [1, 0, -1, -2, -1, 0];
+  const scoopFrames = [
+    { time: 0, position: 'translate(0 0)' },
+    { time: 80, position: 'translate(4 -5) rotate(-4 203 173)' },
+    { time: 160, position: 'translate(-10 13) rotate(5 203 173)' },
+    { time: 240, position: 'translate(-24 35) rotate(12 203 173)', submerged: true, ripple: .85 },
+    { time: 350, position: 'translate(-24 35) rotate(12 203 173)', ripple: .68 },
+    { time: 430, position: 'translate(-8 6)', ripple: .42 },
+    { time: 530, position: 'translate(8 -27) rotate(-9 203 173)', ripple: .22 },
+    { time: 650, position: 'translate(4 -12) rotate(-4 203 173)' },
+    { time: 780, position: 'translate(0 0)' }
+  ];
   let next = 0;
   let scooping = false;
+  let letterTimer;
+  let lastLetterTick;
+
+  function floatLetters() {
+    const tick = Math.floor(performance.now() / 420);
+    if (tick === lastLetterTick) return;
+    lastLetterTick = tick;
+    letters.forEach((letter, index) => {
+      const phase = (index % 3) * 2;
+      const offset = letterOffsets[(tick + phase) % letterOffsets.length];
+      letter.setAttribute('transform', 'translate(0 ' + offset + ')');
+    });
+  }
+
+  function syncLetterMotion() {
+    window.clearInterval(letterTimer);
+    if (reducedMotion.matches) {
+      letters.forEach(letter => letter.removeAttribute('transform'));
+      lastLetterTick = undefined;
+      return;
+    }
+    floatLetters();
+    letterTimer = window.setInterval(floatLetters, 420);
+  }
 
   function revealNote() {
     const message = messages[next];
@@ -33,46 +67,59 @@
     announcement.textContent = message.text;
   }
 
+  syncLetterMotion();
+  if (reducedMotion.addEventListener) {
+    reducedMotion.addEventListener('change', syncLetterMotion);
+  } else {
+    reducedMotion.addListener(syncLetterMotion);
+  }
+
   spoon.disabled = false;
-  spoon.addEventListener('click', async () => {
+  spoon.addEventListener('click', () => {
     if (scooping) return;
-    if (reducedMotion.matches || !motion.animate) {
+    if (reducedMotion.matches) {
       revealNote();
       return;
     }
 
     scooping = true;
-    const dip = motion.animate([
-      { transform: resting },
-      { transform: 'translate(4px, -5px) rotate(-4deg)' },
-      { transform: dipped }
-    ], { duration: 240, easing: 'steps(4, jump-end)', fill: 'forwards' });
+    const started = performance.now();
+    let frameIndex = -1;
+    let revealed = false;
 
-    try {
-      await dip.finished;
-      art.setAttribute('clip-path', 'url(#soup-spoon-submerged)');
-      ripples.animate([
-        { opacity: 0 },
-        { opacity: .85, offset: .18 },
-        { opacity: .54, offset: .48 },
-        { opacity: 0 }
-      ], { duration: 490, easing: 'steps(5, jump-end)' });
+    function advance(now) {
+      const elapsed = now - started;
+      let nextFrame = frameIndex;
+      while (nextFrame + 1 < scoopFrames.length && elapsed >= scoopFrames[nextFrame + 1].time) {
+        nextFrame++;
+      }
 
-      await new Promise(resolve => window.setTimeout(resolve, 110));
-      revealNote();
+      if (nextFrame !== frameIndex && nextFrame >= 0) {
+        frameIndex = nextFrame;
+        const frame = scoopFrames[frameIndex];
+        motion.setAttribute('transform', frame.position);
+        ripples.style.opacity = frame.ripple || 0;
+        if (frame.submerged) {
+          art.setAttribute('clip-path', 'url(#soup-spoon-submerged)');
+        } else {
+          art.removeAttribute('clip-path');
+        }
+      }
 
-      const lift = motion.animate([
-        { transform: dipped },
-        { transform: lifted, offset: .56 },
-        { transform: resting }
-      ], { duration: 430, easing: 'steps(5, jump-end)' });
-      art.removeAttribute('clip-path');
-      dip.cancel();
-      await lift.finished;
-    } finally {
-      art.removeAttribute('clip-path');
-      dip.cancel();
-      scooping = false;
+      if (!revealed && elapsed >= 350) {
+        revealNote();
+        revealed = true;
+      }
+
+      if (frameIndex < scoopFrames.length - 1) {
+        window.requestAnimationFrame(advance);
+      } else {
+        motion.removeAttribute('transform');
+        ripples.style.removeProperty('opacity');
+        scooping = false;
+      }
     }
+
+    window.requestAnimationFrame(advance);
   });
 })();
