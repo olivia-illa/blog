@@ -320,7 +320,16 @@ main {
 img, video, iframe { max-width: 100%; }
 img, video { height: auto; }
 .post-body pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+.post-body pre.nvda-timeline { white-space: normal; }
+.nvda-timeline-title { display: block; margin-bottom: 1em; }
+.nvda-timeline-line { display: grid; grid-template-columns: min(19ch, 50%) minmax(0, 1fr); }
+.nvda-timeline-line > span { min-width: 0; white-space: pre-wrap; }
 .post-body table { width: 100%; table-layout: fixed; overflow-wrap: anywhere; }
+.post-body .nvda-insider-trading { border-collapse: collapse; }
+.nvda-insider-trading th,
+.nvda-insider-trading td { padding: .5rem; text-align: left; vertical-align: top; }
+.nvda-insider-trading tr > :last-child { border-left: 1px solid currentColor; }
+.nvda-insider-trading tbody td { border-top: 1px solid currentColor; }
 
 header {
   padding: 0;
