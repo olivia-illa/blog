@@ -1,0 +1,80 @@
+body.page-mood {
+  display: grid;
+  place-items: end;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 1rem;
+  padding-right: max(1rem, env(safe-area-inset-right));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.page-mood main.mood-scene {
+  position: relative;
+  width: min(100%, 25rem, 84vh);
+  margin: 0;
+  padding: 0;
+}
+
+.mood-bag {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mood-bag[hidden],
+.mood-pin[hidden] {
+  display: none;
+}
+
+.mood-water {
+  fill: color-mix(in srgb, var(--footer-color) 68%, var(--bg-color));
+}
+
+.mood-ink {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mood-pin {
+  position: absolute;
+  inset: 0 0 auto auto;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-color);
+  background: transparent;
+  cursor: pointer;
+}
+
+.mood-pin svg {
+  width: 100%;
+}
+
+.mood-pin:hover,
+.mood-pin:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 2px;
+}
+
+.mood-pin:active {
+  transform: translate(-3px, 3px);
+}
+
+.mood-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

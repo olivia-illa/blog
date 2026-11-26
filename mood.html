@@ -1,0 +1,86 @@
+---
+layout: null
+title: Mood
+permalink: /mood/
+stages:
+  - description: A happy goldfish swims in a plump, full bag.
+    bag: M160 56 C110 69 44 128 35 211 C28 277 53 302 112 303 Q214 306 255 298 C306 293 302 241 292 196 C272 117 214 71 160 56Z
+    folds: M160 55 Q128 74 117 109 M160 55 Q153 83 153 113 M162 56 Q181 77 193 103 M159 56 Q184 67 210 91
+    tie: translate(160 55)
+    water: 112
+    fish: [81, 170, 162, 98]
+  - description: The bag softens as water leaks out. The goldfish watches.
+    bag: M158 94 C116 109 56 133 49 200 C44 232 57 237 47 264 C35 298 76 303 124 303 Q216 306 260 298 C293 293 294 277 291 251 C289 205 271 156 217 135 Q177 119 158 94Z
+    folds: M158 94 Q127 106 104 141 M158 96 Q151 124 153 148 M159 96 Q185 130 207 146
+    tie: translate(158 94) rotate(-8)
+    water: 165
+    fish: [81, 195, 162, 96]
+  - description: The bag sags and the goldfish looks worried.
+    bag: M197 148 C170 162 115 150 76 176 C44 194 37 242 45 273 C53 305 99 305 155 304 Q237 306 266 298 C301 290 299 257 286 230 Q273 201 237 192 Q210 182 197 148Z
+    folds: M196 151 Q167 172 141 188 M197 152 Q184 187 190 206 M199 154 Q211 191 235 201 M82 182 Q85 199 107 210
+    tie: translate(197 148) rotate(35)
+    water: 221
+    fish: [83, 215, 162, 92]
+  - description: The bag slumps into folds. The goldfish gasps in a shallow puddle.
+    bag: M221 221 Q192 216 177 208 Q150 191 129 204 Q111 216 97 217 Q66 205 54 226 Q40 239 46 254 Q33 273 46 289 Q57 303 109 303 Q216 307 264 299 Q302 294 286 266 Q266 226 221 221Z
+    folds: M220 222 Q199 229 186 248 M220 222 Q229 243 257 249 M126 210 Q140 222 164 227 M61 230 Q68 250 95 255 M51 270 L69 276
+    tie: translate(221 221) rotate(51)
+    water: 282
+    fish: [78, 219, 162, 84]
+  - description: The bag is empty and crumpled flat. The goldfish lies still.
+    bag: M271 284 Q254 264 235 268 Q211 267 184 251 Q163 238 134 249 Q107 259 84 254 Q59 253 51 268 Q32 279 46 293 Q61 303 104 303 Q228 308 256 301 Q271 297 271 284Z
+    folds: M55 274 Q72 267 89 271 M56 285 L74 293 M86 262 L105 267 M179 256 Q204 272 228 272 M269 284 Q248 286 239 297
+    tie: translate(271 284) rotate(82)
+    water: 310
+    fish: [77, 250, 162, 54]
+---
+{%- assign stage_key = site.data.mood.stage | append: '' -%}
+{%- assign valid_stages = '1,2,3,4,5' | split: ',' -%}
+{%- unless valid_stages contains stage_key -%}
+  {%- assign stage_key = '1' -%}
+{%- endunless -%}
+{%- assign stage = stage_key | plus: 0 -%}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title | escape }}</title>
+  {% include theme-start.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/mood.css' | relative_url }}">
+  <script src="{{ '/assets/js/mood.js' | relative_url }}" defer></script>
+</head>
+<body class="page-mood">
+  <main class="mood-scene" data-mood data-stage="{{ stage }}">
+    {%- for scene in page.stages %}
+      <svg class="mood-bag" data-mood-stage="{{ forloop.index }}"
+           viewBox="0 0 320 320" role="img" aria-label="{{ scene.description | escape }}"
+           {% unless stage == forloop.index %}hidden{% endunless %}>
+        <defs>
+          <clipPath id="mood-bag-{{ forloop.index }}"><path d="{{ scene.bag }}"/></clipPath>
+        </defs>
+        <path class="mood-water" d="M0 {{ scene.water }} q72 -4 152 0 t168 0 V320 H0Z"
+              clip-path="url(#mood-bag-{{ forloop.index }})"/>
+        <image href="{{ '/assets/images/mood/fish-' | append: forloop.index | append: '.webp' | relative_url }}"
+               x="{{ scene.fish[0] }}" y="{{ scene.fish[1] }}" width="{{ scene.fish[2] }}" height="{{ scene.fish[3] }}"/>
+        <path class="mood-ink" d="{{ scene.bag }} {{ scene.folds }}"/>
+        <g class="mood-ink" transform="{{ scene.tie }}">
+          <path d="M-4 -5 Q-19 -18 -25 -39 Q-17 -45 -10 -41 Q-3 -48 4 -43 Q13 -47 24 -41 Q20 -23 5 -5 M-9 -39 L-2 -8 M8 -40 L3 -8"/>
+          <path d="M-6 4 Q-12 -4 -4 -8 Q4 -12 8 -4 Q11 4 4 8 Q-2 9 -6 4Z"/>
+        </g>
+        {% if forloop.index == 2 or forloop.index == 3 %}
+          <path class="mood-water" d="M294 248 Q304 260 299 264 Q290 267 291 259Z M306 268 Q315 280 310 284 Q301 287 302 279Z"/>
+        {% endif %}
+      </svg>
+    {%- endfor %}
+    <button class="mood-pin" type="button" aria-label="Poke the bag" hidden>
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M28 12 7 33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="29" cy="11" r="5" fill="currentColor"/>
+      </svg>
+    </button>
+    <span class="mood-status" role="status"></span>
+  </main>
+</body>
+</html>
