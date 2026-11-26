@@ -98,6 +98,14 @@
 	  </div>
   </footer>
 
+  {%- comment -%}
+    Page view counts for the self-hosted GoatCounter (no cookies, nothing
+    personal stored). Only production builds include it, and count.js
+    ignores localhost.
+  {%- endcomment -%}
+  {%- if site.goatcounter and jekyll.environment == "production" %}
+  <script data-goatcounter="{{ site.goatcounter }}/count" async src="{{ site.goatcounter }}/count.js"></script>
+  {%- endif %}
 </body>
 </html>
 
