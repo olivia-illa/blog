@@ -61,7 +61,7 @@
       letter.setAttribute('transform', transform);
     });
 
-    if (usesMobileMotion() && !scooping) {
+    if (!scooping) {
       const offset = letterOffsets[tick % letterOffsets.length] / 2;
       motion.setAttribute('transform', 'translate(0 ' + offset + ')');
     }
@@ -145,7 +145,7 @@
         ripples.style.removeProperty('opacity');
         scooping = false;
         lastLetterTick = undefined;
-        floatSoup();
+        if (!reducedMotion.matches || usesMobileMotion()) floatSoup();
       }
     }
 

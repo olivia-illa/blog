@@ -22,12 +22,21 @@ body_class: page-compact page-clippings
     {% include is-clipping-post.html post=post %}
     {% unless is_clipping_post %}{% continue %}{% endunless %}
     <section class="paper-clipping">
-      <div class="paper-byline"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%A, %B %-d, %Y" }}</time>{% if post.source_publisher %}<span>{{ post.source_publisher }}</span>{% endif %}</div>
+      <div class="paper-byline">
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          <span class="paper-date-full">{{ post.date | date: "%A, %B %-d, %Y" }}</span>
+          <span class="paper-date-short">{{ post.date | date: "%-d %b ’%y" }}</span>
+        </time>
+        {% if post.source_publisher %}<span>{{ post.source_publisher }}</span>{% endif %}
+      </div>
       <h2 class="paper-source">{% if post.source_url %}<a href="{{ post.source_url }}" target="_blank" rel="noopener">{{ post.source_title | default: post.title }}</a>{% else %}{{ post.source_title | default: post.title }}{% endif %}</h2>
       {% assign blocks = post.content | markdownify | split: "</p>" %}
       {% assign first_quote_block = blocks[0] | strip_html | strip %}
       <blockquote class="paper-quote"><a href="{{ post.url | relative_url }}">{{ first_quote_block | remove: '“' | remove: '”' | remove: '"' }}</a></blockquote>
-      <div class="paper-foot"><a href="{{ post.url | relative_url }}">Read clipping ↗</a>{% include post-tags.html tags=post.tags %}</div>
+      <div class="paper-foot">
+        {% include post-tags.html tags=post.tags %}
+        <a href="{{ post.url | relative_url }}" aria-label="Read clipping: {{ post.title | escape }}"><span class="paper-read-label">Read clipping </span><span aria-hidden="true">↗</span></a>
+      </div>
     </section>
   {% endfor %}
 </div>

@@ -1480,6 +1480,7 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .paper-clipping:nth-child(7n + 1) { grid-column: span 4; }
 .paper-clipping:nth-child(7n + 6), .paper-clipping:nth-child(7n + 7) { grid-column: span 3; }
 .paper-byline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .25rem .75rem; font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; padding-bottom: .5rem; }
+.paper-date-short { display: none; }
 .paper-byline time { font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .035em; line-height: 1.3; }
 .paper-source { font-family: Georgia, 'Times New Roman', serif; font-size: 1.6rem; line-height: 1.1; text-transform: none; letter-spacing: -.025em; margin: 0 0 .8rem; padding: 0 0 .65rem; border-bottom: 1px solid var(--section-border); }
 .paper-source a, .paper-quote a { color: inherit; text-decoration: none; }
@@ -1487,8 +1488,9 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
 .paper-quote { font-family: Georgia, 'Times New Roman', serif; font-size: 1.15rem; line-height: 1.45; margin: 0 0 1.2rem; padding: 0; border: 0; }
 .paper-clipping:nth-child(7n + 1) .paper-source { font-size: clamp(2rem, 3.2vw, 3.5rem); }
 .paper-clipping:nth-child(7n + 1) .paper-quote { font-size: 1.6rem; }
-.paper-foot { margin-top: auto; font-size: .65rem; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .5rem; }
-.paper-foot .post-tags { margin: 0; font-size: inherit; }
+.paper-foot { margin-top: auto; font-size: .65rem; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: .5rem; }
+.paper-foot .post-tags { grid-area: 1 / 1; margin: 0; font-size: inherit; }
+.paper-foot > a { grid-area: 1 / 2; }
 /* Reveal each clipping’s corner details while its grid cell is active. */
 .paper-byline, .paper-foot { opacity: 0; }
 .paper-clipping:is(:hover, :focus-within) :is(.paper-byline, .paper-foot) { opacity: 1; }
@@ -1497,6 +1499,9 @@ html.home[data-theme="custom"] .home-grid .give-me-10-item {
  .paper-byline, .paper-foot { opacity: 1; }
 }
 @media (max-width: 799px) {
+ .paper-byline, .paper-foot { opacity: 1; }
+ .paper-date-full, .paper-read-label { display: none; }
+ .paper-date-short { display: inline; }
  .clippings-masthead { font-size: clamp(1.2rem, 5.7vw, 2.4rem); padding: .65rem 0; white-space: nowrap; }
  .clippings-masthead span { margin: 0 .08em; }
  .clippings-edition { gap: .5rem; align-items: center; }
