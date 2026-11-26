@@ -8,6 +8,8 @@ permalink: /alphabet-soup/
 <script src="{{ '/assets/js/alphabet-soup.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
 <p class="catalogue-intro-line" id="soup-instructions">scoop up a soggy happy note</p>
+{% assign soup_catalogue = site.data['loose-ends'] | where: 'url', page.url | first %}
+{% if soup_catalogue %}{% include catalogue-edited.html path=soup_catalogue.paths %}{% endif %}
 <section class="alphabet-soup">
   <h1 class="soup-title" aria-label="Letter Soup">
     <svg viewBox="0 0 326 63" aria-hidden="true">
