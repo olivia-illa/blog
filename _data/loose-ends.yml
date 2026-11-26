@@ -51,3 +51,11 @@
     - alphabet-soup.html
     - assets/css/alphabet-soup.css
     - assets/js/alphabet-soup.js
+- title: Mood
+  url: /mood/
+  paths:
+    - mood.html
+    - _data/mood.yml
+    - assets/css/mood.css
+    - assets/js/mood.js
+    - assets/images/mood
