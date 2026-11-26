@@ -57,6 +57,25 @@ in
       description = "The `build` wrapper (Jekyll with the blog's gems).";
     };
 
+    apples = {
+      # Listens on localhost; route `/api/` of the blog's domain to it
+      # (done automatically when `caddy` is on).
+      enable = lib.mkEnableOption "the apple reaction API that stores 🍏/🍎/🥧 votes so everyone sees the counts";
+
+      port = lib.mkOption {
+        type = lib.types.port;
+        default = 8090;
+        description = "Localhost port the apple API listens on.";
+      };
+
+      package = lib.mkOption {
+        type = lib.types.package;
+        default = self.packages.${pkgs.stdenv.hostPlatform.system}.apples;
+        defaultText = lib.literalExpression "blog.packages.\${system}.apples";
+        description = "The apple API package.";
+      };
+    };
+
     caddy = lib.mkOption {
       type = lib.types.bool;
       default = true;
@@ -130,12 +149,57 @@ in
       };
     };
 
+    # Votes live in their own state directory (/var/lib/making-utter-sense-apples),
+    # separate from the rebuilt site. Only pages present in the built site
+    # can be voted on.
+    systemd.services.making-utter-sense-apples = lib.mkIf cfg.apples.enable {
+      description = "Making Utter Sense apple reaction API";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network.target" ];
+      serviceConfig = {
+        ExecStart = lib.escapeShellArgs [
+          (lib.getExe cfg.apples.package)
+          "-listen" "127.0.0.1:${toString cfg.apples.port}"
+          "-db" "%S/making-utter-sense-apples/apples.sqlite3"
+          "-site" "${stateDir}/current"
+        ];
+        DynamicUser = true;
+        StateDirectory = "making-utter-sense-apples";
+        Restart = "on-failure";
+        UMask = "0077";
+        CapabilityBoundingSet = "";
+        LockPersonality = true;
+        MemoryDenyWriteExecute = true;
+        PrivateDevices = true;
+        ProcSubset = "pid";
+        ProtectClock = true;
+        ProtectControlGroups = true;
+        ProtectHostname = true;
+        ProtectKernelLogs = true;
+        ProtectKernelModules = true;
+        ProtectKernelTunables = true;
+        ProtectProc = "invisible";
+        RestrictAddressFamilies = [ "AF_INET" "AF_INET6" ];
+        RestrictNamespaces = true;
+        RestrictRealtime = true;
+        SystemCallArchitectures = "native";
+        SystemCallFilter = [ "@system-service" "~@privileged" ];
+      };
+    };
+
     services.caddy = lib.mkIf cfg.caddy {
       enable = true;
       virtualHosts.${cfg.domain}.extraConfig = ''
-        root * ${stateDir}/current
         encode zstd gzip
-        file_server
+      '' + lib.optionalString cfg.apples.enable ''
+        handle /api/* {
+          reverse_proxy 127.0.0.1:${toString cfg.apples.port}
+        }
+      '' + ''
+        handle {
+          root * ${stateDir}/current
+          file_server
+        }
       '';
     };
 

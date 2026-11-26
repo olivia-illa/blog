@@ -9,6 +9,9 @@ url: "https://oliviailla.blog" # the base hostname & protocol for your site, e.g
 # Build settings
 timezone: Asia/Singapore # UTC+8, matches the +0800 dates in posts so URLs use the intended day
 theme: null # We are building a custom theme
+# Self-hosted GoatCounter (page view stats). Remove to stop counting.
+goatcounter: "https://stats.oliviailla.blog"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -28,6 +31,7 @@ exclude:
   - flake.lock
   - gemset.nix
   - nixos-module.nix
+  - api
   - result
 
 

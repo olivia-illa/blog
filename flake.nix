@@ -42,9 +42,19 @@
               exec jekyll build "$@"
             '';
           };
+          # The apple reaction API (api/), run by nixos-module.nix.
+          apples = pkgs.buildGoModule {
+            pname = "making-utter-sense-apples";
+            version = "0.1.0";
+            src = ./api;
+            vendorHash = "sha256-yb9ons1/UroR33G4qvWTaBUS2LsYcdHWsEhAZHJQ2Kw=";
+            env.CGO_ENABLED = 0;
+            ldflags = [ "-s" "-w" ];
+            meta.mainProgram = "apples";
+          };
         in
         {
-          inherit gems preview build;
+          inherit gems preview build apples;
           default = preview;
         });
 
