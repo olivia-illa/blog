@@ -2,7 +2,7 @@
   const scene = document.querySelector('[data-mood]');
   const drawings = [...scene.querySelectorAll('[data-mood-stage]')];
   const pin = scene.querySelector('.mood-pin');
-  const needle = pin.querySelector('svg');
+  const needle = pin.querySelector('.mood-needle');
   const caption = scene.querySelector('.mood-caption q');
   const status = scene.querySelector('.mood-status');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -26,11 +26,11 @@
 
   updatePin();
   pin.hidden = false;
-  pin.addEventListener('click', async () => {
+  pin.addEventListener('click', () => {
     if (poking) return;
 
     const drawing = drawings[current];
-    if (!drawing.dataset.puncture || reducedMotion.matches || !needle.animate) {
+    if (!drawing.dataset.puncture || reducedMotion.matches) {
       advance();
       return;
     }
@@ -44,16 +44,19 @@
     const rebound = `translate(${-dx * 0.04}px, ${-dy * 0.04}px)`;
 
     poking = true;
-    try {
-      await needle.animate([
-        { transform: 'none', offset: 0 },
-        { transform: contact, offset: 0.5, easing: 'ease-out' },
-        { transform: rebound, offset: 0.88 },
-        { transform: 'none', offset: 1 }
-      ], { duration: 480 }).finished;
-    } finally {
+    needle.style.setProperty('--mood-contact', contact);
+    needle.style.setProperty('--mood-rebound', rebound);
+
+    const finish = () => {
+      window.clearTimeout(fallback);
+      needle.removeEventListener('animationend', finish);
+      needle.classList.remove('is-poking');
       poking = false;
       advance();
-    }
+    };
+
+    const fallback = window.setTimeout(finish, 550);
+    needle.addEventListener('animationend', finish);
+    needle.classList.add('is-poking');
   });
 })();

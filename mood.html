@@ -155,10 +155,12 @@ stages:
     </svg>
   {%- endfor %}
   <button class="mood-pin" type="button" aria-label="Poke the bag" hidden>
-    <svg viewBox="0 0 40 40" aria-hidden="true">
-      <path d="M28 12 7 33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="29" cy="11" r="5" fill="currentColor"/>
-    </svg>
+    <span class="mood-needle" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path d="M28 12 7 33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="29" cy="11" r="5" fill="currentColor"/>
+      </svg>
+    </span>
   </button>
   <span class="mood-status" role="status"></span>
 </div>

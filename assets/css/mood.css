@@ -50,6 +50,7 @@ body.page-mood > main {
 
 .page-mood .mood-scene {
   position: relative;
+  width: min(100%, 17rem, 48vh);
   width: min(100%, 17rem, max(0px, (100cqh - 4.75rem) * 1.075));
 }
 
@@ -113,12 +114,24 @@ body.page-mood > main {
   color: #dc302f;
   background: transparent;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
-.mood-pin svg {
+.mood-needle,
+.mood-needle svg {
   display: block;
-  pointer-events: none;
   width: 100%;
+  pointer-events: none;
+}
+
+.mood-needle.is-poking {
+  animation: mood-poke 480ms ease-out;
+}
+
+@keyframes mood-poke {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: var(--mood-contact); }
+  88% { transform: var(--mood-rebound); }
 }
 
 .mood-pin:focus {
