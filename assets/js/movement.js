@@ -69,7 +69,9 @@ function moveAthletes() {
   for (const { track, athlete, drawing, finishY, isSwimming, isRunning, isCycling } of lanes) {
     const bounds = track.getBoundingClientRect();
     const finishViewportFraction = isSwimming ? .4 : .88;
-    const finish = Math.min(pageTravel, Math.max(1, bounds.bottom + scrollTop - viewportHeight * finishViewportFraction));
+    const scrollToFinish = bounds.bottom + scrollTop - viewportHeight * finishViewportFraction;
+    const pace = isCycling ? .8 : isRunning ? 1.2 : 1;
+    const finish = Math.min(pageTravel, Math.max(1, scrollToFinish * pace));
     const progress = Math.max(0, Math.min(1, scrollTop / finish));
     // Match the SVG's centered aspect-ratio fit so the visible figure reaches the edge.
     const { width, height } = drawing.viewBox.baseVal;

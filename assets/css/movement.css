@@ -185,9 +185,12 @@
   transform: translate(var(--athlete-drift, 0px), var(--athlete-position)) rotate(var(--athlete-turn, 0deg));
 }
 
+.movement-lane--cycling { --athlete-motion-duration: 95ms; }
+.movement-lane--running { --athlete-motion-duration: 185ms; }
+
 @media (prefers-reduced-motion: no-preference) {
   .movement-athlete.is-travelling {
-    transition: transform 120ms ease-out;
+    transition: transform var(--athlete-motion-duration, 120ms) ease-out;
   }
 }
 
@@ -198,9 +201,12 @@
 }
 
 @media (max-width: 48rem) {
+  .movement-lane--cycling { --athlete-motion-duration: 260ms; }
+  .movement-lane--running { --athlete-motion-duration: 440ms; }
+
   :is(.movement-lane--running, .movement-lane--cycling) .movement-athlete.is-travelling {
     transform: translate(var(--athlete-drift, 0px), var(--athlete-position)) rotate(var(--athlete-turn, 0deg));
-    transition: transform 340ms ease-out;
+    transition: transform var(--athlete-motion-duration) ease-out;
   }
 }
 
