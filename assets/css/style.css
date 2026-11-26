@@ -742,16 +742,6 @@ a:hover {
   font-size: 0.75rem;
 }
 
-/* Everyone's votes, filled in by apple-reaction.js from /api/apples */
-.apple-count {
-  margin-left: 0.5rem;
-  /* Sit just left of the emoji, inside the button's empty tap area. */
-  margin-right: calc(1.5rem - 44px);
-  font-size: 0.75rem;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-
 .apple-reaction {
   display: inline-flex;
   align-items: center;
