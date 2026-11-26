@@ -33,6 +33,12 @@ body_class: page-advent
         <stop class="advent-light-stop" offset=".64" stop-opacity=".5"/>
         <stop class="advent-light-stop" offset="1" stop-opacity="0"/>
       </radialGradient>
+      <radialGradient id="advent-phone-window-amber">
+        <stop offset="0" stop-color="#ffd078"/>
+        <stop offset=".55" stop-color="#ffbd5a" stop-opacity=".9"/>
+        <stop offset=".78" stop-color="#ffad49" stop-opacity=".46"/>
+        <stop offset="1" stop-color="#ffad49" stop-opacity="0"/>
+      </radialGradient>
       {% assign festive_colors = "#ffd477,#ff9eae,#a8dfa8,#a5d9f9,#c5b5fb,#ffb585" | split: "," %}
       {% for color in festive_colors %}
         <radialGradient id="advent-festive-{{ forloop.index0 }}" cx="45%" cy="70%" r="85%">
@@ -726,8 +732,12 @@ body_class: page-advent
         {% assign glow_strength = position | modulo: 4 | times: 0.09 | plus: 0.73 %}
         {% assign glow_scale = position | modulo: 3 | times: 0.07 | plus: 1.08 %}
         {% assign pane_strength = position | modulo: 6 | times: 0.028 | plus: 0.19 %}
-        {% capture glow_style %}--advent-glow-delay: {{ glow_delay }}s; --advent-glow-duration: {{ glow_duration }}s; --advent-glow-strength: {{ glow_strength }}; --advent-glow-scale: {{ glow_scale }}; --advent-pane-strength: {{ pane_strength }}{% endcapture %}
+        {% assign phone_glow_low = position | times: 7 | modulo: 8 | times: 0.032 | plus: 0.23 %}
+        {% assign phone_glow_high = position | times: 5 | modulo: 9 | times: 0.032 | plus: 0.52 %}
+        {% assign phone_glow_steady = phone_glow_low | plus: phone_glow_high | divided_by: 2.0 %}
+        {% capture glow_style %}--advent-glow-delay: {{ glow_delay }}s; --advent-glow-duration: {{ glow_duration }}s; --advent-glow-strength: {{ glow_strength }}; --advent-glow-scale: {{ glow_scale }}; --advent-pane-strength: {{ pane_strength }}; --advent-phone-glow-low: {{ phone_glow_low }}; --advent-phone-glow-high: {{ phone_glow_high }}; --advent-phone-glow-steady: {{ phone_glow_steady }}{% endcapture %}
         {% capture door %}
+          <ellipse class="advent-phone-window-halo" cx="0" cy="32" rx="40" ry="46" fill="url(#advent-phone-window-amber)" style="{{ glow_style }}" aria-hidden="true"/>
           <ellipse class="advent-window-halo" cx="0" cy="32" rx="34" ry="40" style="{{ glow_style }}" aria-hidden="true"/>
           <use class="advent-window-casing" href="#{{ shape }}"/>
           <use class="advent-leaf-frame{% if position >= 20 %} advent-shop-frame{% endif %}" href="#{{ shape }}"/>
