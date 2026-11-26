@@ -9,6 +9,9 @@
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
     in
     {
+      # Server deployment: see nixos-module.nix.
+      nixosModules.default = import ./nixos-module.nix self;
+
       packages = forAllSystems (pkgs:
         let
           # The exact gems from Gemfile.lock, built by Nix. Regenerate

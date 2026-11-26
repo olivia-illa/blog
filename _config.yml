@@ -27,6 +27,7 @@ exclude:
   - flake.nix
   - flake.lock
   - gemset.nix
+  - nixos-module.nix
   - result
 
 
