@@ -53,7 +53,8 @@ const lanes = Array.from(courses.querySelectorAll('.movement-track'), (track) =>
     drawing,
     finishY: Number(drawing.dataset.finishY),
     isSwimming: track.parentElement.classList.contains('movement-lane--swimming'),
-    isRunning: track.parentElement.classList.contains('movement-lane--running')
+    isRunning: track.parentElement.classList.contains('movement-lane--running'),
+    isCycling: track.parentElement.classList.contains('movement-lane--cycling')
   };
 });
 
@@ -65,7 +66,7 @@ function moveAthletes() {
   const viewportHeight = window.innerHeight;
   const pageTravel = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
 
-  for (const { track, athlete, drawing, finishY, isSwimming, isRunning } of lanes) {
+  for (const { track, athlete, drawing, finishY, isSwimming, isRunning, isCycling } of lanes) {
     const bounds = track.getBoundingClientRect();
     const finishViewportFraction = isSwimming ? .4 : .88;
     const finish = Math.min(pageTravel, Math.max(1, bounds.bottom + scrollTop - viewportHeight * finishViewportFraction));
@@ -75,14 +76,15 @@ function moveAthletes() {
     const scale = Math.min(drawing.clientWidth / width, drawing.clientHeight / height);
     const drawingTop = (drawing.clientHeight - height * scale) / 2;
     const travel = Math.max(0, track.clientHeight - drawingTop - finishY * scale);
-    const sway = Math.sin(progress * Math.PI * (isSwimming ? 2 : 4));
+    const mobileLandAthlete = tapLayout.matches && (isRunning || isCycling);
+    const sway = Math.sin(progress * Math.PI * (mobileLandAthlete ? 6 : isSwimming ? 2 : 4));
     athlete.style.setProperty('--athlete-position', `${travel * progress}px`);
-    if (isRunning) {
-      athlete.style.setProperty('--athlete-turn', `${sway * 5}deg`);
-    } else {
-      const drift = Math.min(isSwimming ? 6 : 14, bounds.width * .085);
-      athlete.style.setProperty('--athlete-drift', `${sway * drift}px`);
-    }
+    const drift = mobileLandAthlete
+      ? Math.min(isRunning ? 11 : 21, bounds.width * (isRunning ? .08 : .13))
+      : Math.min(isSwimming ? 6 : 14, bounds.width * .085);
+    athlete.style.setProperty('--athlete-drift', `${isRunning && !mobileLandAthlete ? 0 : sway * drift}px`);
+    const turn = isRunning ? (mobileLandAthlete ? 8 : 5) : (mobileLandAthlete ? 4 : 0);
+    athlete.style.setProperty('--athlete-turn', `${sway * turn}deg`);
     athlete.classList.add('is-travelling');
   }
 }

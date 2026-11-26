@@ -197,6 +197,13 @@
   }
 }
 
+@media (max-width: 48rem) {
+  :is(.movement-lane--running, .movement-lane--cycling) .movement-athlete.is-travelling {
+    transform: translate(var(--athlete-drift, 0px), var(--athlete-position)) rotate(var(--athlete-turn, 0deg));
+    transition: transform 340ms ease-out;
+  }
+}
+
 .movement-athlete svg {
   display: block;
   width: 85%;
