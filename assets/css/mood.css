@@ -1,20 +1,56 @@
 body.page-mood {
-  display: grid;
-  place-items: end;
-  box-sizing: border-box;
-  min-height: 100vh;
-  min-height: 100dvh;
-  margin: 0;
-  padding: 1rem;
-  padding-right: max(1rem, env(safe-area-inset-right));
-  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
 }
 
-.page-mood main.mood-scene {
-  position: relative;
-  width: min(100%, 25rem, 84vh);
+body.page-mood > main {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.mood-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  justify-items: center;
+  width: min(100%, 34rem);
+  margin: clamp(0.5rem, 3vh, 1.6rem) auto clamp(0.5rem, 3vh, 2rem);
+  row-gap: clamp(0.5rem, 17vh - 3rem, 9rem);
+}
+
+.mood-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65em;
   margin: 0;
-  padding: 0;
+  text-transform: none;
+  font-size: clamp(0.8rem, 3.4vw, 1.8rem);
+}
+
+.mood-title svg {
+  display: block;
+  height: 1.15em;
+}
+
+.mood-figure {
+  container-type: size;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.mood-caption {
+  margin-top: clamp(0.4rem, 8cqh, 2rem);
+  text-align: center;
+  font-size: var(--reading-size);
+}
+
+.page-mood .mood-scene {
+  position: relative;
+  width: min(100%, 17rem, max(0px, (100cqh - 4.75rem) * 1.075));
 }
 
 .mood-bag {
@@ -26,6 +62,12 @@ body.page-mood {
 .mood-bag[hidden],
 .mood-pin[hidden] {
   display: none;
+}
+
+.mood-table-shadow {
+  fill: var(--text-color);
+  opacity: 0.22;
+  filter: blur(4px);
 }
 
 .mood-water {
@@ -40,33 +82,51 @@ body.page-mood {
   stroke-linejoin: round;
 }
 
+.mood-song {
+  fill: var(--text-color);
+}
+
+.mood-song path {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mood-crease {
+  stroke-width: 1.5;
+  opacity: 0.72;
+}
+
 .mood-pin {
   position: absolute;
-  inset: 0 0 auto auto;
+  top: 0;
+  right: 0;
   display: grid;
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
   border: 0;
-  border-radius: 50%;
-  color: var(--text-color);
+  appearance: none;
+  color: #dc302f;
   background: transparent;
   cursor: pointer;
 }
 
 .mood-pin svg {
+  display: block;
+  pointer-events: none;
   width: 100%;
 }
 
-.mood-pin:hover,
-.mood-pin:focus-visible {
-  outline: 1px dashed currentColor;
-  outline-offset: 2px;
+.mood-pin:focus {
+  outline: none;
 }
 
-.mood-pin:active {
-  transform: translate(-3px, 3px);
+.mood-pin:focus-visible svg {
+  filter: drop-shadow(0 0 2px var(--text-color));
 }
 
 .mood-status {
@@ -77,4 +137,53 @@ body.page-mood {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.mood-runoff,
+.mood-splash {
+  fill: none;
+  stroke: var(--footer-color);
+  stroke-linecap: round;
+  visibility: hidden;
+}
+
+.mood-runoff {
+  stroke-width: 2.5;
+}
+
+.mood-splash {
+  stroke-width: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mood-draining .mood-bag:not([hidden]) .mood-runoff {
+    visibility: visible;
+    animation: mood-runoff 760ms ease-out both;
+  }
+
+  .mood-draining .mood-bag:not([hidden]) .mood-splash {
+    visibility: visible;
+    animation: mood-splash 320ms ease-out 290ms both;
+  }
+
+  .mood-draining .mood-bag:not([hidden]) .mood-puddle {
+    transform-origin: 313px 309px;
+    animation: mood-puddle 440ms ease-out 290ms both;
+  }
+}
+
+@keyframes mood-runoff {
+  0% { stroke-dasharray: 0 1; }
+  45%, 65% { stroke-dasharray: 1 0; opacity: 1; }
+  100% { stroke-dasharray: 1 0; opacity: 0; }
+}
+
+@keyframes mood-splash {
+  0%, 100% { opacity: 0; }
+  30% { opacity: 1; }
+}
+
+@keyframes mood-puddle {
+  from { transform: scale(0.35, 0.55); }
+  to { transform: scale(1); }
 }

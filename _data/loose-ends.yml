@@ -51,7 +51,7 @@
     - alphabet-soup.html
     - assets/css/alphabet-soup.css
     - assets/js/alphabet-soup.js
-- title: Mood
+- title: a fish in its bag
   url: /mood/
   paths:
     - mood.html
