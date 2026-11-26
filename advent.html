@@ -735,7 +735,7 @@ body_class: page-advent
         {% assign phone_glow_low = position | times: 7 | modulo: 8 | times: 0.032 | plus: 0.23 %}
         {% assign phone_glow_high = position | times: 5 | modulo: 9 | times: 0.032 | plus: 0.52 %}
         {% assign phone_glow_steady = phone_glow_low | plus: phone_glow_high | divided_by: 2.0 %}
-        {% capture glow_style %}--advent-glow-delay: {{ glow_delay }}s; --advent-glow-duration: {{ glow_duration }}s; --advent-glow-strength: {{ glow_strength }}; --advent-glow-scale: {{ glow_scale }}; --advent-pane-strength: {{ pane_strength }}; --advent-phone-glow-low: {{ phone_glow_low }}; --advent-phone-glow-high: {{ phone_glow_high }}; --advent-phone-glow-steady: {{ phone_glow_steady }}{% endcapture %}
+        {% capture glow_style %}--advent-glow-delay: {{ glow_delay }}s; --advent-glow-duration: {{ glow_duration }}s; --advent-glow-strength: {{ glow_strength }}; --advent-glow-scale: {{ glow_scale }}; --advent-pane-strength: {{ pane_strength }}; --advent-phone-glow-steady: {{ phone_glow_steady }}{% endcapture %}
         {% capture door %}
           <ellipse class="advent-phone-window-halo" cx="0" cy="32" rx="40" ry="46" fill="url(#advent-phone-window-amber)" style="{{ glow_style }}" aria-hidden="true"/>
           <ellipse class="advent-window-halo" cx="0" cy="32" rx="34" ry="40" style="{{ glow_style }}" aria-hidden="true"/>

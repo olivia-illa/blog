@@ -128,25 +128,20 @@ body.page-advent > main {
 @media (max-width: 767px) {
   .advent-window-halo { display: none; }
   .advent-phone-window-halo { display: inline; opacity: var(--advent-phone-glow-steady, .55); }
-  .advent-pane-shimmer { opacity: var(--advent-pane-strength, .2); }
+  .advent-pane-shimmer { animation: none; opacity: var(--advent-pane-strength, .2); }
 }
 
 @media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
   .advent-phone-window-halo {
+    transform-box: fill-box;
+    transform-origin: center;
     animation: advent-mobile-window-glow var(--advent-glow-duration, 3.8s) ease-in-out var(--advent-glow-delay, 0s) infinite;
   }
-
-  .advent-pane-shimmer { animation-name: advent-mobile-pane-glow; }
 }
 
 @keyframes advent-mobile-window-glow {
-  0%, 100% { opacity: var(--advent-phone-glow-low, .35); }
-  44% { opacity: var(--advent-phone-glow-high, .7); }
-}
-
-@keyframes advent-mobile-pane-glow {
-  0%, 100% { opacity: calc(var(--advent-pane-strength, .25) * .45); }
-  44% { opacity: var(--advent-pane-strength, .3); }
+  0%, 100% { transform: scale(.88); }
+  50% { transform: scale(var(--advent-glow-scale, 1.15)); }
 }
 
 .advent-lantern-glow { fill: url("#advent-lantern-light"); stroke: none; }
