@@ -10,8 +10,9 @@
   var names = ['green apple', 'red apple', 'pie'];
   var state = 0;
   var pieCaption = document.querySelector('.pie-caption');
-  var countEl = document.querySelector('.apple-count');
-  var api = '/api/apples';
+  var api = button.getAttribute('data-api') || '/api/apples';
+  // Local previews show the live counts but must not vote.
+  var readOnly = button.hasAttribute('data-read-only');
 
   function store(key, value) {
     try { localStorage.setItem(key, value); } catch (e) {}
@@ -47,13 +48,15 @@
     button.setAttribute('aria-label', 'Reaction: ' + names[state] + '. Change to ' + names[(state + 1) % emojis.length]);
   }
 
-  // Only the count for the emoji this reader has selected; the green apple
-  // is "no vote", so it shows nothing.
+  // Only the count for the emoji this reader has selected, shown as the
+  // button's hover tooltip; the green apple is "no vote", so it shows nothing.
   function renderCount() {
-    if (!countEl) return;
     var n = counts && countKeys[state] ? counts[countKeys[state]] : 0;
-    countEl.textContent = n > 0 ? String(n) : '';
-    countEl.hidden = !(n > 0);
+    if (n > 0) {
+      button.title = n + (n === 1 ? ' reader' : ' readers') + ' picked the ' + names[state];
+    } else {
+      button.removeAttribute('title');
+    }
   }
 
   function setCounts(c) {
@@ -78,6 +81,7 @@
   }
 
   function send(sentState) {
+    if (readOnly) return;
     var visitor = visitorId();
     if (!visitor) return;
     request('PUT', { post: post, visitor: visitor, state: sentState })
@@ -94,7 +98,7 @@
   else if (saved === '1' || saved === '2') state = Number(saved);
   render();
 
-  if ((load(syncedKey) || '0') !== String(state)) {
+  if (!readOnly && (load(syncedKey) || '0') !== String(state)) {
     send(state);
   } else {
     request('GET').then(setCounts).catch(function () {});
@@ -104,7 +108,7 @@
     var previous = state;
     state = (state + 1) % emojis.length;
     // Move this reader's vote right away instead of waiting for the server.
-    if (counts) {
+    if (counts && !readOnly) {
       if (countKeys[previous]) counts[countKeys[previous]]--;
       if (countKeys[state]) counts[countKeys[state]]++;
     }

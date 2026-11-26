@@ -111,6 +111,9 @@ func (s *server) countsFor(post string) (counts, error) {
 }
 
 func (s *server) get(w http.ResponseWriter, r *http.Request) {
+	// Counts are public, so any page may read them; local previews of the
+	// blog show the live counts this way. Votes (PUT) stay same-origin.
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	if post := r.URL.Query().Get("post"); post != "" {
 		if !s.validPost(post) {
 			http.Error(w, "unknown post", http.StatusNotFound)

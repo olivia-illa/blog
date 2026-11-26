@@ -9,6 +9,10 @@ url: "https://oliviailla.blog" # the base hostname & protocol for your site, e.g
 # Build settings
 timezone: Asia/Singapore # UTC+8, matches the +0800 dates in posts so URLs use the intended day
 theme: null # We are building a custom theme
+# The live apple vote API. Local previews read the counts from here (but
+# never vote); `jekyll serve` rewrites site.url to localhost, hence its own key.
+live_api: "https://oliviailla.blog/api"
+
 # Self-hosted GoatCounter (page view stats). Remove to stop counting.
 goatcounter: "https://stats.oliviailla.blog"
 
