@@ -2400,9 +2400,6 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .drawer-track {
   display: grid;
   grid-template-rows: 1fr;
-  border-radius: 8px 8px 0 0;
-  background: var(--bg-color);
-  box-shadow: inset 0 2px 7px var(--drawer-edge);
 }
 .drawer-track > .folder-stack { min-height: 0; overflow: hidden; }
 .drawer-track .tag-folder:first-child { margin-top: 1.65rem; }
