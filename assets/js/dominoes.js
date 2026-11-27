@@ -50,14 +50,16 @@ if (dominoBoard) {
     starter.setAttribute("aria-disabled", "true");
     followFall = true;
 
-    const started = performance.now();
-    const delay = Math.min(68, 7500 / tiles.length);
+    const phoneLayout = window.matchMedia("(max-width: 600px)").matches;
+    const delay = phoneLayout ? 55 : Math.min(68, 7500 / tiles.length);
+    let nextTipAt = 0;
     let next = 0;
 
     function tip(now) {
-      const reached = Math.floor((now - started) / delay) + 1;
-      while (next < Math.min(reached, tiles.length)) {
+      if (now >= nextTipAt) {
         tiles[next++].classList.add("is-down");
+        // Start the next interval from the actual fall so a slow frame never batches tiles.
+        nextTipAt = now + delay;
       }
 
       if (followFall) {
@@ -73,7 +75,7 @@ if (dominoBoard) {
       frame = next < tiles.length ? requestAnimationFrame(tip) : null;
     }
 
-    tip(started);
+    tip(performance.now());
   }
 
   starter.addEventListener("click", play);

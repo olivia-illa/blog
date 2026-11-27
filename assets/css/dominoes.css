@@ -143,7 +143,16 @@
 .domino-weeknotes { --paper: #bfdfba; --edge: #91b48d; }
 .domino-thoughts { --paper: #cbc2ee; --edge: #a295c4; }
 
-.domino-starter { cursor: pointer; }
+.domino-starter {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.domino-starter:focus { outline: none; }
+.domino-starter:focus-visible svg {
+  filter: drop-shadow(0 0 2px var(--text-color)) drop-shadow(0 0 2px var(--text-color));
+}
+
 .domino-starter .domino-side { fill: #ec724d; }
 
 .domino-starter:disabled { cursor: default; }
