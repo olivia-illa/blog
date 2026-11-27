@@ -64,6 +64,7 @@
   .dominoes .dominoes-board {
     grid-area: board;
     width: 100%;
+    max-width: none;
     box-sizing: border-box;
     margin-block-start: 0;
   }
@@ -88,10 +89,10 @@
 
 @media (max-width: 600px) {
   .dominoes-board {
-    --tile-width: 34px;
-    --tile-track: 32px;
-    --fall-distance: .77;
-    gap: .5rem .23rem;
+    --tile-width: 27px;
+    --tile-track: 25px;
+    --fall-distance: .61;
+    gap: .4rem .18rem;
   }
 }
 
@@ -183,8 +184,7 @@
 
 .domino-count {
   font: 700 14px var(--font-mono, monospace);
-  transform-box: fill-box;
-  transform-origin: center;
+  transform-origin: 0 0;
 }
 
 .domino-final.is-down .domino-count {
@@ -194,12 +194,12 @@
 .domino.is-down svg {
   transform: translate(calc(var(--direction) * var(--landing-slide) * var(--fall-distance)),
     calc(var(--landing-drop) * var(--fall-distance)))
-    rotate(calc(var(--direction) * var(--landing-angle))) scale(1.26);
+    rotate(calc(var(--direction) * var(--landing-angle)));
   animation: domino-tip 310ms ease-out;
 }
 
 @keyframes domino-tip {
-  from { transform: translate(0, 0) rotate(var(--tilt)) scale(1); }
+  from { transform: translate(0, 0) rotate(var(--tilt)); }
   32% {
     transform: translate(calc(var(--direction) * 5px * var(--fall-distance)), calc(5px * var(--fall-distance)))
       rotate(calc(var(--direction) * 29deg)) perspective(180px) rotateX(-38deg);
@@ -207,6 +207,6 @@
   62% {
     transform: translate(calc(var(--direction) * (var(--landing-slide) + 5px) * var(--fall-distance)),
       calc((var(--landing-drop) + 3px) * var(--fall-distance)))
-      rotate(calc(var(--direction) * (var(--landing-angle) + 12deg))) scale(1.26);
+      rotate(calc(var(--direction) * (var(--landing-angle) + 12deg)));
   }
 }

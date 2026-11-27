@@ -4,7 +4,7 @@ title: Dominoes
 permalink: /dominoes/
 ---
 {% assign post_count = site.posts.size %}
-<link rel="stylesheet" href="{{ '/assets/css/dominoes.css' | relative_url }}?v={{ site.time | date: '%s' }}-starter-focus">
+<link rel="stylesheet" href="{{ '/assets/css/dominoes.css' | relative_url }}?v={{ site.time | date: '%s' }}-compact-phone">
 <script src="{{ '/assets/js/dominoes.js' | relative_url }}?v={{ site.time | date: '%s' }}-one-at-a-time" defer></script>
 
 <section class="dominoes" aria-label="Dominoes">
@@ -66,7 +66,11 @@ permalink: /dominoes/
             <use href="#domino-pips-{{ first_face }}"/>
             <use href="#domino-pips-{{ second_face }}" y="32"/>
           </g>
-          {% if tile_number == post_count %}<text class="domino-count" x="22" y="39" text-anchor="middle" dominant-baseline="central">{{ post_count }}</text>{% endif %}
+          {% if tile_number == post_count %}
+          <g transform="translate(22 39)">
+            <text class="domino-count" text-anchor="middle" dominant-baseline="central">{{ post_count }}</text>
+          </g>
+          {% endif %}
         </svg>
       {% if tile_index == 0 %}</button>{% else %}</span>{% endif %}
       {% assign tile_index = tile_number %}
