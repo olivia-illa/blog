@@ -50,10 +50,7 @@
   setDrawer(Boolean(target));
   cabinet.classList.add('drawer-ready');
   drawerButton.hidden = false;
-  requestAnimationFrame(() => {
-    if (target) target.scrollIntoView({ block: 'start' });
-    requestAnimationFrame(() => cabinet.classList.add('drawer-motion'));
-  });
+  if (target) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
   folders.forEach(folder => folder.addEventListener('toggle', syncUrl));
   drawerButton.addEventListener('click', event => {
     const open = drawerTrack.inert;
