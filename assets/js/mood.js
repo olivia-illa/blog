@@ -5,7 +5,6 @@
   const needle = pin.querySelector('.mood-needle');
   const caption = scene.querySelector('.mood-caption q');
   const status = scene.querySelector('.mood-status');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = Number(scene.dataset.stage) - 1;
   let poking = false;
 
@@ -30,7 +29,7 @@
     if (poking) return;
 
     const drawing = drawings[current];
-    if (!drawing.dataset.puncture || reducedMotion.matches) {
+    if (!drawing.dataset.puncture) {
       advance();
       return;
     }

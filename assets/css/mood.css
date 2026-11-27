@@ -134,6 +134,18 @@ body.page-mood > main {
   88% { transform: var(--mood-rebound); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .mood-needle.is-poking {
+    animation-name: mood-poke-gentle;
+    animation-duration: 240ms;
+  }
+}
+
+@keyframes mood-poke-gentle {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: var(--mood-contact); }
+}
+
 .mood-pin:focus {
   outline: none;
 }
@@ -183,6 +195,18 @@ body.page-mood > main {
     transform-origin: 313px 309px;
     animation: mood-puddle 440ms ease-out 290ms both;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mood-draining .mood-bag:not([hidden]) .mood-runoff {
+    visibility: visible;
+    animation: mood-gentle-runoff 320ms ease-out both;
+  }
+}
+
+@keyframes mood-gentle-runoff {
+  0%, 100% { opacity: 0; }
+  35% { opacity: 0.7; }
 }
 
 @keyframes mood-runoff {
