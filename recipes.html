@@ -247,6 +247,14 @@ body_class: page-recipes
     fill: var(--text-color);
   }
 
+  .recipes-cake .recipes-layer:is(:hover, :focus-visible, .is-selected) :is(.recipes-sponge, use) {
+    fill: color-mix(in srgb, var(--bg-color) 84%, var(--text-color));
+  }
+
+  .recipes-cake.is-lit .recipes-layer:is(:hover, :focus-visible, .is-selected) :is(.recipes-sponge, use) {
+    fill: color-mix(in srgb, var(--text-color) 80%, var(--bg-color));
+  }
+
   .recipes-layer-dot { fill: var(--text-color); }
 
   .recipes-cake.is-lit .recipes-layer .recipes-layer-dot {
