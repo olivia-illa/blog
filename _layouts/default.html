@@ -65,9 +65,10 @@
       {% assign updated_posts = site.posts | recently_edited %}
       {% assign newest_update = updated_posts | first %}
       {% assign newest_update_date = newest_update.last_modified_at | default: newest_update.date %}
-      <div class="site-brand">
-        <span class="site-title" tabindex="0" aria-describedby="home-title-hint">{{ site.title }}</span><span class="site-title-hint" id="home-title-hint"> (← I was here on <time datetime="{{ newest_update_date | date_to_xmlschema }}">{{ newest_update_date | date: "%Y-%m-%d" }}</time> and have made {{ site.posts.size }} scribbles)</span>
-      </div>
+      <details class="site-brand home-title-details">
+        <summary class="site-title">{{ site.title }}</summary>
+        <span class="site-title-hint"> (← I was here on <time datetime="{{ newest_update_date | date_to_xmlschema }}">{{ newest_update_date | date: "%Y-%m-%d" }}</time> and have made <a href="{{ '/dominoes/' | relative_url }}">{{ site.posts.size }} scribbles</a>)</span>
+      </details>
       {% endif %}
       <div class="nav-links">
         <a href="{{ "/dates/" | relative_url }}">Dates</a>

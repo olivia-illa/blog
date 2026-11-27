@@ -59,9 +59,3 @@
     - assets/css/mood.css
     - assets/js/mood.js
     - assets/images/mood
-- title: Dominoes
-  url: /dominoes/
-  paths:
-    - dominoes.html
-    - assets/css/dominoes.css
-    - assets/js/dominoes.js
