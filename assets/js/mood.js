@@ -54,7 +54,7 @@
       advance();
     };
 
-    const fallback = window.setTimeout(finish, 550);
+    const fallback = window.setTimeout(finish, 1050);
     needle.addEventListener('animationend', finish);
     needle.classList.add('is-poking');
   });
