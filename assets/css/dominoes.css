@@ -76,11 +76,23 @@
 }
 
 .dominoes-board {
+  --tile-width: 44px;
+  --tile-track: 42px;
+  --fall-distance: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--tile-track), 1fr));
   gap: .65rem .3rem;
   margin-top: .75rem;
   padding: clamp(.55rem, 3vw, 1.5rem);
+}
+
+@media (max-width: 600px) {
+  .dominoes-board {
+    --tile-width: 34px;
+    --tile-track: 32px;
+    --fall-distance: .77;
+    gap: .5rem .23rem;
+  }
 }
 
 .domino {
@@ -138,7 +150,7 @@
 
 .domino svg {
   display: block;
-  width: min(100%, 44px);
+  width: min(100%, var(--tile-width));
   overflow: visible;
   fill: var(--ink);
   transform: rotate(var(--tilt));
@@ -171,24 +183,21 @@
 }
 
 .domino.is-down svg {
-  transform: translate(calc(var(--direction) * var(--landing-slide)), var(--landing-drop))
+  transform: translate(calc(var(--direction) * var(--landing-slide) * var(--fall-distance)),
+    calc(var(--landing-drop) * var(--fall-distance)))
     rotate(calc(var(--direction) * var(--landing-angle))) scale(1.26);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .domino.is-down svg {
-    animation: domino-tip 310ms ease-out;
-  }
+  animation: domino-tip 310ms ease-out;
 }
 
 @keyframes domino-tip {
   from { transform: translate(0, 0) rotate(var(--tilt)) scale(1); }
   32% {
-    transform: translate(calc(var(--direction) * 5px), 5px)
+    transform: translate(calc(var(--direction) * 5px * var(--fall-distance)), calc(5px * var(--fall-distance)))
       rotate(calc(var(--direction) * 29deg)) perspective(180px) rotateX(-38deg);
   }
   62% {
-    transform: translate(calc(var(--direction) * (var(--landing-slide) + 5px)), calc(var(--landing-drop) + 3px))
+    transform: translate(calc(var(--direction) * (var(--landing-slide) + 5px) * var(--fall-distance)),
+      calc((var(--landing-drop) + 3px) * var(--fall-distance)))
       rotate(calc(var(--direction) * (var(--landing-angle) + 12deg))) scale(1.26);
   }
 }
