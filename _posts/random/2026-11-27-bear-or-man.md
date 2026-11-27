@@ -31,6 +31,8 @@ Now he's pulled out a caulk gun to seal the seams along the baseboards and corne
 
 > *(Takes photos of his work from different angles.)*
 
-Mm, I don't recall this man. Though admittedly, it is quite satisfying watching paint with visible brush strokes go over the once rusty, moldy wall. There's barely any discoloration where the old and new paint meet. 
 
-Previously, d and I joked that our apartment looked like a crime scene with bullet holes punched all over. They were drainage holes left by the last worker who finally figured out how to let trapped water out from behind the drywall. Now, this wall has never looked smoother.
+I don't recall him at all. Admittedly, it is quite satisfying watching the paintbrush stroke over the once rusty, moldy wall. There's barely any discoloration where the old and new paint meet, almost as if a white chocolate glaze were poured over it. I can still see the wet spots around the corners, which he carefully reminded me to set dry until evening.
+
+Previously, d and I joked that our apartment looked like a mob shootout, with bullet holes punched all over. They were drainage holes left by the last worker who finally figured out how to let trapped water out from behind the damaged wall. At long last, after months of cleaning up mini floods and fallen paint, we have a smooth wall.
+
