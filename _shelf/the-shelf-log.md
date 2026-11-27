@@ -8,8 +8,8 @@ entries:
     edition: "2026 · Limited series"
     status: "Watching"
     logged_on: "2026-11-24"
-    source: "_posts/clippings/2026-11-24-clips-v2.md"
-    note: "[Add a note]"
+    note_source: "_posts/clippings/2026-11-24-clips-v2.md"
+    note: "2 Eggs Problem"
     credit_source: "https://media.netflix.com/en/only-on-netflix/81681910"
 
   - title: "Suits"
