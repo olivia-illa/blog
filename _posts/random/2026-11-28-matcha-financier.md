@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Matcha Financier plus techniques"
+title: "Matcha Financier + Techniques"
 date: 2026-11-27 22:12:00 +0800
 tags: [baking]
 ---
