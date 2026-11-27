@@ -2401,7 +2401,7 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   display: grid;
   grid-template-rows: 1fr;
   border-radius: 8px 8px 0 0;
-  background: linear-gradient(var(--drawer-edge), transparent 4rem);
+  background: var(--bg-color);
   box-shadow: inset 0 2px 7px var(--drawer-edge);
 }
 .drawer-track > .folder-stack { min-height: 0; overflow: hidden; }
@@ -2413,7 +2413,6 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
 .drawer-ready .cabinet-front {
   position: sticky;
   bottom: 0;
-  background: linear-gradient(var(--bg-color), var(--drawer-edge));
   box-shadow: 0 3px 0 var(--drawer-edge);
 }
 .drawer-ready:not(.drawer-open) .cabinet-front { transform: none; }

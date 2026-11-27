@@ -27,9 +27,10 @@
   }
   document.documentElement.classList.remove('tag-view-loading');
   const target = folders.find(folder => folder.dataset.tag === params.get('t'));
-  const syncUrl = () => {
+  const syncUrl = (openedFolder) => {
     const url = new URL(location.href);
-    const active = !drawerTrack.inert && folders.find(folder => folder.open);
+    const linkedFolder = folders.find(folder => folder.open && folder.dataset.tag === url.searchParams.get('t'));
+    const active = !drawerTrack.inert && (openedFolder || linkedFolder || folders.find(folder => folder.open));
     if (active) {
       url.searchParams.set('t', active.dataset.tag);
       url.searchParams.set('view', 'drawer');
@@ -54,7 +55,9 @@
     if (target) target.scrollIntoView({ block: 'start' });
     requestAnimationFrame(() => cabinet.classList.add('drawer-motion'));
   });
-  folders.forEach(folder => folder.addEventListener('toggle', syncUrl));
+  folders.forEach(folder => {
+    folder.addEventListener('toggle', () => syncUrl(folder.open ? folder : undefined));
+  });
   drawerButton.addEventListener('click', event => {
     const open = drawerTrack.inert;
     if (open) folders.forEach(folder => { folder.open = false; });

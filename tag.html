@@ -12,7 +12,7 @@ body_class: page-compact page-tags
     {% assign sorted_tags = site.tags | sort %}
     {% for tag in sorted_tags %}
     {% assign tab_column = forloop.index0 | modulo: 3 %}
-    <details class="tag-folder" name="tag-folders" data-tag="{{ tag[0] | escape }}" style="--tab-column: {{ tab_column }}; --folder-order: {{ forloop.index }};">
+    <details class="tag-folder" data-tag="{{ tag[0] | escape }}" style="--tab-column: {{ tab_column }}; --folder-order: {{ forloop.index }};">
       <summary class="folder-tab"><span class="folder-tab-name">{{ tag[0] | escape }}</span><span class="folder-tab-count">{{ tag[1].size }}</span></summary>
       <template class="individual-tag-posts"><ul class="post-list">{% for post in tag[1] %}{% include list-row.html post=post numeric_date=true hide_tags=true %}{% endfor %}</ul></template>
       <div class="folder-contents">
