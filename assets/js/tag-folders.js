@@ -1,6 +1,8 @@
 (() => {
   const folders = [...document.querySelectorAll('.tag-folder')];
   const drawerButton = document.querySelector('.close-drawer');
+  const drawerTrack = document.querySelector('.drawer-track');
+  const cabinet = document.querySelector('.tag-cabinet');
   const params = new URLSearchParams(location.search);
   if (params.has('t') && params.get('view') !== 'drawer') {
     const selected = folders.find(folder => folder.dataset.tag === params.get('t'));
@@ -24,38 +26,40 @@
     }
   }
   document.documentElement.classList.remove('tag-view-loading');
-  const updateButton = () => {
-    if (!drawerButton) return;
-    const anyOpen = folders.some(folder => folder.open);
-    drawerButton.textContent = anyOpen ? 'close drawer' : 'open drawer';
-    drawerButton.setAttribute('aria-label', anyOpen ? 'Close drawer and put all folders back' : 'Open drawer and show all folders');
-    drawerButton.title = anyOpen ? 'Close all folders' : 'Open all folders';
+  const target = folders.find(folder => folder.dataset.tag === params.get('t'));
+  const syncUrl = () => {
+    const url = new URL(location.href);
+    const active = !drawerTrack.inert && folders.find(folder => folder.open);
+    if (active) {
+      url.searchParams.set('t', active.dataset.tag);
+      url.searchParams.set('view', 'drawer');
+    } else {
+      url.searchParams.delete('t');
+      url.searchParams.delete('view');
+    }
+    if (url.href !== location.href) history.replaceState(null, '', url);
   };
-  folders.forEach(folder => {
-    folder.addEventListener('toggle', () => {
-      updateButton();
-      const url = new URL(location.href);
-      const active = folder.open ? folder : folders.find(item => item.open);
-      if (active) {
-        url.searchParams.set('t', active.dataset.tag);
-        url.searchParams.set('view', 'drawer');
-      } else {
-        url.searchParams.delete('t');
-        url.searchParams.delete('view');
-      }
-      history.replaceState(null, '', url);
-    });
+  const setDrawer = open => {
+    if (!open && drawerTrack.contains(document.activeElement)) drawerButton.focus();
+    drawerTrack.inert = !open;
+    cabinet.classList.toggle('drawer-open', open);
+    drawerButton.textContent = open ? 'close drawer' : 'open drawer';
+    drawerButton.setAttribute('aria-expanded', String(open));
+  };
+  if (target) target.open = true;
+  setDrawer(Boolean(target));
+  cabinet.classList.add('drawer-ready');
+  drawerButton.hidden = false;
+  requestAnimationFrame(() => {
+    if (target) target.scrollIntoView({ block: 'start' });
+    requestAnimationFrame(() => cabinet.classList.add('drawer-motion'));
   });
-  drawerButton?.addEventListener('click', () => {
-    const open = !folders.some(folder => folder.open);
-    folders.forEach(folder => { folder.open = open; });
-    updateButton();
+  folders.forEach(folder => folder.addEventListener('toggle', syncUrl));
+  drawerButton.addEventListener('click', event => {
+    const open = drawerTrack.inert;
+    if (open) folders.forEach(folder => { folder.open = false; });
+    setDrawer(open);
+    if (open && event.detail === 0) folders[0]?.querySelector('summary').focus({ preventScroll: true });
+    syncUrl();
   });
-  const requested = new URLSearchParams(location.search).get('t');
-  const target = folders.find(folder => folder.dataset.tag === requested);
-  if (target) {
-    target.open = true;
-    requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
-  }
-  updateButton();
 })();

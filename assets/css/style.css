@@ -2393,8 +2393,48 @@ body.page-edited { height: 100dvh; min-height: 0; overflow: hidden; }
   padding-right: 0;
 }
 
-/* The label lies on the same plane as the original drawer front. */
-.cabinet-front .close-drawer { transform: none; }
+.tag-cabinet {
+  --drawer-edge: color-mix(in srgb, var(--text-color) 22%, var(--bg-color));
+  --drawer-travel: 340ms cubic-bezier(.25, .7, .25, 1);
+}
+.drawer-track {
+  display: grid;
+  grid-template-rows: 1fr;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(var(--drawer-edge), transparent 4rem);
+  box-shadow: inset 0 2px 7px var(--drawer-edge);
+}
+.drawer-track > .folder-stack { min-height: 0; overflow: hidden; }
+.drawer-track .tag-folder:first-child { margin-top: 1.65rem; }
+.drawer-track .tag-folder:last-child { margin-bottom: .3rem; }
+.drawer-track .tag-folder:last-child[open] { margin-bottom: 1.5rem; }
+.drawer-ready:not(.drawer-open) .drawer-track { grid-template-rows: 0fr; }
+.drawer-ready:not(.drawer-open) .folder-stack { transform: translateY(-1.2rem); }
+.drawer-ready .cabinet-front {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(var(--bg-color), var(--drawer-edge));
+  box-shadow: 0 3px 0 var(--drawer-edge);
+}
+.drawer-ready:not(.drawer-open) .cabinet-front { transform: none; }
+.cabinet-front .close-drawer {
+  min-height: 44px;
+  box-shadow: inset 0 1px 0 var(--bg-color), 0 2px 0 var(--drawer-edge);
+}
+.cabinet-front .close-drawer[hidden] { display: none; }
+.cabinet-front .close-drawer:hover { background: var(--text-color); color: var(--bg-color); }
+.cabinet-front .close-drawer:active { transform: translateY(1px); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .drawer-motion .drawer-track { transition: grid-template-rows var(--drawer-travel); }
+  .drawer-motion .folder-stack { transition: transform var(--drawer-travel); }
+  .drawer-motion .cabinet-front { transition: transform var(--drawer-travel); }
+  .drawer-motion .tag-folder[open] .folder-contents { animation: tag-folder-lift 200ms ease-out; }
+}
+@keyframes tag-folder-lift {
+  from { opacity: 0; transform: translateY(.45rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* Individual tag pages use the original compact archive markup and spacing. */
 .page-tags main > article.individual-tag-archive { max-width: 700px; margin: 0; }
