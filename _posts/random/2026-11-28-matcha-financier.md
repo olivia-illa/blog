@@ -57,5 +57,5 @@ One thing I missed in my notes was reading the temperature and bake time.
 
 > **Preheat to 200°C, and bake at 180°C for 12–15min.**
 
-I baked mine at 200°C for 25min 🤦🏻‍♀️  and came out burnt on the edges and crunchy all around.
+I baked mine at 200°C for 25min 🤦🏻‍♀️ They came out burnt on the edges with a thick crunchy exterior.
 
