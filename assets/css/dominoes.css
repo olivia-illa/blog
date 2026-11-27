@@ -1,0 +1,194 @@
+.dominoes {
+  margin-block: 1rem 2rem;
+}
+
+.dominoes-note {
+  margin: 0 .375rem .75rem;
+}
+
+.dominoes :is(.dominoes-key, .dominoes-board) {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.dominoes-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1rem;
+  padding: 0;
+  margin-block: 0;
+  list-style: none;
+}
+
+.dominoes-key li::before {
+  display: inline-block;
+  width: .6em;
+  height: .85em;
+  margin-inline-end: .45em;
+  background: var(--paper);
+  border: 1px solid #211e19;
+  border-radius: 2px;
+  transform: rotate(-7deg);
+  vertical-align: -.07em;
+  content: "";
+}
+
+.dominoes-controls:not([hidden]) {
+  display: flex;
+  justify-content: flex-end;
+  margin-block: .75rem 0;
+  margin-inline: .375rem;
+}
+
+@media (min-width: 900px) {
+  .dominoes {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "note board"
+      "key board"
+      "replay replay";
+    column-gap: clamp(1rem, 3vw, 3rem);
+  }
+
+  .dominoes-note { grid-area: note; }
+
+  .dominoes .dominoes-key {
+    grid-area: key;
+    flex-direction: column;
+    align-self: start;
+    margin-inline: .375rem;
+  }
+
+  .dominoes .dominoes-board {
+    grid-area: board;
+    width: 100%;
+    box-sizing: border-box;
+    margin-block-start: 0;
+  }
+
+  .dominoes-controls { grid-area: replay; }
+}
+
+.dominoes-art {
+  position: absolute;
+}
+
+.dominoes-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+  gap: .65rem .3rem;
+  margin-top: .75rem;
+  padding: clamp(.55rem, 3vw, 1.5rem);
+}
+
+.domino {
+  --tilt: -3deg;
+  --landing-angle: 70deg;
+  --landing-drop: 10px;
+  --landing-slide: 6px;
+  --paper: #f3ecd3;
+  --edge: #c9bd9b;
+  --ink: #211e19;
+  display: grid;
+  position: relative;
+  place-items: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.domino:nth-child(3n) {
+  --tilt: 2deg;
+  --landing-angle: 101deg;
+  --landing-drop: 12px;
+  --landing-slide: -3px;
+}
+
+.domino:nth-child(5n) {
+  --tilt: -1deg;
+  --landing-angle: 84deg;
+  --landing-drop: 5px;
+  --landing-slide: 1px;
+}
+
+.domino.domino-turn-out {
+  --landing-angle: 34deg;
+  --landing-drop: 29px;
+  --landing-slide: 8px;
+}
+
+.domino.domino-turn-in {
+  --landing-angle: 34deg;
+  --landing-drop: -9px;
+  --landing-slide: -8px;
+}
+
+.domino-meanderings { --paper: #f3ecd3; }
+.domino-clippings { --paper: #f1b8a5; --edge: #c98f7d; }
+.domino-weeknotes { --paper: #bfdfba; --edge: #91b48d; }
+.domino-thoughts { --paper: #cbc2ee; --edge: #a295c4; }
+
+.domino-starter { cursor: pointer; }
+.domino-starter .domino-side { fill: #ec724d; }
+
+.domino-starter:disabled { cursor: default; }
+
+.domino svg {
+  display: block;
+  width: min(100%, 44px);
+  overflow: visible;
+  fill: var(--ink);
+  transform: rotate(var(--tilt));
+}
+
+.domino-side,
+.domino-face,
+.domino-divider {
+  stroke: var(--ink);
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.domino-side { fill: var(--edge); }
+.domino-face { fill: var(--paper); }
+.domino-divider { fill: none; }
+
+.domino-final .domino-pips { display: none; }
+.domino-final.is-down { z-index: 1; }
+
+.domino-count {
+  font: 700 14px var(--font-mono, monospace);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.domino-final.is-down .domino-count {
+  transform: rotate(calc(-1 * var(--direction) * var(--landing-angle)));
+}
+
+.domino.is-down svg {
+  transform: translate(calc(var(--direction) * var(--landing-slide)), var(--landing-drop))
+    rotate(calc(var(--direction) * var(--landing-angle))) scale(1.26);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .domino.is-down svg {
+    animation: domino-tip 310ms ease-out;
+  }
+}
+
+@keyframes domino-tip {
+  from { transform: translate(0, 0) rotate(var(--tilt)) scale(1); }
+  32% {
+    transform: translate(calc(var(--direction) * 5px), 5px)
+      rotate(calc(var(--direction) * 29deg)) perspective(180px) rotateX(-38deg);
+  }
+  62% {
+    transform: translate(calc(var(--direction) * (var(--landing-slide) + 5px)), calc(var(--landing-drop) + 3px))
+      rotate(calc(var(--direction) * (var(--landing-angle) + 12deg))) scale(1.26);
+  }
+}
