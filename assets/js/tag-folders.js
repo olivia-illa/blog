@@ -48,7 +48,7 @@
     drawerButton.setAttribute('aria-expanded', String(open));
   };
   if (target) target.open = true;
-  setDrawer(Boolean(target));
+  setDrawer(true);
   cabinet.classList.add('drawer-ready');
   drawerButton.hidden = false;
   requestAnimationFrame(() => {
