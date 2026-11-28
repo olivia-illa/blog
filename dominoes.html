@@ -4,8 +4,8 @@ title: Dominoes
 permalink: /dominoes/
 ---
 {% assign post_count = site.posts.size %}
-<link rel="stylesheet" href="{{ '/assets/css/dominoes.css' | relative_url }}?v={{ site.time | date: '%s' }}-theme-glow">
-<script src="{{ '/assets/js/dominoes.js' | relative_url }}?v={{ site.time | date: '%s' }}-one-at-a-time" defer></script>
+<link rel="stylesheet" href="{{ '/assets/css/dominoes.css' | relative_url }}?v={{ site.time | date: '%s' }}-post-links">
+<script src="{{ '/assets/js/dominoes.js' | relative_url }}?v={{ site.time | date: '%s' }}-post-links" defer></script>
 
 <section class="dominoes" aria-label="Dominoes">
   <p class="dominoes-note catalogue-subtitle">(writing) these took me a long time</p>
@@ -57,8 +57,10 @@ permalink: /dominoes/
       {% assign first_face = tile_index | times: 3 | plus: 6 | modulo: 7 %}
       {% assign second_face = tile_index | divided_by: 7 | plus: tile_index | plus: 5 | modulo: 7 %}
       {% assign tile_number = tile_index | plus: 1 %}
-      {% if tile_index == 0 %}<button id="domino-start" class="domino domino-{{ group }} domino-starter{% if tile_number == post_count %} domino-final{% endif %}" type="button" aria-label="Tip the first domino{% if tile_number == post_count %}, {{ post_count }} scribble{% endif %}" disabled>
-      {% else %}<span class="domino domino-{{ group }}{% if tile_number == post_count %} domino-final{% endif %}" {% if tile_number == post_count %}role="img" aria-label="{{ post_count }} scribbles"{% else %}aria-hidden="true"{% endif %}>{% endif %}
+      <a {% if tile_index == 0 %}id="domino-start"{% endif %}
+         class="domino domino-{{ group }}{% if tile_index == 0 %} domino-starter{% endif %}{% if tile_number == post_count %} domino-final{% endif %}"
+         href="{{ post.url | relative_url | escape }}"
+         aria-label="{{ post.title | strip_html | normalize_whitespace | escape }}{% if tile_number == post_count %} ({{ post_count }} {% if post_count == 1 %}scribble{% else %}scribbles{% endif %}){% endif %}">
         <svg viewBox="0 0 49 80" aria-hidden="true" focusable="false">
           <use href="#domino-body"/>
           <g class="domino-pips">
@@ -72,7 +74,7 @@ permalink: /dominoes/
           </g>
           {% endif %}
         </svg>
-      {% if tile_index == 0 %}</button>{% else %}</span>{% endif %}
+      </a>
       {% assign tile_index = tile_number %}
     {% endfor %}
     {% endfor %}

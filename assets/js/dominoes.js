@@ -3,6 +3,7 @@ const dominoBoard = document.querySelector(".dominoes-board");
 if (dominoBoard) {
   const tiles = Array.from(dominoBoard.children);
   const starter = tiles[0];
+  const starterPostLabel = starter.getAttribute("aria-label");
   const controls = document.querySelector(".dominoes-controls");
   const replay = controls.querySelector("[data-domino-replay]");
   let frame = null;
@@ -42,12 +43,18 @@ if (dominoBoard) {
 
   layOutRows();
   new ResizeObserver(layOutRows).observe(dominoBoard);
-  starter.disabled = false;
   controls.hidden = false;
 
+  function armStarter() {
+    starter.setAttribute("role", "button");
+    starter.setAttribute("aria-label", "Tip the first domino");
+  }
+
+  armStarter();
+
   function play() {
-    if (starter.getAttribute("aria-disabled") === "true") return;
-    starter.setAttribute("aria-disabled", "true");
+    starter.removeAttribute("role");
+    starter.setAttribute("aria-label", starterPostLabel);
     followFall = true;
 
     const phoneLayout = window.matchMedia("(max-width: 600px)").matches;
@@ -78,7 +85,18 @@ if (dominoBoard) {
     tip(performance.now());
   }
 
-  starter.addEventListener("click", play);
+  starter.addEventListener("click", (event) => {
+    if (starter.classList.contains("is-down") || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    play();
+  });
+
+  starter.addEventListener("keydown", (event) => {
+    if (event.key === " " && starter.getAttribute("role") === "button") {
+      event.preventDefault();
+      starter.click();
+    }
+  });
   function stopFollowing() {
     followFall = false;
   }
@@ -96,7 +114,7 @@ if (dominoBoard) {
     if (frame !== null) cancelAnimationFrame(frame);
     frame = null;
     tiles.forEach((tile) => tile.classList.remove("is-down"));
-    starter.removeAttribute("aria-disabled");
+    armStarter();
     starter.focus();
   });
 }

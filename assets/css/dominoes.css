@@ -111,6 +111,7 @@
   padding: 0;
   border: 0;
   background: transparent;
+  pointer-events: none;
 }
 
 .domino:nth-child(3n) {
@@ -149,7 +150,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.domino-starter:focus { outline: none; }
+.domino:focus { outline: none; }
 .domino-starter svg {
   transition: filter 180ms ease-out;
 }
@@ -158,7 +159,7 @@
   filter: drop-shadow(0 0 2px var(--text-color)) drop-shadow(0 0 5px var(--text-color));
 }
 
-.domino-starter:focus-visible svg {
+.domino:focus-visible svg {
   filter: drop-shadow(0 0 2px var(--text-color));
 }
 
@@ -168,13 +169,12 @@
 
 .domino-starter .domino-side { fill: #ec724d; }
 
-.domino-starter:disabled { cursor: default; }
-
 .domino svg {
   display: block;
   width: min(100%, var(--tile-width));
   overflow: visible;
   fill: var(--ink);
+  pointer-events: auto;
   transform: rotate(var(--tilt));
 }
 
