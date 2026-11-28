@@ -150,8 +150,20 @@
 }
 
 .domino-starter:focus { outline: none; }
+.domino-starter svg {
+  transition: filter 180ms ease-out;
+}
+
+.domino-starter:not(.is-down) svg {
+  filter: drop-shadow(0 0 2px var(--text-color)) drop-shadow(0 0 5px var(--text-color));
+}
+
 .domino-starter:focus-visible svg {
-  filter: drop-shadow(0 0 2px var(--text-color)) drop-shadow(0 0 2px var(--text-color));
+  filter: drop-shadow(0 0 2px var(--text-color));
+}
+
+.domino-starter:not(.is-down):focus-visible svg {
+  filter: drop-shadow(0 0 3px var(--text-color)) drop-shadow(0 0 6px var(--text-color));
 }
 
 .domino-starter .domino-side { fill: #ec724d; }
